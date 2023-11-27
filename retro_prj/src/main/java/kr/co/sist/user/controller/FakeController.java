@@ -13,6 +13,7 @@ public class FakeController {
 	
 	@GetMapping("/user/result.do")
 	public String searchFake() {
+		//컴
 		return "user/searchFake";
 	}
 

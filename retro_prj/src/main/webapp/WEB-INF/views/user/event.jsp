@@ -39,7 +39,6 @@
 				<ul class="flex gap-6 py-5 max-w-[1280px] mx-auto">
 					<li class="font-bold"><a href="/event/list?searchType=ING">진행중</a></li>
 					<li class=""><a href="/event/list?searchType=END">종료</a></li>
-					<li class=""><a href="/event/list?searchType=WINNERS">당첨자 발표</a></li>
 				</ul>
 			</div>
 			

@@ -6,6 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<jsp:include page="../cdn/cdn.jsp"/>
 <style type="text/css">
 #selectOption {
 	display: none;

@@ -16,7 +16,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<%-- <jsp:include page="../cdn/admin_cdn.jsp"/> --%>
+<jsp:include page="../cdn/admin_cdn.jsp"/> 
 
 <style type="text/css">
 body{

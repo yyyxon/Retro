@@ -7,14 +7,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class ProductController {
+public class AdminProductController {
 	
 	@RequestMapping("/admin/product_managing.do")
 	public String productManage(HttpServletRequest request, Model model) {
 		
 		model.addAttribute("method",request.getMethod());
 		
-		return "admin/product_managingt";
+		return "admin/product_managing";
 	}//productManage
 		
 	}

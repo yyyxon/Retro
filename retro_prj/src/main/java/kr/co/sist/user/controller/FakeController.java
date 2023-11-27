@@ -8,6 +8,11 @@ public class FakeController {
 	
 	@GetMapping("/user/fraud.do")
 	public String fakeFrm() {
+		return "user/fakeFrm";
+	}
+	
+	@GetMapping("/user/result.do")
+	public String searchFake() {
 		return "user/searchFake";
 	}
 

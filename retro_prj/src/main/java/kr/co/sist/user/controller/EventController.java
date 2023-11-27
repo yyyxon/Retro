@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class EventController {
 	
 	@GetMapping("/user/event.do")
-	public String fakeFrm() {
+	public String eventList() {
 		return "user/event";
 	}
 

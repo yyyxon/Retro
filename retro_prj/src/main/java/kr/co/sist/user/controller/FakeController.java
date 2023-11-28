@@ -3,6 +3,8 @@ package kr.co.sist.user.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import kr.co.sist.user.vo.FakeVO;
+
 @Controller
 public class FakeController {
 	
@@ -12,8 +14,9 @@ public class FakeController {
 	}
 	
 	@GetMapping("/result.do")
-	public String searchFake() {
-		//컴
+	public String searchFake(FakeVO fVO) {
+		
+		
 		return "user/searchFake";
 	}
 

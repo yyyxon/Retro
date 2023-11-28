@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class FakeController {
 	
-	@GetMapping("/user/fraud.do")
+	@GetMapping("/fraud.do")
 	public String fakeFrm() {
 		return "user/fakeFrm";
 	}
 	
-	@GetMapping("/user/result.do")
+	@GetMapping("/result.do")
 	public String searchFake() {
 		//컴
 		return "user/searchFake";

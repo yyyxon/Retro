@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class EventController {
 	
-	@GetMapping("/user/event.do")
+	@GetMapping("/event.do")
 	public String eventList() {
 		return "user/event";
 	}

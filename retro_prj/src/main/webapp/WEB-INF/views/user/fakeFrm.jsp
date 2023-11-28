@@ -40,6 +40,9 @@ $(function() {
 	
 	$("#selectList li").click(function() {
 		$("#selectOption").toggle();
+		$("#searchInfo").css("border-color","");
+		$("#warning").html("");
+
 		var selectVal = $(this).attr("id");
 		var selectTxt = "아이디";
 		var placeholder = "영문, 숫자만 입력";
@@ -54,18 +57,59 @@ $(function() {
 			placeholder = "영문, 숫자, 특수문자만 입력";
 		}
 		
+		$("#searchInfo").val("");		
 		$("#searchInfo").attr("type",type);
 		$("#searchInfo").attr("placeholder",placeholder);
 		$("#selectBox").val(selectTxt);
 	});
 	
 	$("#searchFake").click(function(){
-		
-		$("#frm").submit();
+		if(chkValue($("#option").val()) && chkNull()){
+			$("#frm").submit();
+		}
 	});
-	
 });//ready
 
+function chkValue(option) {
+	var searchInfo = $("#searchInfo").val().replace(/ /g,"");
+	var msg = "";
+	var flag = false;
+	
+	if(option == 'phone' && (searchInfo.length != 11 || /-/.test(searchInfo))){
+		msg = "휴대폰 번호를 다시 한 번 확인해주세요.";
+		flag = true;
+	}else if(option == 'id' && (searchInfo.length < 5 || searchInfo.length > 30 || !/^[a-zA-Z0-9]+$/.test(searchInfo))){
+		msg = "아이디를 다시 한 번 확인해주세요.";
+		flag = true;
+	}else if(option == 'email') {
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(searchInfo)) {
+        	msg = "이메일을 다시 한 번 확인해주세요.";
+        	flag = true;
+        }
+	}
+	
+	if(flag){
+		$("#searchInfo").css("border-color","#F43F5E");
+		$("#warning").html(msg);
+		return false;
+	}
+	
+	$("#searchInfo").css("border-color","");
+	$("#warning").html("");
+	return true;	
+}
+
+function chkNull() {
+	var searchInfo = $("#searchInfo").val();
+	if(searchInfo.trim() == ""){
+		$("#warning").html("검색어를 입력해주세요.");
+		$("#searchInfo").css("border-color","#F43F5E");
+		return false;
+	}
+	$("#searchInfo").css("border-color","");
+	$("#warning").html("");
+	return true;
+}
 
 function hideFrmValue(val) {
 	$("#option").val(val);
@@ -91,7 +135,8 @@ function hideFrmValue(val) {
 							판매자의 아이디, 휴대폰, 이메일로 피해 사례 조회를 이용해 보세요!
 						</p>
 						<div class="h-[133.5px]">
-
+							
+							<!-- default 옵션 -->
 							<div class="relative mt-1 border border-[#DADEE5] rounded-md py-[2px]">
 								<input type="button" readonly="readonly" class="relative w-full cursor-default rounded-lg bg-white px-[16px] lg:text-sm py-[12px] text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm"
 									id="selectBox" aria-haspopup="listbox" aria-expanded="false" style="font-weight:500; padding-left:22px"
@@ -135,9 +180,11 @@ function hideFrmValue(val) {
 										placeholder="영문, 숫자만 입력"
 										class="md:px-5 w-full appearance-none border text-input text-xs lg:text-sm font-body placeholder-body min-h-12 transition duration-200 ease-in-out border-gray-300 focus:shadow focus:bg-white focus:border-primary bg-white px-4 py-[13px] outline-0 rounded-md"
 										autocomplete="off" spellcheck="false" aria-invalid="false">
+									<p class="my-2 text-xs text-rose-500" id="warning"></p>
 								</div>
 								<input type="button" data-variant="smoke" value="조회" id="searchFake"
 									class="text-[13px] md:text-sm leading-4 inline-flex items-center transition ease-in-out duration-300 font-semibold font-body text-center justify-center border-0 border-transparent placeholder-white focus-visible:outline-none focus:outline-none rounded-md h-11 md:h-12 px-5 bg-gray-200 text-heading transform-none normal-case hover:bg-gray-300 py-3 w-20">
+								
 							</div>
 						</div>
 						<div>

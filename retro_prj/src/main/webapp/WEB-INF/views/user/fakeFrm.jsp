@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<c:import url="http://localhost/sist/common/cdn/cdn.jsp"/>
+<c:import url="http://localhost/retro_prj/common/cdn/cdn.jsp"/>
 <style type="text/css">
 #selectOption {
 	display: none;
@@ -112,7 +112,7 @@ function chkNull() {
 }
 
 function hideFrmValue(val) {
-	$("#option").val(val);
+	$("#fakeField").val(val);
 }
 </script>
 
@@ -141,7 +141,7 @@ function hideFrmValue(val) {
 								<input type="button" readonly="readonly" class="relative w-full cursor-default rounded-lg bg-white px-[16px] lg:text-sm py-[12px] text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm"
 									id="selectBox" aria-haspopup="listbox" aria-expanded="false" style="font-weight:500; padding-left:22px"
 									data-headlessui-state="" value="아이디"/>
-								<input type="hidden" id="option" name="option" value="id"/>
+								<input type="hidden" id="fakeField" name="fakeField" value="id"/>
 									
 									<span class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
 									<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="w-5 h-5 text-gray-400"
@@ -176,7 +176,7 @@ function hideFrmValue(val) {
 
 							<div class="pt-2 flex gap-2 w-full justify-between align-middle">
 								<div class="w-full">
-									<input id="searchInfo" name="searchInfo" type="text" style="font-family:Pretendard Variable"
+									<input id="searchInfo" name="fakeField" type="text" style="font-family:Pretendard Variable"
 										placeholder="영문, 숫자만 입력"
 										class="md:px-5 w-full appearance-none border text-input text-xs lg:text-sm font-body placeholder-body min-h-12 transition duration-200 ease-in-out border-gray-300 focus:shadow focus:bg-white focus:border-primary bg-white px-4 py-[13px] outline-0 rounded-md"
 										autocomplete="off" spellcheck="false" aria-invalid="false">

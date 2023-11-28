@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <!-- <body cz-shortcut-listen="true"> -->
 	<div id="__next">
-		<div class="flex flex-col min-h-screen">
+		<div><!--  class="flex flex-col min-h-screen" -->
 			<header id="siteHeader" class="relative z-20 w-full h-16 sm:h-20 lg:h-36 xl:h-40 max-[480px]:mt-0 mt-[60px] headerThree is-scrolling">
 				<div id="header_items_wrapper" class="fixed z-20 w-full h-16 px-4 text-gray-700 transition duration-200 ease-in-out bg-white innerSticky body-font sm:h-20 lg:h-36 xl:h-40 md:px-8 lg:px-0" style="top: 0px;">
 					<div class="flex items-center mx-auto px-0 lg:px-8 2xl:px-16 max-w-[1280px] h-full lg:h-20 xl:h-24 relative before:absolute before:w-screen before:bg-[#F1F1F1] before:bottom-0 box-content justify-around">

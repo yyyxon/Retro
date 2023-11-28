@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="icon" href="http://192.168.10.136/mvc_prj/common/main/favicon.png" />
-<jsp:include page="../cdn/cdn.jsp"/>
+<c:import url="http://localhost/sist/common/cdn/cdn.jsp"/>
 
 <style type="text/css">
 </style>

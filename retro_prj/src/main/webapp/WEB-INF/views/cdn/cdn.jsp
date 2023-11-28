@@ -12,4 +12,5 @@
 <link rel="stylesheet" href="https://web.joongna.com/_next/static/css/4faf93b11322cf67.css">
 <link rel="stylesheet" href="https://web.joongna.com/_next/static/css/e3048584c00a0406.css" data-n-p="">
 <link rel="stylesheet" href="https://web.joongna.com/_next/static/css/13bd0b4016b44d89.css">
-<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/variable/pretendardvariable.css" />
+<link rel="stylesheet" as="style" crossorigin hrefkd91025K@!
+="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/variable/pretendardvariable.css" />

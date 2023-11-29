@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import kr.co.sist.user.domain.MyPageEnterDomain;
-import kr.co.sist.user.service.mypage.EnterMyPageInfoService;
+import kr.co.sist.user.service.mypage.MyPageInfoService;
 import kr.co.sist.user.vo.MyPageEnterVO;
 
 @Controller
@@ -21,7 +21,7 @@ public class MyPageController {
 	public String myPageEnter(String id, String pw, Model model) {
 		MyPageEnterVO mpeVO = new MyPageEnterVO(id, pw);
 		
-		MyPageEnterDomain mpeDomain = new EnterMyPageInfoService().isEnterable(mpeVO);
+		MyPageEnterDomain mpeDomain = new MyPageInfoService().isEnterable(mpeVO);
 		System.out.println(mpeDomain);
 		
 		return "";

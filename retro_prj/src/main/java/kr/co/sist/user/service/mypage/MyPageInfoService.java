@@ -4,7 +4,7 @@ import kr.co.sist.user.dao.EnterMyPageInfoDAO;
 import kr.co.sist.user.domain.MyPageEnterDomain;
 import kr.co.sist.user.vo.MyPageEnterVO;
 
-public class EnterMyPageInfoService {
+public class MyPageInfoService {
 	
 	public MyPageEnterDomain isEnterable(MyPageEnterVO mpeVO) {
 		MyPageEnterDomain mpeDomain = null;

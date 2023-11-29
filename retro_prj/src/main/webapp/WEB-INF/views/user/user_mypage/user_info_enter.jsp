@@ -83,9 +83,9 @@
 				
 				<p class="py-12 text-center" style="font-size: 28px;color: #000000;font-weight: bold;padding-bottom: 20px;">비밀번호 입력</p>
 				<div style="text-align: center;">
-					<form id="frm" name="frm" method="get">
+					<form id="frm" name="frm" method="post" action="mypage_info.do">
 						<input type="password" id="pw" name="pw" style="margin-bottom: 300px;padding-left: 10px;padding-top: 7px;padding-bottom: 5px;border: 1px solid #D1D1D1;border-radius: 5px;" placeholder="비밀번호 입력">
-						<input type="hidden">
+						<input type="hidden" name="id" value="user">
 					</form>
 				</div>
 			</div>

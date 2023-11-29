@@ -8,5 +8,5 @@ import lombok.ToString;
 @Setter
 @ToString
 public class FakeVO {
-	private String fakeField, fakeKeyword;
+	private String fraudField, fraudKeyword;
 }

@@ -3,42 +3,168 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <meta charset="UTF-8">
+<style type="text/css">
+#category-depth-1, #category-depth-2, #category-depth-3,
+	#category-depth-4, #category-depth-5,
+	#category-depth-1-1,#category-depth-1-2{
+	display: none;
+}
+</style>
 <title>Insert title here</title>
 <script type="text/javascript">
-$(function(){
-	
-});//ready
+	$(function() {
 
-	function category-1(){
-		$.ajax({
-			type:"get",
-			dataType:"Text",
-			error:fuction(xhr){
-				 console.log( xhr.status );				
-			},
-			success: function( data ){
-				var catagory1="";
-				catagory1+="<div id='category-depth-1'"
-				catagory1+="class='w-1/3 h-full overflow-y-auto border border-solid rounded border-jnGray-300'>"
-				catagory1+="<ul class='flex flex-col border-solid border-jnGray-300'>"
-				catagory1+="<li class='false h-10 p-3' id='category-11'><button>"
-				catagory1+="<p class='truncate break-keep'>여성의류</p>"
-				catagory1+="</button></li>"
-				catagory1+="<li class='false h-10 p-3' id='category-12'><button>"
-				catagory1+="<p class='truncate break-keep'>남성의류</p>"
-				catagory1+="</button></li>"
-				catagory1+="</ul>"
-				catagory1="</div>";
-				
-				$("#output").html(catagory1);
-			}//success
+		/* 패션의류 클릭하면 동작 */
+		$("#category-1").click(function() {
+			$(this).css({
+				'background-color' : '#E5E4E4'
+			});
+		 $("#category-2, #category-3, #category-4, #category-5, #category-1-1, #category-11,#category-12").css({
+			  'background-color': '#FFFFFF'
+		 });
 			
-		});//ajax		
-}
+			$("#category-depth-1").show();
+			
+			$("#category-depth-2, #category-depth-3, #category-depth-4, #category-depth-5,#category-depth-1-1,#category-depth-1-2").hide();
+		});//click
+		
+		/* 패션잡화 클릭하면 동작 */
+		$("#category-2").click(function() {
+			$(this).css({
+				'background-color' : '#E5E4E4'
+			});
+			$("#category-1, #category-3, #category-4, #category-5, #category-1-1").css({
+				  'background-color': '#FFFFFF'
+			 });
+			$("#category-depth-2").show();
+			$("#category-depth-1, #category-depth-3, #category-depth-4, #category-depth-5,#category-depth-1-1,#category-depth-1-2").hide();
+		});//click
+		
+		/* 모바일, 테블릿 클릭하면 동작 */
+		$("#category-3").click(function() {
+			$(this).css({
+				'background-color' : '#E5E4E4'
+			});
+			$("#category-2, #category-1, #category-4, #category-5, #category-1-1").css({
+				  'background-color': '#FFFFFF'
+			 });
+			$("#category-depth-3").show();
+			$("#category-depth-2, #category-depth-1, #category-depth-4, #category-depth-5,#category-depth-1-1,#category-depth-1-2").hide();
+		});//click
+		
+		/* 노트북, PC 클릭하면 동작 */
+		$("#category-4").click(function() {
+			$(this).css({
+				'background-color' : '#E5E4E4'
+			});
+			$("#category-2, #category-3, #category-1, #category-5, #category-1-1").css({
+				  'background-color': '#FFFFFF'
+			 });
+			$("#category-depth-4").show();
+			$("#category-depth-2, #category-depth-3, #category-depth-1, #category-depth-5,#category-depth-1-1,#category-depth-1-2").hide();
+		});//click
+		
+		/* 도서 문구 클릭하면 동작 */
+		$("#category-5").click(function() {
+			$(this).css({
+				'background-color' : '#E5E4E4'
+			});
+			$("#category-2, #category-3, #category-4, #category-1, #category-1-1").css({
+				  'background-color': '#FFFFFF'
+			 });
+			$("#category-depth-5").show();
+			$("#category-depth-2, #category-depth-3, #category-depth-4, #category-depth-1,#category-depth-1-1").hide();
+		});//click
+		
+		/* 여성의류 클릭하면 동작 */
+		$("#category-11").click(function() {
+			$(this).css({
+				'background-color' : '#E5E4E4'
+			});
+			$("#category-12, #category-112,#category-113,#category-111").css({
+				  'background-color': '#FFFFFF'
+			 });
+			$("#category-depth-1-1").show();
+			$("#category-depth-1-2").hide();
+		});//click
+		
+		/* 남성의류 클릭하면 동작 */
+		$("#category-12").click(function() {
+			$(this).css({
+				'background-color' : '#E5E4E4'
+			});
+			$("#category-11, #category-121,#category-122,#category-123").css({
+				  'background-color': '#FFFFFF'
+			 });
+			$("#category-depth-1-2").show();
+			$("#category-depth-1-1").hide();
+		});//click
+		
+		/* 티셔츠 , 캐쥬얼의류가 클릭되면 동작 */
+		$("#category-111").click(function() {
+			$(this).css({
+				'background-color' : '#E5E4E4'
+			});
+		$("#category-112, #category-113").css({
+			  'background-color': '#FFFFFF'
+		 });
+		});//click
+		
+		/* 바지, 치마가 클릭되면 동작 */
+		$("#category-112").click(function() {
+			$(this).css({
+				'background-color' : '#E5E4E4'
+			});
+		$("#category-111, #category-113").css({
+			  'background-color': '#FFFFFF'
+		 });
+		});//click
+		
+		/* 트레이닝복이 클릭되면 동작 */
+		$("#category-113").click(function() {
+			$(this).css({
+				'background-color' : '#E5E4E4'
+			});
+		$("#category-112, #category-111").css({
+			  'background-color': '#FFFFFF'
+		 });
+		});//click
+		
+		/* 티셔츠 , 캐쥬얼의류가 클릭되면 동작 */
+		$("#category-121").click(function() {
+			$(this).css({
+				'background-color' : '#E5E4E4'
+			});
+		$("#category-122, #category-123").css({
+			  'background-color': '#FFFFFF'
+		 });
+		});//click
+		
+		/* 바지, 치마가 클릭되면 동작 */
+		$("#category-122").click(function() {
+			$(this).css({
+				'background-color' : '#E5E4E4'
+			});
+		$("#category-121, #category-123").css({
+			  'background-color': '#FFFFFF'
+		 });
+		});//click
+		
+		/* 트레이닝복이 클릭되면 동작 */
+		$("#category-123").click(function() {
+			$(this).css({
+				'background-color' : '#E5E4E4'
+			});
+		$("#category-122, #category-121").css({
+			  'background-color': '#FFFFFF'
+		 });
+		});//click
 
+	});//ready
 </script>
-<link as="script" rel="prefetch"
+ <link as="script" rel="prefetch"
 	href="https://web.joongna.com/_next/static/chunks/4126-99e7ff6d28dc11d7.js">
 <link as="script" rel="prefetch"
 	href="https://web.joongna.com/_next/static/chunks/6869-4c157c328e76af89.js">
@@ -48,7 +174,7 @@ $(function(){
 	href="https://web.joongna.com/_next/static/css/4faf93b11322cf67.css">
 <link rel="stylesheet"
 	href="https://web.joongna.com/_next/static/css/e3048584c00a0406.css"
-	data-n-p="">
+	data-n-p=""> 
 <link rel="stylesheet"
 	href="https://web.joongna.com/_next/static/css/82d769b08f8a03ee.css"
 	data-n-p="">
@@ -140,94 +266,249 @@ $(function(){
 						</button>
 						<div
 							class="flex flex-row w-full overflow-hidden text-sm font-medium h-60">
-							<div id="category-depth-1"
+							<div id="category-depth-0"
 								class="w-1/3 h-full overflow-y-auto border border-solid rounded border-jnGray-300">
 								<ul class="flex flex-col border-solid border-jnGray-300">
-									<li class="false h-10 p-3" id="category-1" onclick="category-1()"><button>
-											<p class="truncate break-keep">패션의류</p>
-										</button></li>
-									<li class="false h-10 p-3" id="category-2"><button>
-											<p class="truncate break-keep">패션잡화</p>
-										</button></li>
-									<li class="false h-10 p-3" id="category-3"><button>
-											<p class="truncate break-keep">모바일/태블릿</p>
-										</button></li>
-									<li class="false h-10 p-3" id="category-4"><button>
-											<p class="truncate break-keep">노트북/PC</p>
-										</button></li>
-									<li class="false h-10 p-3" id="category-5"><button>
-											<p class="truncate break-keep">도서/문구</p>
-										</button></li>
+									<li class="false h-10 p-3" id="category-1">
+											패션의류
+									</li>
+									<li class="false h-10 p-3" id="category-2">
+											<p>패션잡화</p>
+										</li>
+									<li class="false h-10 p-3" id="category-3">
+											<p>모바일/태블릿</p>
+										</li>
+									<li class="false h-10 p-3" id="category-4">
+											<p>노트북/PC</p>
+										</li>
+									<li class="false h-10 p-3" id="category-5">
+											<p>도서/문구</p>
+										</li>
 								</ul>
 							</div>
-							<div id="output"></div>
-							<!-- <div id="category-depth-1"
+							<!-- 패션의류 > 여성의류 , 남성의류   -->
+							<div id="category-depth-1"
 								class="w-1/3 h-full overflow-y-auto border border-solid rounded border-jnGray-300">
+
 								<ul class="flex flex-col border-solid border-jnGray-300">
-									<li class="false h-10 p-3" id="category-11"><button>
+									<li class="false h-10 p-3" id="category-11">
 											<p class="truncate break-keep">여성의류</p>
-										</button></li>
-									<li class="false h-10 p-3" id="category-12"><button>
+										</li>
+									<li class="false h-10 p-3" id="category-12">
 											<p class="truncate break-keep">남성의류</p>
-										</button></li>
+										</li>
 								</ul>
-							</div> -->
-						<%-- 	<div id="category-depth-2"
+
+							</div>
+							<!-- 패션잡화 > 여성화 ,남성화, 가방   -->
+							<div id="category-depth-2"
 								class="w-1/3 h-full overflow-y-auto border border-solid rounded border-jnGray-300">
 								<ul class="flex flex-col border-solid border-jnGray-300">
-									<li class="false h-10 p-3" id="category-21"><button>
+									<li class="false h-10 p-3" id="category-21">
 											<p class="truncate break-keep">여성화</p>
-										</button></li>
-									<li class="false h-10 p-3" id="category-22"><button>
+										</li>
+									<li class="false h-10 p-3" id="category-22">
 											<p class="truncate break-keep">남성화</p>
-										</button></li>
-									<li class="false h-10 p-3" id="category-23"><button>
+										</li>
+									<li class="false h-10 p-3" id="category-23">
 											<p class="truncate break-keep">가방</p>
-										</button></li>
+										</li>
 
 								</ul>
 							</div>
+							<!-- 모바일/태블릿 > 스마트폰 ,테블릿   -->
 							<div id="category-depth-3"
 								class="w-1/3 h-full overflow-y-auto border border-solid rounded border-jnGray-300">
 								<ul class="flex flex-col border-solid border-jnGray-300">
-									<li class="false h-10 p-3" id="category-31"><button>
+									<li class="false h-10 p-3" id="category-31">
 											<p class="truncate break-keep">스마트폰</p>
-										</button></li>
-									<li class="false h-10 p-3" id="category-32"><button>
+										</li>
+									<li class="false h-10 p-3" id="category-32">
 											<p class="truncate break-keep">테블릿PC</p>
-										</button></li>
+									</li>
 								</ul>
 							</div>
+							<!-- 노트북/PC > 노트북, 모니터, 데스크탑  -->
 							<div id="category-depth-4"
 								class="w-1/3 h-full overflow-y-auto border border-solid rounded border-jnGray-300">
 								<ul class="flex flex-col border-solid border-jnGray-300">
-									<li class="false h-10 p-3" id="category-41"><button>
+									<li class="false h-10 p-3" id="category-41">
 											<p class="truncate break-keep">노트북</p>
-										</button></li>
-									<li class="false h-10 p-3" id="category-42"><button>
+										</li>
+									<li class="false h-10 p-3" id="category-42">
 											<p class="truncate break-keep">모니터</p>
-										</button></li>
-									<li class="false h-10 p-3" id="category-43"><button>
+									</li>
+									<li class="false h-10 p-3" id="category-43">
 											<p class="truncate break-keep">데스크탑</p>
-										</button></li>
+										</li>
 								</ul>
 							</div>
+							<!-- 도서/문구 > 학습/교육, 소설/만화책, 문구/사무용품-->
 							<div id="category-depth-5"
 								class="w-1/3 h-full overflow-y-auto border border-solid rounded border-jnGray-300">
 								<ul class="flex flex-col border-solid border-jnGray-300">
 									<li class="false h-10 p-3" id="category-51"
-										onclick="${ param.id }"><button>
+										onclick="${ param.id }">
 											<p class="truncate break-keep">학습 / 교육</p>
-										</button></li>
-									<li class="false h-10 p-3" id="category-52"><button>
+										</li>
+									<li class="false h-10 p-3" id="category-52">
 											<p class="truncate break-keep">소설 / 만화책</p>
-										</button></li>
-									<li class="false h-10 p-3" id="category-53"><button>
+										</li>
+									<li class="false h-10 p-3" id="category-53">
 											<p class="truncate break-keep">문구 / 사무용품</p>
-										</button></li>
+										</li>
 								</ul>
-							</div> --%>
-
+							</div>
+							<!-- 패션의류 > 여성의류 > 티셔츠/캐쥬얼의류, 바지/치마, 트레이닝복 -->
+							<div id="category-depth-1-1"
+								class="w-1/3 h-full overflow-y-auto border border-solid rounded border-jnGray-300">
+								<ul class="flex flex-col border-solid border-jnGray-300">
+									<li class="false h-10 p-3" id="category-111">
+											<p class="truncate break-keep">티셔츠/캐쥬얼의류</p>
+										</li>
+									<li class="false h-10 p-3" id="category-112">
+											<p class="truncate break-keep">바지/치마</p>
+										</li>
+									<li class="false h-10 p-3" id="category-113">
+											<p class="truncate break-keep">트레이닝복</p>
+										</li>
+								</ul>
+							</div>
+							<!-- 패션의류 > 남성의류 > 티셔츠/캐쥬얼의류, 바지, 트레이닝복 -->
+							<div id="category-depth-1-2"
+								class="w-1/3 h-full overflow-y-auto border border-solid rounded border-jnGray-300">
+								<ul class="flex flex-col border-solid border-jnGray-300">
+									<li class="false h-10 p-3" id="category-121">
+											<p class="truncate break-keep">티셔츠/캐쥬얼의류</p>
+										</li>
+									<li class="false h-10 p-3" id="category-122">
+											<p class="truncate break-keep">바지</p>
+										</li>
+									<li class="false h-10 p-3" id="category-123">
+											<p class="truncate break-keep">트레이닝복</p>
+										</li>
+								</ul>
+							</div>
+							<!-- 패션잡화 > 여성화 >  단화/로퍼, 워커/부츠, 샌들/슬리퍼 -->
+							<div id="category-depth-2-1"
+								class="w-1/3 h-full overflow-y-auto border border-solid rounded border-jnGray-300">
+								<ul class="flex flex-col border-solid border-jnGray-300">
+									<li class="false h-10 p-3" id="category-211">
+											<p class="truncate break-keep">단화/로퍼</p>
+										</li>
+									<li class="false h-10 p-3" id="category-212">
+											<p class="truncate break-keep">워커/부츠</p>
+										</li>
+									<li class="false h-10 p-3" id="category-213">
+											<p class="truncate break-keep">샌들/슬리퍼</p>
+										</li>
+								</ul>
+							</div>
+							<!-- 패션잡화 > 남성화 >  단화/로퍼, 워커/부츠, 샌들/슬리퍼 -->
+							<div id="category-depth-2-2"
+								class="w-1/3 h-full overflow-y-auto border border-solid rounded border-jnGray-300">
+								<ul class="flex flex-col border-solid border-jnGray-300">
+									<li class="false h-10 p-3" id="category-221">
+											<p class="truncate break-keep">단화/로퍼</p>
+										</li>
+									<li class="false h-10 p-3" id="category-222">
+											<p class="truncate break-keep">워커/부츠</p>
+										</li>
+									<li class="false h-10 p-3" id="category-223">
+											<p class="truncate break-keep">샌들/슬리퍼</p>
+										</li>
+								</ul>
+							</div>
+							<!-- 패션잡화 > 가방 >  숄더백, 크로스백, 백팩 -->
+							<div id="category-depth-2-3"
+								class="w-1/3 h-full overflow-y-auto border border-solid rounded border-jnGray-300">
+								<ul class="flex flex-col border-solid border-jnGray-300">
+									<li class="false h-10 p-3" id="category-231">
+											<p class="truncate break-keep">숄더백</p>
+										</li>
+									<li class="false h-10 p-3" id="category-232">
+											<p class="truncate break-keep">크로스백</p>
+										</li>
+									<li class="false h-10 p-3" id="category-233">
+											<p class="truncate break-keep">백팩</p>
+										</li>
+								</ul>
+							</div>
+							<!-- 모바일/ 태블릿 > 스마트폰 >  삼성/LG/애플/기타 -->
+							<div id="category-depth-3-1"
+								class="w-1/3 h-full overflow-y-auto border border-solid rounded border-jnGray-300">
+								<ul class="flex flex-col border-solid border-jnGray-300">
+									<li class="false h-10 p-3" id="category-311">
+											<p class="truncate break-keep">삼성</p>
+										</li>
+									<li class="false h-10 p-3" id="category-312">
+											<p class="truncate break-keep">LG</p>
+										</li>
+									<li class="false h-10 p-3" id="category-313">
+											<p class="truncate break-keep">애플</p>
+										</li>
+									<li class="false h-10 p-3" id="category-314">
+											<p class="truncate break-keep">기타</p>
+										</li>
+								</ul>
+							</div>
+							<!-- 모바일/ 태블릿 > 태블릿PC  > 삼성/애플/기타 -->
+							<div id="category-depth-3-2"
+								class="w-1/3 h-full overflow-y-auto border border-solid rounded border-jnGray-300">
+								<ul class="flex flex-col border-solid border-jnGray-300">
+									<li class="false h-10 p-3" id="category-321">
+											<p class="truncate break-keep">삼성</p>
+										</li>
+									<li class="false h-10 p-3" id="category-322">
+											<p class="truncate break-keep">애플</p>
+										</li>
+									<li class="false h-10 p-3" id="category-323">
+											<p class="truncate break-keep">기타</p>
+										</li>
+								</ul>
+							</div>
+							<!-- 노트북 > 노트북  >  삼성/LG/애플 -->
+							<div id="category-depth-3-3"
+								class="w-1/3 h-full overflow-y-auto border border-solid rounded border-jnGray-300">
+								<ul class="flex flex-col border-solid border-jnGray-300">
+									<li class="false h-10 p-3" id="category-331">
+											<p class="truncate break-keep">삼성</p>
+										</li>
+									<li class="false h-10 p-3" id="category-332">
+											<p class="truncate break-keep">LG</p>
+										</li>
+									<li class="false h-10 p-3" id="category-333">
+											<p class="truncate break-keep">애플</p>
+										</li>
+								</ul>
+							</div>
+							<!-- 도서/문구 > 학습/교육 >  학습/참고서, 수험서/자격증, 컴퓨터/인터넷 -->
+							<div id="category-depth-4-1"
+								class="w-1/3 h-full overflow-y-auto border border-solid rounded border-jnGray-300">
+								<ul class="flex flex-col border-solid border-jnGray-300">
+									<li class="false h-10 p-3" id="category-411">
+											<p class="truncate break-keep">학습/참고서</p>
+										</li>
+									<li class="false h-10 p-3" id="category-412">
+											<p class="truncate break-keep">수험서/자격증</p>
+										</li>
+									<li class="false h-10 p-3" id="category-413">
+											<p class="truncate break-keep">컴퓨터/인터넷</p>
+										</li>
+								</ul>
+							</div>
+							<!-- 도서/문구 > 소설/만화책 >   소설책, 만화책 -->
+							<div id="category-depth-4-2"
+								class="w-1/3 h-full overflow-y-auto border border-solid rounded border-jnGray-300">
+								<ul class="flex flex-col border-solid border-jnGray-300">
+									<li class="false h-10 p-3" id="category-221">
+											<p class="truncate break-keep">소설책</p>
+										</li>
+									<li class="false h-10 p-3" id="category-222">
+											<p class="truncate break-keep">만화책</p>
+										</li>
+								</ul>
+							</div>
 						</div>
 					</div>
 

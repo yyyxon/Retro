@@ -63,8 +63,9 @@ $(function(){
 
  <jsp:include page="/common/cdn/header.jsp"/>
 <body>
+<img src="http://localhost/retro_prj/common/images/main_logo.png" style="width:160px; margin-left: 870px; margin-top: 150px "/>
+<div style="text-align: center;  margin-top: 80px" id="LoginWrap">
 
-<div style="text-align: center;  margin-top: 200px" id="LoginWrap">
 <label style="margin-left: -410px">아이디</label><br>
 <input type="text" id="loginId" name="id" placeholder="아이디를 입력해주세요" class="inputBox" /> 
 <br>

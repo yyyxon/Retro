@@ -12,7 +12,11 @@
 </style>
 <script type="text/javascript">
 	$(function() {
-		
+		$("#pw").keydown(function(keyNum){
+			if(keyNum.keyCode == 13){ 
+				$("#frm").submit()	
+			}
+		})
 	});
 </script>
 </head>
@@ -24,6 +28,7 @@
 	<div class="flex mx-auto max-w-[1280px] px-4 md:px-8 2xl:px-16 box-content">
 	
 <c:import url="http://localhost/retro_prj/common/cdn/user_mypage_cdn.jsp"/>
+<%-- <c:import url="http://localhost/sist/common/cdn/user_mypage_cdn.jsp"/> --%>
 
 		<div class="w-full flex-grow">
 			<div class="block pb-4 lg:mt-6">
@@ -79,7 +84,7 @@
 				<p class="py-12 text-center" style="font-size: 28px;color: #000000;font-weight: bold;padding-bottom: 20px;">비밀번호 입력</p>
 				<div style="text-align: center;">
 					<form id="frm" name="frm" method="get">
-						<input type="password" id="pw" style="margin-bottom: 300px;padding-left: 10px;padding-top: 7px;padding-bottom: 5px;border: 1px solid #D1D1D1;border-radius: 5px;" placeholder="비밀번호 입력">
+						<input type="password" id="pw" name="pw" style="margin-bottom: 300px;padding-left: 10px;padding-top: 7px;padding-bottom: 5px;border: 1px solid #D1D1D1;border-radius: 5px;" placeholder="비밀번호 입력">
 						<input type="hidden">
 					</form>
 				</div>

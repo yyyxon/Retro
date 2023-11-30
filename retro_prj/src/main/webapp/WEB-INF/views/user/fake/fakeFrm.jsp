@@ -125,9 +125,9 @@ function hideFrmValue(val) {
 <c:import url="http://localhost/retro_prj/common/cdn/header.jsp"/>
 <body style="font-family: Pretendard Variable">
 	<main class="relative flex-grow border-b-2" style="min-height: -webkit-fill-available; -webkit-overflow-scrolling: touch">
-		<div class="max-w-[1280px] mx-auto max-w-[1280px] px-4 md:px-8 2xl:px-16 box-content" style="margin-bottom:30px">
+		<div class="max-w-[1280px] mx-auto max-w-[1280px] px-4 md:px-8 2xl:px-16 box-content" style="margin-bottom:30px; margin-top:30px">
 			<h1 class="a11yHidden">RE:TRO 통합 사기 조회</h1>
-			<div class="flex justify-center w-full border-b-2 text-jnblack">
+			<div class="flex justify-center w-full text-jnblack">
 				<div class="w-full py-10" style="padding-top: 0px;">
 					<div class="flex items-center justify-between mt-2 pb-5 text-xl text-jnBlack">
 						<h3 class="text-lg md:text-xl lg:text-2xl 2xl:text-3xl xl:leading-10 font-bold text-heading">

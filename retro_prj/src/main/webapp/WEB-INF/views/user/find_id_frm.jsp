@@ -48,7 +48,7 @@ $(function(){
  <jsp:include page="/common/cdn/header.jsp"/>
 <body>
 
-<div style=" font-size: 35px; font-weight: bold; color: #333333; margin-left: 870px; margin-top: 150px; margin-bottom: 30px ">아이디 찾기</div>
+<div style=" font-size: 35px; font-weight: bold; color: #333333; text-align: center; margin-top: 150px; margin-bottom: 30px ">아이디 찾기</div>
 <hr style="border: solid 1px #333333; paddin:20px; width: 450px; margin: 0px auto">
 <br>
 <div style="text-align: center">가입 시 등록한 휴대폰 번호와 이메일을 입력하면 <br>아이디의 일부를 알려드립니다.</div>

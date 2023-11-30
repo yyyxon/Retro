@@ -54,7 +54,46 @@ a:hover { color:#222222 }
 </style>
 <script type="text/javascript">
 $(function(){
+   $("#loginBtn").click(function(){
+	   alert("버튼 눌림")
+	   checkNull(); 
+	   /* $("#frm").submit(); */
+   })
    
+  $("#id").keydown(function( evt ){
+        if(evt.which == 13){
+            checkNull();
+        }//end if
+    });//end keydown
+
+    $("#pw").keydown(function( evt ){
+        if(evt.which == 13){
+            checkNull();
+        }//end if
+    });//end keydown
+
+   
+    function checkNull(){
+ alert("check");
+    	var id=$("#id").val();
+    	var pass=$("#pw").val();
+
+    	$("#id").focus();
+    	if( id.replace(/ /g,"") == ""){
+    	    $("#Warn").html("<span>아이디와 비밀번호를 입력해주세요</span>");
+    	    $("#id").val("");
+    	    return;
+    	}//end if
+
+    	$("#pw").focus();
+    	if( pass.replace(/ /g,"")  ==""){
+    	    $("#Warn").html("<span>아이디와 비밀번호를 입력해주세요</span>");
+    	    $("#pw").val("");
+    	    return;
+    	}//end if
+
+    	 	$("#frm").submit();
+    	}//chkNull
 });//ready
 </script>
 
@@ -63,20 +102,28 @@ $(function(){
 
  <jsp:include page="/common/cdn/header.jsp"/>
 <body>
+<form id="frm" action="login_process.do" method="post">
+<div style="margin: 0px auto; text-align: center">
 <img src="http://localhost/retro_prj/common/images/main_logo.png" style="width:160px; margin-left: 870px; margin-top: 150px "/>
+<br><div id="Warn" style="margin-top: 10px"></div><br>
+
+</div>
 <div style="text-align: center;  margin-top: 80px" id="LoginWrap">
 
 <label style="margin-left: -410px">아이디</label><br>
-<input type="text" id="loginId" name="id" placeholder="아이디를 입력해주세요" class="inputBox" /> 
+<input type="text" id="id" name="id" placeholder="아이디를 입력해주세요"  class="inputBox" /> 
 <br>
 <label style="margin-left: -400px; margin-top: 50px">비밀번호</label><br>
-<input type="text" id="loginPass" name="pass" placeholder="비밀번호를 입력해주세요" class="inputBox" /> 
+<input type="password" id="pw" name="pw" placeholder="비밀번호를 입력해주세요"  class="inputBox" /> 
 <br>
 <input type="button"  style="margin-top:40px; border-radius: 12px; width:450px; height: 50px; font-family:Pretendard Variable;    color:#FFFFFF; background-color:#333333  " id="loginBtn" name="loginBtn" value="로그인" class="btn btn-dark"/>
 <div style="text-align: center; margin-top: 30px" >
-<ul class="ul" ><li class="li"><a href="/join" class="look_link" >가입</a></li><li class="li"> <a href="/join" class="look_link" >아이디 찾기</a></li><li class="li"><a href="/join" class="look_link" >비밀번호 찾기</a></li></ul>
+<ul class="ul" ><li class="li"><a href="/join" class="look_link" >가입</a></li><li class="li"> <a href="find_id_frm.do" class="look_link" >아이디 찾기</a></li><li class="li"><a href="find_pw_frm.do" class="look_link" >비밀번호 찾기</a></li></ul>
 </div>
 </div>
+
+
+</form>
 <div style="margin-top:300px"></div>
  <jsp:include page="/common/cdn/footer.jsp"/> 
 </body>

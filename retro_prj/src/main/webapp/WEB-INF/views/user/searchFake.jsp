@@ -33,22 +33,7 @@
 					<div class="pt-6 border-y-jnblack border-solid border-t text-[12px] leading-5">
 						<div class="text-[20px] font-bold">
 							<p class="pt-[10px]">
-								<% 	
-								String keyword = request.getParameter("fraudKeyword").toLowerCase();
-								String field = request.getParameter("fraudField");
-								String tempKey = "";
-								int index = 2;
-								if( keyword!= null && !"".equals(keyword)){
-									if(keyword.length() > 7 && !"email".equals(field)){
-										index = keyword.length()-5;
-									}
-									tempKey = keyword.substring(0,index);
-									for(int i = index; i < keyword.length() ; i++){
-										tempKey = tempKey.concat("*");
-									}
-								}
-								%>
-								<%= tempKey %>
+								${ fakeResult.fraudKeyword }
 							</p>
 							<p class="pt-[10px]">피해 사례 조회</p>
 						</div>
@@ -62,11 +47,11 @@
 							<dd class="flex flex-wrap flex-[1_0_74%] items-center justify-between py-7 pr-3 pl-1 border-b-[1px] border-[#e0e0e0] border-solid">
 								<p class="text-[14px] text-jngreen">
 									<c:choose>
-										<c:when test="${ fakeCnt eq 0 }">
+										<c:when test="${ fakeResult.cnt eq 0 }">
 											신고 건수 없음
 										</c:when>
 										<c:otherwise>
-											${ fakeCnt } 건
+											${ fakeResult.cnt } 건
 										</c:otherwise>
 									</c:choose>
 								</p>

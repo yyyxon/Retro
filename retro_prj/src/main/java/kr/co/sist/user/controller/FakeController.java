@@ -13,7 +13,7 @@ public class FakeController {
 	
 	@GetMapping("/fraud.do")
 	public String fakeFrm() {
-		return "user/fakeFrm";
+		return "user/fake/fakeFrm";
 	}
 	
 	@GetMapping("/result.do")
@@ -24,7 +24,7 @@ public class FakeController {
 		
 		model.addAttribute("fakeResult",fd);
 		
-		return "user/searchFake";
+		return "user/fake/searchFake";
 	}
 
 }

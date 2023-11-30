@@ -2,11 +2,11 @@ package kr.co.sist.user.service.mypage;
 
 import kr.co.sist.user.dao.EnterMyPageInfoDAO;
 import kr.co.sist.user.domain.MyPageEnterDomain;
-import kr.co.sist.user.vo.MyPageEnterVO;
+import kr.co.sist.user.vo.MyPageIdPwVO;
 
-public class MyPageInfoService {
+public class MyPageInfoDetailService {
 	
-	public MyPageEnterDomain isEnterable(MyPageEnterVO mpeVO) {
+	public MyPageEnterDomain isEnterable(MyPageIdPwVO mpeVO) {
 		MyPageEnterDomain mpeDomain = null;
 		
 		mpeDomain = EnterMyPageInfoDAO.getInstance().isEnterable(mpeVO);

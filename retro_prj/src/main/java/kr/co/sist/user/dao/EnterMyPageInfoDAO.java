@@ -4,7 +4,7 @@ import org.apache.ibatis.session.SqlSession;
 
 import kr.co.sist.common.dao.MybatisHandler;
 import kr.co.sist.user.domain.MyPageEnterDomain;
-import kr.co.sist.user.vo.MyPageEnterVO;
+import kr.co.sist.user.vo.MyPageIdPwVO;
 
 public class EnterMyPageInfoDAO {
 	
@@ -22,13 +22,13 @@ public class EnterMyPageInfoDAO {
 		return mpDAO;
 	}
 	
-	public MyPageEnterDomain isEnterable(MyPageEnterVO mpeVO) {
+	public MyPageEnterDomain isEnterable(MyPageIdPwVO mpeVO) {
 		MyPageEnterDomain mpeDomain = null;
 		
 		MybatisHandler mh = MybatisHandler.getInstance();
 		SqlSession ss = mh.getMyBatisHandler(configPath, false);
 		
-		mpeDomain = ss.selectOne("kr.co.sist.user.join.canEnter", mpeVO);
+		mpeDomain = ss.selectOne("kr.co.sist.user.mypageInfoDetail.canEnter", mpeVO);
 		
 		mh.closeHandler(ss);
 		

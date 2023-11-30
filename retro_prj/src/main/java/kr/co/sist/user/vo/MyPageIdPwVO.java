@@ -2,6 +2,7 @@ package kr.co.sist.user.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -9,7 +10,8 @@ import lombok.ToString;
 @Setter
 @ToString
 @AllArgsConstructor
-public class MyPageEnterVO {
+@NoArgsConstructor
+public class MyPageIdPwVO {
 	private String id, pw;
 
 }

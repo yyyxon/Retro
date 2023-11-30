@@ -1,5 +1,5 @@
 package kr.co.sist.user.dao;
 
-public class MerchDAO {
+public class ProductDAO {
 
 }

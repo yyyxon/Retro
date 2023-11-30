@@ -1,5 +1,5 @@
 package kr.co.sist.user.service;
 
-public class MerchService {
+public class ProductService {
 
 }

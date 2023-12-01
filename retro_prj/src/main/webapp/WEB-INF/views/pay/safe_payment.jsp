@@ -6,17 +6,22 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<c:import url="http://localhost/retro_prj/common/cdn/cdn.jsp"/>
 <title>Insert title here</title>
 <link rel="icon"
 	href="http://192.168.0.70/jsp_prj/common/main/favicon-32x32.png">
 <!-- jQuery CDN -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <!-- 결제 css -->
-<link  rel="stylesheet" href="https://fruitsfamily.com/static/css/main.8c8a1dc3.chunk.css">
+<link rel="stylesheet" href="https://fruitsfamily.com/static/css/main.8c8a1dc3.chunk.css" >
 <style type="text/css">
 .Checkout-container {
     padding-left: 650px;
     padding-right: 650px;
+}
+.h1, h1 {
+    font-size: 40px;
+    text-align: center;
 }
 </style>
 <script type="text/javascript">
@@ -26,6 +31,7 @@
 </script>
 
 </head>
+<c:import url="http://localhost/retro_prj/common/cdn/header.jsp"/>
 <body>
 	<div class="Checkout-container">
 		<h1 class="page-title">주문 / 결제</h1>
@@ -94,6 +100,6 @@
 			</div>
 		</div>
 	</div>
-
+<c:import url="http://localhost/retro_prj/common/cdn/footer.jsp"/>
 </body>
 </html>

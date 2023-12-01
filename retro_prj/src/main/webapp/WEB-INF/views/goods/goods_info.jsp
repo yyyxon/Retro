@@ -6,6 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<c:import url="http://localhost/retro_prj/common/cdn/cdn.jsp"/>
 <title>Insert title here</title>
 <link rel="icon" href="http://192.168.0.70/jsp_prj/common/main/favicon-32x32.png">
 <!-- jQuery CDN -->
@@ -21,20 +22,6 @@
 <link as="script" rel="prefetch" href="https://web.joongna.com/_next/static/chunks/6869-4c157c328e76af89.js">
 <link as="script" rel="prefetch" href="https://web.joongna.com/_next/static/chunks/7068-99e7a3a9004c76dc.js">
 <style type="text/css">
-header {
-	background: #707070;
-	grid-area: header;
-}
-footer {
-	background: #707070;
-	grid-area: footer;
-}
-header,footer {
-	padding: 70px;
-	color:white;
-	text-align: center;
-	font-size:40px;
-}
 </style>
 <script type="text/javascript">
 	$(function() {
@@ -43,9 +30,7 @@ header,footer {
 </script>
 
 </head>
- <c:import url="/common/cdn/cdn.jsp" /> 
-
- <jsp:include page="/common/cdn/header.jsp"/>
+<c:import url="http://localhost/retro_prj/common/cdn/header.jsp"/>
 <body>
 	<div class="max-w-[1280px] lg:min-h-[950px] mx-auto max-w-[1280px] px-4 md:px-8 2xl:px-16 box-content">
 		<div class="items-start block grid-cols-2 pt-5 lg:grid gap-x-10 xl:gap-x-14 pb-14 lg:py-10 lg:pb-14 2xl:pb-20">
@@ -297,6 +282,6 @@ header,footer {
 			</div>
 		</div>
 	</div>
-</body>
- <jsp:include page="/common/cdn/footer.jsp"/> 
+<c:import url="http://localhost/retro_prj/common/cdn/footer.jsp"/>
+</body> 
 </html>

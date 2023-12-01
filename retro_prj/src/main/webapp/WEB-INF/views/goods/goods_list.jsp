@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<c:import url="http://localhost/retro_prj/common/cdn/cdn.jsp"/>
 <link rel="icon" href="http://192.168.0.70/jsp_prj/common/main/favicon-32x32.png">
 <!-- jQuery CDN -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -15,27 +16,13 @@
 <link rel="stylesheet" href="https://web.joongna.com/_next/static/css/a4ef56fda630c4e5.css" data-n-p=""/>
 
 <style type="text/css">
-header {
-	background: #707070;
-	grid-area: header;
-}
-footer {
-	background: #707070;
-	grid-area: footer;
-}
-header,footer {
-	padding: 70px;
-	color:white;
-	text-align: center;
-	font-size:40px;
-}
 </style>
 <script type="text/javascript">
 	
 </script>
 
 </head>
-<header>header</header>
+<c:import url="http://localhost/retro_prj/common/cdn/header.jsp"/>
 <body>
 	<div
 		class="flex pt-0 pb-16 bg-white lg:pt-8 lg:pb-20 mx-auto max-w-[1280px] px-4 md:px-8 2xl:px-16 box-content">
@@ -439,6 +426,7 @@ header,footer {
 			</div>
 		</div>
 	</div>
+<c:import url="http://localhost/retro_prj/common/cdn/footer.jsp"/>
 </body>
-<footer>footer</footer>
+
 </html>

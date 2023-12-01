@@ -38,8 +38,34 @@ a:hover { color:#222222 }
 </style>
 <script type="text/javascript">
 $(function(){
+   $("#findIdBtn").click(function() {
+	   $("#frm").submit();
+   })
    
 });//ready
+</script>
+<script type="text/javascript">
+    
+    // 입력을 제한 할 특수문자의 정규식
+    var replaceId  = /[-]/gi;
+    
+    $(document).ready(function(){
+        
+        $("#phone").on("focusout", function() {
+            var x = $(this).val();
+            if (x.length > 0) {
+                if (x.match(replaceId)) {
+                   x = x.replace(replaceId, "");
+                }
+                $(this).val(x);
+            }
+        }).on("keyup", function() {
+            $(this).val($(this).val().replace(replaceId, ""));
+
+        });
+
+    });
+ 
 </script>
 
 </head>
@@ -47,21 +73,22 @@ $(function(){
 
  <jsp:include page="/common/cdn/header.jsp"/>
 <body>
-
+<form id="frm" action="find_id_process.do" method="post">
 <div style=" font-size: 35px; font-weight: bold; color: #333333; text-align: center; margin-top: 150px; margin-bottom: 30px ">아이디 찾기</div>
 <hr style="border: solid 1px #333333; paddin:20px; width: 450px; margin: 0px auto">
 <br>
 <div style="text-align: center">가입 시 등록한 휴대폰 번호와 이메일을 입력하면 <br>아이디의 일부를 알려드립니다.</div>
 <div style="text-align: center;  margin-top: 100px" id="LoginWrap">
 <label style="margin-left: -380px">휴대폰 번호</label><br>
-<input type="text" id="loginId" name="id" placeholder="휴대폰번호를 입력해주세요" class="inputBox" /> 
+<input type="text" id="phone" name="phone" placeholder="휴대폰번호를 입력해주세요" class="inputBox" maxlength="11" /> 
 <br>
 <label style="margin-left: -410px; margin-top: 50px">이메일</label><br>
-<input type="text" id="loginPass" name="pass" placeholder="이메일을 입력해주세요" class="inputBox" /> 
+<input type="text" id="email" name="email" placeholder="이메일을 입력해주세요" class="inputBox" /> 
 <br>
-<input type="button"  style="margin-top:40px; border-radius: 12px; width:450px; height: 50px; font-family:Pretendard Variable;    color:#FFFFFF; background-color:#333333  " id="loginBtn" name="loginBtn" value="아이디 찾기" class="btn btn-dark"/>
+<input type="button"  style="margin-top:40px; border-radius: 12px; width:450px; height: 50px; font-family:Pretendard Variable;    color:#FFFFFF; background-color:#333333  " id="findIdBtn" name="findIdBtn" value="아이디 찾기" class="btn btn-dark"/>
 
 </div>
+</form>
 <div style="margin-top:300px"></div>
  <jsp:include page="/common/cdn/footer.jsp"/> 
 </body>

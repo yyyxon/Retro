@@ -38,7 +38,12 @@ a:hover { color:#222222 }
 </style>
 <script type="text/javascript">
 $(function(){
-   
+   $("#findPwBtn").click(function(){
+	   location.href="find_pw_frm.do"
+   })
+    $("#loginBtn").click(function(){
+	   location.href="login_frm.do"
+   })
 });//ready
 </script>
 
@@ -53,15 +58,16 @@ $(function(){
 <br>
 <div style="text-align: center">아이디</div><br>
 <div style="text-align: center">
-<strong style="font-size: 25px">test</strong>
+<strong style="font-size: 25px"><c:out value="${requestScope.id }"/></strong>
 </div>
 <div style="text-align: center;  margin-top: 100px" id="LoginWrap">
 
 
 <br>
-<input type="button"  style="margin-top:40px; margin-left:10px; border-radius: 12px; width:210px; height: 50px; font-family:Pretendard Variable;       " id="findPwBtn" name="findPwBtn" value="비밀번호 찾기" class="btn btn-outline-dark"/><input type="button"  style="margin-top:40px; margin-left:15px; border-radius: 12px; width:210px; height: 50px; font-family:Pretendard Variable;    color:#FFFFFF; background-color:#333333  " id="loginBtn" name="loginBtn" value="로그인" class="btn btn-dark"/>
+<input type="button"  style="margin-top:40px; margin-left:10px; border-radius: 12px; width:210px; height: 50px; font-family:Pretendard Variable;       " id="findPwBtn" name="findPwBtn" value="비밀번호 찾기" class="btn btn-outline-dark"  onclick="javascirpt:" /><input type="button"  style="margin-top:40px; margin-left:15px; border-radius: 12px; width:210px; height: 50px; font-family:Pretendard Variable;    color:#FFFFFF; background-color:#333333  " id="loginBtn" name="loginBtn" value="로그인" class="btn btn-dark"/>
 
 </div>
+
 <div style="margin-top:300px"></div>
  <jsp:include page="/common/cdn/footer.jsp"/> 
 </body>

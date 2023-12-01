@@ -32,6 +32,20 @@ public class LoginDAO {
 		SqlSession ss= mbh.getMyBatisHandler(configPath, false);
 		System.out.println("11111"+lVO);
 		ld=ss.selectOne("kr.co.sist.login.selectLogin", lVO);
+		
+		System.out.println("222222"+ld);
+		mbh.closeHandler(ss);
+		
+		return ld;
+	}
+	
+public LoginDomain selectId(LoginVO lVO)throws PersistenceException {
+		
+		LoginDomain ld = new LoginDomain();
+		MybatisHandler mbh= MybatisHandler.getInstance();
+		SqlSession ss= mbh.getMyBatisHandler(configPath, false);
+		System.out.println("11111"+lVO);
+		ld=ss.selectOne("kr.co.sist.login.selectId", lVO);
 		System.out.println("222222"+ld);
 		mbh.closeHandler(ss);
 		

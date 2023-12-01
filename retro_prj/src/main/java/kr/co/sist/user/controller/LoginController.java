@@ -19,7 +19,8 @@ public class LoginController {
 		
 		
 		return "user/login/login_frm";
-	}
+	}//loginfrm
+	
 	@PostMapping("/user/login/login_process.do")
 	public String loginSuccessProcess(Model model,LoginVO lVO) {
 
@@ -38,7 +39,9 @@ public class LoginController {
 		return url;
 		
 		
-	}
+	}//loginSuccessProcess
+	
+	
 	@GetMapping("/user/login/find_id_frm.do")
 	public String findIdFrm() {
 		

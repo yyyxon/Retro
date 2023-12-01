@@ -4,9 +4,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.co.sist.user.domain.MyPageEnterDomain;
 import kr.co.sist.user.service.mypage.MyPageInfoDetailService;
+import kr.co.sist.user.vo.ChangePwVO;
 import kr.co.sist.user.vo.MyPageIdPwVO;
 
 @Controller
@@ -35,8 +37,19 @@ public class MyPageController {
 	}
 	
 	@PostMapping("/change_pw.do")
-	public String changePw() {
+	public String changePw(String oldPw, String newPw, Model model) {
+		System.out.println("oldPw :: "+oldPw+" / newPw :: "+newPw);
+		String id = "user";
 		
-		return "";
+		String flagMsg = new MyPageInfoDetailService().changePw(new ChangePwVO(id, oldPw, newPw));
+		model.addAttribute("flagMsg", flagMsg);
+		
+		return "user/user_mypage/change_pw";
 	}
+	
+	@PostMapping("/user_mypage_frm.do")
+	public String userMypageMainFrm(Model model) {
+		return "user/user_mypage/user_mypage_frm";
+	}
+	
 }

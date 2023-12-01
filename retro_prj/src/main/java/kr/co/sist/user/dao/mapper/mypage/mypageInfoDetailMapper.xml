@@ -11,9 +11,9 @@ WHERE ID=#{id} AND PW=#{pw}
 </select>
 
 <!-- 비번 변경 -->
-<update id="changeUserPw" parameterType="kr.co.sist.user.vo.MyPageIdPwVO">
+<update id="changeUserPw" parameterType="kr.co.sist.user.vo.ChangePwVO">
 UPDATE MEMBER
-SET PW=#{pw}
+SET PW=#{newPw}
 WHERE ID=#{id}
 </update>
 </mapper>

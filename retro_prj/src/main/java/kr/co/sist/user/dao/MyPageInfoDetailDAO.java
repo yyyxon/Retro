@@ -4,20 +4,21 @@ import org.apache.ibatis.session.SqlSession;
 
 import kr.co.sist.common.dao.MybatisHandler;
 import kr.co.sist.user.domain.MyPageEnterDomain;
+import kr.co.sist.user.vo.ChangePwVO;
 import kr.co.sist.user.vo.MyPageIdPwVO;
 
-public class EnterMyPageInfoDAO {
+public class MyPageInfoDetailDAO {
 	
-	private static EnterMyPageInfoDAO mpDAO;
+	private static MyPageInfoDetailDAO mpDAO;
 	private static String configPath;
 	
-	private EnterMyPageInfoDAO() {
+	private MyPageInfoDetailDAO() {
 		configPath = "kr/co/sist/common/dao/mybatis-config.xml";
 	}
 	
-	public static EnterMyPageInfoDAO getInstance() {
+	public static MyPageInfoDetailDAO getInstance() {
 		if(mpDAO == null) {
-			mpDAO = new EnterMyPageInfoDAO();
+			mpDAO = new MyPageInfoDetailDAO();
 		}
 		return mpDAO;
 	}
@@ -33,5 +34,23 @@ public class EnterMyPageInfoDAO {
 		mh.closeHandler(ss);
 		
 		return mpeDomain;
+	}
+	
+	public int updatePw(ChangePwVO cpVO) {
+		int result = 0;
+		
+		MybatisHandler mh = MybatisHandler.getInstance();
+		SqlSession ss = mh.getMyBatisHandler(false);
+		
+		result = ss.update("kr.co.sist.user.mypageInfoDetail.changeUserPw", cpVO);
+		if(result == 1) {
+			ss.commit();
+		} else {
+			ss.rollback();
+		}
+		
+		mh.closeHandler(ss);
+		
+		return result;
 	}
 }

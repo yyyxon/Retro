@@ -117,7 +117,7 @@ if(cookies != null){
 %>
 
 <div class="form-signin w-100 m-auto">
-  <form id="adminLoginFrm" method="post" action="login_process.jsp">
+  <form id="Frm" method="post" action="admin_login_process.do">
     <img class="mb-4" src="http://localhost/retro_prj/common/images/admin_login_img.png" alt="" width="249" height="101" style="margin-left:20px">
     <h1 class="h3 mb-3 fw-normal"></h1>
 

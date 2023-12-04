@@ -1,4 +1,4 @@
-package kr.co.sist.user.vo;
+package kr.co.sist.login.domain;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -7,8 +7,7 @@ import lombok.ToString;
 @Setter
 @Getter
 @ToString
-public class LoginVO {
+public class LoginDomain {
 	
-	private String id, pw ,nickname,email,phone;
-	
-}
+	private String id,nickname,pw;
+} 	

@@ -1,8 +1,8 @@
-package kr.co.sist.user.service;
+package kr.co.sist.login.service;
 
-import kr.co.sist.user.dao.LoginDAO;
-import kr.co.sist.user.domain.LoginDomain;
-import kr.co.sist.user.vo.LoginVO;
+import kr.co.sist.login.dao.LoginDAO;
+import kr.co.sist.login.domain.LoginDomain;
+import kr.co.sist.login.vo.LoginVO;
 
 public class LoginService {
 	private static LoginService ls;
@@ -27,7 +27,7 @@ public class LoginService {
 		
 		return ld;
 		
-	}
+	}//selectLogin
 	
 	
 	public LoginDomain selectId(LoginVO lVO) {
@@ -38,7 +38,7 @@ public class LoginService {
 		
 		return ld;
 		
-	}
+	}//selectId
 	
 	public LoginDomain selectTempPw(LoginVO lVO) {
 		LoginDomain ld= new LoginDomain();
@@ -46,11 +46,8 @@ public class LoginService {
 		
 		ld=lDAO.selectTempPw(lVO);
 		
-        	
-		
-		
 		
 		return ld;
 		
-	}
+	}//selectTempPw
 }

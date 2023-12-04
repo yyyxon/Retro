@@ -1,15 +1,14 @@
-package kr.co.sist.user.controller;
+package kr.co.sist.login.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import kr.co.sist.user.domain.LoginDomain;
-import kr.co.sist.user.service.LoginService;
-import kr.co.sist.user.vo.LoginVO;
+import kr.co.sist.login.domain.LoginDomain;
+import kr.co.sist.login.service.LoginService;
+import kr.co.sist.login.vo.LoginVO;
 @SessionAttributes({"id","nickname"})
 @Controller
 public class LoginController {
@@ -88,15 +87,18 @@ public class LoginController {
 		
 		model.addAttribute("msg", msg);
 		return url;
-	}
+	}//findPwProcess
 	
-
-
-	@GetMapping("/user/login/find_pw_success.do")
-	public String findpwSuccess() {
+//------------------admin
+	
+	@GetMapping("/admin/login/admin_login_frm.do")
+	public String adminLoginFrm() {
 		
-		return "user/login/find_pw_success";
-	}
+		
+		return "admin/login/admin_login_frm";
+	}//loginfrm
+
+	
 
 
 }

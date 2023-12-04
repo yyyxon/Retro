@@ -1,4 +1,4 @@
-package kr.co.sist.user.dao;
+package kr.co.sist.login.dao;
 
 import org.apache.ibatis.exceptions.PersistenceException;
 import org.apache.ibatis.session.SqlSession;
@@ -6,8 +6,8 @@ import org.springframework.core.NestedExceptionUtils;
 import org.springframework.web.util.NestedServletException;
 
 import kr.co.sist.common.dao.MybatisHandler;
-import kr.co.sist.user.domain.LoginDomain;
-import kr.co.sist.user.vo.LoginVO;
+import kr.co.sist.login.domain.LoginDomain;
+import kr.co.sist.login.vo.LoginVO;
 
 public class LoginDAO {
 	private static LoginDAO lDAO;
@@ -35,7 +35,7 @@ public class LoginDAO {
 		mbh.closeHandler(ss);
 		
 		return ld;
-	}
+	}//selectLogin
 	
 public LoginDomain selectId(LoginVO lVO)throws PersistenceException {
 		
@@ -46,7 +46,7 @@ public LoginDomain selectId(LoginVO lVO)throws PersistenceException {
 		mbh.closeHandler(ss);
 		
 		return ld;
-	}
+	}//selectId
 
 public LoginDomain selectTempPw(LoginVO lVO)throws PersistenceException {
 	
@@ -72,5 +72,5 @@ public LoginDomain selectTempPw(LoginVO lVO)throws PersistenceException {
 	return ld;
 	
 	
-}
+}//selectTempPw
 }

@@ -8,6 +8,7 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="https://kream.co.kr/_nuxt/css/199727e.css" />
 <link rel="stylesheet" href="https://kream.co.kr/_nuxt/css/9caa514.css" />
+<link rel="stylesheet" href="https://kream.co.kr/_nuxt/css/312115d.css" />
 <c:import url="http://localhost/retro_prj/common/cdn/cdn.jsp" />
 
 <style type="text/css">
@@ -22,17 +23,19 @@
 </head>
 <body>
 
-	<c:import url="http://localhost/retro_prj/common/cdn/header.jsp" />
+<c:import url="http://localhost/retro_prj/common/cdn/header.jsp"/>
 	<main class="relative flex-grow border-b-2"
 		style="min-height: -webkit-fill-available; -webkit-overflow-scrolling: touch">
 		<div class="flex mx-auto max-w-[1280px] px-4 md:px-8 2xl:px-16 box-content">
-
-			<div data-v-7a3bdf55="" data-v-0adb81cc=""
+		<c:import url="http://localhost/retro_prj/common/cdn/mypage_sidebar.jsp" />
+		<div class="w-full flex-grow">
+		
+		<div data-v-7a3bdf55="" data-v-0adb81cc=""
 				class="content_area my-page-content">
 				<div data-v-7a3bdf55="" class="my_order_detail finished">
 					<div data-v-61e7a8a3="" data-v-7a3bdf55="" class="content_title">
-						<div data-v-61e7a8a3="" class="title">
-							<h3 data-v-61e7a8a3="">종료된 거래</h3>
+						<div data-v-61e7a8a3="" class="title" style="padding-top: 20px">
+							<h3 data-v-61e7a8a3="" style="font-size:18px; font-weight: 600">구매내역 상세</h3>
 							<!---->
 						</div>
 						<div data-v-7a3bdf55="" data-v-61e7a8a3="" class="btn_box">
@@ -45,8 +48,6 @@
 												data-v-71603f99=""
 												src="https://kream-phinf.pstatic.net/MjAyMzA2MjFfNzMg/MDAxNjg3MzUxMTQxMDk5._X8ITUGTSzqIhQitbG9KEl_aNAZIvERaeBnWZ4kd4b0g.oC0IhncZ1jN15hqLP3khlX5o0ov4RhzM4sW9d3ayFCIg.PNG/a_067df32d884c4361a6674c79902d5c66.png0"
 												width="20" height="20" alt="더보기"> 더보기 </a></li>
-										<li data-v-71603f99=""><a data-v-71603f99=""
-											href="#inquiry" class="menu_item normal"> 문의하기 </a></li>
 									</ul>
 									<div data-v-71603f99="" class="v-portal" style="display: none;"></div>
 								</div>
@@ -98,51 +99,11 @@
 											</div>
 										</div>
 									</div>
-									<div data-v-41e7c61c="" class="order_detail_header_buttons">
-										<button data-v-bfcf9a6e="" data-v-41e7c61c=""
-											class="button display_button small light_gray_bordered active"
-											style="background-color: rgb(255, 255, 255); color: rgb(34, 34, 34); border-color: rgb(235, 235, 235);">
-											상품 상세</button>
-									</div>
 								</div>
 								<!---->
 							</div>
 						</div>
 					</div>
-					<div data-v-88f1699c="" data-v-7a3bdf55="" class="progress_wrap"
-						style="background-color: rgb(242, 249, 246);">
-						<p data-v-88f1699c="" class="progress_title">진행 상황</p>
-						<ol data-v-88f1699c="" class="progress_list">
-							<li data-v-88f1699c="" class="progress_item"><div
-									data-v-88f1699c="" class="progress_bar"
-									style="background-color: rgb(34, 34, 34);"></div>
-								<p data-v-88f1699c="" class="progress_item_title"
-									style="color: rgb(34, 34, 34);">발송완료</p>
-								<!----></li>
-							<li data-v-88f1699c="" class="progress_item"><div
-									data-v-88f1699c="" class="progress_bar"
-									style="background-color: rgb(34, 34, 34);"></div>
-								<p data-v-88f1699c="" class="progress_item_title"
-									style="color: rgb(34, 34, 34);">입고완료</p>
-								<!----></li>
-							<li data-v-88f1699c="" class="progress_item"><div
-									data-v-88f1699c="" class="progress_bar"
-									style="background-color: rgb(34, 34, 34);"></div>
-								<p data-v-88f1699c="" class="progress_item_title"
-									style="color: rgb(34, 34, 34);">검수합격</p>
-								<!----></li>
-							<li data-v-88f1699c="" class="progress_item"><div
-									data-v-88f1699c="" class="progress_bar"
-									style="background-color: rgb(34, 34, 34);"></div>
-								<p data-v-88f1699c="" class="progress_item_title"
-									style="color: rgb(34, 34, 34);">
-									<em style="color: inherit;" class="">정산완료</em>
-								</p>
-								<!----></li>
-						</ol>
-					</div>
-					<!---->
-					<!---->
 					<div data-v-7a3bdf55="">
 						<!---->
 						<!---->
@@ -509,14 +470,9 @@
 					<div data-v-7a3bdf55="" class="v-portal" style="display: none;"></div>
 				</div>
 			</div>
-
-
-
-
-
-
+			</div>
 		</div>
 	</main>
-	<c:import url="http://localhost/retro_prj/common/cdn/footer.jsp" />
+<c:import url="http://localhost/retro_prj/common/cdn/footer.jsp"/>
 </body>
 </html>

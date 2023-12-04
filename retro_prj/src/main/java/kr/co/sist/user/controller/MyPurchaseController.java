@@ -11,4 +11,9 @@ public class MyPurchaseController {
 		return "/user/user_mypage/user_purchase";
 	}
 
+	@GetMapping("my/purchase/purchase_detail.do")
+	public String purchaseDetail() {
+		return "/user/user_mypage/user_purchase_detail";
+	}
+
 }

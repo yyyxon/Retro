@@ -88,10 +88,8 @@ $(function(){
 		<div class="text" id="mainTitle">
 			<strong>대시보드</strong>
 		</div>
-		<div id="background_box"> <!-- 각자 원하는데로 사용 -->
-<!-- 여기부터가 코딩하는 div 영역 --><!-- 여기부터가 코딩하는 div 영역 --><!-- 여기부터가 코딩하는 div 영역 --><!-- 여기부터가 코딩하는 div 영역 --><!-- 여기부터가 코딩하는 div 영역 -->
-
-<!-- 여기까지가 코딩하는 div 영역 --><!-- 여기까지가 코딩하는 div 영역 --><!-- 여기까지가 코딩하는 div 영역 --><!-- 여기까지가 코딩하는 div 영역 --><!-- 여기까지가 코딩하는 div 영역 --> 
+		<div id="background_box">
+		<div id="">  
 		</div>
 	</div>	
 </div>

@@ -1,5 +1,6 @@
 package kr.co.sist.user.controller.mypage;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -64,7 +65,11 @@ public class MyPageController {
 	}
 	
 	@GetMapping("/reallyBye.do")
-	public String reallyBye(HttpSession session) {
+	public String reallyBye(HttpSession session, HttpServletRequest request) {
+		String id = request.getParameter("id");
+		System.out.println("reallyBye :: "+id+"----------------------------------------------------------------------------------");
+		new MyPageInfoDetailService().byebye(id);
+		
 		return "user/user_mypage/byebye_end";
 	}
 }

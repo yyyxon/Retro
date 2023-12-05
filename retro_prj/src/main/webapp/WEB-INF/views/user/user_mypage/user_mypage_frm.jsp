@@ -153,7 +153,7 @@ function sortUp(txt) {
 </div>
 </main>
 
-	<!-- footer -->
-	<c:import url="http://localhost/retro_prj/common/cdn/footer.jsp" />
+<!-- footer -->
+<c:import url="http://localhost/retro_prj/common/cdn/footer.jsp" />
 </body>
 </html>

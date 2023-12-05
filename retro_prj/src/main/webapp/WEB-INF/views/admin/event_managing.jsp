@@ -80,11 +80,11 @@ $(function() {
 		<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
  		<path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
 		</svg>
-		회원 관리
+		이벤트 관리
 		</div>
 		
 		<div class="text" id="mainTitle">
-			<strong>회원 리스트</strong>
+			<strong>이벤트 리스트</strong>
 		</div>
 		<div id="background_box"> <!-- 각자 원하는데로 사용 -->
 <!-- 여기부터가 코딩하는 div 영역 --><!-- 여기부터가 코딩하는 div 영역 --><!-- 여기부터가 코딩하는 div 영역 --><!-- 여기부터가 코딩하는 div 영역 --><!-- 여기부터가 코딩하는 div 영역 -->

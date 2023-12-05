@@ -6,14 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<c:import url="http://localhost/sist/common/cdn/cdn.jsp"/>
-<link rel="icon" href="http://192.168.10.136/html_prj/common/main/favicon.png" />
-<link rel="stylesheet" href="https://web.joongna.com/_next/static/css/13bd0b4016b44d89.css"/>
-<!-- jQeury CDN -->
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-
+<c:import url="http://localhost/retro_prj/common/cdn/cdn.jsp" />
 <style type="text/css">
 </style>
 
@@ -25,7 +18,7 @@
 
 </head>
 <body>
-
+<c:import url="http://localhost/retro_prj/common/cdn/header.jsp"/>
 	<main class="relative flex-grow border-b-2"
 		style="min-height: -webkit-fill-available; -webkit-overflow-scrolling: touch">
 		<div
@@ -55,7 +48,7 @@
 							<div class="relative h-full">
 							
 								<!-- 링크 -->
-								<a class="w-full h-full aspect-[2.5] absolute" href="/event/detail/1119">
+								<a class="w-full h-full aspect-[2.5] absolute" href="event/detail.do?evtcode=10">
 								
 									<!-- 이미지 -->
 									<img alt="중고나라 에코마일" src="https://img2.joongna.com/media/original/2023/11/13/1699866394928.png"
@@ -68,10 +61,7 @@
 								<!-- 시작/종료 날짜 -->
 								<p class="text-[#666666]">
 									2023-11-13
-									<!-- -->
 									~
-									<!-- -->
-									<!-- -->
 									2024-01-14
 								</p>
 								
@@ -194,6 +184,6 @@
 		</div>
 		<div class="Toastify"></div>
 	</main>
-
+<c:import url="http://localhost/retro_prj/common/cdn/footer.jsp"/>
 </body>
 </html>

@@ -64,23 +64,22 @@ public class AdminProductDAO {
 	 * @return
 	 * @throws PersistenceException
 	 */
-	public int updateRemoveProduct(AdminProductVO apVO)throws PersistenceException { int
-		 updateCnt=0; 
-		 MybatisHandler mbh= MybatisHandler.getInstance(); 
-		 SqlSession ss=mbh.getMyBatisHandler(configPath, false);
-		 updateCnt=ss.selectOne("admin.product.udpateProduct",apVO);
-				 
-		  mbh.closeHandler(ss);
-				  
-		  return updateCnt; 
-	 }//updateRemoveProduct
-				 
+	/*
+	 * public int updateRemoveProduct(AdminProductVO apVO)throws
+	 * PersistenceException { int updateCnt=0; MybatisHandler mbh=
+	 * MybatisHandler.getInstance(); SqlSession ss=mbh.getMyBatisHandler(configPath,
+	 * false); updateCnt=ss.selectOne("admin.product.udpateProduct",apVO);
+	 * 
+	 * mbh.closeHandler(ss);
+	 * 
+	 * return updateCnt; }//updateRemoveProduct
+	 */				 
 	public static void main(String[] args) {
-		AdminProductDAO apDAO = AdminProductDAO.getInstance();
-		AdminProductVO apVO=new AdminProductVO();
-		apVO.setPcode("P00001");
-		apVO.setPcancel("C");
-		apDAO.updateRemoveProduct(apVO);
+		/*
+		 * AdminProductDAO apDAO = AdminProductDAO.getInstance(); AdminProductVO
+		 * apVO=new AdminProductVO(); apVO.setPcode("P00001"); apVO.setPcancel("C");
+		 * apDAO.updateRemoveProduct(apVO);
+		 */
 	}//main
 
 }// class

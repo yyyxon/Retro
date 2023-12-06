@@ -142,9 +142,9 @@
 	</dependencies>
     <build>
         <plugins>
-            <plugin>
-  				<artifactId>maven-war-plugin</artifactId>
-  				<version>3.2.2</version>
+        	<plugin>
+			  <artifactId>maven-war-plugin</artifactId>
+			  <version>3.2.2</version>
 			</plugin>
             <plugin>
                 <artifactId>maven-eclipse-plugin</artifactId>

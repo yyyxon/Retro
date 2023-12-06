@@ -21,7 +21,7 @@
 	overflow: auto;
 	background-color:  #FFFFFF;
 	color:  #333333;
-	height: 150%; width: 95%;
+	height: 150%; width: 91.2%;
 	position: absolute;
 	top: 100px; left: 30px;
 	outline:  1px;
@@ -31,16 +31,16 @@
 
 #top_title{
 	height:63px;
-	font-size:18.5px;
+	font-size:15px;
 	border-bottom: 2px solid #919191;
-	background-color: #FAFAFA;
+	text-align: left;
 	vertical-align: middle;
 }
 
 .top_title{
 	height:63px;
-	font-size:18.5px;
-	background-color: #FAFAFA;
+	font-size:15px;
+	text-align: left;
 	vertical-align: middle;
 }
 
@@ -60,19 +60,22 @@ tr {
 .searchList{
 	height: 45px;
 	width: 108px;
-	border: 1px solid #CCCCCC;
-	position: absolute; left: 244px;
-	border-radius: 5px;
+	position: absolute; left: 284px;
 	font-size: 18px;
+	box-shadow: rgb(204, 202, 202) 0px 1px 2px 0px;
+	border-radius: 3px;
+	border: 0px;
+	top:19px;
 }
 
 #searchList{
 	height: 45px;
 	width: 108px;
-	border: 1px solid #CCCCCC;
-	position: absolute; left: 244px;
-	border-radius: 5px;
+	position: absolute; left: 284px;
 	font-size: 18px;
+	box-shadow: rgb(204, 202, 202) 0px 1px 2px 0px;
+	border-radius: 3px;
+	border: 0px;
 }
 
 .searchCat{
@@ -82,18 +85,44 @@ tr {
 	position: absolute; left: 119px;
 	border-radius: 5px;
 	font-size: 18px;
+	border: 0px;
 }
 
 .textBox{
-height: 45px; width: 180px;
-border: 1px solid  #CCCCCC;
-position: absolute; left: 361px;
-border-radius: 5px;
-font-size: 18px;
+	height: 45px; width: 250px;
+	position: absolute; left: 410px;
+	font-size: 18px;
+	background-color: white;
+	box-shadow: rgb(204, 202, 202) 0px 1px 2px 0px;
+	border-radius: 3px;
+	top:19px;
 }
 
+.keywordBox{
+	border: 0px;
+	width: 200px;
+	height: 40px;
+	margin: 1px 0px 0px 5px;
+	top:19px;
+}
+
+/* 돋보기 버튼 */
+.searchBtn {
+    position: absolute;
+    left: 617px;
+    top: 26px;
+    background-color: white;
+    border: 0px;
+}
+
+input[type="text"]:focus,
+select:focus {
+  outline: none;
+}
+
+/* 검색 버튼 */
 #btnSearch{
-  position: absolute; left: 550px;
+  position: absolute; left: 590px;
   background-color: #FFFFFF;
   border: 1px solid #BEBEBE;
   height: 45px;

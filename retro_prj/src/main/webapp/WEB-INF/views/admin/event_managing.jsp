@@ -87,6 +87,7 @@ $(function() {
 			<strong>이벤트 리스트</strong>
 		</div>
 		
+		<!-- 검색 -->
 		<div class="searchDiv">
 		<div class="allBox">
 		<form id="frmSearch">
@@ -107,7 +108,9 @@ $(function() {
 		</form>
 		</div>
 		</div>
+		<!---->
 		
+		<!-- 테이블 -->
 		<div id="background_box">
 		<div style="margin: 10px; text-align: center;">
 			<!-- 리스트 시작 -->
@@ -148,16 +151,9 @@ $(function() {
 				</tbody>
 			</table>
 			</div>
-
-		
-		
-		
-		
-		
-		
-		
-		
 		</div>
+		<!---->
+		
 	</div>	
 </div>
 </body>

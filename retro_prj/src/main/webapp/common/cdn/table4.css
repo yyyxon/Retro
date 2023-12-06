@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+
 #right{
 	font-family: Pretendard Variable;
 }
@@ -30,7 +31,7 @@
 }
 
 #top_title{
-	height:63px;
+	height:55px;
 	font-size:16px;
 	border-bottom: 1px solid #F4F4F4;
 	text-align: center;

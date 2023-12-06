@@ -65,10 +65,15 @@ $(function() {
 		location.href="logout.jsp";
 	});
 });
+
+function detail(rcode){
+	$("#rcode").val(rcode);
+	$("#frmDetail").submit();
+}
 </script>
 </head>
 <body>
-<%@ include file="sidebar.jsp" %>
+<%@ include file="../sidebar.jsp" %>
 <div id="right">
 	<div id="rightHeader" align="right">
 		<span style="font-weight: bold;margin-right: 20px">관리자님</span>
@@ -81,34 +86,20 @@ $(function() {
  		<path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
 		</svg>
 		이벤트 관리
+		<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+ 		<path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+		</svg>
+		이벤트 등록
 		</div>
 		
 		<div class="text" id="mainTitle">
-			<strong>이벤트 리스트</strong>
+			<strong>이벤트 등록</strong>
 		</div>
 		
-		<!-- 검색 -->
-		<div class="searchDiv">
-		<div class="allBox">
-		<form id="frmSearch">
-			<select class="searchList" id="field" name="field">
-				<option value="1"${ param.field eq "1" ? " selected='selected'" : "" }>아이디</option>
-				<option value="2"${ param.field eq "2" ? " selected='selected'" : "" }>상품명</option>
-				<option value="3"${ param.field eq "3" ? " selected='selected'" : "" }>카테고리명</option>
-			</select>
-			<span class="textBox" style="vertical-align: middle">
-			<input type="text" id="keyword" name="keyword" class="keywordBox" placeholder="내용을 입력해주세요"
-			value = "${ param.keyword ne 'null' ? param.keyword : ''}"/>
-			</span>
-			<button class="searchBtn">
-			<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#858585" class="bi bi-search" viewBox="0 0 16 16">
-  			<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-			</svg>
-			</button>
+		<!-- 상세보기 페이지로 -->
+		<form id="frmDetail" action="eventDetail.do">
+			<input type="hidden" id="rcode" name="rcode"/>
 		</form>
-		</div>
-		</div>
-		<!---->
 		
 		<!-- 테이블 -->
 		<div id="background_box">
@@ -128,7 +119,7 @@ $(function() {
 				<tbody>
 					<!-- list가 존재하지 않을 경우 -->
 					<c:if test="${ empty reviewList }">
-					<tr>
+					<tr onclick="detail(10)">
 						<td colspan="6" style="text-align: center;"> 
 							이벤트가 존재하지 않습니다. </td>
 					</tr>
@@ -171,7 +162,7 @@ $(function() {
 					</c:if>
 				
 					<c:forEach var="review" items="${ reviewList }" varStatus="i">
-					<tr onclick="boardDetail(${ review.rcode })">
+					<tr onclick="detail(10)">
 						<td>${ startNum + i.index }</td>
 						<td>${ review.cat_name }</td>
 						<td>${ review.gname }</td>
@@ -190,8 +181,16 @@ $(function() {
 		</div>
 		<!---->
 		
-		
-		
+		<div class="pagenationDiv">
+    	<div class="pagination">
+      		<a href="#"><</a>
+        	<a href="#">1</a>
+        	<span class="active">2</span>
+        	<a href="#">3</a>
+        	<a href="#">></a>
+    	</div>
+    	</div>
+			
 	</div>	
 </div>
 </body>

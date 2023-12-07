@@ -46,7 +46,14 @@
 	vertical-align: middle;
 }
 
-tr {
+.tableList thead tr {
+	height: 56px;
+	vertical-align: middle;
+	font-size:15px;
+}
+
+/* <tbody> 내부의 <tr>에 대한 스타일 */
+.tableList tbody tr {
 	height: 56px;
 	vertical-align: middle;
 	font-size:15px;

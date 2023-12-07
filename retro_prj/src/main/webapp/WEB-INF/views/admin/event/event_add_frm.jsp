@@ -47,37 +47,61 @@ body{
 
 .dateCss {
 	font-family: Pretendard Variable;
-	margin: 5px;
-	width: 100px;
+	margin-right: 5px;
+	width: 180px;
 }
 
+.borderCss{
+	border: 1px solid #DBDFE6; 
+	border-radius: 5px; 
+}
+
+.tableList td {
+	border-bottom: 1px solid #DEE2E6;
+}
+
+.tableList th {
+	border-bottom: 1px solid #DEE2E6;
+	padding: 10px;
+}
 </style>
 <!-- 태균이가 만든거 끝-->
 
-<!-- datepicker 시작 -->
-
-
+<script type="text/javascript" src="http://localhost/retro_prj/common/datepicker/jquery-ui.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://localhost/retro_prj/common/datepicker/jquery-ui.css"/>
 
 </head>
 <body>
 <%@ include file="../sidebar.jsp" %>
 <script type="text/javascript">
+
 $(function() {
-	$("#datepicker").datepicker({ //JSON 형태 -> 이름:값, 이름:값,,,
-    	dateFormat: "yy-mm-dd",
-    	dayNamesMin: [ "일", "월", "화", "수", "목", "금", "토" ],
-    	duration: "fast",
-    	monthNames: [ "1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월" ],
-    showOn: "button",
-    buttonImage: "images/calendar.gif",
-    buttonImageOnly: true,
-    buttonText: "Select date"
-    });
+	
+	$(".dateCss").datepicker({ //JSON 형태 -> 이름:값, 이름:값,,,
+		  dateFormat: 'yy-mm-dd',
+		  prevText: '이전 달',
+		  nextText: '다음 달',
+		  monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+		  monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+		  dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+		  dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+		  dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+		  showMonthAfterYear: true,
+		  yearSuffix: '년',
+	      showOn: "both", // Display the datepicker when clicking the input field and the button
+	      buttonImage: "http://localhost/retro_prj/common/images/icons/calendarsm.png",
+	      buttonImageOnly: true,
+	      buttonText: "Select date"
+	});
 	
 	$("#btnLogout").click(function() {
 		location.href="logout.jsp";
 	});
 });
+
+function date() {
+
+}
 </script>
 <div id="right">
 	<div id="rightHeader" align="right">
@@ -103,30 +127,37 @@ $(function() {
 		
 		<!-- 테이블 -->
 		<div id="background_box">
-			<div style="margin: 10px;">
-				<input type="text" id="datepicker" " class="dateCss"> ~
-				<input type="text" id="datepicker1" class="dateCss">
+				<div style="margin: 0 10px 0px 10px;">
 				
 				<table class="table tableList">
 				<tr>
+					<th class="top_title">기간</th>
+					<td>
+					<input type="text" id="startDate" name="startDate" class="dateCss borderCss" autocomplete="off">
+				 	~
+					<input type="text" id="endDate" name="endDate" class="dateCss borderCss" autocomplete="off">
+					</td>
+				</tr>
+				<tr>
 					<th class="top_title">제목</th>
-					<td><input type="text" id="evtTitle" name="title"></td>
+					<td><input type="text" id="evtTitle" name="title" class="borderCss"></td>
 				</tr>
 				<tr>
 					<th class="top_title">이미지 첨부</th>
-					<td><input type="file" id="evtImg" name="img"/></td>
+					<td><input type="file" id="evtImg" name="img" class="borderCss"/></td>
 				</tr>
 				<tr>
-					<td colspan="2">
-					<div id="thumbnail">
-						<img src="http://localhost/mvc_prj/common/images/damgom.jpg"/>
-					</div>
+					<th class="top_title">이미지</th>
+					<td>
+						<div>
+							<img src="http://localhost/mvc_prj/common/images/damgom.jpg" height="200px"/>
+						</div>
 					</td>
 				</tr>
 				<tr>
 					<th class="top_title">내용</th>
 					<td>
-						<textarea style="width:50%; height:200px"></textarea>
+						<textarea style="width:50%; height:200px; resize: none;" class="borderCss"></textarea>
 					</td>
 				</tr>
 

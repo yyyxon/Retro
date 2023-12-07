@@ -157,9 +157,9 @@ $(function() {
 <aside class="sidebar">
   <div id="leftside-navigation" class="nano">
     <ul class="nano-content">
-      <li style="height: 100px;padding: 0px;background: #353535;">
+      <li style="height: 100px;padding: 0px;background: #426784;">
         <!-- <a style="padding: 0px;height: 100px" href="http://192.168.10.143/jsp_prj/prj_admin/admin_design.jsp"> -->
-        <img src="../common/images/logo_dark.png" style="display: block; margin: 0px auto;padding-top: 1px;">
+        <img src="http://localhost/retro_prj/common/images/logo_w.png" style="display: block; margin: 0px auto;padding-top: 5px;" width=210px>
 <!-- <span style="font-size: 16px;font-weight: bold;">&ensp;이미지</span> --><!-- </a> -->
       </li>
       

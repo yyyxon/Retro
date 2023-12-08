@@ -15,7 +15,6 @@
 <script type="text/javascript">
 	var comboBoxSortFlag = false;
 	var comboBoxSortTxt = "최신순";
-/* 	var comboBoxSort = $("#comboBoxSort")[0]; */
 	
 	$("#btn").val(comboBoxSortTxt);
 	

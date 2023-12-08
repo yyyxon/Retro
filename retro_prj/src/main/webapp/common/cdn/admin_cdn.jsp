@@ -7,7 +7,7 @@
 <!-- jQuery CDN -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <!-- table css -->
-<link rel="stylesheet" type="text/css" href="http://localhost/retro_prj/common/cdn/table4.css"/>
+<link rel="stylesheet" type="text/css" href="http://localhost/retro_prj/common/cdn/table.css"/>
 <!-- Pretendard -->
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/variable/pretendardvariable.css" />
 <!-- datepicker 시작 -->

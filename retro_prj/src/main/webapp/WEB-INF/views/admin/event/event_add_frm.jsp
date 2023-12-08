@@ -31,7 +31,9 @@ body{
 	background: #FFFFFF;
 }
 #rightBody{
-	width: 100%; min-height: 500px;float: right;
+	width: 100%; 
+	min-height: 500px;
+	float: right;
 	padding: 20px;
 	padding-left: 56px;
 	background: #EEEEEE;
@@ -54,6 +56,11 @@ body{
 .borderCss{
 	border: 1px solid #DBDFE6; 
 	border-radius: 5px; 
+	height: 30px;
+}
+
+.borderCss:focus {
+	border: 1px solid #4D799B;
 }
 
 .tableList td {
@@ -63,6 +70,57 @@ body{
 .tableList th {
 	border-bottom: 1px solid #DEE2E6;
 	padding: 10px;
+	height: 60px;
+}
+
+.imgThum {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.imgDiv {
+	width: 100%;
+    overflow: auto;
+}
+
+.filebox input[type="file"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+}
+
+.filebox .upload-name {
+    display: inline-block;
+    padding: 0 10px;
+    vertical-align: middle;
+    width: 60%;
+    color: #999999;
+    border: 1px solid #DBDFE6; 
+	border-radius: 2px; 
+	height: 30px;
+}
+
+.filebox label {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    vertical-align: middle;
+    background-color: #333;
+    cursor: pointer;
+    height: 40px;
+    margin-left: 10px;
+}
+
+.upload-name:focus {
+	outline:none;
+}
+
+textarea:focus{
+	outline:none;
 }
 </style>
 <!-- 태균이가 만든거 끝-->
@@ -77,6 +135,11 @@ body{
 
 $(function() {
 	
+	$("#file").on('change',function(){
+		  var fileName = $("#file").val();
+		  $(".upload-name").val(fileName);
+		});
+	
 	$(".dateCss").datepicker({ //JSON 형태 -> 이름:값, 이름:값,,,
 		  dateFormat: 'yy-mm-dd',
 		  prevText: '이전 달',
@@ -89,7 +152,7 @@ $(function() {
 		  showMonthAfterYear: true,
 		  yearSuffix: '년',
 	      showOn: "both", // Display the datepicker when clicking the input field and the button
-	      buttonImage: "http://localhost/retro_prj/common/images/icons/calendarsm.png",
+	      buttonImage: "http://localhost/retro_prj/common/images/icons/calendar.png",
 	      buttonImageOnly: true,
 	      buttonText: "Select date"
 	});
@@ -114,7 +177,9 @@ function date() {
 		<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
  		<path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
 		</svg>
+		<a href="http://localhost/retro_prj/admin/event.do">
 		이벤트 관리
+		</a>
 		<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
  		<path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
 		</svg>
@@ -126,10 +191,10 @@ function date() {
 		</div>
 		
 		<!-- 테이블 -->
-		<div id="background_box">
+		<div id="background_box" style="height:140%">
 				<div style="margin: 0 10px 0px 10px;">
 				
-				<table class="table tableList">
+				<table class="table tableList" style="height: auto;">
 				<tr>
 					<th class="top_title">기간</th>
 					<td>
@@ -140,33 +205,39 @@ function date() {
 				</tr>
 				<tr>
 					<th class="top_title">제목</th>
-					<td><input type="text" id="evtTitle" name="title" class="borderCss"></td>
-				</tr>
-				<tr>
-					<th class="top_title">이미지 첨부</th>
-					<td><input type="file" id="evtImg" name="img" class="borderCss"/></td>
-				</tr>
-				<tr>
-					<th class="top_title">이미지</th>
-					<td>
-						<div>
-							<img src="http://localhost/mvc_prj/common/images/damgom.jpg" height="200px"/>
-						</div>
-					</td>
+					<td><input type="text" id="evtTitle" name="title" class="borderCss" style="width:100%;"></td>
 				</tr>
 				<tr>
 					<th class="top_title">내용</th>
 					<td>
-						<textarea style="width:50%; height:200px; resize: none;" class="borderCss"></textarea>
+						<textarea style="width:100%; height:140px; margin: 7px 0px 5px 0px; resize: none;" class="borderCss"></textarea>
 					</td>
 				</tr>
-
-				
+				<tr>
+					<th class="top_title">이미지 첨부</th>
+					<td>
+					<div class="filebox">
+    						<input class="upload-name" placeholder="첨부파일" readonly="readonly">
+    						<label for="file">파일찾기</label> 
+    						<input type="file" id="file">
+					</div>
+					</td>
+				</tr>
+ 				<tr>
+					<th class="top_title" style="border-bottom: none; height: 286px">이미지</th>
+					<td style="border-bottom: none; padding:15px">
+						<div class="imgDiv">
+							<img src="http://localhost/mvc_prj/common/images/damgom.jpg" class="imgThum"/>
+						</div>
+					</td>
+				</tr>
 				</table>	
 			</div>
 		</div>
 		<!---->
-			
+		<div class="btnDiv">
+		<input type="button" class="btnCss" value="저장">	
+		</div>
 	</div>	
 </div>
 </body>

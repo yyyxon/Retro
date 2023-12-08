@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import kr.co.sist.user.dao.JoinDAO;
 import kr.co.sist.user.vo.JoinVO;
+import kr.co.sist.util.cipher.DataDecrypt;
 import kr.co.sist.util.cipher.DataEncrypt;
 
 @Service
@@ -22,7 +23,7 @@ public class JoinService {
 	@PostMapping("/user_join_process.do")
 	public void addUser(JoinVO jVO) {
 		try {
-			DataEncrypt de=new DataEncrypt("singsungsaengsungyeon");
+			DataEncrypt de=new DataEncrypt("voffwqfnfonxjgogiqvjp");
 			jVO.setPw(DataEncrypt.messageDigest("MD5", jVO.getPw()));
 			
 			jDAO.insertUser(jVO);

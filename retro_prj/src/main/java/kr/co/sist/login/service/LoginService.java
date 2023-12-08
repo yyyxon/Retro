@@ -28,7 +28,7 @@ public class LoginService {
 		LoginDAO lDAO = LoginDAO.getInstance();
 		
 		try {
-			DataEncrypt de = new DataEncrypt("singsungsaengsungyeon");
+			DataEncrypt de = new DataEncrypt("voffwqfnfonxjgogiqvjp");
 			lVO.setPw(DataEncrypt.messageDigest("MD5", lVO.getPw()));
 			ld=lDAO.selectLogin(lVO);
 			

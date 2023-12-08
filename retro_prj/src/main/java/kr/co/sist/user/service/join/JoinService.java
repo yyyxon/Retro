@@ -52,7 +52,11 @@ public class JoinService {
 	
 	public boolean checkEmail(String email) {
 		String emailReg = "^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$";
-        return Pattern.matches(emailReg, email);
+		boolean flag = false;
+		
+		flag = Pattern.matches(emailReg, email) && !email.contains("@retro.co.kr") && !email.contains("@retro.com");
+		
+        return flag;
 	}
 	
 	public boolean checkPhone(String phone) {
@@ -71,6 +75,10 @@ public class JoinService {
 		length = nickname.getBytes().length;
 		if(length < 31) {
 			flag = true;
+		}
+		String[] unableNickname = {"관리자", "매니저"};
+		for(String str : unableNickname) {
+			flag = !nickname.contains(str);
 		}
 		
 		return flag;

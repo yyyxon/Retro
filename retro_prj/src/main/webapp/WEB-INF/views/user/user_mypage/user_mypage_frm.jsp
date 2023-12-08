@@ -37,14 +37,47 @@
 		
 		$("#onSale").click(function() {
 			alert("판매중");
+			$.ajax({
+				url:"",
+				type:"GET",
+				data:param,
+				dataType:"JSON",
+				error:function(xhr) {
+					alert(xhr.status);
+				},
+				success:function(jsonObj) {
+					alert(jsonObj);
+				}
 		});
 		
 		$("#reservation").click(function() {
 			alert("예약중");
+			$.ajax({
+				url:"",
+				type:"GET",
+				data:param,
+				dataType:"JSON",
+				error:function(xhr) {
+					alert(xhr.status);
+				},
+				success:function(jsonObj) {
+					alert(jsonObj);
+				}
 		});
 		
 		$("#completed").click(function() {
 			alert("판매완료");
+			$.ajax({
+				url:"",
+				type:"GET",
+				data:param,
+				dataType:"JSON",
+				error:function(xhr) {
+					alert(xhr.status);
+				},
+				success:function(jsonObj) {
+					alert(jsonObj);
+				}
 		});
 	});
 	

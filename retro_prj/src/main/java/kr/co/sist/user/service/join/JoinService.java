@@ -1,6 +1,5 @@
 package kr.co.sist.user.service.join;
 
-import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 import java.util.regex.Pattern;
 
@@ -10,8 +9,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import kr.co.sist.user.dao.JoinDAO;
+import kr.co.sist.user.service.mypage.UserInfoEncryptionSerivice;
 import kr.co.sist.user.vo.JoinVO;
-import kr.co.sist.util.cipher.DataDecrypt;
 import kr.co.sist.util.cipher.DataEncrypt;
 
 @Service
@@ -19,17 +18,14 @@ public class JoinService {
 	
 	@Autowired
 	private JoinDAO jDAO;
+	@Autowired
+	private UserInfoEncryptionSerivice encrypt;
 	
 	@PostMapping("/user_join_process.do")
 	public void addUser(JoinVO jVO) {
 		try {
-			DataEncrypt de=new DataEncrypt("voffwqfnfonxjgogiqvjp");
-			jVO.setPw(DataEncrypt.messageDigest("MD5", jVO.getPw()));
-			
+			jVO.setPw(DataEncrypt.messageDigest("MD5", encrypt.oneWayEncryptData(jVO.getPw())));
 			jDAO.insertUser(jVO);
-			
-		} catch (UnsupportedEncodingException uee) {
-			uee.printStackTrace();
 			
 		} catch (NoSuchAlgorithmException ne) {
 			ne.printStackTrace();

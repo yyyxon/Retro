@@ -66,8 +66,8 @@ $(function() {
 	});
 });
 
-function detail(rcode){
-	$("#rcode").val(rcode);
+function detail(ecode){
+	$("#ecode").val(ecode);
 	$("#frmDetail").submit();
 }
 </script>
@@ -117,7 +117,8 @@ function detail(rcode){
 		
 		<!-- 상세보기 페이지로 -->
 		<form id="frmDetail" action="eventDetail.do">
-			<input type="hidden" id="rcode" name="rcode"/>
+			<input type="hidden" id="no" name="no" value="4"/>
+			<input type="hidden" id="ecode" name="ecode"/>
 		</form>
 		
 		<!-- 테이블 -->
@@ -137,45 +138,9 @@ function detail(rcode){
 				
 				<tbody>
 					<!-- list가 존재하지 않을 경우 -->
-					<c:if test="${ empty reviewList }">
+					<c:if test="${ empty eventList }">
 					<tr onclick="detail(10)">
-						<td colspan="6" style="text-align: center;"> 
-							이벤트가 존재하지 않습니다. </td>
-					</tr>
-					<tr>
-						<td colspan="6" style="text-align: center;"> 
-							이벤트가 존재하지 않습니다. </td>
-					</tr>
-					<tr>
-						<td colspan="6" style="text-align: center;"> 
-							이벤트가 존재하지 않습니다. </td>
-					</tr>
-					<tr>
-						<td colspan="6" style="text-align: center;"> 
-							이벤트가 존재하지 않습니다. </td>
-					</tr>
-					<tr>
-						<td colspan="6" style="text-align: center;"> 
-							이벤트가 존재하지 않습니다. </td>
-					</tr>
-					<tr>
-						<td colspan="6" style="text-align: center;"> 
-							이벤트가 존재하지 않습니다. </td>
-					</tr>
-					<tr>
-						<td colspan="6" style="text-align: center;"> 
-							이벤트가 존재하지 않습니다. </td>
-					</tr>
-					<tr>
-						<td colspan="6" style="text-align: center;"> 
-							이벤트가 존재하지 않습니다. </td>
-					</tr>
-					<tr>
-						<td colspan="6" style="text-align: center;"> 
-							이벤트가 존재하지 않습니다. </td>
-					</tr>
-					<tr>
-						<td colspan="6" style="text-align: center;"> 
+						<td colspan="6" style="text-align: center; border:none;"> 
 							이벤트가 존재하지 않습니다. </td>
 					</tr>
 					</c:if>

@@ -157,13 +157,14 @@ $(function() {
 	      buttonText: "Select date"
 	});
 	
-	$("#saveBtn").click(function(){
-		$("#saveBtn").submit();
-	});
-	
 	$("#btnLogout").click(function() {
 		location.href="logout.jsp";
 	});
+	
+	$("#saveBtn").click(function(){
+		$("#evtForm").submit();
+	});
+	
 });
 
 function date() {
@@ -199,6 +200,7 @@ function date() {
 				<div style="margin: 0 10px 0px 10px;">
 				
 				<form id="evtForm">
+				<input type="hidden" name="no" value="4"/>
 				<table class="table tableList" style="height: auto;">
 				<tr>
 					<th class="top_title">기간</th>
@@ -242,7 +244,8 @@ function date() {
 		</div>
 		<!---->
 		<div class="btnDiv">
-			<input type="button" class="btnCss" id="saveBtn" value="저장">	
+		<input type="button" class="btnCss" value="저장" id="saveBtn">	
+		<input type="button" class="btnCss" value="삭제" id="delBtn">	
 		</div>
 	</div>	
 </div>

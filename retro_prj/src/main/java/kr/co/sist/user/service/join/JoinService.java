@@ -21,6 +21,10 @@ public class JoinService {
 	@Autowired
 	private UserInfoEncryptionSerivice encrypt;
 	
+	/**
+	 * 회원 정보를 DB에 저장하기 위한 method
+	 * @param jVO
+	 */
 	@PostMapping("/user_join_process.do")
 	public void addUser(JoinVO jVO) {
 		try {
@@ -32,6 +36,11 @@ public class JoinService {
 		}
 	}
 	
+	/**
+	 * 유효성 검사
+	 * @param jVO
+	 * @return JSONObject
+	 */
 	public JSONObject chkInfo(JoinVO jVO) {
 		JSONObject jsonObj = new JSONObject();
 		jsonObj.put("flag", false);

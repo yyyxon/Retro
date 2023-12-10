@@ -74,14 +74,13 @@ body{
 }
 
 .imgThum {
-	max-width: 296px; 
-	max-height: 296px;
-	transition: all 0.3s ease;
+	max-width: 291px; 
+	max-height: 291px;
 }
 
 .imgDiv {
 	width: 100%;
-	height: 318px;
+	height: auto;
 	border: 1px solid #DBDFE6; 
 	border-radius: 5px; 
 }
@@ -136,6 +135,11 @@ textarea:focus{
 <script type="text/javascript">
 
 $(function() {
+	toggleImageSize();
+	
+	$("#thumnail").click(function(){
+		toggleImageSize();
+	});
 	
 	$("#file").on('change',function(){
 		  var fileName = $("#file").val();
@@ -172,6 +176,11 @@ $(function() {
 			alert("이미지를 선택해주세요.");
 			return;
 		}
+		
+		var thumbnail = document.getElementById('thumnail');
+        thumbnail.style.maxWidth = '291px';
+        thumbnail.style.maxHeight = '291px';
+        
 		var file = event.target.files[0];
 	    var reader = new FileReader(); 
 	    
@@ -187,14 +196,14 @@ $(function() {
 function toggleImageSize() {
     var thumbnail = document.getElementById('thumnail');
 
-    if (thumbnail.style.maxWidth === '296px') {
+    if (thumbnail.style.maxWidth === '291px') {
         // 현재 이미지가 원본 크기라면 최대 크기 제한을 없애고, 테두리 스타일 변경
-        thumbnail.style.maxWidth = 'none';
-        thumbnail.style.border = '2px solid red';
+        thumbnail.style.maxWidth = '400px';
+        thumbnail.style.maxHeight = '2000px';
     } else {
         // 현재 이미지가 최대 크기 제한이 없는 경우, 다시 최대 크기 제한을 설정하고, 테두리 스타일 초기화
-        thumbnail.style.maxWidth = '296px';
-        thumbnail.style.border = 'none';
+        thumbnail.style.maxWidth = '291px';
+        thumbnail.style.maxHeight = '291px';
     }
 }
 </script>
@@ -228,7 +237,7 @@ function toggleImageSize() {
 				
 				<form id="evtForm">
 				<input type="hidden" name="no" value="4"/>
-				<table class="table tableList" style="height: auto;">
+				<table class="table tableList" style="height: auto; width: ">
 				<tr>
 					<th class="top_title">기간</th>
 					<td>
@@ -259,9 +268,9 @@ function toggleImageSize() {
 				</tr>
  				<tr>
 					<th class="top_title" style="border-bottom: none; height: 305px">이미지</th>
-					<td style="border-bottom: none; padding:10px; height: 305px">
-						<div class="imgDiv" style="padding:10px" onclick="toggleImageSize()">
-							<img src="http://localhost/mvc_prj/common/images/damgom.jpg" id="thumnail" class="imgThum"/>
+					<td style="border-bottom: none; padding:15px 10px 0px 10px; height: 305px">
+						<div class="imgDiv" style="padding:10px">
+							<img src="http://localhost/retro_prj/upload/notice.png" id="thumnail" class="imgThum"/>
 						</div>
 					</td>
 				</tr>

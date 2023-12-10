@@ -34,28 +34,8 @@ public class MypagePrdInfoService {
 	 * @param id
 	 * @return List&lt;MypagePrdDomain&gt;
 	 */
-	public JSONObject searchPrdOnProcess(String id) {
-		JSONObject jsonObj = new JSONObject();
-		List<MypagePrdDomain> list = mpDAO.selectAllPrd(id);
-		
-		JSONArray jsonArr = new JSONArray();
-		JSONObject jsonTemp = null;
-		for(MypagePrdDomain mpDomain : list) {
-			jsonTemp = new JSONObject();
-			jsonTemp.put("pcode", mpDomain.getPcode());
-			jsonTemp.put("pname", mpDomain.getPname());
-			jsonTemp.put("price", mpDomain.getPrice());
-			jsonTemp.put("loc", mpDomain.getLoc());
-			jsonTemp.put("input_date", mpDomain.getInput_date());
-			
-			jsonArr.add(jsonTemp);
-		}
-		
-		jsonObj.put("data", jsonArr);
-		jsonObj.put("dataSize", jsonArr.size());
-		jsonObj.put("dataFlag", jsonArr.size() > 0 ? true : false);
-		
-		return jsonObj;
+	public List<MypagePrdDomain> searchPrdOnProcess(String id) {
+		return mpDAO.selectPrdOnProcess(id);
 	}
 	
 	/**
@@ -63,28 +43,8 @@ public class MypagePrdInfoService {
 	 * @param id
 	 * @return JSONObject
 	 */
-	public JSONObject searchCompletedPrd(String id) {
-		JSONObject jsonObj = new JSONObject();
-		List<MypagePrdDomain> list = mpDAO.selectAllPrd(id);
-		
-		JSONArray jsonArr = new JSONArray();
-		JSONObject jsonTemp = null;
-		for(MypagePrdDomain mpDomain : list) {
-			jsonTemp = new JSONObject();
-			jsonTemp.put("pcode", mpDomain.getPcode());
-			jsonTemp.put("pname", mpDomain.getPname());
-			jsonTemp.put("price", mpDomain.getPrice());
-			jsonTemp.put("loc", mpDomain.getLoc());
-			jsonTemp.put("input_date", mpDomain.getInput_date());
-			
-			jsonArr.add(jsonTemp);
-		}
-		
-		jsonObj.put("data", jsonArr);
-		jsonObj.put("dataSize", jsonArr.size());
-		jsonObj.put("dataFlag", jsonArr.size() > 0 ? true : false);
-		
-		return jsonObj;
+	public List<MypagePrdDomain> searchCompletedPrd(String id) {
+		return mpDAO.selectCompletedPrd(id);
 	}
 	
 	/**
@@ -92,27 +52,7 @@ public class MypagePrdInfoService {
 	 * @param id
 	 * @return JSONObject
 	 */
-	public JSONObject searchReservationPrd(String id) {
-		JSONObject jsonObj = new JSONObject();
-		List<MypagePrdDomain> list = mpDAO.selectAllPrd(id);
-		
-		JSONArray jsonArr = new JSONArray();
-		JSONObject jsonTemp = null;
-		for(MypagePrdDomain mpDomain : list) {
-			jsonTemp = new JSONObject();
-			jsonTemp.put("pcode", mpDomain.getPcode());
-			jsonTemp.put("pname", mpDomain.getPname());
-			jsonTemp.put("price", mpDomain.getPrice());
-			jsonTemp.put("loc", mpDomain.getLoc());
-			jsonTemp.put("input_date", mpDomain.getInput_date());
-			
-			jsonArr.add(jsonTemp);
-		}
-		
-		jsonObj.put("data", jsonArr);
-		jsonObj.put("dataSize", jsonArr.size());
-		jsonObj.put("dataFlag", jsonArr.size() > 0 ? true : false);
-		
-		return jsonObj;
+	public List<MypagePrdDomain> searchReservationPrd(String id) {
+		return mpDAO.selectReservationPrd(id);
 	}
 }

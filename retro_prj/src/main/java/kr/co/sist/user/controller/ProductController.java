@@ -29,7 +29,6 @@ public class ProductController {
 		
 		List<ProductDomain> categoryList=ps.searchCategory();
 		model.addAttribute("categoryList",categoryList);
-		model.addAttribute("categorySize",categoryList.size());
 		
 		return "user/product/product_register";
 	}//productRegister

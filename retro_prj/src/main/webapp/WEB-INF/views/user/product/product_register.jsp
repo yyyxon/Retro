@@ -464,20 +464,12 @@
 		/* ---------------도서 , 문구--------------------- */
 
 		/* 도서/ 문구 클릭하면 동작 */
-		$("#B")
-				.click(
-						function() {
-							$(this).css({
-								'background-color' : '#E5E4E4'
-							});
-							$("#G, #T, #P, #C, #C-1,#B1,#B2,#B3").css({
-								'background-color' : '#FFFFFF'
-							});
-							$("#category-depth-5").show();
-							$(
-									"#category-depth-2, #category-depth-3, #category-depth-4, #category-depth-1,#category-depth-1-1,#category-depth-1-2,#category-depth-2-1,#category-depth-2-2,#category-depth-2-3,#category-depth-3-1,#category-depth-3-2,#category-depth-4-1,#category-depth-5-1,#category-depth-5-2")
-									.hide();
-						});//click
+		$("#B").click(function() {
+			$(this).css({'background-color' : '#E5E4E4'});
+			$("#G, #T, #P, #C, #C-1,#B1,#B2,#B3").css({'background-color' : '#FFFFFF'});
+			$("#category-depth-5").show();
+			$("#category-depth-2, #category-depth-3, #category-depth-4, #category-depth-1,#category-depth-1-1,#category-depth-1-2,#category-depth-2-1,#category-depth-2-2,#category-depth-2-3,#category-depth-3-1,#category-depth-3-2,#category-depth-4-1,#category-depth-5-1,#category-depth-5-2").hide();
+		});//click
 
 		/* 학습 / 교육 클릭하면 동작 */
 		$("#B1").click(function() {
@@ -597,6 +589,15 @@
 			$("#changeStatus").val("S");
 
 		});//clcick
+		
+		/* '배송비 별도' 클릭시 동작 */
+		$("#parcelFeeN").click(funtion(){
+			$("#changeDeliver").val("N");
+		});//click
+		/* '배송비 포함' 클릭시 동작*/
+		$("#parcelFeeY").click(funtion(){
+			$("#changeDeliver").val("Y");
+		});
 
 		$("#registerBtn").click(function() {
 			
@@ -607,7 +608,7 @@
 			$("#productDescription").val();
 			$("#oldProductBtn").val();
 			$("#changeStatus").val();
-				
+			$("#changeDeliver").val();
 				
 			
 		});//click
@@ -678,6 +679,7 @@
 	
 	<form id="regiFrm">
 	<input type="hidden" name="category3" id="category3"/>
+	<input type="hidden" name="deliver" id="changeDeliver" value="N"/>
 	<main class="relative flex-grow border-b-2"
 		style="min-height: -webkit-fill-available; -webkit-overflow-scrolling: touch">
 		<div class="mx-auto max-w-[1280px] px-4 md:px-8 2xl:px-16 box-content">
@@ -1029,7 +1031,7 @@
 							<input type="button" id="oldProductBtn" name="status"
 								class="h-10 w-[80px] rounded-md border border-solid font-semibold text-base mb-2 text-white bg-jngreen border-jngreen"
 								value="중고" /> 
-								<input type="hidden" name="status" id="changeStatus"/>
+								<input type="hidden" name="status" id="changeStatus" value="J"/>
 								<input type="button" id="newProductBtn"
 								class="h-10 w-[80px] rounded-md border border-solid font-semibold text-base mb-2 border-jnblack text-jnblack bg-white"
 								value="새상품" />
@@ -1052,6 +1054,7 @@
 											포함</span></label></li>
 							</ul>
 						</div>
+										
 
 						<!-- 희망지역 : 주소검색 / 지역 설정 안함 버튼 -->
 						<p class="font-semibold">희망지역</p>

@@ -25,7 +25,6 @@ public class ProductController {
 	public String productRegister(HttpServletRequest request, Model model) {
 		
 		String pname=request.getParameter("pname");
-		System.out.println(pname);
 		
 		List<ProductDomain> categoryList=ps.searchCategory();
 		model.addAttribute("categoryList",categoryList);

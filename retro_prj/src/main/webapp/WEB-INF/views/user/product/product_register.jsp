@@ -382,20 +382,13 @@
 		/* ---------------노트북, PC--------------------- */
 
 		/* 노트북, PC 클릭하면 동작 */
-		$("#P")
-				.click(
-						function() {
-							$(this).css({
-								'background-color' : '#E5E4E4'
-							});
-							$("#G, #T, #C, #B, #C-1,#P1,#P2,#P3").css({
-								'background-color' : '#FFFFFF'
-							});
-							$("#category-depth-4").show();
-							$(
-									"#category-depth-2, #category-depth-3, #category-depth-1, #category-depth-5,#category-depth-1-1,#category-depth-1-2,#category-depth-3-1,#category-depth-3-2,#category-depth-2-1,#category-depth-2-2,#category-depth-2-3,#category-depth-4-1,#category-depth-5-1,#category-depth-5-2")
+		$("#P").click(function() {
+			$(this).css({'background-color' : '#E5E4E4'});
+			$("#G, #T, #C, #B, #C-1,#P1,#P2,#P3").css({'background-color' : '#FFFFFF'});
+			$("#category-depth-4").show();
+			$("#category-depth-2, #category-depth-3, #category-depth-1, #category-depth-5,#category-depth-1-1,#category-depth-1-2,#category-depth-3-1,#category-depth-3-2,#category-depth-2-1,#category-depth-2-2,#category-depth-2-3,#category-depth-4-1,#category-depth-5-1,#category-depth-5-2")
 									.hide();
-						});//click
+		});//click
 
 		/* 노트북 클릭하면 동작 */
 		$("#P1").click(function() {
@@ -464,20 +457,13 @@
 		/* ---------------도서 , 문구--------------------- */
 
 		/* 도서/ 문구 클릭하면 동작 */
-		$("#B")
-				.click(
-						function() {
-							$(this).css({
-								'background-color' : '#E5E4E4'
-							});
-							$("#G, #T, #P, #C, #C-1,#B1,#B2,#B3").css({
-								'background-color' : '#FFFFFF'
-							});
-							$("#category-depth-5").show();
-							$(
-									"#category-depth-2, #category-depth-3, #category-depth-4, #category-depth-1,#category-depth-1-1,#category-depth-1-2,#category-depth-2-1,#category-depth-2-2,#category-depth-2-3,#category-depth-3-1,#category-depth-3-2,#category-depth-4-1,#category-depth-5-1,#category-depth-5-2")
+		$("#B").click(function() {
+			$(this).css({'background-color' : '#E5E4E4'});
+			$("#G, #T, #P, #C, #C-1,#B1,#B2,#B3").css({'background-color' : '#FFFFFF'});
+			$("#category-depth-5").show();
+			$("#category-depth-2, #category-depth-3, #category-depth-4, #category-depth-1,#category-depth-1-1,#category-depth-1-2,#category-depth-2-1,#category-depth-2-2,#category-depth-2-3,#category-depth-3-1,#category-depth-3-2,#category-depth-4-1,#category-depth-5-1,#category-depth-5-2")
 									.hide();
-						});//click
+		});//click
 
 		/* 학습 / 교육 클릭하면 동작 */
 		$("#B1").click(function() {
@@ -565,70 +551,40 @@
 		});//click
 
 		/* --------희망지역 버튼------------- */
-
+		var flag=true;
 		/* '주소검색' 버튼 누르면 동작 */
-		$("#addrSearchBtn")
-				.click(
-						function() {
-
-							$(this)
-									.attr(
-											'class',
-											"h-10 w-[80px] rounded-md border border-solid font-semibold text-base mb-2 text-white bg-jngreen border-jngreen");
-							$("#noAddrBtn")
-									.attr(
-											'class',
-											"h-10 w-[80px] rounded-md border border-solid font-semibold text-base mb-2 border-jnblack text-jnblack bg-white");
-						});//clcick
+		$("#addrSearchBtn").click(function() {
+			$(this).attr('class',"h-10 w-[80px] rounded-md border border-solid font-semibold text-base mb-2 text-white bg-jngreen border-jngreen");
+			$("#noAddrBtn").attr('class',"h-10 w-[80px] rounded-md border border-solid font-semibold text-base mb-2 border-jnblack text-jnblack bg-white");
+			$("#locInputBox").css('display', 'block');
+			flag=true;
+			
+		});//clcick
 
 		/* '지역 설정 안 함'버튼누르면 동작*/
-		$("#noAddrBtn")
-				.click(
-						function() {
-							$(this)
-									.attr(
-											'class',
-											"h-10 w-[80px] rounded-md border border-solid font-semibold text-base mb-2 text-white bg-jngreen border-jngreen");
-							$("#addrSearchBtn")
-									.attr(
-											'class',
-											"h-10 w-[80px] rounded-md border border-solid font-semibold text-base mb-2 border-jnblack text-jnblack bg-white");
-
-						});//clcick
+		$("#noAddrBtn").click(function() {
+			$(this).attr('class',"h-10 w-[80px] rounded-md border border-solid font-semibold text-base mb-2 text-white bg-jngreen border-jngreen");
+			$("#addrSearchBtn").attr('class',"h-10 w-[80px] rounded-md border border-solid font-semibold text-base mb-2 border-jnblack text-jnblack bg-white");
+			$("#locInputBox").css('display', 'none');
+			 $("#locErr").css('display', 'none');
+			 flag=false;
+		});//clcick
 
 		/* --------상품 상태 버튼------------- */
 
 		/* '중고' 버튼 누르면 동작 */
-		$("#oldProductBtn")
-				.click(
-						function() {
-
-							$(this)
-									.attr(
-											'class',
-											"h-10 w-[80px] rounded-md border border-solid font-semibold text-base mb-2 text-white bg-jngreen border-jngreen");
-							$("#newProductBtn")
-									.attr(
-											'class',
-											"h-10 w-[80px] rounded-md border border-solid font-semibold text-base mb-2 border-jnblack text-jnblack bg-white");
-							$("#changeStatus").val("J");
-						});//clcick
+		$("#oldProductBtn").click(function() {
+			$(this).attr('class',"h-10 w-[80px] rounded-md border border-solid font-semibold text-base mb-2 text-white bg-jngreen border-jngreen");
+			$("#newProductBtn").attr('class',"h-10 w-[80px] rounded-md border border-solid font-semibold text-base mb-2 border-jnblack text-jnblack bg-white");
+			$("#changeStatus").val("J");
+		});//clcick
 
 		/* '새상품'버튼누르면 동작*/
-		$("#newProductBtn")
-				.click(
-						function() {
-							$(this)
-									.attr(
-											'class',
-											"h-10 w-[80px] rounded-md border border-solid font-semibold text-base mb-2 text-white bg-jngreen border-jngreen");
-							$("#oldProductBtn")
-									.attr(
-											'class',
-											"h-10 w-[80px] rounded-md border border-solid font-semibold text-base mb-2 border-jnblack text-jnblack bg-white");
-							$("#changeStatus").val("S");
-
-						});//clcick
+		$("#newProductBtn").click(function() {
+			$(this).attr('class',"h-10 w-[80px] rounded-md border border-solid font-semibold text-base mb-2 text-white bg-jngreen border-jngreen");
+			$("#oldProductBtn").attr('class',"h-10 w-[80px] rounded-md border border-solid font-semibold text-base mb-2 border-jnblack text-jnblack bg-white");
+			$("#changeStatus").val("S");
+		});//clcick
 
 		/* '배송비 별도' 클릭시 동작 */
 		$("#parcelFeeN").click(function() {
@@ -640,7 +596,33 @@
 		});
 
 		$("#registerBtn").click(function() {
-
+			
+			if($("#productTitle").val() === ''){
+			        $("#pnameErr").css('display', 'block');
+			        return; // locInput이 비어있으면 처리 중단
+			    } else {
+			        $("#pnameErr").css('display', 'none');
+			}//end else			
+			
+			
+			/* 상품 상세 정보가 비어있을 때 */
+			if($("#productDescription").val() === ''){
+			        $("#contextErr").css('display', 'block');
+			        document.getElementById('productPrice').scrollIntoView({ behavior: 'smooth' });
+			        return; // locInput이 비어있으면 처리 중단
+			    } else {
+			        $("#contextErr").css('display', 'none');
+			}//end else			
+			
+			/* 희망지역 입력 칸이 비어있을 시 */
+			 if(flag){
+			    if ( $("#locInputBox").val() === '') {
+			        $("#locErr").css('display', 'block');
+			        return; // locInput이 비어있으면 처리 중단
+			    } else {
+			        $("#locErr").css('display', 'none');
+			    }//end else
+			 }//end if
 			$("#productTitle").val();
 			$("#productPrice").val();
 			$("#productDescription").val();
@@ -651,6 +633,7 @@
 			location.href = "product_register_ok.do";
 			$("#regiFrm").submit();
 
+			
 		});//click
 
 	});//ready
@@ -674,7 +657,8 @@
 			});
 		});
 	});
-
+	
+	/* price */
 	function validatePrice(input) {
 		// 숫자만 남기기
 		input.value = input.value.replace(/[^0-9]/g, '');
@@ -690,21 +674,22 @@
 			input.value = input.value.slice(0, maxLength);
 		} else {
 			document.getElementById('priceError').style.display = 'none';
-		}
-	}
+		}//end else
+	}//validatePrice
 
+	/* context */
 	function lengthCnt() {
-		var reviewArea = $("#reviewArea").val();
+		var reviewArea = $("#productDescription").val();
 		var maxLength = 1000;
 
 		$("#lengthCnt").html(reviewArea.length);
 
 		if (reviewArea.length > maxLength) {
 			var subText = reviewArea.substring(0, maxLength);
-			$("#reviewArea").val(subText);
+			$("#productDescription").val(subText);
 			$("#lengthCnt").html(maxLength);
-		}
-	}
+		}//end if
+	}//lengthCnt
 </script>
 
 <!-- 
@@ -748,8 +733,9 @@
 
 
 	<form id="regiFrm">
-		<input type="hidden" name="category3" id="category3" /> <input
-			type="hidden" name="deliver" id="changeDeliver" value="N" />
+		<input type="hidden" name="category3" id="category3" /> 
+		<input type="hidden" name="deliver" id="changeDeliver" value="N" />
+		<input type="hidden" name="loc" id="changeLoc"/>
 		<main class="relative flex-grow border-b-2"
 			style="min-height: -webkit-fill-available; -webkit-overflow-scrolling: touch">
 			<div
@@ -813,7 +799,7 @@
 								<div class="os-scrollbar-corner"></div>
 							</div>
 						</div>
-					</div>
+					</div><br/>
 					<div class="flex flex-col px-5 space-y-5">
 						<!-- 상품명 입력 inpuBox -->
 						<div class="block">
@@ -821,6 +807,8 @@
 								placeholder="상품명"
 								class="py-2 px-4 md:px-5 w-full appearance-none border text-input text-xs lg:text-sm font-body placeholder-body min-h-12 transition duration-200 ease-in-out bg-white border-gray-300 focus:border-heading h-11 md:h-12 focus:outline-none rounded-md"
 								autocomplete="off" spellcheck="false" aria-invalid="false">
+								<p id="pnameErr"
+							style="display:none; color: red; font-size: 15px;">  상품명을 입력해주세요.</p>
 						</div>
 
 						<div
@@ -1087,15 +1075,17 @@
 						<p id="priceError" class="input_error"
 							style="display: none; color: red; font-size: 15px">최대 1억원까지
 							입력 가능합니다.</p>
-					</div>
+					</div><br/>
 					<section class="flex flex-col px-5 space-y-5">
 						<!-- 상품명, 구매시기, 착용 시간, 요염 여부, 하자여부 작성 inputBox -->
 						<div style="text-align: right">
 							<textarea id=productDescription name="context" oninput="javascript:lengthCnt()"
 								placeholder="- 상품명(브랜드)																																																- 구매 시기																																																- 사용 기간																																																- 하자 여부																																																* 실제 촬영한 사진과 함께 상세 정보를 입력해주세요.																																																* 카카오톡 아이디 첨부 시 게시물 삭제 및 이용제재 처리될 수 있어요.																																																 																																																안전하고 건전한 거래환경을 위해 과학기술정보통신부, 한국인터넷진흥원, 중고나라가 함께합니다."
-								style="width: 100%; height: 220px; border: 1px solid #E5E4E4; border-radius: 5px; resize: none; padding: 15px; margin-top: 15px; border-color:#929492 "></textarea>
+								style="width: 100%; height: 300px; border: 1px solid #E5E4E4; border-radius: 5px; resize: none; padding: 15px; margin-top: 15px; border-color:#929492 "></textarea>
+							<p id="contextErr"
+							style="display:none; color: red; font-size: 15px; text-align: left;">상품 상제 정보를 입력해주세요</p>
 							<span id="lengthCnt">0</span>/1000
-						</div>
+						</div><br/>
 						<!-- 상품상태 : 중고 / 새상품 버튼 -->
 						<p class="font-semibold">상품상태</p>
 						<div class="flex gap-3">
@@ -1106,7 +1096,7 @@
 								id="newProductBtn"
 								class="h-10 w-[80px] rounded-md border border-solid font-semibold text-base mb-2 border-jnblack text-jnblack bg-white"
 								value="새상품" />
-						</div>
+						</div><br/>
 						<!-- 배송비 : 새송비 별도 / 배송비 포함 러디오 버튼-->
 						<div>
 							<p class="text-jnGray-900">배송비</p>
@@ -1124,18 +1114,21 @@
 										value="1"><span class="cursor-pointer text-jnGray-700">배송비
 											포함</span></label></li>
 							</ul>
-						</div>
+						</div><br/>
 
 
 						<!-- 희망지역 : 주소검색 / 지역 설정 안함 버튼 -->
 						<p class="font-semibold">희망지역</p>
 						<div class="flex gap-3">
-							<input type="button" id="addrSearchBtn" name="loc"
+							<input type="button" id="addrSearchBtn"
 								class="h-10 w-[80px] rounded-md border border-solid font-semibold text-base mb-2 text-white bg-jngreen border-jngreen"
-								value="주소 검색" /> <input type="button" id="noAddrBtn"
+								value="주소 입력" /> <input type="button" id="noAddrBtn"
 								class="h-10 w-[80px] rounded-md border border-solid font-semibold text-base mb-2 border-jnblack text-jnblack bg-white"
 								style="width: 130px" value="지역 설정 안 함">
 						</div>
+							<input type="text" class="inputBox" name="loc" id="locInputBox" placeholder="희망하는 지역의 동까지 입력   예) 자양동" style="font-size :15px;border: 1px solid #929492; width:300px; padding: 5px; display: block"/>
+							<p id="locErr"
+							style="display:none; color: red; font-size: 15px;">희망하는 지역의 주소를 입력해주세요.</p>
 					</section>
 					<section class="w-full px-5 text-sm font-medium mb-7">
 						<div class="h-px mb-4 bg-jnGray-200"></div>

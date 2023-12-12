@@ -136,7 +136,7 @@ function sortUp(txt, flag) {
 		<div class="w-full flex-grow">
 		
 <!-- 마이페이지 header -->
-<c:import url="http://localhost/retro_prj/common/cdn/mypage_info.jsp" />
+<c:import url="/common/cdn/mypage_info.jsp" />
 		
 <!-- 판매한 /중인 /완료한 상품 보여주는 곳 시작 -->
 <div class="px-0 max-lg:mt-10">

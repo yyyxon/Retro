@@ -26,7 +26,7 @@
 				<strong id="creditScr">신뢰지수 <c:out value="${userInfo.credit_level }"/></strong><span class="text-jnGray-500">1,000</span>
 			</div>
 			<div class="w-full h-1.5 bg-[#CCF4DC] rounded overflow-hidden">
-				<div id="creditBar" class="h-full rounded bg-[#0DCC5A]" style="width: ${userInfo.credit_level / 1000 * 100 };"></div>
+				<div id="creditBar" class="h-full rounded bg-[#0DCC5A]" style="width: ${userInfo.credit_level / 1000 * 100 }%;"></div>
 			</div>
 			<ul class="flex justify-between mt-4 py-4 text-center text-jnGray-600 border border-gray-300 rounded-lg lg:border-none [&amp;_li]:w-full [&amp;_li]:border-r [&amp;_li]:border-gray-300">
 				<li><dt class="justify-center mt-0">구매</dt>

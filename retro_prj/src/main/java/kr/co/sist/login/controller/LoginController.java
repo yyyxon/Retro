@@ -13,7 +13,7 @@ import kr.co.sist.login.service.LoginService;
 import kr.co.sist.login.vo.LoginVO;
 import kr.co.sist.user.domain.mypage.MypageInfoDomain;
 import kr.co.sist.user.service.mypage.MyPageInfoDetailService;
-@SessionAttributes({"id","nickname"})
+@SessionAttributes({"id","nickname", "userInfo"})
 @Controller
 public class LoginController {
 	

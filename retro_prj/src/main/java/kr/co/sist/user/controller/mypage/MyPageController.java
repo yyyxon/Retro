@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.co.sist.user.domain.MyPageEnterDomain;
@@ -26,7 +28,7 @@ public class MyPageController {
 		return "user/user_mypage/user_info_enter";
 	}
 	
-	@PostMapping("/mypage_info.do")
+	@RequestMapping(value = "/mypage_info.do", method = {RequestMethod.GET, RequestMethod.POST})
 	public String myPageEnter(String pw, Model model, HttpSession session) {
 		MyPageIdPwVO mpeVO = new MyPageIdPwVO((String)session.getAttribute("id"), pw);
 		

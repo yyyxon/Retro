@@ -15,17 +15,6 @@ import kr.co.sist.user.domain.GoodsDomain;
 public class GoodsDAO {
 	
 	
-	
-	public int totalCount(BoardRangeVO brVO) throws PersistenceException{
-		int cnt=0;
-		
-		MybatisHandler mbh=MybatisHandler.getInstance();
-		SqlSession ss=mbh.getMyBatisHandler(false);
-		cnt=ss.selectOne("",brVO);
-		
-		return cnt;
-	}
-	
 	/**
 	 * 대분류 상품 조회
 	 * @param brVO

@@ -1,9 +1,127 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <script type="text/javascript">
+$(function() {
+	  var inWrap = $('.inner-wrapper'),
+	  $slide = $('.slide');
 
+	  function slideNext() {
+	    inWrap.animate({left: '-200%'}, 200, function() {
+	      inWrap.css('left', '-100%');
+	      $('.slide').last().after($('.slide').first());
+	    });
+	  }
+	   //Enabling auto scroll
+	   sliderInterval = setInterval(slideNext, 4000);
+
+	  $('.prev').on('click', function() {
+	    inWrap.animate({left: '0%'}, 200, function() {
+	      inWrap.css('left', '-100%');
+	      $('.slide').first().before($('.slide').last());
+	    });
+	  });
+
+	  $('.next').on('click', function() {
+	    clearInterval(sliderInterval);
+	    slideNext();
+	  });
+	});
 </script>
+
+<style type="text/css">
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {  
+  font-family: 'Open Sans', sans-serif;
+}
+
+.container{
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+
+}
+
+h1 {
+  text-align: center;
+  margin: 30px 0;
+}
+
+
+.slider-wrapper {
+  width: 600px;
+  height: 300px;
+  background: #000;
+  overflow: hidden;
+}
+
+.inner-wrapper {
+  width: 500%;
+  height: 100%;
+  position: relative;
+  left: -100%;
+}
+
+
+.slide {
+  width: calc(100%/5);
+  height: 100%;
+  background: lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 100px;
+  font-weight: 700;
+  float: left;
+}
+
+.button {
+  width: 30px;
+  height: 30px;
+  border-top: 2px solid black;
+  position: absolute;
+  cursor: pointer;
+
+}
+
+.prev {
+  border-left: 2px solid black;
+  left: 400px;
+  transform: rotate(-45deg);
+}
+
+.next {
+  border-right: 2px solid black;
+  right: 400px;
+  transform: rotate(45deg);
+}
+</style>
 <main class="relative flex-grow border-b-2" style="min-height: -webkit-fill-available; -webkit-overflow-scrolling: touch">
+	
+	<div class="container">
+
+    <div class="slider-wrapper">
+      <div class="inner-wrapper">
+        <div class="slide">1</div>
+        <div class="slide">2</div>
+        <div class="slide">3</div>
+        <div class="slide">4</div>
+        <div class="slide">5</div>
+      </div>
+    </div>
+
+    <div class="button prev"></div>
+    <div class="button next"></div>
+
+  </div>
+	
 	<div class="mx-auto max-w-[1280px] px-4 md:px-8 2xl:px-16 box-content">
 		<div>
 			<div type="productCarousel">

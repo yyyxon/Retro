@@ -161,7 +161,7 @@ $(function() {
 	
 	/* 삭제 */
 	$("#delBtn").click(function() {
-		if(confirm("삭제 하시겠습니까??")){
+		if(confirm("삭제 하시겠습니까?")){
 			$.ajax({
 				url : "eventDeleteProcess.do",
 				type : "post",
@@ -186,68 +186,75 @@ $(function() {
 	
 	/* 저장 */
 	$("#saveBtn").click(function(){
-		var subImg = $("#thumSrc").val();
-		var mainImg = $("#mainSrc").val();
+		if(chkValue()){
+			//1.폼 얻기
+			var frm = $("#evtForm")[0];
 		
-		if(subImg == ""){
-			alert("썸네일 이미지를 선택해주세요.");
-			return;
-		}
+			//2.ajax로 전송할 폼 객체 생성
+			var formData = new FormData(frm);
 		
-		if(mainImg == ""){
-			alert("메인 이미지를 선택해주세요.");
-			return;
-		}
-		
-		//1.폼 얻기
-		var frm = $("#evtForm")[0];
-		
-		//2.ajax로 전송할 폼 객체 생성
-		var formData = new FormData(frm);
-		
-		$.ajax({
-			url: "eventUpdateProcess.do",
-			type : "post",
-			processData : false,
-			contentType : false,
-			data : formData,
-			async : "false",
-			dataType : "JSON",
-			error : function(xhr) {
-				console.log(xhr.status);
-			},
-			success : function(jsonObj) {
-				if(jsonObj.uploadFlag){
-					var msg = jsonObj.resultFlag ? "수정되었습니다." : "서버에서 문제가 발생하였습니다. 잠시 후 다시 시도해주세요.";
-					alert(msg);
-				}else{
-					if(jsonObj.overFileimg != null && jsonObj.overFileimg2 != null){
-						alert(jsonObj.overFileimg + ", " + jsonObj.overFileimg2 + "파일이 10MByte를 초과하여 업로드에 실패하였습니다.");
-						return;
-					}
-					if(jsonObj.overFileimg != null){
-						alert(jsonObj.overFileimg + "파일이 10MByte를 초과하여 업로드에 실패하였습니다.");
-						return;
-					}
-					if(jsonObj.overFileimg2 != null){
-						alert(jsonObj.overFileimg2 + "파일이 10MByte를 초과하여 업로드에 실패하였습니다.");
-						return;
+			$.ajax({
+				url: "eventUpdateProcess.do",
+				type : "post",
+				processData : false,
+				contentType : false,
+				data : formData,
+				async : "false",
+				dataType : "JSON",
+				error : function(xhr) {
+					console.log(xhr.status);
+				},
+				success : function(jsonObj) {
+					if(jsonObj.uploadFlag){
+						var msg = jsonObj.resultFlag ? "수정되었습니다." : "서버에서 문제가 발생하였습니다. 잠시 후 다시 시도해주세요.";
+						alert(msg);
+					}else{
+						if(jsonObj.overFileimg != null && jsonObj.overFileimg2 != null){
+							alert(jsonObj.overFileimg + ", " + jsonObj.overFileimg2 + "파일이 10MByte를 초과하여 업로드에 실패하였습니다.");
+							return;
+						}
+						if(jsonObj.overFileimg != null){
+							alert(jsonObj.overFileimg + "파일이 10MByte를 초과하여 업로드에 실패하였습니다.");
+							return;
+						}
+						if(jsonObj.overFileimg2 != null){
+							alert(jsonObj.overFileimg2 + "파일이 10MByte를 초과하여 업로드에 실패하였습니다.");
+							return;
+						}
 					}
 				}
-			}
-		});
+			});
+		}
 	});
 
 	/* 파일 값이 바뀌면 파일명을 보여주는 input 값이 바뀜 */
 	$("#mainImg").on('change',function(){
 		  var fileName = $("#mainImg").val();
+		  var fileType = fileName.substring(fileName.lastIndexOf(".")).toLowerCase();
 		  fileName = fileName.substring(fileName.lastIndexOf("\\")+1);
+			
+		  if(fileType != "" && fileType != ".jpg" && fileType != ".png" && fileType != ".jpeg") {
+			  alert("jpg, jpeg, png 확장자만 가능합니다.");
+			  $("#mainImg").val("");
+			  fileName = "";
+		  }
+		  
 		  $("#mainSrc").val(fileName);
 	});
 
 	$("#subImg").on('change',function(){
 		  var fileName = $("#subImg").val();
+		  var fileType = fileName.substring(fileName.lastIndexOf(".")).toLowerCase();
 		  fileName = fileName.substring(fileName.lastIndexOf("\\")+1);
+		  
+		  if(fileType != "" && fileType != ".jpg" && fileType != ".png" && fileType != ".jpeg") {
+			  alert("jpg, jpeg, png 확장자만 가능합니다.");
+			  $("#subImg").val("");
+			  $("#thumSrc").val("");
+			  
+			  return;
+		  }
+		  
 		  $("#thumSrc").val(fileName);
 	});
 	/* ------------------------------------ */
@@ -287,6 +294,43 @@ $(function() {
 	/* ------------------------------------ */
 
 });
+
+function chkValue() {
+	var startDate = $("#startDate").val().split('-');
+	var endDate = $("#endDate").val().split('-');
+	var title = $("#evtTitle").val();
+	var subImg = $("#thumSrc").val();
+	var mainImg = $("#mainSrc").val();
+	
+	startDate = parseInt(startDate[0] + startDate[1] + startDate[2]);
+	endDate = parseInt(endDate[0] + endDate[1] + endDate[2]);
+	
+	if(startDate-endDate > 0 || $("#startDate").val() == "" || $("#endDate").val() == ""){
+		alert("시작 날짜와 종료 날짜를 확인해주세요.");
+		$("#startDate").focus();
+		return false;
+	}
+	
+	if(title.replace(/ /g,"") == ""){
+		alert("제목을 입력해주세요.");
+		$("#evtTitle").val("");
+		$("#evtTitle").focus();
+		return false;
+	}
+	
+	if(subImg == ""){
+		alert("썸네일 이미지를 선택해주세요.");
+		return false;
+	}
+	
+	if(mainImg == ""){
+		alert("메인 이미지를 선택해주세요.!");
+		return false;
+	}
+	
+	return true;
+}
+
 </script>
 <div id="right">
 	<div id="rightHeader" align="right">

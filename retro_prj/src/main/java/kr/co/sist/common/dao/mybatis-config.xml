@@ -19,6 +19,7 @@
 		<typeAlias type="kr.co.sist.admin.vo.AdminEventVO" alias="aeVO"/>
 		<typeAlias type="kr.co.sist.admin.domain.AdminEventDomain" alias="aed"/>
 		<typeAlias type="kr.co.sist.admin.domain.EventDomain" alias="ed"/>
+		<typeAlias type="kr.co.sist.user.domain.EventDomain" alias="ued"/>
 	</typeAliases>
 	
 	
@@ -45,6 +46,7 @@
     <mapper resource="kr/co/sist/admin/dao/mapper/dashBoardMapper.xml"/>
     <mapper resource="kr/co/sist/user/dao/mapper/mypage/mypagePrdInfoMapper.xml"/>
     <mapper resource="kr/co/sist/user/dao/mapper/goodsMapper.xml"/>
+    <mapper resource="kr/co/sist/user/dao/mapper/eventMapper.xml"/>
     
   </mappers> 
 </configuration>

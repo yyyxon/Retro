@@ -177,6 +177,7 @@
 		
 	</c:choose>
 		</ul>
+		
 			<div class="bottom-0 py-3 m-auto text-center bg-white">
 				<ul class="flex justify-center space-x-2 space-x-reverse">
 					<li class="w-4 mr-2"><a class="items-center hidden h-full"
@@ -189,7 +190,7 @@
 				<c:forEach var="i" begin="1" end="${pageVO.totalPageNo}" step="1">     
 				
 					<li class="w-10 h-10 rounded-md shrink-0 bg-jngreen/80 text-white">
-					 <a class="block leading-10" href="goods_list1.do?category1=${pageVO.category}&amp;pageNo=${i}">${i}</a>
+					 <a class="block leading-10" href="goods_search_by_text.do?searchText=${pageVO.searchText}&amp;pageNo=${i}">${i}</a>
 					</li>
 					
 				</c:forEach>

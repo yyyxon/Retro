@@ -344,7 +344,7 @@ function chkValue() {
 	}
 	
 	if(mainImg == ""){
-		alert("메인 이미지를 선택해주세요.!");
+		alert("메인 이미지를 선택해주세요.");
 		return false;
 	}
 	

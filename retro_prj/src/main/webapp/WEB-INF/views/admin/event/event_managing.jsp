@@ -178,6 +178,12 @@ function detailEvt(ecode){
         	<a href="#">></a>
     	</div>
     	</div>
+    	
+    	<c:if test="${ not empty keyword }">
+    	    <div class="btnDiv">
+				<input type="button" class="btnCss" value="목록">	
+			</div>
+    	</c:if>
 			
 	</div>	
 </div>

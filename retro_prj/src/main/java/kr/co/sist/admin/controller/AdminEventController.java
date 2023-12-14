@@ -132,7 +132,7 @@ public class AdminEventController {
 				aeVO.setContext((mr.getParameter("context")));
 				aeVO.setImg(mr.getOriginalFileName("img"));
 				aeVO.setImg2(mr.getOriginalFileName("img2"));
-				aeVO.setId("admin");
+				aeVO.setId(mr.getParameter("id"));
 				
 				if("insert".equals(method)) {
 					resultFlag = aes.addEvent(aeVO)==1;

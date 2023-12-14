@@ -283,8 +283,28 @@ $(function() {
 });
 
 function chkValue() {
-	var startDate = $("#startDate").val().split('-');
-	var endDate = $("#endDate").val().split('-');
+	var startDate = $("#startDate").val();
+	var endDate = $("#endDate").val();
+	
+    // 정규식을 사용하여 날짜 형식 검사
+    var dateFormatRegex = /^\d{4}-\d{2}-\d{2}$/;
+
+    if (!dateFormatRegex.test(startDate)) {
+      alert('시작 날짜를 확인해주세요.');
+      $("#startDate").focus();
+      $("#startDate").val("");
+      return false;
+    }
+    
+    if (!dateFormatRegex.test(endDate)) {
+        alert('종료 날짜를 확인해주세요.');
+        $("#endDate").focus();
+        $("#endDate").val("");
+        return false;
+    }
+	
+	startDate = $("#startDate").val().split('-');
+	endDate = $("#endDate").val().split('-');
 	var title = $("#evtTitle").val();
 	var subImg = $("#subImg").val();
 	var mainImg = $("#mainImg").val();
@@ -293,7 +313,7 @@ function chkValue() {
 	startDate = parseInt(startDate[0] + startDate[1] + startDate[2]);
 	endDate = parseInt(endDate[0] + endDate[1] + endDate[2]);
 	
-	if(startDate-endDate > 0 || $("#startDate").val() == "" || $("#endDate").val() == ""){
+	if(startDate-endDate > 0){
 		alert("시작 날짜와 종료 날짜를 확인해주세요.");
 		$("#startDate").focus();
 		return false;
@@ -350,7 +370,7 @@ function chkValue() {
 		
 		<!-- 테이블 -->
 		<div id="background_box" style="height:140%">
-				<div style="margin: 0 10px 0px 10px;">
+			<div style="margin: 0 10px 0px 10px;">
 				
 				<form id="evtForm" action="eventAddProcess.do" method="POST">
 				<input type="hidden" name="no" value="4"/>

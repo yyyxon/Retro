@@ -15,7 +15,7 @@ public class EventController {
 	private EventService es;
 	
 	@GetMapping("/event.do")
-	public String eventList(String searchType, Model model) {
+	public String eventList(@RequestParam(required = false, defaultValue = "ING")String searchType, Model model) {
 		
 		model.addAttribute("eventList",es.searchAllEvent(searchType));
 		

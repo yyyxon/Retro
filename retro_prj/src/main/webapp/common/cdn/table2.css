@@ -206,6 +206,8 @@ td {
 .btnCss:hover {
 	background-color: white;
 	color: #333;
+	font-weight: 600;
+  	transition: background-color 0.3s ease, color 0.3s ease, font-weight 0.3s ease;
 }
 
 /* #btnChange{

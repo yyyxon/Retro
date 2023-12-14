@@ -111,9 +111,17 @@ body{
     color: #fff;
     vertical-align: middle;
     background-color: #333;
+    border: 1px solid #BEBEBE;
     cursor: pointer;
     height: 40px;
     margin: 3px 0px 0px 10px;
+}
+
+.filebox label:hover {
+	background-color: white;
+	color: #333;
+	font-weight: 600;
+  	transition: background-color 0.3s ease, color 0.3s ease, font-weight 0.3s ease;
 }
 
 .upload-name:focus {

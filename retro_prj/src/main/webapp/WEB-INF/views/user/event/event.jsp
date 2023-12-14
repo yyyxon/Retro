@@ -38,7 +38,7 @@
 						class="text-lg md:text-xl lg:text-2xl 2xl:text-3xl xl:leading-10 font-bold text-heading">이벤트</h3>
 				</div>
 				<ul class="flex gap-6 py-5 max-w-[1280px] mx-auto">
-					<li class="" id="ING"><a href="event.do?searchType=ING">진행중</a></li>
+					<li class="" id="ING"><a href="event.do">진행중</a></li>
 					<li class="" id="END"><a href="event.do?searchType=END">종료</a></li>
 				</ul>
 			</div>

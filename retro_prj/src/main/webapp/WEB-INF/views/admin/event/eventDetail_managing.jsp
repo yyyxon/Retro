@@ -111,10 +111,19 @@ body{
     color: #fff;
     vertical-align: middle;
     background-color: #333;
+    border: 1px solid #BEBEBE;
     cursor: pointer;
     height: 40px;
     margin: 3px 0px 0px 10px;
 }
+
+.filebox label:hover {
+	background-color: white;
+	color: #333;
+	font-weight: 600;
+  	transition: background-color 0.3s ease, color 0.3s ease, font-weight 0.3s ease;
+}
+
 
 .upload-name:focus {
 	outline:none;
@@ -122,6 +131,12 @@ body{
 
 textarea:focus{
 	outline:none;
+}
+
+#userPage {
+	float: left;
+	font-size: 17px;
+	font-weight: 600;
 }
 
 </style>
@@ -206,7 +221,7 @@ $(function() {
 				},
 				success : function(jsonObj) {
 					if(jsonObj.uploadFlag){
-						var msg = jsonObj.resultFlag ? "수정되었습니다." : "서버에서 문제가 발생하였습니다. 잠시 후 다시 시도해주세요.";
+						var msg = jsonObj.resultFlag ? "저장되었습니다." : "서버에서 문제가 발생하였습니다. 잠시 후 다시 시도해주세요.";
 						alert(msg);
 					}else{
 						if(jsonObj.overFileimg != null && jsonObj.overFileimg2 != null){
@@ -354,12 +369,17 @@ function chkValue() {
 		
 		<div class="text" id="mainTitle">
 			<strong>이벤트 상세</strong>
+			<a href="http://localhost/retro_prj/event/detail.do?eventcode=${ param.eventcode }">
+				<svg style="margin-bottom: 5px" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+  					<path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+  					<path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+				</svg>
+			</a>
 		</div>
 		
 		<!-- 테이블 -->
 		<div id="background_box" style="height:140%">
 				<div style="margin: 0 10px 0px 10px;">
-				
 				<form id="evtForm" method="POST">
 				<input type="hidden" name="no" value="4"/>
 				<input type="hidden" id="eventcode" name="eventcode" value="${ param.eventcode }"/>

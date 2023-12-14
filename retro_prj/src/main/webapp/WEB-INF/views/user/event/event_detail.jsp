@@ -28,19 +28,19 @@
 			<div class="relative">
 				<div class="flex">
 					<!-- 이벤트 제목 -->
-					<p class="text-center flex-[1_0_auto] py-4" style="font-size:18px">
+					<p class="text-center flex-[1_0_auto] py-4" style="font-size:20px;">
 						${ event.title }
 					</p>
 				</div>
 					<!-- 이벤트 기간 -->
-					<p style="text-align: right; margin-bottom:10px; color:#ABABAB">
+					<p style="text-align: right; margin-bottom:13px; color:#ABABAB">
 						${ event.start_date } ~ ${ event.end_date }
 					</p>
 				<div class="[&amp;>img]:w-full [&amp;>img]:h-auto bg-transparent w-full [&amp;>p]:mb-0" id="eventContent">
 					<p style="font-size: 0;">
 						<img src="http://localhost/retro_prj/upload/${ event.img }" alt="" width="850">
 					</p>
-					<p>
+					<p style="margin: 10px 0px 5px 0px; font-size:18px; text-align: center">
 						${ event.context }
 					</p>
 				</div>

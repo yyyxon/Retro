@@ -108,6 +108,10 @@ body {
   color: #aeb2b7;
 }
 
+#logo:hover{
+	cursor:pointer;
+}
+
 /* 임태균이 만든 거 시작 */
 #down{
   position: fixed;
@@ -159,7 +163,8 @@ $(function() {
     <ul class="nano-content">
       <li style="height: 100px;padding: 0px;background: #426784;">
         <!-- <a style="padding: 0px;height: 100px" href="http://192.168.10.143/jsp_prj/prj_admin/admin_design.jsp"> -->
-        <img src="http://localhost/retro_prj/common/images/logo_w.png" style="display: block; margin: 0px auto;padding-top: 5px;" width=210px>
+        <img id="logo" src="http://localhost/retro_prj/common/images/logo_w.png" onclick="javascript:location.href='http://localhost/retro_prj/index.html'"
+        style="display: block; margin: 0px auto; padding-top: 5px;" width=210px;">
 <!-- <span style="font-size: 16px;font-weight: bold;">&ensp;이미지</span> --><!-- </a> -->
       </li>
       

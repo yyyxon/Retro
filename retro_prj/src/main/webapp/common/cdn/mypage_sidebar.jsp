@@ -11,6 +11,6 @@
 	<h3 class="mb-2 text-lg font-semibold">내 정보</h3>
 	<ul>
 		<li><a href="http://localhost/retro_prj/mypage_enter.do">정보 수정</a></li>
-		<li>1:1 문의</li>
+		<li><a href="inquiry_frm.do">1:1 문의</a></li>
 	</ul>
 </div>

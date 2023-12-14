@@ -21,6 +21,7 @@
 		<typeAlias type="kr.co.sist.admin.domain.EventDomain" alias="ed"/>
 		<typeAlias type="kr.co.sist.user.domain.EventDomain" alias="ued"/>
 		<typeAlias type="kr.co.sist.user.domain.MyInquiryDomain" alias="mid"/>
+		<typeAlias type="kr.co.sist.user.vo.MyInquiryVO" alias="miVO"/>
 	</typeAliases>
 	
 	

@@ -6,10 +6,8 @@ import org.apache.ibatis.exceptions.PersistenceException;
 import org.apache.ibatis.session.SqlSession;
 
 import kr.co.sist.common.dao.MybatisHandler;
-import kr.co.sist.login.dao.LoginDAO;
-import kr.co.sist.login.domain.LoginDomain;
-import kr.co.sist.login.vo.LoginVO;
 import kr.co.sist.user.domain.MyInquiryDomain;
+import kr.co.sist.user.vo.MyInquiryVO;
 
 public class MyInquiryDAO {
 	private static MyInquiryDAO miDAO;
@@ -27,7 +25,7 @@ public class MyInquiryDAO {
 		
 		return miDAO;
 	}//getInstance
-	
+
 public List<MyInquiryDomain> selectInquiry(String id)throws PersistenceException {
 		List<MyInquiryDomain> list=null;
 		MyInquiryDomain mId = new MyInquiryDomain();
@@ -38,5 +36,62 @@ public List<MyInquiryDomain> selectInquiry(String id)throws PersistenceException
 		mbh.closeHandler(ss);
 		
 		return list;
-	}//selectLogin
+	}//selectInquiry
+
+public MyInquiryDomain selectInquiryDetail(String icode)throws PersistenceException {
+	MyInquiryDomain mId = new MyInquiryDomain();
+	MybatisHandler mbh= MybatisHandler.getInstance();
+	SqlSession ss= mbh.getMyBatisHandler(configPath, false);
+	mId=ss.selectOne("kr.co.sist.inquiry.selectInquiryDetail", icode);
+	
+	mbh.closeHandler(ss);
+	
+	return mId;
+}//selectInquiryDetail
+
+public int updateInquiry( MyInquiryVO miVO)throws PersistenceException{
+	int cnt= 0;
+	MybatisHandler mbh = MybatisHandler.getInstance();
+	SqlSession ss= mbh.getMyBatisHandler(configPath, false);
+	
+	cnt= ss.update("kr.co.sist.inquiry.updateInquiry",miVO);
+	
+	if(cnt==1) {
+		ss.commit();
+	}
+	mbh.closeHandler(ss);
+	
+	return cnt;
+}
+
+public int deleteInquiry( String icode)throws PersistenceException{
+	int cnt= 0;
+	MybatisHandler mbh = MybatisHandler.getInstance();
+	SqlSession ss= mbh.getMyBatisHandler(configPath, false);
+	
+	cnt= ss.delete("kr.co.sist.inquiry.deleteInquiry",icode);
+	
+	if(cnt==1) {
+		ss.commit();
+	}
+	mbh.closeHandler(ss);
+	
+	return cnt;
+}
+
+public int insertInquiry( MyInquiryVO miVO)throws PersistenceException{
+	int cnt= 0;
+	MybatisHandler mbh = MybatisHandler.getInstance();
+	SqlSession ss= mbh.getMyBatisHandler(configPath, false);
+	
+	cnt= ss.insert("kr.co.sist.inquiry.insertInquiry",miVO);
+	
+	if(cnt==1) {
+		ss.commit();
+	}
+	mbh.closeHandler(ss);
+	
+	return cnt;
+}
+
 }

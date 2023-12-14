@@ -46,31 +46,16 @@ $(function(){
 	   $("#frm").submit();
    })
    
+   $("#ibtn").click(function(){
+	   location.href=""
+   })
+   
+   $("#writebtn").click(function(){
+	   location.href="inquiry_write_frm.do"
+   })
 });//ready
 </script>
-<script type="text/javascript">
-    
-    // 입력을 제한 할 특수문자의 정규식
-    var replaceId  = /[-]/gi;
-    
-    $(document).ready(function(){
-        
-        $("#phone").on("focusout", function() {
-            var x = $(this).val();
-            if (x.length > 0) {
-                if (x.match(replaceId)) {
-                   x = x.replace(replaceId, "");
-                }
-                $(this).val(x);
-            }
-        }).on("keyup", function() {
-            $(this).val($(this).val().replace(replaceId, ""));
 
-        });
-
-    });
- 
-</script>
 
 </head>
  <c:import url="/common/cdn/cdn.jsp" /> 
@@ -85,39 +70,32 @@ $(function(){
 		<div class="w-full flex-grow">
 
 <div style=" font-size: 35px; font-weight: bold; color: #333333;  margin-top: 30px; margin-bottom:10px ">1:1 문의내용</div>
-<hr style="border: solid 2px #000000; margin-top:10px; width: 100%; margin: 0px auto">
+	<input type="button" id="writebtn" value="문의작성" style="color:#FFFFFF; background-color:#333333; margin-left: 1000px; margin-bottom: 5px" class="btn btn-dark">
+	<hr style="border: solid 2px #000000; margin-top:10px; width: 100%; margin: 0px auto">
 
-<table style="border-left: none; border-right: none; border-top: none;" >
+		<table style="border-left: none; border-right: none; border-top: none;">
 
        
 
-        <c:if test="${ empty inquiryList}">
-       <p class="message" style="width:1220px;position: absolute; top:180px">작성한 게시물이 없습니다.</p>
-       </c:if> 
+      	<c:if test="${ empty inquiryList}">
+      	 <p class="message" style="width:1220px;position: absolute; top:180px">작성한 문의 내용이 없습니다.</p>
+      	</c:if> 
       
- <c:forEach var="inq" items="${inquiryList}" varStatus="i"> 
+ 			<c:forEach var="inq" items="${inquiryList}" varStatus="i"> 
 
-         <tr style="text-align:  center; border-left:none; border-right: none; border-top: none; ">
+        	 <tr style="text-align:  center; border-left:none; border-right: none; border-top: none; ">
                 
                 <td style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis; border-left:none; border-right: none;border-top: none; width:30px"><span class="" style="font-size: 18px" >
-                	<a href=""onclick=""><<c:out value="${inq.type}"/>></a></span></td>
+                	<a href="inquiry_detail_frm.do?icode=${inq.inquiryCode}" ><<c:out value="${inq.type}"/>></a></span></td>
                 <td style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis; border-left:none; border-right: none;border-top: none; width:50px; text-align:center; "><span class="" style="font-size: 18px"> <c:out value="" />
-                   <a href="" onclick=""><c:out value="${inq.context}"/></a>  </span></td>
+                   <a href="inquiry_detail_frm.do?icode=${inq.inquiryCode}" ><c:out value="${inq.context}"/></a>  </span></td>
                 <td style="border-left:none; border-right: none;border-top: none; text-align:right; "><span class="txtNum" style="font-weight: bold; font-size: 18px;  "  >
-                	<a href=""onclick=""><c:out value="${inq.status eq 'Y' ? '답변완료' : '진행 중' }"/></a></span></td>
-                
-                
-            </tr>
-            </c:forEach> 
-            
-     
+                	<a href="inquiry_detail_frm.do?icode=${inq.inquiryCode}" ><c:out value="${inq.status eq 'Y' ? '답변완료' : '진행 중' }"/></a></span></td>
+          
+           	</tr>
+          </c:forEach> 
 
-
-            
-           
-
-
-</table>
+		</table>
 
 	<div class="bottom-0 py-3 m-auto text-center bg-white">
 				<ul class="flex justify-center space-x-2 space-x-reverse">
@@ -128,7 +106,7 @@ $(function(){
 								xmlns="http://www.w3.org/2000/svg">
 								<path d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"></path></svg></a></li>
 				
-				<c:forEach var="i" begin="1" end="<%-- ${pageVO.totalPageNo} --%>2" step="1">     
+				<c:forEach var="i" begin="1" end="2" step="1">     
 				
 					<li class="w-10 h-10 rounded-md shrink-0 bg-jngreen/80 text-white">
 					 <a class="block leading-10" href="goods_list1.do?category1=${pageVO.category}&amp;pageNo=${i}">${i}</a>

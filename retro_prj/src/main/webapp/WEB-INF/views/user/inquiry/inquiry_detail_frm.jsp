@@ -38,39 +38,36 @@ table, tr, td{
  border:none;
 }
 
-
+textarea:focus {
+  outline: none;
+}
 </style>
 <script type="text/javascript">
 $(function(){
-   $("#findIdBtn").click(function() {
-	   $("#frm").submit();
-   })
+   
+   //답변 완료 상태 시 수정 및 삭제 버튼 숨기기
+   <c:if test="${not empty requestScope.answer}">
+   $("#updateBtn").hide();                 // 아니면 거절 사유 숨김
+   $("#deleteBtn").hide();                 // 아니면 거절 사유 숨김
+	</c:if>
+   
+	$("#updateBtn").click(function(){
+		
+		document.frm.action="inquiry_updt_frm.do";
+		
+		$("#frm").submit();
+		
+	});//click
+	
+	$("#deleteBtn").click(function(){
+		document.frm.action="inquiry_delete_frm.do";
+		$("#frm").submit();
+		
+	});//click
    
 });//ready
 </script>
-<script type="text/javascript">
-    
-    // 입력을 제한 할 특수문자의 정규식
-    var replaceId  = /[-]/gi;
-    
-    $(document).ready(function(){
-        
-        $("#phone").on("focusout", function() {
-            var x = $(this).val();
-            if (x.length > 0) {
-                if (x.match(replaceId)) {
-                   x = x.replace(replaceId, "");
-                }
-                $(this).val(x);
-            }
-        }).on("keyup", function() {
-            $(this).val($(this).val().replace(replaceId, ""));
 
-        });
-
-    });
- 
-</script>
 
 </head>
  <c:import url="/common/cdn/cdn.jsp" /> 
@@ -83,22 +80,36 @@ $(function(){
 		<div class="flex mx-auto max-w-[1280px] px-4 md:px-8 2xl:px-16 box-content">
 		<c:import url="http://localhost/retro_prj/common/cdn/mypage_sidebar.jsp" />
 		<div class="w-full flex-grow">
-
-<div style=" font-size: 35px; font-weight: bold; color: #333333;  margin-top: 30px; margin-bottom:10px ">1:1 문의내용</div>
+<form id="frm" name="frm" action="" method="post">
+<input type="hidden" value="${icode}" name="inquiryCode">
+<div style=" font-size:  25px; font-weight: bold; color: #333333;  margin-top: 30px; margin-bottom:10px ">1:1 문의내용</div>
 <hr style="border: solid 2px #000000; margin-top:10px; width: 100%; margin: 0px auto">
 
+<div style="margin-top: 30px"><span style="font-size: 18px">유형 : <c:out value="${type}"/> <br>상태 : <c:out value="${status eq 'Y'? '답변완료':'미답변'}"/></span></div>
+<div style="font-size: 13px;margin-top: 20px">문의 내용</div> <div style="font-size: 13px;margin-left: 660px; margin-top: -20px">문의일&nbsp;&nbsp;<c:out value="${askdate}"/></div>
+             
+ 
+<textarea name="context" style="width:780px; height:180px; resize: none; border: 1px solid #EEEEEE; margin-top: 10px; border-radius: 5px" maxlength="3000" rows="" cols=""><c:out value="${context}"/></textarea>
 
-            
-     
+<c:if test="${not empty answer}">
 
+		<div style="font-size: 13px;margin-top: 10px">답변 내용</div>
+       <textarea style="width:780px; height:180px; resize: none; border: 1px solid #EEEEEE; margin-top: 10px; border-radius: 5px" maxlength="200" rows="" cols=""><c:out value="${answer}"/></textarea>
+      </c:if> 
 
-            
+<div style="margin-top: 20px; margin-left: 800px" >
+ <input type="button" id="updateBtn" style="color:#FFFFFF; background-color:#333333; display:"  class="btn btn-dark" value="수정">
+ <input type="button" id="deleteBtn"  style="color:#FFFFFF; background-color:#333333;" class="btn btn-dark" value="삭제">
+  </div>
+  
+  <br>
            
 
 
-</table>
 
 
+
+</form>
 </div>
 </div>
 

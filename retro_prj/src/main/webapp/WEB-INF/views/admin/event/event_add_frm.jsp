@@ -288,6 +288,7 @@ function chkValue() {
 	var title = $("#evtTitle").val();
 	var subImg = $("#subImg").val();
 	var mainImg = $("#mainImg").val();
+	var context = $("#context").val();
 	
 	startDate = parseInt(startDate[0] + startDate[1] + startDate[2]);
 	endDate = parseInt(endDate[0] + endDate[1] + endDate[2]);
@@ -302,6 +303,10 @@ function chkValue() {
 		alert("제목을 입력해주세요.");
 		$("#evtTitle").focus();
 		return false;
+	}
+	
+	if(context.replace(/ /g,"") == ""){
+		$("#context").val("");
 	}
 	
 	if(subImg == ""){
@@ -367,7 +372,7 @@ function chkValue() {
 				<tr>
 					<th class="top_title">내용</th>
 					<td colspan="2">
-						<textarea style="width:100%; height:100px; margin: 7px 0px 5px 0px; padding:5px 10px; resize: none;" class="borderCss" name="context" placeholder="내용(선택)"></textarea>
+						<textarea style="width:100%; height:100px; margin: 7px 0px 5px 0px; padding:5px 10px; resize: none;" class="borderCss" name="context" id="context" placeholder="내용(선택)"></textarea>
 					</td>
 				</tr>
 				<tr>

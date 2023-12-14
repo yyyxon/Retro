@@ -74,7 +74,7 @@
 								</p>
 								
 								<!-- D-DAY -->
-								<c:if test="${ param.searchType eq 'ING' }">
+								<c:if test="${ param.searchType eq 'ING' or param.searchType eq '' or param.searchType eq null }">
 									<p class="text-jngreen">
 										D-${ event.dday }
 									</p>

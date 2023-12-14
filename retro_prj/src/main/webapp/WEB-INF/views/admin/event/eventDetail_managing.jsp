@@ -316,6 +316,7 @@ function chkValue() {
 	var title = $("#evtTitle").val();
 	var subImg = $("#thumSrc").val();
 	var mainImg = $("#mainSrc").val();
+	var context = $("#context").val();
 	
 	startDate = parseInt(startDate[0] + startDate[1] + startDate[2]);
 	endDate = parseInt(endDate[0] + endDate[1] + endDate[2]);
@@ -331,6 +332,10 @@ function chkValue() {
 		$("#evtTitle").val("");
 		$("#evtTitle").focus();
 		return false;
+	}
+	
+	if(context.replace(/ /g,"") == ""){
+		$("#context").val("");
 	}
 	
 	if(subImg == ""){
@@ -370,10 +375,11 @@ function chkValue() {
 		<div class="text" id="mainTitle">
 			<strong>이벤트 상세</strong>
 			<a href="http://localhost/retro_prj/event/detail.do?eventcode=${ param.eventcode }">
-				<svg style="margin-bottom: 5px" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
-  					<path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
-  					<path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
-				</svg>
+				<svg stroke="currentColor" fill="#5D5F63" stroke-width="0" viewBox="0 0 24 24" 
+				height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" 
+				style="color: white; width: 18px; height: 18px; margin-bottom:5px"><g>
+				<path fill="none" d="M0 0h24v24H0z"></path>
+				<path d="M10 3v2H5v14h14v-5h2v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h6zm7.586 2H13V3h8v8h-2V6.414l-7 7L10.586 12l7-7z"></path></g></svg>
 			</a>
 		</div>
 		
@@ -400,7 +406,7 @@ function chkValue() {
 				<tr>
 					<th class="top_title">내용</th>
 					<td colspan="2">
-						<textarea style="width:100%; height:100px; margin: 7px 0px 5px 0px; padding:5px 10px; resize: none;" class="borderCss" name="context" placeholder="내용(선택)">${ event.context }</textarea>
+						<textarea style="width:100%; height:100px; margin: 7px 0px 5px 0px; padding:5px 10px; resize: none;" class="borderCss" name="context" id="context" placeholder="내용(선택)">${ event.context }</textarea>
 					</td>
 				</tr>
 				<tr>

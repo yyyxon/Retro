@@ -36,7 +36,7 @@
 				<li class="last:border-none"><dt class="justify-center mt-0">찜</dt>
 					<dd id="wishDd" class="text-xl font-semibold text-jnblack"><c:out value="${userInfo.total_wish }"/></dd></li>
 				<li class="last:border-none"><dt class="justify-center mt-0">거래후기</dt>
-					<a href="#void"><dd id="hugiDd" class="text-xl font-semibold text-jnblack"><c:out value="${userInfo.total_buycomment }"/></dd></a></li>
+					<a href="user_buy_comment.do"><dd id="hugiDd" class="text-xl font-semibold text-jnblack"><c:out value="${userInfo.total_buycomment }"/></dd></a></li>
 			</ul>
 		</div>
 	</div>

@@ -38,7 +38,7 @@
 		<div class="w-full flex-grow">
 		
 <!-- 마이페이지 header -->
-<c:import url="http://localhost/retro_prj/common/cdn/mypage_info.jsp" />
+<c:import url="/common/cdn/mypage_info.jsp" />
 
 <!--  -->
 <div>
@@ -54,7 +54,7 @@
 					<svg width="16" height="18" viewBox="0 -2 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="css-wsqqvh">
 						<path d="M2.53333 14C2.53333 11.4227 5.42266 9.33333 7.99999 9.33333C10.5773 9.33333 13.4667 11.4227 13.4667 14M10.6667 4.66667C10.6667 6.13943 9.47275 7.33333 7.99999 7.33333C6.52723 7.33333 5.33333 6.13943 5.33333 4.66667C5.33333 3.19391 6.52723 2 7.99999 2C9.47275 2 10.6667 3.19391 10.6667 4.66667Z" stroke="#9CA3AF" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path>
 					</svg>
-					<p style="color: rgb(120, 126, 137);margin-left: 2px;">1</p>
+					<p style="color: rgb(120, 126, 137);margin-left: 2px;"><c:out value="${reiviewCnt.rOne }"/></p>
 				</div>
 			</div>
 			<br/>
@@ -66,7 +66,7 @@
 					<svg width="16" height="18" viewBox="0 -2 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="css-wsqqvh">
 						<path d="M2.53333 14C2.53333 11.4227 5.42266 9.33333 7.99999 9.33333C10.5773 9.33333 13.4667 11.4227 13.4667 14M10.6667 4.66667C10.6667 6.13943 9.47275 7.33333 7.99999 7.33333C6.52723 7.33333 5.33333 6.13943 5.33333 4.66667C5.33333 3.19391 6.52723 2 7.99999 2C9.47275 2 10.6667 3.19391 10.6667 4.66667Z" stroke="#9CA3AF" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path>
 					</svg>
-					<p style="color: rgb(120, 126, 137);margin-left: 2px;">1</p>
+					<p style="color: rgb(120, 126, 137);margin-left: 2px;"><c:out value="${reiviewCnt.rTwo }"/></p>
 				</div>
 			</div>
 			<br/>
@@ -78,19 +78,19 @@
 					<svg width="16" height="18" viewBox="0 -2 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="css-wsqqvh">
 						<path d="M2.53333 14C2.53333 11.4227 5.42266 9.33333 7.99999 9.33333C10.5773 9.33333 13.4667 11.4227 13.4667 14M10.6667 4.66667C10.6667 6.13943 9.47275 7.33333 7.99999 7.33333C6.52723 7.33333 5.33333 6.13943 5.33333 4.66667C5.33333 3.19391 6.52723 2 7.99999 2C9.47275 2 10.6667 3.19391 10.6667 4.66667Z" stroke="#9CA3AF" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path>
 					</svg>
-					<p style="color: rgb(120, 126, 137);margin-left: 2px;">1</p>
+					<p style="color: rgb(120, 126, 137);margin-left: 2px;"><c:out value="${reiviewCnt.rThree }"/></p>
 				</div>
 			</div>
 			<br/>
 		</li>
 		<li>
-			<div style="float: left;">택배 거래가 수월했어요.(포장, 협조적)</div>
+			<div style="float: left;">거래 시간을 잘 지켜요.</div>
 			<div style="float: right;">
 				<div style="min-width: 36px;max-width: 56px; display: flex;">
 					<svg width="16" height="18" viewBox="0 -2 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="css-wsqqvh">
 						<path d="M2.53333 14C2.53333 11.4227 5.42266 9.33333 7.99999 9.33333C10.5773 9.33333 13.4667 11.4227 13.4667 14M10.6667 4.66667C10.6667 6.13943 9.47275 7.33333 7.99999 7.33333C6.52723 7.33333 5.33333 6.13943 5.33333 4.66667C5.33333 3.19391 6.52723 2 7.99999 2C9.47275 2 10.6667 3.19391 10.6667 4.66667Z" stroke="#9CA3AF" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path>
 					</svg>
-					<p style="color: rgb(120, 126, 137);margin-left: 2px;">1</p>
+					<p style="color: rgb(120, 126, 137);margin-left: 2px;"><c:out value="${reiviewCnt.rFour }"/></p>
 				</div>
 			</div>
 		</li>
@@ -102,16 +102,33 @@
 	<strong>상세한 후기도 있어요</strong><span style="color: #0DCC5A;padding-left: 7px;">2</span>
 </div>
 <div id="div_s" style="width: 100%">
-	<table style="border: none">
-		<tr style="border: none">
-			<td style="border: none;text-align: left;width: 50px;">
-				<img src="https://img2.joongna.com/common/Profile/Default/profile_f.png" alt="id" width="42" height="42" referrerpolicy="no-referrer" class="css-sxxyvs" style="border-radius: 24px;">
-			</td>
-			<td style="border: none;text-align: left;max-width: 30px;padding-left: 20px;padding-right: 20px;padding-top: 15px;">idr5345345345</td>
-			<td style="border: none;padding: 15px 12px;background-color: rgb(241, 244, 246);border-radius: 8px;font-size: 14px;
-				line-height: 20px;color: rgb(20, 19, 19);text-align: left;word-break: break-all;min-width: 200px;max-width: 200px;">context</td>
-			<td style="border: none;text-align: left;padding-left: 20px;max-width: 40px;padding-top: 15px;">2023-12-12</td>
-		</tr>
+	<table style="border: none;border-collapse: separate;border-spacing: 0px 12px;">
+		<c:choose>
+			<c:when test="${not empty reiviews }">
+			<c:forEach var="reiview" items="${reiviews }">
+				<tr style="border: none;">
+					<td style="border: none;text-align: left;width: 50px;">
+						<img src="https://img2.joongna.com/common/Profile/Default/profile_f.png" alt="id" width="42" height="42" referrerpolicy="no-referrer" class="css-sxxyvs" style="border-radius: 24px;">
+					</td>
+					<td style="border: none;text-align: left;max-width: 30px;padding-left: 20px;padding-right: 20px;padding-top: 15px;font-size: 14px;">
+						<c:out value="${reiview.id }"/>
+					</td>
+					<td style="border: none;padding: 15px 12px;background-color: rgb(241, 244, 246);border-radius: 8px;font-size: 14px;
+						line-height: 20px;color: rgb(20, 19, 19);text-align: left;word-break: break-all;min-width: 200px;max-width: 200px;">
+						<c:out value="${reiview.context }"/>
+					</td>
+					<td style="border: none;text-align: left;padding-left: 20px;max-width: 40px;padding-top: 15px;font-size: 14px;">
+						<c:out value="${reiview.input_date }"/>
+					</td>
+				</tr>
+			</c:forEach>
+			</c:when>
+			<c:otherwise>
+				<tr>
+					<td colspan="4">작성된 후기가 없습니다.</td>
+				</tr>
+			</c:otherwise>
+		</c:choose>
 	</table>
 </div>
 <div style="margin-bottom: 150px;">

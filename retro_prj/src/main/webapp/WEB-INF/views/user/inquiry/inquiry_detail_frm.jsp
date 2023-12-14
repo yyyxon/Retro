@@ -34,6 +34,10 @@ a {
 }
 a:hover { color:#222222 }
 
+table, tr, td{
+ border:none;
+}
+
 
 </style>
 <script type="text/javascript">
@@ -74,25 +78,32 @@ $(function(){
  <jsp:include page="/common/cdn/header.jsp"/>
  
 <body>
-<c:import url="http://localhost/retro_prj/common/cdn/mypage_sidebar.jsp" />
-<form id="frm" action="find_id_process.do" method="post">
-<div style=" font-size: 35px; font-weight: bold; color: #333333; text-align: center; margin-top: 150px; margin-bottom: 30px ">아이디 찾기</div>
-<hr style="border: solid 1px #333333; paddin:20px; width: 450px; margin: 0px auto">
-<br>
-<div style="text-align: center">가입 시 등록한 휴대폰 번호와 이메일을 입력하면 <br>아이디의 일부를 알려드립니다.</div>
-<br><div id="Warn" style="text-align: center; font-weight: bold"><c:out value="${requestScope.msg }"/></div><br>
-<div style="text-align: center; margin-top: 70px" id="LoginWrap">
-<label style="margin-left: -380px">휴대폰 번호</label><br>
-<input type="text" id="phone" name="phone" placeholder="휴대폰번호를 입력해주세요" class="inputBox" maxlength="11" /> 
-<br>
-<label style="margin-left: -410px; margin-top: 50px">이메일</label><br>
-<input type="text" id="email" name="email" placeholder="이메일을 입력해주세요" class="inputBox" /> 
-<br>
-<input type="button"  style="margin-top:40px; border-radius: 12px; width:450px; height: 50px; font-family:Pretendard Variable;    color:#FFFFFF; background-color:#333333  " id="findIdBtn" name="findIdBtn" value="아이디 찾기" class="btn btn-dark"/>
+<main class="relative flex-grow border-b-2"
+		style="min-height: -webkit-fill-available; -webkit-overflow-scrolling: touch">
+		<div class="flex mx-auto max-w-[1280px] px-4 md:px-8 2xl:px-16 box-content">
+		<c:import url="http://localhost/retro_prj/common/cdn/mypage_sidebar.jsp" />
+		<div class="w-full flex-grow">
+
+<div style=" font-size: 35px; font-weight: bold; color: #333333;  margin-top: 30px; margin-bottom:10px ">1:1 문의내용</div>
+<hr style="border: solid 2px #000000; margin-top:10px; width: 100%; margin: 0px auto">
+
+
+            
+     
+
+
+            
+           
+
+
+</table>
+
 
 </div>
-</form>
-<div style="margin-top:300px"></div>
+</div>
+
+
+</main>
  <jsp:include page="/common/cdn/footer.jsp"/> 
 </body>
 </html>

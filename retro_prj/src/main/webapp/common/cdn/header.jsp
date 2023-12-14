@@ -209,10 +209,10 @@
 							</div>
 							<nav class="headerMenu flex w-full relative hidden lg:flex ps-3.5 xl:ps-5">
 								<div class="menuItem group cursor-pointer ">
-									<a class="relative inline-flex items-center px-3 py-3 text-sm font-normal xl:text-base text-heading xl:px-4 group-hover:text-black" href="/event/list?searchType=ING">이벤트</a>
+									<a class="relative inline-flex items-center px-3 py-3 text-sm font-normal xl:text-base text-heading xl:px-4 group-hover:text-black" href="http://localhost/retro_prj/event.do">이벤트</a>
 								</div>
 								<div class="menuItem group cursor-pointer ">
-									<a class="relative inline-flex items-center px-3 py-3 text-sm font-normal xl:text-base text-heading xl:px-4 group-hover:text-black" href="/fraud">사기조회</a>
+									<a class="relative inline-flex items-center px-3 py-3 text-sm font-normal xl:text-base text-heading xl:px-4 group-hover:text-black" href="http://localhost/retro_prj/fraud.do">사기조회</a>
 								</div>
 							</nav>
 						</div>

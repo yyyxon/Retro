@@ -45,6 +45,10 @@ body{
 	left : 60px;
 } 
 
+td {
+	cursor: pointer;
+}
+
 /* #background_box{
 overflow: auto;
 background-color:  #FFFFFF;

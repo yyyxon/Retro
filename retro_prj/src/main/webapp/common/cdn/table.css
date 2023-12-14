@@ -154,10 +154,6 @@ select:focus {
 	position: relative;
 }
 
-td {
-	cursor: pointer;
-}
-
 #btnChange{
   	left: 43.9%;
   	top: 680px;

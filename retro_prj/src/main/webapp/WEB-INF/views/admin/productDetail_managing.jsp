@@ -121,7 +121,7 @@ body{
 						상세 정보</label>
 					<div
 						style="position: absolute; top: 60px; left: 50px; width: 350px; height: 350px">
-						<img id="previewMainImg" src="../upload/img1.jpg"
+						<img id="previewMainImg" src="http://localhost/retro_prj/upload/${ productOne.img }"
 							style="width: 350px; height: 350px;" name="mainImg__div">
 							<!-- ../upload/${ productOne.img } -->
 					</div>

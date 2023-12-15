@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import kr.co.sist.user.service.sales.SalesService;
+import kr.co.sist.user.vo.sales.SalesVO;
 
 @Controller
 public class SalesController {
@@ -17,8 +18,16 @@ public class SalesController {
 	
 	@GetMapping("/user_sales_frm.do")
 	public String userSalesFrm(HttpSession session, Model model) {
-		model.addAttribute("saleList", sService.searchAllSales((String)session.getAttribute("id")));
+		return "user/user_mypage/user_sales_frm";
+	}
+	
+	@GetMapping("/user_sales.do")
+	public String userSalesProcess(HttpSession session, char flag, Model model) {
+		String id = (String)session.getAttribute("id");
+		SalesVO sVO = new SalesVO(id, flag);
 		
-		return "user_sales_frm";
+		model.addAttribute("saleList", sService.searchSales(sVO));
+		
+		return "user/user_mypage/user_sales_process";
 	}
 }

@@ -31,48 +31,33 @@
 </style>
 
 <script type="text/javascript">
+	let flag = 'A';
+
 	$(function() {
-		 $(document).on('click', function (event) {
-	         var orderBy = $("#orderBy");
-	         var orderByList = $("#orderByList");
-	         // 클릭된 영역이 selectBox 내부에 속하면 아무 동작하지 않음
-	         if (orderBy.is(event.target) || orderBy.has(event.target).length > 0) {
-	             return;
-	         }
-	         // 클릭된 영역이 selectOption 내부에 속하면 아무 동작하지 않음
-	         if (orderByList.is(event.target) || orderByList.has(event.target).length > 0) {
-	             return;
-	         }
-	         
-	         orderByList.hide();
-	     });
-		
-		
-		$("#orderBy").click(function() {
-			$("#orderByList").toggle();
-		});
-		
-		$("#dc").click(function() {
-			alert("눌림");
-			$.ajax({
-				uri: "purchase_t.do",
-				type: "post",
-				dataType: "JSON",
-				error: function(xhr){
-					alert(xhr.status);
-				},
-				success: function(jsonObj){
-					alert(jsonObj.dataSize);
-				}
-			});
-		});
-		
+		salesAjax(flag);
 	});//ready
 	
-	function purchaseDetail(val){
-		$("#pccode").val(val);
-		$("#hrdFrm").submit();
-	}
+function salesAjax(val) {
+	flag = val;
+	alert(flag);
+		
+	$.ajax({
+		url:"user_sales.do",
+		type:"GET",
+		data:{flag:flag},
+		dataType:"HTML",
+		error: function(xhr){
+			alert(xhr.status);
+		},
+		success: function(jsp){
+			$("#salesOutupt").html(jsp);
+		}
+	});
+}
+	
+function moveTo(val){
+	alert(val);
+}
 
 </script>
 
@@ -84,7 +69,7 @@
 		<div class="flex mx-auto max-w-[1280px] px-4 md:px-8 2xl:px-16 box-content">
 			<c:import url="http://localhost/retro_prj/common/cdn/mypage_sidebar.jsp" />
 			<div class="w-full flex-grow">
-				<c:import url="http://localhost/retro_prj/common/cdn/mypage_info.jsp" />
+				<c:import url="/common/cdn/mypage_info.jsp" />
 				<div class="px-0 max-lg:mt-10">
 					<div class="items-center justify-between block mb-4 md:flex lg:mb-7">
 						<div class="flex-shrink-0 mb-1 text-xs leading-4 text-body md:text-sm pe-4 md:me-6 lg:ps-2 lg:block">
@@ -92,13 +77,13 @@
 						<div class="flex flex-wrap items-center justify-between">
 							<div class="mr-0 lg:mr-4">
 								<ul class="colors flex flex-nowrap -me-3">
-									<li class="shrink-0 cursor-pointer rounded-full border border-gray-100  p-1 px-2 mr-1 sm:mr-3 flex justify-center items-center text-heading text-xs md:text-sm uppercase font-semibold transition duration-200 ease-in-out hover:border-black border-black">
+									<li id="all" onclick="salesAjax('A')" class="shrink-0 cursor-pointer rounded-full border border-gray-100  p-1 px-2 mr-1 sm:mr-3 flex justify-center items-center text-heading text-xs md:text-sm uppercase font-semibold transition duration-200 ease-in-out hover:border-black border-black">
 										전체
 									</li>
-									<li id="dc" class="shrink-0 cursor-pointer rounded-full border border-gray-100  p-1 px-2 mr-1 sm:mr-3 flex justify-center items-center text-heading text-xs md:text-sm uppercase font-semibold transition duration-200 ease-in-out hover:border-black">
+									<li id="on" onclick="salesAjax('O')" class="shrink-0 cursor-pointer rounded-full border border-gray-100  p-1 px-2 mr-1 sm:mr-3 flex justify-center items-center text-heading text-xs md:text-sm uppercase font-semibold transition duration-200 ease-in-out hover:border-black">
 										판매중
 									</li>
-									<li class="shrink-0 cursor-pointer rounded-full border border-gray-100  p-1 px-2 mr-1 sm:mr-3 flex justify-center items-center text-heading text-xs md:text-sm uppercase font-semibold transition duration-200 ease-in-out hover:border-black">
+									<li id="fin" onclick="salesAjax('F')" class="shrink-0 cursor-pointer rounded-full border border-gray-100  p-1 px-2 mr-1 sm:mr-3 flex justify-center items-center text-heading text-xs md:text-sm uppercase font-semibold transition duration-200 ease-in-out hover:border-black">
 										판매완료
 									</li>
 								</ul>
@@ -138,42 +123,8 @@
 					</div>
 
 					<!-- 판매내역 리스트 -->
-					<table style="border: none;margin-bottom: 280px;">
-						<thead>
-							<tr style="border: none;padding-bottom: 15px;">
-								<th style="padding: 10px;border: none;;width: 30px;max-width: 30px;"></th>
-								<th style="padding: 10px;border: none;;width: 180px;"></th>
-								<th style="border: none;width: 80px;max-width: 80px;font-size: 14px;color: #333;"><strong>가격</strong></th>
-								<th style="border: none;width: 40px;max-width: 40px;font-size: 14px;color: #333;"><strong>등록일</strong></th>
-								<th style="border: none;width: 40px;max-width: 40px;font-size: 14px;color: #333;"><strong>찜</strong></th>
-							</tr>
-						</thead>
-						<tbody>
-						<c:choose>
-							<c:when test="${empty saleList }">
-								<tr style="border: none;">
-									<td colspan="5" style="border: none;text-align: center;font-size: 14px;border-bottom: 1px solid #EDEDED;">조회 결과가 없습니다.</td>
-								</tr>
-							</c:when>
-							<c:otherwise>
-								<c:forEach var="prd" items="saleList">
-								<tr style="border: none;" onclick="moveTo('${prd.pcode }')">
-									<td style="border: none;width: 70px;max-width: 70px;border-bottom: 1px solid #EDEDED;"><img src="https://blog.kakaocdn.net/dn/tEMUl/btrDc6957nj/NwJoDw0EOapJNDSNRNZK8K/img.jpg" width="60" style="border-radius: 5px;"></td>
-									<td style="border: none;width: 120px;font-size: 14px;border-bottom: 1px solid #EDEDED;"><c:out value="${prd.pname }"/></td>
-									<td style="border: none;text-align: center;font-size: 14px;border-bottom: 1px solid #EDEDED;">
-										<fmt:formatNumber pattern="#,###,###,###" value="${prd.price }"/>
-									</td>
-									<td style="border: none;text-align: center;font-size: 14px;border-bottom: 1px solid #EDEDED;">
-										<fmt:formatDate pattern="yyyy-MM-dd" value="${prd.input_date }"/>
-									</td>
-									<td style="border: none;text-align: center;font-size: 14px;border-bottom: 1px solid #EDEDED;"><c:out value="${prd.wish }"/></td>
-								</tr>
-								</c:forEach>
-							</c:otherwise>
-						</c:choose>
-						</tbody>
-					</table>
-					<!-- 판매내역 리스트 끝 -->
+					<div id="salesOutupt"></div>
+					<!-- 판매내역 리스트 -->
 					
 						<div data-v-ef57988c="" class="v-portal" style="display: none;"></div>
 					</div>

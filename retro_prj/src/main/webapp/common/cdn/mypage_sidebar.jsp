@@ -5,7 +5,7 @@
 	<h3 class="mb-2 text-lg font-semibold" style="color:#222">쇼핑 정보</h3>
 	<ul>
 		<li onclick="javascript:location.href=''" style="color:#222">구매내역</li>
-		<li>판매내역</li>
+		<li onclick="http://localhost/retro_prj/user_sales_frm.do">판매내역</li>
 		<li>찜 목록</li>
 	</ul>
 	<h3 class="mb-2 text-lg font-semibold" style="color:#222">내 정보</h3>

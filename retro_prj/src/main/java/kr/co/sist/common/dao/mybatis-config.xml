@@ -53,6 +53,7 @@
     <mapper resource="kr/co/sist/user/dao/mapper/inquiryMapper.xml"/>
     <mapper resource="kr/co/sist/user/dao/mapper/reiview/reiviewMapper.xml"/>
     <mapper resource="kr/co/sist/user/dao/mapper/purchaseMapper.xml"/>
+    <mapper resource="kr/co/sist/user/dao/mapper/sales/salesMapper.xml"/>
     
   </mappers> 
 </configuration>

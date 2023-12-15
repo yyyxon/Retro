@@ -60,17 +60,15 @@ public class ProductService {
         return search;
     }//searchProduct
 
-    public JSONObject editProduct(ProductVO pVO) {
-        JSONObject editJsonObj = new JSONObject();
-        editJsonObj.put("resultData", false);
-        try {
-            int updateCnt = pDAO.updateProduct(pVO);
-            editJsonObj.put("resultData", true);
-        } catch (PersistenceException pe) {
-            pe.printStackTrace();
-            editJsonObj.put("error", pe.getMessage()); // 예외 메시지 추가
-        }//end catch
-        return editJsonObj;
+    public int editProduct(ProductVO pVO) {
+    	int editCnt= 0;
+		try {
+			editCnt=pDAO.updateProduct(pVO);
+		}catch(PersistenceException pe) {
+			pe.printStackTrace();
+		}//end catch
+		
+		return editCnt;
     }//editProduct
 
     public JSONObject editSaleok(String pcode) {

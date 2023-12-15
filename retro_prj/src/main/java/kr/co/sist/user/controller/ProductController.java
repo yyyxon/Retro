@@ -126,11 +126,10 @@ public class ProductController {
 	@RequestMapping("/user/product/product_detail.do")
 	public String productDetail(HttpServletRequest request, Model model,ProductVO pVO) {
 		
-		
 		String pcode=ps.getPcode();
 		pVO.setPcode(pcode);
 		pVO.setId("1011kiy111");
-				
+//		String pcode=request.getParameter("pcode");
 		ProductDomain userProduct=ps.searchProduct(pVO);
 		
 		model.addAttribute("userProduct",userProduct);
@@ -138,12 +137,86 @@ public class ProductController {
 		return "user/product/product_detail";
 	}//productDetail
 	
-	@ResponseBody
-	@RequestMapping("/user/product/productEdit.do")
-	public String productEdit(ProductVO pVO) {
+	/**
+	 * 상품 수정 페이지
+	 * @param request
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping("/user/product/product_edit.do")
+	public String productEditFrm(HttpServletRequest request, HttpSession session, Model model, ProductVO pVO) {
+
+	    String pcode = request.getParameter("pcode"); // URL에서 pcode를 받아옵니다.
+	    pVO.setPcode(pcode); // 받아온 pcode를 ProductVO에 설정합니다.
+
+	    ProductDomain userProduct = ps.searchProduct(pVO);
+	    model.addAttribute("userProduct", userProduct);
+
+	    return "user/product/product_edit";
+	}
+	
+	
+	@RequestMapping("/user/product/productEdit_register_ok.do")
+	public String productEdit(HttpSession session,HttpServletRequest request, Model model,ProductVO pVO)  {
 		
-		return ps.editProduct(pVO).toJSONString();
-	}//productDetail
+		File saveDir=new File("C:/Users/user/git/retro/retro_prj/src/main/webapp/upload");
+		
+		int maxSize=1024*1024*30; // 최대 파일 업로드 사이즈 30Mbyte
+		String pcode=null;
+		try {
+			MultipartRequest mr=new MultipartRequest(request, saveDir.getAbsolutePath(), 
+					maxSize, "UTF-8",new DefaultFileRenamePolicy());
+			
+			String pname=mr.getParameter("pname");
+			String context=mr.getParameter("context");
+			String img=mr.getFilesystemName("img");
+			int price=Integer.parseInt(mr.getParameter("price"));
+			String deliver=mr.getParameter("deliver");
+			String status=mr.getParameter("status");
+			String loc=mr.getParameter("loc");
+			String c3code=mr.getParameter("c3code");
+			String id = (String)session.getAttribute("id");
+			
+			
+//			System.out.println(img);
+			pVO.setPname(pname);
+			pVO.setContext(context);
+			pVO.setImg(img);
+			pVO.setPrice(price);
+			pVO.setDeliver(deliver);
+			pVO.setStatus(status);
+			pVO.setLoc(loc);
+			pVO.setC3code(c3code);
+			pVO.setId("1011kiy111");
+			ps.editProduct(pVO);
+
+	     // 파일을 원하는 위치에 저장
+//	        Enumeration<String> files = mr.getFileNames();
+//	        while (files.hasMoreElements()) {
+//	            String name = files.nextElement();
+//	            MultipartFile file = mr.getFile(name);
+//
+//	            // 각 업로드된 파일을 처리합니다.
+//	            String originalFileName = file.getOriginalFilename();
+//	            String fileExtension = originalFileName.substring(originalFileName.lastIndexOf("."));
+//	            String savedFileName = pcode + fileExtension;
+//
+//	            // 파일을 원하는 위치에 저장합니다.
+//	            File savedFile = new File(saveDir, savedFileName);
+//	            file.transferTo(savedFile);
+//	        }
+	       
+		} catch (IOException e) {
+			e.printStackTrace();
+		}//end catch
+		
+
+	    return "user/product/productEdit_register_ok";
+
+	}//productDetails
+	
+	
+	
 	
 	@ResponseBody
 	@RequestMapping("/user/product/productSaleEdit.do")

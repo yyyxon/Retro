@@ -2,21 +2,14 @@ package kr.co.sist.user.controller;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Enumeration;
-import java.util.Iterator;
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
@@ -38,17 +31,8 @@ public class ProductController {
 	@RequestMapping("/user/product/product_register.do")
 	public String productRegister(HttpServletRequest request, Model model) {
 		
-		
-		
 		return "user/product/product_register";
 	}//productRegister
-	
-//	@RequestMapping("/upload_process.do")
-//	public String upload(HttpServletRequest request, Model model) {
-//		
-//		
-//	}//productRegister
-	
 	
 	
 	/**
@@ -81,7 +65,6 @@ public class ProductController {
 			String c3code=mr.getParameter("c3code");
 			String id = (String)session.getAttribute("id");
 			
-			
 //			System.out.println(img);
 			pVO.setPname(pname);
 			pVO.setContext(context);
@@ -97,21 +80,6 @@ public class ProductController {
 			pVO.setId("1011kiy111");
 			ps.addProduct(pVO);
 
-	     // 파일을 원하는 위치에 저장
-//	        Enumeration<String> files = mr.getFileNames();
-//	        while (files.hasMoreElements()) {
-//	            String name = files.nextElement();
-//	            MultipartFile file = mr.getFile(name);
-//
-//	            // 각 업로드된 파일을 처리합니다.
-//	            String originalFileName = file.getOriginalFilename();
-//	            String fileExtension = originalFileName.substring(originalFileName.lastIndexOf("."));
-//	            String savedFileName = pcode + fileExtension;
-//
-//	            // 파일을 원하는 위치에 저장합니다.
-//	            File savedFile = new File(saveDir, savedFileName);
-//	            file.transferTo(savedFile);
-//	        }
 	       
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -132,7 +100,7 @@ public class ProductController {
 	@RequestMapping("/user/product/product_detail.do")
 	public String productDetail(HttpServletRequest request, HttpSession session,Model model,ProductVO pVO) {
 		String id = (String)session.getAttribute("id");
-	
+		
 		String pcode=ps.getPcode("1011kiy111");
 		pVO.setPcode(pcode);
 		pVO.setId("1011kiy111");

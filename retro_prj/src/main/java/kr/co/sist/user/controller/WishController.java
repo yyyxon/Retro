@@ -44,7 +44,6 @@ public class WishController {
 		String id = (String)session.getAttribute("id");
 		
 		brVO.setId("1011kiy111");
-//		String pcode=request.getParameter("pcode");
 		List<WishDomain> searchWishList=ws.searchWish(brVO);
 		int selectAllCnt=ws.searchWishCnt("1011kiy111");
 		
@@ -52,13 +51,14 @@ public class WishController {
 		model.addAttribute("selectAllCnt",selectAllCnt);
 		
 		return "user/product/wishList";
-	}//productDetail
+	}//WishList
+	
 	
 	@ResponseBody
 	@RequestMapping("/user/product/wishDelete.do")
 	public String wishDelete(String pcode) {
 		
 		return ws.cancelWish(pcode).toJSONString();
-	}//productDetail
+	}//wishDelete
 	
 }//class

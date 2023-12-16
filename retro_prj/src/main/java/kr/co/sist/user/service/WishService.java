@@ -38,20 +38,20 @@ public class WishService {
 	    		pe.printStackTrace();
 	        }//end catch
 	        return selectAllCnt;
-	    }//searchWish
+	    }//searchWishCnt
 	    
 	    public JSONObject addWish(WishVO wVO) {
 	        JSONObject addjsonObj = new JSONObject();
 	        addjsonObj.put("resultData", false);
 	        try {
-	            int deleteCnt = wDAO.insertWish(wVO);
+	            int insertCnt = wDAO.insertWish(wVO);
 	            addjsonObj.put("resultData", true);
 	        } catch (PersistenceException pe) {
 	            pe.printStackTrace();
 	            addjsonObj.put("error", pe.getMessage()); // 예외 메시지 추가
 	        }//end catch
 	        return addjsonObj;
-	    }//addProduct
+	    }//addWish
 	    
 	    
 	    /**
@@ -85,15 +85,14 @@ public class WishService {
 	                deletejsonObj.put("resultData", true);
 	            } else {
 	                deletejsonObj.put("resultData", false);
-	            }
+	            }//end else
 	            
 	        } catch (PersistenceException pe) {
 	            pe.printStackTrace();
 	            deletejsonObj.put("error", pe.getMessage()); // 예외 메시지 추가
 	        }//end catch
 	        return deletejsonObj;
-	    }//cancelProduct
-	    
+	    }//cancelWish
 	    
 	    
 }//class

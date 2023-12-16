@@ -44,7 +44,7 @@ public class WishDAO {
 	        mbh.closeHandler(ss);
 	    }//finally
 		return selectAllCnt;
-	}// selectCategory
+	}// selectWishCnt
 	
 	
 	/**
@@ -69,7 +69,7 @@ public class WishDAO {
 	        mbh.closeHandler(ss);
 	    }//finally
 		return insertCnt;
-	}// selectCategory
+	}// insertWish
 	
 	/**
 	 * 찜 리스트 전체 조회
@@ -88,7 +88,7 @@ public class WishDAO {
 		mbh.closeHandler(ss);
 
 		return allWishList;
-	}// selectProduct
+	}// selectAllWish
 	
 	public int deleteWish(String pcode) throws PersistenceException {
 	    int deleteCnt=0;
@@ -97,19 +97,16 @@ public class WishDAO {
 	    SqlSession ss = mbh.getMyBatisHandler(configPath, false);
 	    try {
 	        deleteCnt = ss.delete("user.wish.deleteWish", pcode);
-	        System.out.println(deleteCnt);
 	        if (deleteCnt == 1) {
 	            ss.commit();
-	            System.out.println("커밋됨");
 	        } else {
 	            ss.rollback();
-	            System.out.println("롤백됨");
 	        }//end else
 	    } finally {
 	        mbh.closeHandler(ss);
 	    }//end finally
 	    return deleteCnt;
-	}//deleteProduct
+	}//deleteWish
 	
 //	public static void main (String[] args) {
 //		WishDAO wdd=WishDAO.getInstance();

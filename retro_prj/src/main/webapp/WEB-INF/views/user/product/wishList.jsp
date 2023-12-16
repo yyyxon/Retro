@@ -31,6 +31,9 @@
     right: 0;
 }
 
+  #deleteBtn:hover {
+    cursor: pointer; /* 버튼 위에 마우스를 올릴 때 손가락 모양으로 변경 */
+  }
 </style>
 <script type="text/javascript">
 	$(function() {
@@ -59,6 +62,7 @@
 				},
 				success : function(jsonObj) {
 					alert("삭제 완료되었습니다.");
+					location.reload()
 					/* location.href=""; 사용자 메인으로 이동 */
 				}//success
 			});//ajax
@@ -86,7 +90,7 @@
 						<!-- 상품 정보 -->
 						<div id="productDiv" onclick="">
 						<div data-v-ef57988c="">
-							<div data-v-6e1f328e="" data-v-ef57988c="">
+							<div data-v-6e1f328e="" data-v-ef57988c="" >
 								<div data-v-6e1f328e="" class="purchase_list_display_item" style="background-color: rgb(255, 255, 255);">
 									<div data-v-6e1f328e="" class="purchase_list_product">
 									
@@ -120,7 +124,7 @@
 
 										<!-- 삭제 -->
 										<div data-v-6e1f328e="" class="list_item_column column_last">
-											<input type="button" class="btnStyle" value="삭제하기" id="deleteBtn" onclick="deleteWish('${ wl.pcode }')" style="margin-left: 60px" />
+											<input type="button" class="btnStyle" value="삭제하기" id="deleteBtn" onclick="deleteWish('${ wl.pcode }')" style="margin-left: 60px;" />
 										</div>
 										<!---->
 									</div>

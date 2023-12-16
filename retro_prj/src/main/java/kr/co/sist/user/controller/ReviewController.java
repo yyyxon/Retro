@@ -18,6 +18,8 @@ public class ReviewController {
 	
 	@PostMapping("/purchase_review_write_prc.do")
 	public String addBuyComment(@RequestParam(required = true, defaultValue = "1")String comment1, String[] comment2) {
+		System.out.println(comment2[0]);
+		System.out.println(comment2[1]);
 		return "/user/review/review_complete";
 	}
 	

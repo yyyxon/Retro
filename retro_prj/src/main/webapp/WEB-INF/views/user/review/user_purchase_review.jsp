@@ -146,7 +146,23 @@ textarea:focus {
 	}
 	
 	function comment2(value){
-		$("#"+value).attr('checked','checked');
+/* 		$("#"+value).attr('checked','checked');
+		document.getElementById("reviewBtn").disabled = false;
+		 */
+		    // 주어진 ID를 가진 체크박스의 상태를 토글
+		    $("#" + value).prop('checked', function(_, currentChecked) {
+		        // 현재 체크된 상태와 반대로 설정하여 토글
+		        return !currentChecked;
+		    });
+
+		    // 네 개의 체크박스 중 하나라도 체크된 경우
+		    if ($("#checkKind").prop('checked') || $("#checkSpeed").prop('checked') || $("#checkTime").prop('checked') || $("#checkComfort").prop('checked')) {
+		        // reviewBtn을 활성화
+		        document.getElementById("reviewBtn").disabled = false;
+		    } else {
+		        // 모든 체크박스가 체크 해제된 경우 reviewBtn을 비활성화
+		        document.getElementById("reviewBtn").disabled = true;
+		    }
 	}
 	
 </script>
@@ -337,7 +353,7 @@ textarea:focus {
 				</div>
 				
 				<div class="css-1nenfkg">
-					<input type="button" class="css-12uwwjm" id="reviewBtn" value="후기 등록"/>
+					<input type="button" class="css-12uwwjm" id="reviewBtn" value="후기 등록" disabled="disabled"/>
 				</div>
 				
 			</main>

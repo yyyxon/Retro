@@ -41,16 +41,22 @@ public class MyPurchaseController {
 	}
 
 	@GetMapping("/my/purchase/detail.do")
-	public String purchaseDetail(HttpSession session, String code, String table, Model model) {
-		if("buy".equals(table)) {
+	public String purchaseDetail(HttpSession session, String code, Model model) {
+		if(code.startsWith("B")){
 			model.addAttribute("purchase", mps.searchBuyDetail(code));
 		}
 		
-		if("safe".equals(table)) {
+		if(code.startsWith("S")){
 			model.addAttribute("purchase", mps.searchPayDetail(code));
 		}
 		
 		return "/user/user_mypage/user_purchase_detail";
+	}
+	
+	@ResponseBody
+	@PostMapping("/my/purchase_cancel.do")
+	public String purchaseCancel(HttpSession session, String code) {
+		return mps.cancelBuy(code).toJSONString();
 	}
 
 }

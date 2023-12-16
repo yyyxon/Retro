@@ -201,7 +201,7 @@ textarea:focus {
 						
 						<div class="css-1vhc4hr">
 							<div class="item-wrap ">
-								<button type="button" id="bestBtn" onclick="comment1('best')">
+								<button type="button" id="bestBtn" onclick="comment1('1')">
 									<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="css-wsqqvh">
 										<g clip-path="url(#clip0_833_149965)">
 										<circle cx="30" cy="30" r="30" fill="#0DCC5A"></circle>
@@ -227,7 +227,7 @@ textarea:focus {
 							</div>
 							
 							<div class="item-wrap ">
-								<button type="button" id="goodBtn" onclick="comment1('good')">
+								<button type="button" id="goodBtn" onclick="comment1('2')">
 									<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="css-wsqqvh">
 										<g clip-path="url(#clip0_13404_51422)">
 										<circle cx="30" cy="30" r="29.25" fill="white"
@@ -249,7 +249,7 @@ textarea:focus {
 							</div>
 							
 							<div class="item-wrap ">
-								<button type="button" id="sosoBtn" onclick="comment1('soso')">
+								<button type="button" id="sosoBtn" onclick="comment1('3')">
 									<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="css-nn7eu2">
 										<g clip-path="url(#clip0_13404_51422)">
 										<circle cx="30" cy="30" r="29.25" fill="white"
@@ -272,15 +272,14 @@ textarea:focus {
 					</section>
 					<!---->
 					
-					<form id="hrdFrm">
+					<form id="hrdFrm" action="http://localhost/retro_prj/purchase_review_write_prc.do" method="POST">
 					<input type="hidden" id="comment1" name="comment1">
 					<!-- 상세 선택 -->
 					<section>
 						<ul class="css-1ovzr4f">
-						
 							<li>
 							<label for="sellerFeedback" id="sellerFeedback" onclick="comment2('checkKind')">
-							<input type="checkbox" id="checkKind" name="review_item" value="1">
+							<input type="checkbox" id="checkKind" name="comment2" value="1">
 								<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
 										xmlns="http://www.w3.org/2000/svg" class="css-1t3in5p">
 										<path fill-rule="evenodd" clip-rule="evenodd"
@@ -292,7 +291,7 @@ textarea:focus {
 							
 							<li>
 							<label for="replySpeedFeedback" id="replySpeedFeedback" onclick="comment2('checkSpeed')">
-							<input type="checkbox" id="checkSpeed" name="review_item" value="2">
+							<input type="checkbox" id="checkSpeed" name="comment2" value="2">
 								<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
 										xmlns="http://www.w3.org/2000/svg" class="css-1t3in5p">
 										<path fill-rule="evenodd" clip-rule="evenodd"
@@ -304,7 +303,7 @@ textarea:focus {
 							
 							<li>
 							<label for="descriptionMatchFeedback" id="comfortFeedback" onclick="comment2('checkComfort')">
-							<input type="checkbox" id="checkComfort" name="review_item" value="3">
+							<input type="checkbox" id="checkComfort" name="comment2" value="3">
 								<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
 										xmlns="http://www.w3.org/2000/svg" class="css-1t3in5p">
 										<path fill-rule="evenodd" clip-rule="evenodd"
@@ -316,7 +315,7 @@ textarea:focus {
 
 							<li>
 							<label for="descriptionMatchFeedback" id="timeFeedback" onclick="comment2('checkTime')">
-							<input type="checkbox" id="checkTime" name="review_item" value="4">
+							<input type="checkbox" id="checkTime" name="comment2" value="4">
 								<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
 										xmlns="http://www.w3.org/2000/svg" class="css-1t3in5p">
 										<path fill-rule="evenodd" clip-rule="evenodd"
@@ -331,7 +330,7 @@ textarea:focus {
 					
 					<div style="text-align: right">
 					<textarea id="reviewArea" name="reviewArea" oninput="lengthCnt()" placeholder="상세한 리뷰를 작성해주세요.(선택)"
-					style="width:100%; height: 170px;" ></textarea>
+					style="width:100%; height: 130px;" ></textarea>
 					<span id="lengthCnt">0</span>/300
 					</div>
 					</form>

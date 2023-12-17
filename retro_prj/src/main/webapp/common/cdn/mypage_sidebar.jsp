@@ -4,13 +4,13 @@
 	<h2 class="mb-3 text-xl font-semibold" style="color:#222">마이 페이지</h2>
 	<h3 class="mb-2 text-lg font-semibold" style="color:#222">쇼핑 정보</h3>
 	<ul>
-		<li onclick="javascript:location.href=''" style="color:#222">구매내역</li>
-		<li onclick="http://localhost/retro_prj/user_sales_frm.do">판매내역</li>
-		<li>찜 목록</li>
+		<li id="purLi"><a href="http://localhost/retro_prj/my/purchase.do">구매내역</a></li>
+		<li id="saleLi"><a href="http://localhost/retro_prj/user_sales_frm.do">판매내역</a></li>
+		<li id="wishLi">찜 목록</li>
 	</ul>
 	<h3 class="mb-2 text-lg font-semibold" style="color:#222">내 정보</h3>
 	<ul>
-		<li><a href="http://localhost/retro_prj/mypage_enter.do">정보 수정</a></li>
-		<li><a href="inquiry_frm.do">1:1 문의</a></li>
+		<li id="infoLi"><a href="http://localhost/retro_prj/mypage_enter.do">정보 수정</a></li>
+		<li id="inquiryLi"><a href="inquiry_frm.do">1:1 문의</a></li>
 	</ul>
 </div>

@@ -130,6 +130,10 @@ body {
 }
 /* 임태균이 만든 거 끝 */
 
+svg {
+	display: inline;
+}
+
 #left{
 	min-width: 240px;height: 100%;float: left;
 	padding: 0px;

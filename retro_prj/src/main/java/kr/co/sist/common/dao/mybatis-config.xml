@@ -17,6 +17,7 @@
 		<typeAlias type="kr.co.sist.user.domain.EventDomain" alias="ued"/>
 		<typeAlias type="kr.co.sist.user.domain.MyInquiryDomain" alias="mid"/>
 		<typeAlias type="kr.co.sist.user.vo.MyInquiryVO" alias="miVO"/>
+		<typeAlias type="kr.co.sist.user.domain.MyPurchaseDomain" alias="mpd"/>
 		
 		<!-- 인영 시작 -->
 		<typeAlias type="kr.co.sist.user.domain.ProductDomain" alias="pd"/>
@@ -55,6 +56,7 @@
     <mapper resource="kr/co/sist/user/dao/mapper/eventMapper.xml"/>
     <mapper resource="kr/co/sist/user/dao/mapper/inquiryMapper.xml"/>
     <mapper resource="kr/co/sist/user/dao/mapper/reiview/reiviewMapper.xml"/>
+    <mapper resource="kr/co/sist/user/dao/mapper/purchaseMapper.xml"/>
     
     <!-- 인영 mapper -->
     <mapper resource="kr/co/sist/admin/dao/mapper/adminProductMapper.xml"/>

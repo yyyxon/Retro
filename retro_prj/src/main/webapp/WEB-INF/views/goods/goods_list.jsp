@@ -168,35 +168,43 @@
 			</c:forEach>
 		</c:when>
 		
-	</c:choose>
-		</ul>
-			<div class="bottom-0 py-3 m-auto text-center bg-white">
-				<ul class="flex justify-center space-x-2 space-x-reverse">
-					<li class="w-4 mr-2"><a class="items-center hidden h-full"
-						href="/search?category=1050&amp;page=0"><svg
-								stroke="currentColor" fill="currentColor" stroke-width="0"
-								viewBox="0 0 24 24" height="1em" width="1em"
-								xmlns="http://www.w3.org/2000/svg">
-								<path d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"></path></svg></a></li>
-				
+</c:choose>
+	</ul>
+		<div class="bottom-0 py-3 m-auto text-center bg-white">
+			<ul class="flex justify-center space-x-2 space-x-reverse">
+			
+			<!-- 이전 페이지 링크 -->
+			<c:if test="${ pageVO.prev }">
+				<li class="w-4 mr-2"><a class="items-center h-full flex" 
+				href="goods_list1.do?category1=${ pageVO.category }&amp;page=${pageVO.pageNo - 1}">
+				<svg stroke="currentColor" fill="currentColor" stroke-width="0" 
+				viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+				<path d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"></path></svg></a>
+				</li>
+			</c:if>
+			
+			<!-- 페이지 번호 링크 -->
 				<c:forEach var="i" begin="1" end="${pageVO.totalPageNo}" step="1">     
-				
 					<li class="w-10 h-10 rounded-md shrink-0 bg-jngreen/80 text-white">
 					 <a class="block leading-10" href="goods_list1.do?category1=${pageVO.category}&amp;pageNo=${i}">${i}</a>
 					</li>
-					
 				</c:forEach>
-					
-					<li class="w-4 mr-2"><a class="items-center h-full flex"
-						href="/search?category=1050&amp;page=2"><svg
-								stroke="currentColor" fill="currentColor" stroke-width="0"
-								viewBox="0 0 24 24" height="1em" width="1em"
-								xmlns="http://www.w3.org/2000/svg">
-								<path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"></path></svg></a></li>
-				</ul>
-			</div>
+				
+			<!-- 다음 페이지 링크 -->
+			<c:if test="${ pageVO.next }">
+				<li class="w-4 mr-2">
+					<a class="items-center h-full flex" 
+					href="goods_list1.do?category1=${ pageVO.category }&amp;page=${pageVO.pageNo + 1}">
+					<svg stroke="currentColor" fill="currentColor" stroke-width="0" 
+					viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+					<path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"></path></svg>
+					</a>
+				</li>
+			</c:if>
+			</ul>
 		</div>
 	</div>
+</div>
 </body>
 <jsp:include page="/common/cdn/footer.jsp"/> 
 </html>

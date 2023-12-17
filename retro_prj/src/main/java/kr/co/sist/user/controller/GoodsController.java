@@ -35,7 +35,7 @@ public class GoodsController {
 		
 		List<GoodsDomain> list=null;
 //		list=gs.searchGoodsList1(category);
-		list=gs.searchGoodsList1(pageVO);
+		list=gs.searchGoodsList1Page(pageVO);
 		model.addAttribute("bigCate", list);
 		model.addAttribute("pageVO", pageVO);
 		
@@ -43,39 +43,55 @@ public class GoodsController {
 	}
 	
 	/**
-	 * 중분류 상품 조회
+	 * 중분류 상품 조회, 페이징처리
 	 * @param category
 	 * @param model
 	 * @return
 	 */
 	@GetMapping("/goods/goods_list2.do")
-	public String goodsList2(@RequestParam("category2") String category, Model model) {
-		System.out.println(category);
-		List<GoodsDomain> list=null;
-		list=gs.searchGoodsList2(category);
-		model.addAttribute("midCate", list);
+	public String goodsList2(@RequestParam("category2") String category, @RequestParam(required = false, defaultValue="1") Integer pageNo , Model model) {
+		PageVO pageVO = new PageVO(pageNo);
+//		System.out.println("================");
+//		System.out.println(pageVO);
+		pageVO.setCategory(category);
+		int totalCnt = gs.searchGoodsList2Cnt(pageVO);
+		pageVO.setTotalCnt(totalCnt);
 		
-		return "goods/goods_list";
+		List<GoodsDomain> list=null;
+//		list=gs.searchGoodsList2(category);
+		list=gs.searchGoodsList2Page(pageVO);
+		model.addAttribute("midCate", list);
+		model.addAttribute("pageVO", pageVO);
+		
+		return "goods/goods_list2";
 	}
 	
 	/**
-	 * 소분류 상품 조회
+	 * 소분류 상품 조회, 페이징처리
 	 * @param category
 	 * @param model
 	 * @return
 	 */
 	@GetMapping("/goods/goods_list3.do")
-	public String goodsList3(@RequestParam("category3") String category, Model model) {
+	public String goodsList3(@RequestParam("category3") String category, @RequestParam(required = false, defaultValue="1") Integer pageNo, Model model) {
+		PageVO pageVO = new PageVO(pageNo);
+		System.out.println("===============");
+		System.out.println(pageVO);
+		pageVO.setCategory(category);
+		int totalCnt = gs.searchGoodsList3Cnt(pageVO);
+		pageVO.setTotalCnt(totalCnt);
 		
 		List<GoodsDomain> list=null;
-		list=gs.searchGoodsList3(category);
+//		list=gs.searchGoodsList3(category);
+		list=gs.searchGoodsList3Page(pageVO);
 		model.addAttribute("smallCate", list);
+		model.addAttribute("pageVO", pageVO);
 		
-		return "goods/goods_list";
+		return "goods/goods_list3";
 	}
 	
 	/**
-	 * 상품 검색, 페이징처리
+	 * 상품 검색창, 페이징처리
 	 * @param category
 	 * @param model
 	 * @return

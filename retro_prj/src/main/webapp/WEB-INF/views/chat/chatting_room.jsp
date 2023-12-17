@@ -160,7 +160,7 @@ function sendMsgFromRight() {
 						<div class="col-md-3">
 							<div class="chatLeft p-2 border rounded chatperson">
 								<img src="https://blog.gentrop.com/hubfs/perfil-gaspar.png" alt="avatar">
-								<h5>임태균</h5>
+								<h5>닉네임</h5>
 								<small class="text-muted">판매자</small>
 								<div class="chatinput">
 									<input class="my-2 border rounded-pill w-100 form-control chatInput" placeholder="Type here..." id="updateLeft">
@@ -176,7 +176,7 @@ function sendMsgFromRight() {
 						<div class="col-md-3">
 							<div class="chatRight border p-2 rounded chatperson">
 								<img src="https://imgur.com/7Lht9zY.png" alt="avatar">
-								<h5>이승우</h5>
+								<h5>닉네임2</h5>
 								<small class="text-muted">구매자</small>
 								<div class="chatinput">
 									<input class="my-2 border rounded-pill w-100 form-control chatInput" placeholder="Type here..." id="updateRight">
@@ -187,7 +187,6 @@ function sendMsgFromRight() {
 					</div>
 				</div>
 			</div>
-
 		</div>
 	</div>
 </div>

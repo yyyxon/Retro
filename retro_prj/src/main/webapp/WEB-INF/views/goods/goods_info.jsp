@@ -70,10 +70,9 @@ $(document).ready(function () {
 				<div class="swiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden" dir="ltr">
 					
 					<div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px);">
-						
 						<div class="swiper-slide swiper-slide-active" style="width: 503px;">
 							<div class="col-span-1 transition duration-150 ease-in hover:opacity-90 w-full relative pt-[100%]">
-								<img alt="나이키 티셔츠-0" referrerpolicy="no-referrer"
+								<img alt="상품이미지-0" referrerpolicy="no-referrer"
 									src="http://localhost/retro_prj/common/goods_img/sample.png"
 									decoding="async" data-nimg="fill"
 									class="object-cover w-full h-full rounded-lg top-1/2 left-1/2"
@@ -83,7 +82,7 @@ $(document).ready(function () {
 						</div>
 						<div class="swiper-slide swiper-slide-next" style="width: 503px;">
 							<div class="col-span-1 transition duration-150 ease-in hover:opacity-90 w-full relative pt-[100%]">
-								<img alt="나이키 티셔츠-1" referrerpolicy="no-referrer"
+								<img alt="상품이미지-1" referrerpolicy="no-referrer"
 									src="http://localhost/retro_prj/common/goods_img/sample2.png"
 									decoding="async" data-nimg="fill"
 									class="object-cover w-full h-full rounded-lg top-1/2 left-1/2"
@@ -93,7 +92,7 @@ $(document).ready(function () {
 						</div>
 						 <div class="swiper-slide" style="width: 503px;">
 							<div class="col-span-1 transition duration-150 ease-in hover:opacity-90 w-full relative pt-[100%]">
-								<img alt="나이키 티셔츠-2" referrerpolicy="no-referrer"
+								<img alt="상품이미지-2" referrerpolicy="no-referrer"
 									src="http://localhost/retro_prj/common/goods_img/sample3.png"
 									decoding="async" data-nimg="fill"
 									class="object-cover w-full h-full rounded-lg top-1/2 left-1/2"
@@ -103,7 +102,7 @@ $(document).ready(function () {
 						</div>
 						<div class="swiper-slide" style="width: 503px;">
 							<div class="col-span-1 transition duration-150 ease-in hover:opacity-90 w-full relative pt-[100%]">
-								<img alt="나이키 티셔츠-3" referrerpolicy="no-referrer"
+								<img alt="상품이미지-3" referrerpolicy="no-referrer"
 									src="http://localhost/retro_prj/common/goods_img/sample4.png"
 									decoding="async" data-nimg="fill"
 									class="object-cover w-full h-full rounded-lg top-1/2 left-1/2"
@@ -113,7 +112,7 @@ $(document).ready(function () {
 						</div>
 						<div class="swiper-slide" style="width: 503px;">
 							<div class="col-span-1 transition duration-150 ease-in hover:opacity-90 w-full relative pt-[100%]">
-								<img alt="나이키 티셔츠-4" referrerpolicy="no-referrer"
+								<img alt="상품이미지-4" referrerpolicy="no-referrer"
 									src="http://localhost/retro_prj/common/goods_img/sample5.png"
 									decoding="async" data-nimg="fill"
 									class="object-cover w-full h-full rounded-lg top-1/2 left-1/2"
@@ -164,17 +163,17 @@ $(document).ready(function () {
 								class="text-sm mx-2.5 leading-5 text-body min-[480px]:px-1 max-[480px]:px-0">&gt;</li>
 							<li
 								class="flex-shrink-0 px-0 text-sm break-all transition duration-200 ease-in text-body first:ps-0 last:pe-0 hover:text-heading"><a
-								class="capitalize" href="/search?category=2">패션의류</a></li>
+								class="capitalize" href="/retro_prj/goods/goods_list1.do?category1=C">패션의류</a></li>
 							<li
 								class="text-sm mx-2.5 leading-5 text-body min-[480px]:px-1 max-[480px]:px-0">&gt;</li>
 							<li
 								class="flex-shrink-0 px-0 text-sm break-all transition duration-200 ease-in text-body first:ps-0 last:pe-0 hover:text-heading"><a
-								class="capitalize" href="/search?category=112">남성의류</a></li>
+								class="capitalize" href="/retro_prj/goods/goods_list2.do?category2=C1">여성의류</a></li>
 							<li
 								class="text-sm mx-2.5 leading-5 text-body min-[480px]:px-1 max-[480px]:px-0">&gt;</li>
 							<li
 								class="flex-shrink-0 px-0 text-sm break-all transition duration-200 ease-in text-body first:ps-0 last:pe-0 hover:text-heading"><a
-								class="capitalize" href="/search?category=1064">정장</a></li>
+								class="capitalize" href="/retro_prj/goods/goods_list3.do?category3=C101">티셔츠/캐주얼의류</a></li>
 						</ol>
 					</div>
 				</div>
@@ -314,10 +313,10 @@ $(document).ready(function () {
 				</div>
 				<div class="lg:ml-4">
 					<div class="flex justify-between mt-2 text-[#0CB650] font-medium">
-						<strong>신뢰지수 1000</strong><span class="text-jnGray-500 text-sm">1,000</span>
+						<strong>신뢰지수 0</strong><span class="text-jnGray-500 text-sm">1000</span>
 					</div>
 					<div class="w-full h-1.5 bg-[#CCF4DC] rounded overflow-hidden">
-						<div class="h-full rounded bg-[#0DCC5A]" style="width: 100%;"></div>
+						<div class="h-full rounded bg-[#0DCC5A]" style="width: 0%;"></div>
 					</div>
 				</div>
 			</div>

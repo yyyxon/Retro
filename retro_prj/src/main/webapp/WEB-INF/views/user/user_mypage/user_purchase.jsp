@@ -111,7 +111,7 @@
 	function purchaseWrite(code) {
 		var frm = $("#hrdFrm")[0];
 		frm.action = "http://localhost/retro_prj/purchase_review_write.do";
-		//frm.method = "POST";
+		frm.method = "POST";
 		$("#code").val(code);
 		$("#hrdFrm").submit();
 	}

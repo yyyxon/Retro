@@ -17,7 +17,7 @@ public class ReviewController {
 	@Autowired
 	private PurchaseReviewService prs;
 	
-	@GetMapping("/purchase_review_write.do")
+	@PostMapping("/purchase_review_write.do")
 	public String buyCommentFrm(String code, Model model) {
 		model.addAttribute("info",prs.searchPurchaseInfo(code));
 		return "/user/review/user_purchase_review";

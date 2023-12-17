@@ -215,7 +215,7 @@ textarea:focus {
 					<section class="css-1y8gct2">
 						<div>
 							<h3>
-								${ info.nickname }님과의<br>거래는 어떠셨나요?
+								${ info.nickname }님과의 거래는 어떠셨나요?
 							</h3>
 						</div>
 						

@@ -216,10 +216,15 @@
 		$("#registerBtn").click(function() {
 
 			var formData = new FormData($("#regiFrm")[0]);
+			
+			if(mainImg == ""){
+				alert("이미지를 최소 한 개 이상 선택해주세요.");
+			}
 
 			if ($("#productTitle").val() === '') {
 				$("#pnameErr").css('display', 'block');
 				alert("상품명을 입력해주세요");
+				$("#productTitle").focus();
 				return; // locInput이 비어있으면 처리 중단
 			} else {
 				$("#pnameErr").css('display', 'none');
@@ -228,6 +233,7 @@
 			if ($("#productPrice").val() === '') {
 				$("#priceNErr").css('display', 'block');
 				alert("가격을 입력해주세요");
+				$("#productPrice").focus();
 				return; // locInput이 비어있으면 처리 중단
 			} else {
 				$("#priceNErr").css('display', 'none');
@@ -237,6 +243,7 @@
 			if ($("#productDescription").val() === '') {
 				$("#contextErr").css('display', 'block');
 				alert("상품 상세정보를 입력해주세요");
+				$("#productDescription").focus();
 				return; // locInput이 비어있으면 처리 중단
 			} else {
 				$("#contextErr").css('display', 'none');
@@ -247,6 +254,7 @@
 				if ($("#locInputBox").val() === '') {
 					$("#locErr").css('display', 'block');
 					alert("희망지역을 입력해주세요");
+					$("#locInputBox").focus();
 					return; // locInput이 비어있으면 처리 중단
 				} else {
 					$("#locErr").css('display', 'none');

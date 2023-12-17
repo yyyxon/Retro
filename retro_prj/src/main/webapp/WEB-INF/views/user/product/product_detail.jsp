@@ -78,7 +78,10 @@
 		});//click
 
 		$("#sendComment").click(function() {
-			location.href = "../review/user_sales_review.do";
+			var frm = $("#hrdFrm")[0];
+			frm.action = "http://localhost/retro_prj/sales_review_write.do";
+			frm.method = "POST";
+			$("#hrdFrm").submit();
 			
 			/*  var pcode = "${userProduct.pcode}";
 			    prductSaleOk(pcode); */
@@ -605,7 +608,11 @@
 			</div>
 		</div>
 
-
+	
+		<form id="hrdFrm" action="/retro_prj/user/review/user_sales_review" method="post">
+			<input type="hidden" id="comment1" name="comment1" value="1">
+			<input type="hidden" id="code" name="code" value="${ userProduct.pcode }">
+						
 		<!-- '상태변경' 버튼 클릭 후 '판매완료' 클릭 시 나오는 모달  -->
 		<!-- 거래 상대 선택 및 판매 후기 작성 모달 -->
 		<div id="completeModalBg" class="completeModal-bg"
@@ -622,6 +629,7 @@
 								class="block font-semibold text-xl text-center text-jnGray-900">
 								거래한 상대를 선택하고 <br>후기를 작성해보세요.
 							</p>
+							<c:forEach var="info" items="${ AllCominfo }" varStatus="i">
 							<ul class="w-full mt-4 px-4 overflow-y-scroll">
 								<li class="flex items-center justify-between mb-1"><div
 										class="flex items-center">
@@ -630,18 +638,19 @@
 											width="50" height="50" decoding="async" data-nimg="1"
 											class="rounded-full max-w-none h-[50px] mr-3" loading="lazy"
 											style="color: transparent;">
+											
 										<div>
-											<p class="mb-0 text-start">중고나라#8626590</p>
-											<p
-												class="text-start text-sm text-jnGray-700 w-full line-clamp-1">제가
-												아니면 안돼요</p>
+											<p class="mb-0 text-start">${ info.buyerNick }</p>
 										</div>
+											<!-- <p
+												class="text-start text-sm text-jnGray-700 w-full line-clamp-1">제가
+												아니면 안돼요</p> -->
 									</div> <label for="1424385_8626376_8626376" class="flex items-end"><input
-										type="radio" id="1424385_8626376_8626376"
-										name="myProductBuyer"
+										type="radio" id="1424385_8626376_8626376" name="buyerId" value="${ info.buyerId }"
 										class="appearance-none rounded-full w-5 h-5 border-1.5 border-solid border-jnGray-500 transition-all duration-100 ease-linear mx-1.5 cursor-pointer checked:border-6 checked:border-jngreen"
 										value="8626376"></label></li>
 							</ul>
+						</c:forEach>
 						</div>
 					</div>
 					<div class="flex space-x-2 w-full shrink-0 text text-base h-[52px]">
@@ -654,6 +663,7 @@
 				</div>
 			</div>
 		</div>
+		</form>
 		<!-- <div class="Toastify"></div> -->
 	</main>
 	<!-- footer -->

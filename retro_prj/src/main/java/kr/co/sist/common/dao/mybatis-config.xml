@@ -21,6 +21,7 @@
 		<typeAlias type="kr.co.sist.user.domain.MyPurchaseDomain" alias="mpd"/>
 		
 		<!-- 인영 시작 -->
+		<typeAlias type="kr.co.sist.user.domain.MySalesDomain" alias="msd"/>
 		<typeAlias type="kr.co.sist.user.domain.ProductDomain" alias="pd"/>
 		<typeAlias type="kr.co.sist.user.domain.WishDomain" alias="wd"/>
 		<typeAlias type="kr.co.sist.user.vo.ProductVO" alias="pVO"/>
@@ -66,6 +67,7 @@
     <mapper resource="kr/co/sist/user/dao/mapper/productMapper.xml"/>
     <mapper resource="kr/co/sist/user/dao/mapper/wishMapper.xml"/>
     <mapper resource="kr/co/sist/user/dao/mapper/buyReceiptMapper.xml"/>
+    <mapper resource="kr/co/sist/user/dao/mapper/reiview/salesReviewMapper.xml"/>
     <!-- 인영 mapper 끝-->
   </mappers> 
 </configuration>

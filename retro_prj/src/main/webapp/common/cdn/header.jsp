@@ -16,7 +16,7 @@
 						</div>
 						<div class="relative hidden w-1/2 ms-7 me-7 xl:ms-9 lg:block" style="margin-top:15px">
 							<div class="relative flex items-center justify-between w-full rounded-md bg-borderBottom">
-								<form id="searchForm" action="/retro_prj/goods/goods_search_by_text.do" class="w-full" novalidate="" role="search">
+								<form id="searchForm" action="/retro_prj/user/goods/goods_search_by_text.do" class="w-full" novalidate="" role="search">
 									<label for="search" class="flex items-center justify-between">
 									<span class="absolute top-0 left-0 flex items-center justify-center flex-shrink-0 w-12 h-full cursor-pointer md:w-14 focus:outline-none"><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-[16px] h-[16px] text-heading">
 										<path d="M10.0278 19.0556C14.3233 19.0556 17.8056 15.5733 17.8056 11.2778C17.8056 6.98223 14.3233 3.5 10.0278 3.5C5.73223 3.5 2.25 6.98223 2.25 11.2778C2.25 15.5733 5.73223 19.0556 10.0278 19.0556Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="transparent"></path>

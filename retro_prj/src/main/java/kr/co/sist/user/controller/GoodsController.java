@@ -24,7 +24,7 @@ public class GoodsController {
 	 * @param model
 	 * @return
 	 */
-	@GetMapping("/goods/goods_list1.do")
+	@GetMapping("user/goods/goods_list1.do")
 	public String goodsList1(@RequestParam("category1") String category, @RequestParam(required = false, defaultValue="1") Integer pageNo, Model model) {
 		PageVO pageVO = new PageVO(pageNo);
 //		System.out.println("==========================");
@@ -39,7 +39,7 @@ public class GoodsController {
 		model.addAttribute("bigCate", list);
 		model.addAttribute("pageVO", pageVO);
 		
-		return "goods/goods_list";
+		return "user/goods/goods_list";
 	}
 	
 	/**
@@ -48,7 +48,7 @@ public class GoodsController {
 	 * @param model
 	 * @return
 	 */
-	@GetMapping("/goods/goods_list2.do")
+	@GetMapping("user/goods/goods_list2.do")
 	public String goodsList2(@RequestParam("category2") String category, @RequestParam(required = false, defaultValue="1") Integer pageNo , Model model) {
 		PageVO pageVO = new PageVO(pageNo);
 //		System.out.println("================");
@@ -63,7 +63,7 @@ public class GoodsController {
 		model.addAttribute("midCate", list);
 		model.addAttribute("pageVO", pageVO);
 		
-		return "goods/goods_list2";
+		return "user/goods/goods_list2";
 	}
 	
 	/**
@@ -72,7 +72,7 @@ public class GoodsController {
 	 * @param model
 	 * @return
 	 */
-	@GetMapping("/goods/goods_list3.do")
+	@GetMapping("user/goods/goods_list3.do")
 	public String goodsList3(@RequestParam("category3") String category, @RequestParam(required = false, defaultValue="1") Integer pageNo, Model model) {
 		PageVO pageVO = new PageVO(pageNo);
 		System.out.println("===============");
@@ -87,7 +87,7 @@ public class GoodsController {
 		model.addAttribute("smallCate", list);
 		model.addAttribute("pageVO", pageVO);
 		
-		return "goods/goods_list3";
+		return "user/goods/goods_list3";
 	}
 	
 	/**
@@ -96,7 +96,7 @@ public class GoodsController {
 	 * @param model
 	 * @return
 	 */
-	@GetMapping("/goods/goods_search_by_text.do")
+	@GetMapping("user/goods/goods_search_by_text.do")
 	public String goodsSearchByText(@RequestParam String searchText, @RequestParam(required = false, defaultValue="1") Integer pageNo, Model model) {
 		PageVO pageVO = new PageVO(pageNo);
 		pageVO.setSearchText(searchText);
@@ -109,11 +109,11 @@ public class GoodsController {
 		model.addAttribute("bigCate", list);
 		model.addAttribute("pageVO", pageVO);
 		
-		return "goods/goods_list_search";
+		return "user/goods/goods_list_search";
 	}
 	
 	
-	@GetMapping("/goods/goods_info.do")
+	@GetMapping("user/goods/goods_info.do")
 	public String goodsInfo(@RequestParam String pcode, Model model) {
 		
 		GoodsDomain gd=gs.searchGoodsDetail(pcode);
@@ -139,19 +139,19 @@ public class GoodsController {
 		model.addAttribute("level",gd.getCredit_level());
 		
 		
-		return "goods/goods_info";
+		return "user/goods/goods_info";
 	}
 	
 	
 	
-	@GetMapping("/seller/seller_info.do")
+	@GetMapping("user/seller/seller_info.do")
 	public String sellerInfo() {
-		return "seller/seller_info";
+		return "user/seller/seller_info";
 	}
 
-	@GetMapping("/seller/seller_review.do")
+	@GetMapping("user/seller/seller_review.do")
 	public String sellerReview() {
-		return "seller/seller_review";
+		return "user/seller/seller_review";
 	}
 	
 	

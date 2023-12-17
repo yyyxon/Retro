@@ -583,7 +583,7 @@
 					<div class="relative flex gap-4 px-5 py-3">
 						<input type="button" id="registerBtn"
 							class="text-[13px] md:text-sm leading-4 inline-flex items-center cursor-pointer transition ease-in-out duration-300 font-semibold font-body text-center justify-center border-0 border-transparent placeholder-white focus-visible:outline-none focus:outline-none rounded-md bg-heading text-white px-5 md:px-6 lg:px-8 py-4 md:py-3.5 lg:py-4 hover:text-white hover:bg-gray-600 hover:shadow-cart w-[20%] break-keep"
-							style="margin-left: 590px;" value="등록" />
+							style="margin-left: 590px;" value="수정" />
 					</div>
 				</section>
 			</div>

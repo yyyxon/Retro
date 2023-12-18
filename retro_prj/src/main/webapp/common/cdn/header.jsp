@@ -108,7 +108,7 @@ $(function(){
 								<!-- 로그인 됐을 때만 작동하게 코드 추가해주숑  -->
 								<div style="left: 110px;position: absolute;display: none;" id="myPageDiv">
 									<ul class='absolute bg-white flex flex-col top-[30px] right-[5px] rounded-lg shadow-header [&amp;>li]:py-3 [&amp;>li]:mx-5 [&amp;>li]:border-b [&amp;>li]:border-jnGray-500 [&amp;>li:last-of-type]:border-b-0 text-sm font-normal'>
-									<li style='width: 64px;''><a href='/store/8626376'>마이 페이지</a></li>
+									<li style='width: 64px;''><a href="http://localhost/retro_prj/user_mypage_frm.do">마이 페이지</a></li>
 									<li ><a href="http://localhost/retro_prj/user/logout_process.do">로그아웃</a></li></ul>
 								</div>
 							</li>

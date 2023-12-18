@@ -180,31 +180,38 @@ function chkNull() {
 		<!---->
 		<div class="pagenationDiv">
     	<div class="pagination">
-    		<c:choose>
-    			<c:when test="${empty param.page }">
-    				<a href="user_list.do?page=1"><span class="active">1</span></a>
-    				<a href="user_list.do?page=1">2</a>
-    				<a href="user_list.do?page=1">3</a>
-    				<a href="user_list.do?page=1">4</a>
-    				<a href="user_list.do?page=1">5</a>
-    			</c:when>
-	    		<c:when test="${pageEnd != 1 }">
-	    			<c:forEach var="pn" begin="${pageStart }" end="${pageEnd }" step="1">
-		        		<a href="user_list.do?page=${pn }">
-		        			<c:choose>
-			    				<c:when test="${param.page == pn }">
-						        	<span class="active">${pn }</span>
-			    				</c:when>
-			    				<c:when test="${empty param.page }">
-			    					<span class="active">1</span>
-			    				</c:when>
-		        			</c:choose>
-	    				</a>
-	    			</c:forEach>
-	    		</c:when>
-    		</c:choose>
+    		<c:if test="${pageEnd != 1 }">
+	    		<c:choose>
+	    			<c:when test="${empty param.page }">
+	    				<c:forEach var="pn" begin="1" end="${pageEnd }" step="1">
+		    				<a href="admin_inquiry_frm.do?page=${pn }">
+		    				<c:if test="${pn == 1 }">
+			    				<span class="active">1</span>
+		    				</c:if>
+		    				<c:if test="${pn != 1 }">
+		    					${pn }
+		    				</c:if>
+		    				</a>
+	    				</c:forEach>
+	    			</c:when>
+		    		<c:when test="${pageEnd != 1 }">
+		    			<c:forEach var="pn" begin="${pageStart }" end="${pageEnd }" step="1">
+			        		<a href="admin_inquiry_frm.do?page=${pn }">
+			        			<c:choose>
+				    				<c:when test="${param.page == pn }">
+							        	<span class="active">${pn }</span>
+				    				</c:when>
+				    				<c:otherwise>
+				    					${pn }
+				    				</c:otherwise>
+			        			</c:choose>
+		    				</a>
+		    			</c:forEach>
+		    		</c:when>
+	    		</c:choose>
+    		</c:if>
     	</div>
-    	</div>
+    </div>
     	<c:if test="${ not empty param.keyword }">
 	    	<div class="btnDiv">
 				<a href="product_managing.do">

@@ -11,6 +11,6 @@
 	<h3 class="mb-2 text-lg font-semibold" style="color:#222">내 정보</h3>
 	<ul>
 		<li id="infoLi"><a href="http://localhost/retro_prj/mypage_enter.do">정보 수정</a></li>
-		<li id="inquiryLi"><a href="inquiry_frm.do">1:1 문의</a></li>
+		<li id="inquiryLi"><a href="http://localhost/retro_prj/inquiry_frm.do">1:1 문의</a></li>
 	</ul>
 </div>

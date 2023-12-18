@@ -10,7 +10,7 @@
 		from inquiry
 		)
 		<where>
-		rnum between 1 and 10
+		rnum between #{ startNum } and #{ endNum }
 		
 		<if test='keyword neq null and keyword neq ""'>
 			<if test='field eq "id"'>

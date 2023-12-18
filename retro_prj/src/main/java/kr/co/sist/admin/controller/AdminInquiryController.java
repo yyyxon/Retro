@@ -35,6 +35,7 @@ public class AdminInquiryController {
 		list=ais.searchInquiry(brVO);
 		model.addAttribute("inquiryList", list);
 		model.addAttribute("pageStart", pd.getPaginationStartNum());
+		model.addAttribute("startNum", pd.getStartNum());
 		model.addAttribute("pageEnd", pd.getPaginationEndNum());
 		
 		return"admin/admin_inquiry_frm";

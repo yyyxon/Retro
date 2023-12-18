@@ -46,7 +46,7 @@
 	JOIN CATEGORY2 C2 ON C3.C2CODE = C2.C2CODE
 	JOIN CATEGORY C ON C2.CCODE = C.CCODE
 	WHERE C.CCODE = #{category}	
-	) TB
+	) 
 	WHERE RNUM &gt;= #{start} and RNUM &lt;= #{end}
 	</select>
 	

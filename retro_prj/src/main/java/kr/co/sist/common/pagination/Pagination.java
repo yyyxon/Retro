@@ -32,7 +32,7 @@ public class Pagination {
 		
 		if((paginationStartNum + 4) > totalPage) {
 			paginationEndNum = totalPage;
-			paginationStartNum = 4 - totalPage;
+			paginationStartNum = 1;
 		} else {
 			paginationEndNum = paginationStartNum + 4;
 		}

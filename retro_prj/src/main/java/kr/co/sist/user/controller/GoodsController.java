@@ -2,6 +2,8 @@ package kr.co.sist.user.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -114,7 +116,7 @@ public class GoodsController {
 	
 	
 	@GetMapping("user/goods/goods_info.do")
-	public String goodsInfo(@RequestParam String pcode, Model model) {
+	public String goodsInfo(@RequestParam String pcode, HttpServletRequest request,Model model) {
 		
 		GoodsDomain gd=gs.searchGoodsDetail(pcode);
 		
@@ -138,6 +140,7 @@ public class GoodsController {
 		model.addAttribute("id",gd.getId());
 		model.addAttribute("level",gd.getCredit_level());
 		
+		model.addAttribute("pcode",pcode);
 		
 		return "user/goods/goods_info";
 	}

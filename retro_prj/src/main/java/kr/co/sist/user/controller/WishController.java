@@ -28,8 +28,9 @@ public class WishController {
 	 */
 	@ResponseBody
 	@RequestMapping("/user/product/addWish.do")
-	public String addWish(WishVO wVO) {
-		
+	public String addWish(WishVO wVO, HttpSession session) {
+		String id = (String)session.getAttribute("id");
+		wVO.setId("1011kiy111");
 		return ws.addWish(wVO).toJSONString();
 	}//productRegister
 	

@@ -64,6 +64,29 @@ $(document).ready(function () {
   function moveReport() {
 	  location.herf="report_frm.do?pcode=${param.pcode}"
   }
+  
+  
+  function addWish(pcode){
+	  $.ajax({
+			url : "../product/addWish.do",
+			type : "get",
+			data : "pcode=" + pcode,
+			dataType : "JSON",
+			error : function(xhr) {
+				alert("죄송합니다. 서버에 문제가 발생하였습니다. 잠시 후에 다시 시도해주세요.");
+				console.log(xhr.status);
+			},
+			success : function(jsonObj) {
+				alert("찜 등록이 완료되었습니다.");
+				var confirmGoWishList= confirm("찜 목록으로 가시겠습니까?");
+
+				if (confirmGoWishList) {
+					location.href="http://localhost/retro_prj/user/product/wishList.do";
+				}//end if
+			}//success
+		});//ajax
+  }//addWish
+
 </script>
 </head>
 <body>
@@ -252,7 +275,7 @@ $(document).ready(function () {
 						class="text-[13px] md:text-sm leading-4 inline-flex items-center cursor-pointer transition ease-in-out duration-300 font-semibold font-body text-center justify-center border-0 border-transparent placeholder-white focus-visible:outline-none focus:outline-none rounded-md h-11 md:h-12 px-5 text-white py-2 transform-none normal-case hover:text-white hover:shadow-cart w-full bg-jnblack hover:bg-jnblack/90">
 						<span class="py-2 3xl:px-8">안전거래</span>
 					</button>
-					<button data-variant="slim" style="width:150px"
+					<button data-variant="slim" style="width:150px"  onclick="addWish('${ pcode }')"
 						class="text-[13px] md:text-sm leading-4 inline-flex items-center cursor-pointer transition ease-in-out duration-300 font-semibold font-body text-center justify-center placeholder-white focus-visible:outline-none focus:outline-none rounded-md h-11 md:h-12 px-5 py-2 transform-none normal-case hover:shadow-cart w-full bg-white hover:bg-white/90 text-jnblack hover:text-jnblack border-[1px] border-jnblack">찜</button>
 				</div>
 			</div>

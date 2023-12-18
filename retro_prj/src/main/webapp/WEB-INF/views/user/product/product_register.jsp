@@ -61,7 +61,6 @@
 }
 
 </style>
-<title>Insert title here</title>
 <script type="text/javascript">
 	$(function() {
 		/* ---------------패션 의류--------------------- */

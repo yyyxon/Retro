@@ -3,6 +3,7 @@ package kr.co.sist.user.controller;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,6 +16,7 @@ import kr.co.sist.common.pagination.Pagination;
 import kr.co.sist.common.pagination.PaginationDomain;
 import kr.co.sist.user.domain.GoodsDomain;
 import kr.co.sist.user.service.GoodsService;
+import kr.co.sist.user.vo.GoodsVO;
 
 @Controller
 public class GoodsController {
@@ -125,7 +127,12 @@ public class GoodsController {
 	
 	
 	@GetMapping("user/goods/goods_info.do")
-	public String goodsInfo(@RequestParam String pcode, HttpServletRequest request,Model model) {
+	public String goodsInfo(@RequestParam String pcode, Model model, HttpSession session) {
+		String id = (String)session.getAttribute("id");
+		
+		GoodsVO gVO = new GoodsVO();
+		gVO.setId(id);
+		gVO.setPcode(pcode);
 		
 		GoodsDomain gd=gs.searchGoodsDetail(pcode);
 		
@@ -148,8 +155,11 @@ public class GoodsController {
 		model.addAttribute("context",gd.getContext());
 		model.addAttribute("id",gd.getId());
 		model.addAttribute("level",gd.getCredit_level());
-		
 		model.addAttribute("pcode",pcode);
+		
+		if(gs.searchCheck(gVO) == 1) {
+			return "/user/product/product_detail";
+		}
 		
 		return "user/goods/goods_info";
 	}

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 import kr.co.sist.common.PageVO;
 import kr.co.sist.common.dao.MybatisHandler;
 import kr.co.sist.user.domain.GoodsDomain;
+import kr.co.sist.user.vo.GoodsVO;
 
 @Component
 public class GoodsDAO {
@@ -238,6 +239,16 @@ public class GoodsDAO {
 		mbh.closeHandler(ss);
 		
 		return list;
+	}
+	
+	public int searchCheck(GoodsVO gVO) throws PersistenceException {
+		int cnt = 0;
+		
+		MybatisHandler mbh = MybatisHandler.getInstance();
+		SqlSession ss = mbh.getMyBatisHandler(false);
+		cnt = ss.selectOne("kr.co.sist.goods.selectCheck",gVO);
+		
+		return cnt;
 	}
 	
 	

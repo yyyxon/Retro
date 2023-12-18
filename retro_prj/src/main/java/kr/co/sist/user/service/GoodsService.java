@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 import kr.co.sist.common.PageVO;
 import kr.co.sist.user.dao.GoodsDAO;
 import kr.co.sist.user.domain.GoodsDomain;
+import kr.co.sist.user.vo.GoodsVO;
 
 @Component
 public class GoodsService {
@@ -229,7 +230,17 @@ public class GoodsService {
 		return list;
 	}//searchByText
 
-	
+	public int searchCheck(GoodsVO gVO) {
+		int cnt = 0;
+		
+		try {
+			cnt = gDAO.searchCheck(gVO);
+		}catch(PersistenceException pe) {
+			pe.printStackTrace();
+		}
+		
+		return cnt;
+	}
 	
 	
 

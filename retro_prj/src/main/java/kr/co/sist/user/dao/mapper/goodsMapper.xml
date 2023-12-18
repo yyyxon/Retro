@@ -146,6 +146,12 @@
 	where RNUM &gt;= ${start} and RNUM &lt;= ${end}
 	</select>
 	
+	<select id="selectCheck" parameterType="gVO" resultType="int">
+	select count(*) cnt
+	from product
+	where pcode = #{ pcode } and id = #{ id }
+	</select>
+	
 </mapper>
 
 

@@ -20,7 +20,13 @@ CASE WHEN STATUS='C' THEN '탈퇴'
 		 END STATUS
 FROM MEMBER
 )
-WHERE RNUM BETWEEN #{startNum} AND #{endNum}
+<where>
+	RNUM BETWEEN #{startNum} AND #{endNum}
+	<if test='keyword neq null or keyword neq ""'>
+		AND #{field}=#{keyword}
+	</if>
+</where>
+
 </select>
 
 <!-- 회원 정보 상세 조회 -->

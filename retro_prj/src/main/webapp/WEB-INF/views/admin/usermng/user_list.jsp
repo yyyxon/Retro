@@ -53,7 +53,7 @@ $(function() {
 		location.href="logout.jsp";
 	});//click
 	
-	/* $(".searchBtn").click(function() {
+	$(".searchBtn").click(function() {
 		chkNull();
 	});//click
 	
@@ -61,7 +61,7 @@ $(function() {
 		if(evt.which == 13){
 			chkNull();
 		}//end if
-	});//keyup */
+	});//keyup
 	
 	$("#allList").click(function(){
 		location.href="product_managing.jsp";
@@ -113,7 +113,7 @@ function chkNull() {
 		<!-- 검색 -->
 		 <div class="searchDiv">
 		<div class="allBox">
-		<form id="frmSearch">
+		<form id="frmSearch" method="user_list.do">
 			<select class="searchList" id="field" name="field">
 				<option value="category"${ param.field eq "category" ? " selected='selected'" : "" }>아이디</option>
 				<option value="id"${ param.field eq "id" ? " selected='selected'" : "" }>닉네임</option>

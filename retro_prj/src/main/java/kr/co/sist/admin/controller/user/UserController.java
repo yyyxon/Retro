@@ -19,11 +19,15 @@ public class UserController {
 	private UserService uService;
 	
 	@GetMapping("/user_list.do")
-	public String userList(Model model, String page) {
+	public String userList(Model model, String page, String keyword, String field) {
 		PaginationDomain pd = uService.totalRecode(page);
 		BoardRangeVO brVO = new BoardRangeVO();
 		brVO.setStartNum(pd.getStartNum());
 		brVO.setEndNum(pd.getEndNum());
+		brVO.setKeyword(keyword);
+		brVO.setField(field);
+		
+		System.out.println(brVO);
 		
 		model.addAttribute("userList", uService.seachUserList(brVO));
 		model.addAttribute("pageStart", pd.getPaginationStartNum());

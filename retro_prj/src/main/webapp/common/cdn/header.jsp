@@ -86,7 +86,7 @@
 										$("#login").click(function(){
 											var uid = '<%=(String)session.getAttribute("id")%>';
 											if(uid=='null') {
-												location.href="login/login_frm.do"
+												location.href="login_frm.do"
 											} else {
 												$("#myPageDiv").toggle();
 											}

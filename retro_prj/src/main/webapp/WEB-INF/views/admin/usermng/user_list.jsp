@@ -180,20 +180,29 @@ function chkNull() {
 		<!---->
 		<div class="pagenationDiv">
     	<div class="pagination">
-    		<c:if test="pageData.paginationEndNum != 1">
-    			<c:forEach var="pn" begin="${pageStart }" end="${pageEnd }" step="1">
-	        		<a href="user_list.do?page=${pn }">${pn }
-	        			<c:choose>
-		    				<c:when test="${param.page == pn }">
-					        	<span class="active">${pn }</span>
-		    				</c:when>
-		    				<c:when test="${empty param.page }">
-		    					<span class="active">1</span>
-		    				</c:when>
-	        			</c:choose>
-    				</a>
-    			</c:forEach>
-    		</c:if>
+    		<c:choose>
+    			<c:when test="${empty param.page }">
+    				<a href="user_list.do?page=1"><span class="active">1</span></a>
+    				<a href="user_list.do?page=1">2</a>
+    				<a href="user_list.do?page=1">3</a>
+    				<a href="user_list.do?page=1">4</a>
+    				<a href="user_list.do?page=1">5</a>
+    			</c:when>
+	    		<c:when test="${pageEnd != 1 }">
+	    			<c:forEach var="pn" begin="${pageStart }" end="${pageEnd }" step="1">
+		        		<a href="user_list.do?page=${pn }">
+		        			<c:choose>
+			    				<c:when test="${param.page == pn }">
+						        	<span class="active">${pn }</span>
+			    				</c:when>
+			    				<c:when test="${empty param.page }">
+			    					<span class="active">1</span>
+			    				</c:when>
+		        			</c:choose>
+	    				</a>
+	    			</c:forEach>
+	    		</c:when>
+    		</c:choose>
     	</div>
     	</div>
     	<c:if test="${ not empty param.keyword }">

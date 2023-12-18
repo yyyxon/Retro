@@ -28,7 +28,7 @@ public class Pagination {
 		currentPage = pageNum;
 		startNum = currentPage * pageScale - pageScale + 1;		
 		endNum = startNum + pageScale - 1; //끝
-		paginationStartNum = (pageNum - paginationScale) < 1 ? pageNum : (pageNum - paginationScale);
+		paginationStartNum = (pageNum - paginationScale) < 1 ? 1 : (pageNum - paginationScale);
 		paginationEndNum = (paginationScale + pageNum) > totalPage ? totalPage : (paginationScale + pageNum);
 		
 		PaginationDomain pd = new PaginationDomain();

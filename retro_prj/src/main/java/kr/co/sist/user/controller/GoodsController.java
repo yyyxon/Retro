@@ -18,6 +18,7 @@ import kr.co.sist.user.domain.GoodsDomain;
 import kr.co.sist.user.service.GoodsService;
 import kr.co.sist.user.service.WishService;
 import kr.co.sist.user.vo.GoodsVO;
+import kr.co.sist.user.vo.ProductVO;
 import kr.co.sist.user.vo.WishVO;
 
 @Controller
@@ -131,6 +132,7 @@ public class GoodsController {
 	@GetMapping("user/goods/goods_info.do")
 	public String goodsInfo(@RequestParam String pcode, Model model, HttpSession session) {
 		String id = (String)session.getAttribute("id");
+		String url = "user/goods/goods_info";
 		
 		GoodsVO gVO = new GoodsVO();
 		gVO.setId(id);
@@ -159,7 +161,6 @@ public class GoodsController {
 		model.addAttribute("level",gd.getCredit_level());
 		model.addAttribute("pcode",pcode);
 		
-
 		WishVO wVO=new WishVO();
 		WishService ws=WishService.getInstance();
 		wVO.setId(id);
@@ -170,6 +171,14 @@ public class GoodsController {
 		model.addAttribute("chkPcode",ws.getChkPcode(wVO));
 		System.out.println(ws.getChkPcode(wVO));
 		model.addAttribute("pcode",pcode);
+		
+		if(gs.searchCheck(gVO) == 1) {
+			ProductVO pVO = new ProductVO();
+			pVO.setPcode(pcode);
+			pVO.setId(id);
+			new ProductController().productDetail(session, model, pVO);
+			return "user/product/product_detail";
+		}
 		
 		return "user/goods/goods_info";
 	}

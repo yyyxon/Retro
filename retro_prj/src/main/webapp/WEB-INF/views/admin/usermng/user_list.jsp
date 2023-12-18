@@ -166,7 +166,7 @@ function chkNull() {
 				
 					 <c:forEach var="member" items="${ userList }" varStatus="i">
 					<tr onclick="userDetail('${ member.id }')" style="cursor: pointer;">
-						<td>${ i.count }</td> 
+						<td>${ i.index + startNum }</td> 
 						<td><c:out value="${ member.id }"/></td>
 						<td>${ member.nickname }</td>
 						<td>${ member.phone }</td>

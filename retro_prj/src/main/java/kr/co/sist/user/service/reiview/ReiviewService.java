@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import kr.co.sist.common.BoardRangeVO;
 import kr.co.sist.user.dao.reiview.ReiviewDAO;
 import kr.co.sist.user.domain.reiview.ReiviewCntDomain;
 import kr.co.sist.user.domain.reiview.ReiviewDomain;
@@ -15,8 +16,8 @@ public class ReiviewService {
 	@Autowired
 	private ReiviewDAO rDAO;
 
-	public List<ReiviewDomain> searchUseProfileReiview(String id) {
-		return rDAO.selectUserProfileReiview(id);
+	public List<ReiviewDomain> searchUseProfileReiview(BoardRangeVO brVO) {
+		return rDAO.selectUserProfileReiview(brVO);
 	}
 	
 	public ReiviewCntDomain getReiviewCnt(List<ReiviewDomain> list) {
@@ -50,5 +51,9 @@ public class ReiviewService {
 		}
 		
 		return rcDomain;
+	}
+	
+	public int totalReocodeCnt(String id) {
+		return rDAO.selectTotalRecode(id);
 	}
 }

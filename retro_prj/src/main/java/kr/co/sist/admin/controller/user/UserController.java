@@ -32,6 +32,7 @@ public class UserController {
 		model.addAttribute("userList", uService.seachUserList(brVO));
 		model.addAttribute("pageStart", pd.getPaginationStartNum());
 		model.addAttribute("pageEnd", pd.getPaginationEndNum());
+		model.addAttribute("startNum", brVO.getStartNum());
 		
 		return "admin/usermng/user_list";
 	}

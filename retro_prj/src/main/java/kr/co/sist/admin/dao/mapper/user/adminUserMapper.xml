@@ -5,21 +5,38 @@
 <mapper namespace="kr.co.sist.admin.userMng">
 <!-- 모든 회원 조회 -->
 <select id="selectAllUser" resultType="kr.co.sist.admin.domain.user.UserDomain">
-
+SELECT ID, NICKNAME, PHONE, TO_CHAR(INPUT_DATE,'YYYY-MM-DD HH24:MI:SS') INPUT_DATE,
+CASE WHEN STATUS='C' THEN '탈퇴'
+		 WHEN STATUS='D' THEN '정지'
+		 WHEN STATUS='F' THEN '삭제'
+		 ELSE '정상'
+		 END STATUS
+FROM MEMBER
 </select>
 
 <!-- 회원 정보 상세 조회 -->
 <select id="selectOneUser" resultType="kr.co.sist.admin.domain.user.UserDomain" parameterType="String">
-
+SELECT ID, NICKNAME, PHONE, TO_CHAR(INPUT_DATE,'YYYY-MM-DD HH24:MI:SS') INPUT_DATE, EMAIL,
+CASE WHEN STATUS='C' THEN '탈퇴'
+		 WHEN STATUS='D' THEN '정지'
+		 WHEN STATUS='F' THEN '삭제'
+		 ELSE '정상'
+		 END STATUS
+FROM MEMBER
+WHERE ID=#{id}
 </select>
 
 <!-- 회원 정지 -->
 <select id="updateUserStatus" resultType="kr.co.sist.admin.domain.user.UserDomain" parameterType="String">
-
+UPDATE MEMBER
+SET STATUS='D'
+WHERE ID=#{id}
 </select>
 
 <!-- 회원 삭제 -->
 <select id="updateDelUser" resultType="kr.co.sist.admin.domain.user.UserDomain" parameterType="String">
-
+UPDATE MEMBER
+SET STATUS='F'
+WHERE ID=#{id}
 </select>
 </mapper>

@@ -2,6 +2,7 @@ package kr.co.sist.admin.service.user;
 
 import java.util.List;
 
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,11 +23,17 @@ public class UserService {
 		return uDAO.selectOneUser(id);
 	}
 	
-	public boolean UserStatusChange(String id) {
-		return uDAO.updateUserStatus(id) == 1 ? true : false;
+	public JSONObject UserStatusChange(String id) {
+		JSONObject json = new JSONObject();
+		json.put("flag", uDAO.updateUserStatus(id) == 1 ? true : false);
+		
+		return json;
 	}
 	
-	public boolean UserWithdraw(String id) {
-		return uDAO.updateUser(id) == 1 ? true : false;
+	public JSONObject UserWithdraw(String id) {
+		JSONObject json = new JSONObject();
+		json.put("flag", uDAO.updateUser(id) == 1 ? true : false);
+
+		return json;
 	}
 }

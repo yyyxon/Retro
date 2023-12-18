@@ -20,12 +20,19 @@ CASE WHEN STATUS='C' THEN '탈퇴'
 		 END STATUS
 FROM MEMBER
 )
-<where>
-	RNUM BETWEEN #{startNum} AND #{endNum}
-	<if test='keyword neq null or keyword neq ""'>
-		AND #{field}=#{keyword}
-	</if>
-</where>
+WHERE RNUM BETWEEN #{startNum} AND #{endNum}
+<if test='keyword neq null or !"".equals(keyword)'>
+	AND ${field}=#{keyword}
+</if>
+<if test="keyword eq 'id'">
+	AND id=#{keyword}
+</if>
+<if test="keyword eq 'nickname'">
+	AND id=#{keyword}
+</if>
+<if test="keyword eq 'phone'">
+	AND id=#{keyword}
+</if>
 
 </select>
 

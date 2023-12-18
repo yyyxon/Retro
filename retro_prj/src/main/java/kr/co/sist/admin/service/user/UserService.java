@@ -31,6 +31,10 @@ public class UserService {
 	}
 	
 	public List<UserDomain> seachUserList(BoardRangeVO brVO) {
+		if("phone".equals(brVO.getField())) {
+			brVO.setKeyword(brVO.getKeyword().replace("-", ""));
+		}
+		
 		return uDAO.selectAllUser(brVO);
 	}
 	

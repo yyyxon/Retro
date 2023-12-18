@@ -67,8 +67,8 @@ function all() {
 		},
 		success:function(data) {
 			var cnt = $("#totalPrd").val();
-			$("#cntDiv").html(cnt+"개의 상품");
 			$("#prdInfo").html(data);
+			$("#cntDiv").html(cnt+"개의 상품");
 		}
 	});
 }

@@ -110,9 +110,9 @@ public class GoodsController {
 		int totalCnt = gs.searchByTextCnt(pageVO);
 		pageVO.setTotalCnt(totalCnt);
 		
-		PaginationDomain pd=new Pagination().setStartEndPageNum(totalCnt, pageNo);
-		pageVO.setStart(pd.getStartNum());
-		pageVO.setEnd(pd.getEndNum());
+//		PaginationDomain pd=new Pagination().setStartEndPageNum(totalCnt, pageNo);
+//		pageVO.setStart(pd.getStartNum());
+//		pageVO.setEnd(pd.getEndNum());
 		
 		
 		List<GoodsDomain> list=null;
@@ -120,8 +120,8 @@ public class GoodsController {
 		list=gs.searchByText(pageVO);
 		model.addAttribute("bigCate", list);
 		model.addAttribute("pageVO", pageVO);
-		model.addAttribute("pageStart", pd.getPaginationStartNum());
-		model.addAttribute("pageEnd", pd.getPaginationEndNum());
+//		model.addAttribute("pageStart", pd.getPaginationStartNum());
+//		model.addAttribute("pageEnd", pd.getPaginationEndNum());
 		
 		
 		return "user/goods/goods_list_search";

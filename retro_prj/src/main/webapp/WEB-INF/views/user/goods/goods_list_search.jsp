@@ -148,7 +148,7 @@
 				</c:if>			
 					
 				<!-- 페이지 번호 링크 -->
-				<c:forEach var="i" begin="${ pageStart }" end="${ pageEnd }" step="1">     
+				<c:forEach var="i" begin="1" end="${pageVO.totalPageNo}" step="1">     
 					<li class="w-10 h-10 rounded-md shrink-0 bg-jngreen/80 text-white">
 					 <a class="block leading-10" href="goods_search_by_text.do?searchText=${pageVO.searchText}&amp;pageNo=${i}">${i}</a>
 					</li>

@@ -1,6 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!-- <body cz-shortcut-listen="true"> -->
+<script type="text/javascript">
+$(function(){
+	var uid = '<%=(String)session.getAttribute("id")%>';
+	if(uid!='null') {
+		$("#log").html(uid+"님");
+	}else{
+		$("#log").html("로그인");
+	}
+	
+	$("#login").click(function(){
+			var uid = '<%=(String)session.getAttribute("id")%>';
+			if(uid=='null') {
+			location.href="http://localhost/retro_prj/user/login/login_frm.do";
+		} else {
+			$("#myPageDiv").toggle();
+		}
+	});
+});
+</script>
 <div id="__next">
 	<div>
 		<!--  class="flex flex-col min-h-screen" -->
@@ -9,14 +28,12 @@
 			<div id="header_items_wrapper"
 				class="fixed z-20 w-full h-16 px-4 text-gray-700 transition duration-200 ease-in-out bg-white innerSticky body-font sm:h-20 lg:h-36 xl:h-40 md:px-8 lg:px-0"
 				style="top: 0px;">
-				<div
-					class="flex items-center mx-auto px-0 lg:px-8 2xl:px-16 max-w-[1280px] h-full lg:h-20 xl:h-24 relative before:absolute before:w-screen before:bg-[#F1F1F1] before:bottom-0 box-content justify-around">
-					<div
-						class="flex items-center 2xl:me-12 3xl:me-20 place-self-stretch max-[1023px]:flex-auto max-[1023px]:ml-[10px]">
+				<div class="flex items-center mx-auto px-0 lg:px-8 2xl:px-16 max-w-[1280px] h-full lg:h-20 xl:h-24 relative before:absolute before:w-screen before:bg-[#F1F1F1] before:bottom-0 box-content justify-around">
+					<div class="flex items-center 2xl:me-12 3xl:me-20 place-self-stretch max-[1023px]:flex-auto max-[1023px]:ml-[10px]">
 						<a style="width: 200px; height: 30px"
 							class="ga4_main_top_logo max-[1023px]:!w-[97px] max-[1023px]:!h-[16px] inline-flex focus:outline-none relative"
-							href="/"> <span
-							style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: 50px; background: none; opacity: 1; border: 0; margin: 0; padding: 0; position: absolute; top: 0; left: 0; bottom: 0; right: 0">
+							href="http://localhost/retro_prj/index.do"> 
+							<span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: 50px; background: none; opacity: 1; border: 0; margin: 0; padding: 0; position: absolute; top: 0; left: 0; bottom: 0; right: 0">
 								<img alt="RE:TRO"
 								src="http://localhost/retro_prj/common/images/main_logo.png"
 								decoding="async" data-nimg="fill"
@@ -26,19 +43,16 @@
 					</div>
 					<div class="relative hidden w-1/2 ms-7 me-7 xl:ms-9 lg:block"
 						style="margin-top: 15px">
-						<div
-							class="relative flex items-center justify-between w-full rounded-md bg-borderBottom">
+						<div class="relative flex items-center justify-between w-full rounded-md bg-borderBottom">
 							<form id="searchForm"
 								action="/retro_prj/user/goods/goods_search_by_text.do"
 								class="w-full" novalidate="" role="search">
 								<label for="search" class="flex items-center justify-between">
-									<span
-									class="absolute top-0 left-0 flex items-center justify-center flex-shrink-0 w-12 h-full cursor-pointer md:w-14 focus:outline-none"><svg
+									<span class="absolute top-0 left-0 flex items-center justify-center flex-shrink-0 w-12 h-full cursor-pointer md:w-14 focus:outline-none"><svg
 											width="24" height="24" viewBox="0 0 24 24"
 											xmlns="http://www.w3.org/2000/svg"
 											class="w-[16px] h-[16px] text-heading">
-										<path
-												d="M10.0278 19.0556C14.3233 19.0556 17.8056 15.5733 17.8056 11.2778C17.8056 6.98223 14.3233 3.5 10.0278 3.5C5.73223 3.5 2.25 6.98223 2.25 11.2778C2.25 15.5733 5.73223 19.0556 10.0278 19.0556Z"
+										<path d="M10.0278 19.0556C14.3233 19.0556 17.8056 15.5733 17.8056 11.2778C17.8056 6.98223 14.3233 3.5 10.0278 3.5C5.73223 3.5 2.25 6.98223 2.25 11.2778C2.25 15.5733 5.73223 19.0556 10.0278 19.0556Z"
 												stroke="currentColor" stroke-width="1.5"
 												stroke-linecap="round" stroke-linejoin="round"
 												fill="transparent"></path>
@@ -82,6 +96,7 @@
 							
 							<li class="relative flex px-3">
 								<button class="flex items-center justify-center [&amp;>p]:ml-2" id="login">
+<<<<<<< HEAD
 								<script type="text/javascript">
 										$("#login").click(function(){
 											var uid = '<%=(String)session.getAttribute("id")%>';
@@ -94,6 +109,8 @@
 											
 										});
 									</script>
+=======
+>>>>>>> branch 'main' of https://github.com/mark3lim/retro.git
 									<svg stroke="currentColor" fill="none" stroke-width="0"
 										viewBox="0 0 24 24" height="24" width="24"
 										xmlns="http://www.w3.org/2000/svg">
@@ -101,13 +118,13 @@
 											stroke-width="2"
 											d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
 									<p></p>
-								 	
+									<span id="log"></span>
 								</button>
 								<!-- 로그인 됐을 때만 작동하게 코드 추가해주숑  -->
 								<div style="left: 110px;position: absolute;display: none;" id="myPageDiv">
 									<ul class='absolute bg-white flex flex-col top-[30px] right-[5px] rounded-lg shadow-header [&amp;>li]:py-3 [&amp;>li]:mx-5 [&amp;>li]:border-b [&amp;>li]:border-jnGray-500 [&amp;>li:last-of-type]:border-b-0 text-sm font-normal'>
 									<li style='width: 64px;''><a href=''/store/8626376'>마이 페이지</a></li>
-									<li ><a href="logout_process.do">로그아웃</a></li></ul>
+									<li ><a href="http://localhost/retro_prj/user/logout_process.do">로그아웃</a></li></ul>
 								</div>
 							</li>
 						</ul>

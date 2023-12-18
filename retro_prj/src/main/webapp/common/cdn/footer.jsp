@@ -6,7 +6,7 @@
 			<div class="pb-3 md:pb-0 col-span-2 lg:col-span-full xl:col-span-2">
 				<div class="me-4 flex flex-col space-y-7 lg:space-y-7.5">
 					<a style="width: 200px; height: 30px"
-						class="inline-flex focus:outline-none relative" href="/">
+						class="inline-flex focus:outline-none relative" href="http://localhost/retro_prj/index.do">
 					<span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; 
 					height: 50px; background: none; opacity: 1; border: 0; margin: 0; padding: 0; position: absolute; top: 0; left: 0; bottom: 0; right: 0">
 					<img alt="RE:TRO" src="http://localhost/retro_prj/common/images/main_logo.png" decoding="async" data-nimg="fill"
@@ -109,7 +109,7 @@
 				2023
 				<!-- -->
 				&nbsp;<a class="font-semibold text-gray-700 transition-colors duration-200 ease-in-out hover:text-body"
-					href="index.html">(주)RE:TRO</a>&nbsp; All Rights
+					href="http://localhost/retro_prj/index.do">(주)RE:TRO</a>&nbsp; All Rights
 				Reserved
 			</p>
 			<p class="text-sm font-semibold leading-[19px] text-[#212121] cursor-pointer">

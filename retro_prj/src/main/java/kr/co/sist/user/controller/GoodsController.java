@@ -8,10 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.co.sist.common.PageVO;
+import kr.co.sist.common.pagination.Pagination;
+import kr.co.sist.common.pagination.PaginationDomain;
 import kr.co.sist.user.domain.GoodsDomain;
 import kr.co.sist.user.service.GoodsService;
 
@@ -105,11 +106,19 @@ public class GoodsController {
 		int totalCnt = gs.searchByTextCnt(pageVO);
 		pageVO.setTotalCnt(totalCnt);
 		
+		PaginationDomain pd=new Pagination().setStartEndPageNum(totalCnt, pageNo);
+		pageVO.setStart(pd.getStartNum());
+		pageVO.setEnd(pd.getEndNum());
+		
+		
 		List<GoodsDomain> list=null;
 //		list=gs.searchByText(searchText);
 		list=gs.searchByText(pageVO);
 		model.addAttribute("bigCate", list);
 		model.addAttribute("pageVO", pageVO);
+		model.addAttribute("pageStart", pd.getPaginationStartNum());
+		model.addAttribute("pageEnd", pd.getPaginationEndNum());
+		
 		
 		return "user/goods/goods_list_search";
 	}

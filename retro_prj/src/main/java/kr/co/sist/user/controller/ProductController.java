@@ -89,7 +89,7 @@ public class ProductController {
 	public String productDetail( HttpSession session,Model model,ProductVO pVO) {
 		String id = (String)session.getAttribute("id");
 	
-		String pcode=ps.getPcode("1011kiy111");
+		String pcode=ps.getPcode(id);
 		pVO.setPcode(pcode);
 		pVO.setId(id);
 		ProductDomain userProduct=ps.searchProduct(pVO);

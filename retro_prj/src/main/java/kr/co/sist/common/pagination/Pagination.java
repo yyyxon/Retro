@@ -29,7 +29,13 @@ public class Pagination {
 		startNum = currentPage * pageScale - pageScale + 1;		
 		endNum = startNum + pageScale - 1; //끝
 		paginationStartNum = (pageNum - paginationScale) < 1 ? 1 : (pageNum - paginationScale);
-		paginationEndNum = (paginationScale + pageNum) > totalPage ? totalPage : (paginationScale + pageNum);
+		
+		if((paginationStartNum + 4) > totalPage) {
+			paginationEndNum = totalPage;
+			paginationStartNum = totalPage - 4;
+		} else {
+			paginationEndNum = paginationStartNum + 4;
+		}
 		
 		PaginationDomain pd = new PaginationDomain();
 		pd.setStartNum(startNum);

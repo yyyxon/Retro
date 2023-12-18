@@ -133,7 +133,7 @@ public class GoodsController {
 		model.addAttribute("date",gd.getInput_date());
 		model.addAttribute("pview",gd.getPview());
 		model.addAttribute("wish",gd.getWish());
-		model.addAttribute("delivery",gd.getDelivery());
+		model.addAttribute("deliver",gd.getDeliver());
 		model.addAttribute("status",gd.getStatus());
 		model.addAttribute("loc",gd.getLoc());
 		model.addAttribute("context",gd.getContext());

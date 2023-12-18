@@ -7,7 +7,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
 <c:import url="http://localhost/retro_prj/common/cdn/cdn.jsp" />
 <link rel="icon" href="http://192.168.0.70/jsp_prj/common/main/favicon-32x32.png">
 <!-- jQuery CDN -->
@@ -36,7 +35,7 @@
 					 href="goods_info.do?pcode=${ product.pcode }">
 					<div class="relative w-full rounded-md overflow-hidden pt-[100%] mb-3 md:mb-3.5">
 							<img alt="" referrerpolicy="no-referrer"
-								src="http://localhost/retro_prj/WEB-INF/views/goods/images/${ product.img }"
+								src="http://localhost/retro_prj/upload/${ product.img }"
 								decoding="async" data-nimg="fill"
 								class="bg-gray-300 object-cover w-full transition duration-200 ease-in rounded-md group-hover:rounded-b-none"
 								style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
@@ -82,7 +81,7 @@
 					 href="goods_info.do?pcode=${ product.pcode }">
 					<div class="relative w-full rounded-md overflow-hidden pt-[100%] mb-3 md:mb-3.5">
 							<img alt="" referrerpolicy="no-referrer"
-								src="http://localhost/retro_prj/WEB-INF/views/goods/images/${ product.img }"
+								src="http://localhost/retro_prj/upload/${ product.img }"
 								decoding="async" data-nimg="fill"
 								class="bg-gray-300 object-cover w-full transition duration-200 ease-in rounded-md group-hover:rounded-b-none"
 								style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
@@ -128,7 +127,7 @@
 					 href="goods_info.do?pcode=${ product.pcode }">
 					<div class="relative w-full rounded-md overflow-hidden pt-[100%] mb-3 md:mb-3.5">
 							<img alt="" referrerpolicy="no-referrer"
-								src="http://localhost/retro_prj/WEB-INF/views/goods/images/${ product.img }"
+								src="http://localhost/retro_prj/upload/${ product.img }"
 								decoding="async" data-nimg="fill"
 								class="bg-gray-300 object-cover w-full transition duration-200 ease-in rounded-md group-hover:rounded-b-none"
 								style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">

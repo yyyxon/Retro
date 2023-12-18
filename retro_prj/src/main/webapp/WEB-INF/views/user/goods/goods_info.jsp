@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ page info=""%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -100,7 +101,7 @@ $(document).ready(function () {
 						<div class="swiper-slide swiper-slide-active" style="width: 503px;">
 							<div class="col-span-1 transition duration-150 ease-in hover:opacity-90 w-full relative pt-[100%]">
 								<img alt="상품이미지-0" referrerpolicy="no-referrer"
-									src="http://localhost/retro_prj/common/goods_img/sample.png"
+									src="http://localhost/retro_prj/upload/<c:out value="${ img }"/>"
 									decoding="async" data-nimg="fill"
 									class="object-cover w-full h-full rounded-lg top-1/2 left-1/2"
 									loading="lazy"
@@ -110,7 +111,7 @@ $(document).ready(function () {
 						<div class="swiper-slide swiper-slide-next" style="width: 503px;">
 							<div class="col-span-1 transition duration-150 ease-in hover:opacity-90 w-full relative pt-[100%]">
 								<img alt="상품이미지-1" referrerpolicy="no-referrer"
-									src="http://localhost/retro_prj/common/goods_img/sample2.png"
+									src="http://localhost/retro_prj/upload/<c:out value="${ img2 }"/>"
 									decoding="async" data-nimg="fill"
 									class="object-cover w-full h-full rounded-lg top-1/2 left-1/2"
 									loading="lazy"
@@ -120,7 +121,7 @@ $(document).ready(function () {
 						 <div class="swiper-slide" style="width: 503px;">
 							<div class="col-span-1 transition duration-150 ease-in hover:opacity-90 w-full relative pt-[100%]">
 								<img alt="상품이미지-2" referrerpolicy="no-referrer"
-									src="http://localhost/retro_prj/common/goods_img/sample3.png"
+									src="http://localhost/retro_prj/upload/<c:out value="${ img3 }"/>"
 									decoding="async" data-nimg="fill"
 									class="object-cover w-full h-full rounded-lg top-1/2 left-1/2"
 									loading="lazy"
@@ -130,17 +131,7 @@ $(document).ready(function () {
 						<div class="swiper-slide" style="width: 503px;">
 							<div class="col-span-1 transition duration-150 ease-in hover:opacity-90 w-full relative pt-[100%]">
 								<img alt="상품이미지-3" referrerpolicy="no-referrer"
-									src="http://localhost/retro_prj/common/goods_img/sample4.png"
-									decoding="async" data-nimg="fill"
-									class="object-cover w-full h-full rounded-lg top-1/2 left-1/2"
-									loading="lazy"
-									style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
-							</div>
-						</div>
-						<div class="swiper-slide" style="width: 503px;">
-							<div class="col-span-1 transition duration-150 ease-in hover:opacity-90 w-full relative pt-[100%]">
-								<img alt="상품이미지-4" referrerpolicy="no-referrer"
-									src="http://localhost/retro_prj/common/goods_img/sample5.png"
+									src="http://localhost/retro_prj/upload/<c:out value="${ img4 }"/>"
 									decoding="async" data-nimg="fill"
 									class="object-cover w-full h-full rounded-lg top-1/2 left-1/2"
 									loading="lazy"
@@ -208,7 +199,7 @@ $(document).ready(function () {
 				
 				<div class="pb-5 border-b border-gray-300">
 					<h1 class="flex justify-between mb-1 text-lg font-bold align-middle text-heading lg:text-xl 2xl:text-2xl hover:text-black">
-						나이키 티셔츠 팔아요
+						<c:out value="${ pname }"/>
 						<button type="button" aria-label="공유하기" class="ml-2 text-lg">
 							<svg stroke="currentColor" fill="currentColor" stroke-width="0"
 								viewBox="0 0 24 24" height="1em" width="1em"
@@ -221,7 +212,7 @@ $(document).ready(function () {
 					<div class="flex items-center justify-between">
 						<div
 							class="text-heading font-bold text-[40px] pe-2 md:pe-0 lg:pe-2 2xl:pe-0 mr-2">
-							20000<span class="text-base">원</span>
+							<fmt:formatNumber value="${price}" pattern="#,###,###"/><span class="text-base">원</span>
 						</div>
 						<svg width="30" height="17" viewBox="0 0 30 17" fill="none"
 							xmlns="http://www.w3.org/2000/svg">
@@ -239,7 +230,7 @@ $(document).ready(function () {
 				<div class="py-4 border-b border-gray-300 space-s-4">
 					<div class="pb-1 space-y-5 text-sm">
 						<div class="flex justify-between text-body">
-							<span>26분 전 · 조회 0 · 찜 0</span><a href="/fraud">
+							<span>26분 전 · 조회 <c:out value="${ pview }"/> · 찜 <c:out value="${ wish }"/></span><a href="/fraud">
 							<div class="flex items-center hover:text-gray-400">
 									<svg stroke="currentColor" fill="currentColor" stroke-width="0"
 										viewBox="0 0 16 16" height="1em" width="1em"
@@ -253,16 +244,45 @@ $(document).ready(function () {
 						<div class="flex justify-between">
 							<div class="flex-1 basis-[33.33%] pe-4 border-r border-gray-300">
 								<span>배송비</span><span
-									class="block mt-2 text-lg font-semibold text-heading">배송비
-									포함</span>
+									class="block mt-2 text-lg font-semibold text-heading">
+								<c:choose>
+									<c:when test="${ deliver eq 'Y' || deliver eq null }">
+										배송비 포함
+									</c:when>
+									<c:when test="${ deliver eq 'N' }">
+										배송비 별도
+									</c:when>
+								</c:choose>
+								</span>
 							</div>
 							<div class="flex-1 basis-[33.33%] px-4 border-r border-gray-300">
 								<span>상품 상태</span><span
-									class="block mt-2 text-lg font-semibold text-heading">중고</span>
+									class="block mt-2 text-lg font-semibold text-heading">
+							<c:choose>
+								<c:when test="${ status eq 'J' }">
+									중고
+								</c:when>
+								<c:when test="${ status eq 'S' }">
+									새 상품
+								</c:when>
+							</c:choose>
+									
+									</span>
 							</div>
 							<div class="flex-1 basis-[33.33%] ps-4">
 								<span>희망 지역</span><span
-									class="block mt-2 text-lg font-semibold text-heading">지역 설정 안함</span>
+									class="block mt-2 text-lg font-semibold text-heading">
+								<c:choose>
+									<c:when
+										test="${ loc eq null || loc eq ''}">
+										지역 정보 없음
+									</c:when>
+									<c:when
+										test="${ loc != null and loc != '' }">
+										${ loc }
+									</c:when>
+								</c:choose>
+							</span>
 							</div>
 						</div>
 						
@@ -319,7 +339,7 @@ $(document).ready(function () {
 				</div>
 				<article>
 					<p class="px-4 py-10 break-words break-all whitespace-pre-line lg:py-2">
-					나이키 티셔츠 싸게 팔아봅니다 연락주세요
+					<c:out value="${ context }"/>
 					</p>
 				</article>
 			</div>
@@ -328,7 +348,7 @@ $(document).ready(function () {
 				<div class="flex">
 					<div class="flex w-full flex-col justify-around lg:ml-4">
 						<a class="font-semibold text-base text-jnblack"
-							href="/store/1062005">김빛내리</a><span
+							href="/store/1062005"><c:out value="${ id }"/></a><span
 							class="font-medium text-sm flex text-jnGray-500">판매상품 7 ·
 							안전거래 2 · 후기 0</span>
 					</div>

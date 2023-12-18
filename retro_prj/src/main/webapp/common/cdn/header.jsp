@@ -135,7 +135,7 @@ $(function(){
 									class="py-5 text-sm text-body max-h-[calc(100vh-220px)] overflow-y-scroll">
 									<li class=""><a
 										class="flex items-center py-2 ps-5 xl:ps-7 pe-3 xl:pe-3.5 hover:text-heading hover:bg-gray-300"
-										href="goods_list1.do?category1=C">패션의류</a>
+										href="http://localhost/retro_prj/user/goods/goods_list1.do?category1=C">패션의류</a>
 										<div
 											class="absolute flex bg-white categoryMegaMenu shadow-header w-[630px] xl:w-[1000px] 2xl:w-[1200px] start-full"
 											style="margin-left: 240px;">
@@ -147,31 +147,31 @@ $(function(){
 															class="pt-6 even:bg-gray-150 pb-7 2xl:pb-8 2xl:pt-7 max-h-[calc(100vh-220px)] overflow-y-scroll">
 															<li class="mb-1.5"><a
 																class="block text-sm py-1.5 text-heading font-semibold px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list2.do?category2=C1">여성의류</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list2.do?category2=C1">여성의류</a></li>
 															<li class=""><a
 																class="text-body text-sm block py-1.5 px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list3.do?category3=C101">티셔츠 / 캐주얼의류</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list3.do?category3=C101">티셔츠 / 캐주얼의류</a></li>
 															<li class=""><a
 																class="text-body text-sm block py-1.5 px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list3.do?category3=C102">바지 / 치마</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list3.do?category3=C102">바지 / 치마</a></li>
 															<li class="border-b border-gray-300 pb-3.5 mb-3"><a
 																class="text-body text-sm block py-1.5 px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list3.do?category3=C103">트레이닝복</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list3.do?category3=C103">트레이닝복</a></li>
 														</ul>
 														<ul
 															class="pt-6 even:bg-gray-150 pb-7 2xl:pb-8 2xl:pt-7 max-h-[calc(100vh-220px)] overflow-y-scroll">
 															<li class="mb-1.5"><a
 																class="block text-sm py-1.5 text-heading font-semibold px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list2.do?category2=C2">남성의류</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list2.do?category2=C2">남성의류</a></li>
 															<li class=""><a
 																class="text-body text-sm block py-1.5 px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list3.do?category3=C201">티셔츠 / 캐쥬얼의류</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list3.do?category3=C201">티셔츠 / 캐쥬얼의류</a></li>
 															<li class=""><a
 																class="text-body text-sm block py-1.5 px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list3.do?category3=C202">바지</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list3.do?category3=C202">바지</a></li>
 															<li class=""><a
 																class="text-body text-sm block py-1.5 px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list3.do?category3=C203">트레이닝복</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list3.do?category3=C203">트레이닝복</a></li>
 														</ul>
 													</div>
 												</div>
@@ -179,7 +179,7 @@ $(function(){
 										</div></li>
 									<li class=""><a
 										class="flex items-center py-2 ps-5 xl:ps-7 pe-3 xl:pe-3.5 hover:text-heading hover:bg-gray-300"
-										href="goods_list1.do?category1=G">패션잡화</a>
+										href="http://localhost/retro_prj/user/goods/goods_list1.do?category1=G">패션잡화</a>
 										<div
 											class="absolute flex bg-white categoryMegaMenu shadow-header w-[630px] xl:w-[1000px] 2xl:w-[1200px] start-full"
 											style="margin-left: 240px;">
@@ -191,46 +191,46 @@ $(function(){
 															class="pt-6 even:bg-gray-150 pb-7 2xl:pb-8 2xl:pt-7 max-h-[calc(100vh-220px)] overflow-y-scroll">
 															<li class="mb-1.5"><a
 																class="block text-sm py-1.5 text-heading font-semibold px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list2.do?category2=G1">여성화</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list2.do?category2=G1">여성화</a></li>
 															<li class=""><a
 																class="text-body text-sm block py-1.5 px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list3.do?category3=G101">단화 / 로퍼</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list3.do?category3=G101">단화 / 로퍼</a></li>
 															<li class=""><a
 																class="text-body text-sm block py-1.5 px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list3.do?category3=G102">워커 / 부츠</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list3.do?category3=G102">워커 / 부츠</a></li>
 															<li class="border-b border-gray-300 pb-3.5 mb-3"><a
 																class="text-body text-sm block py-1.5 px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list3.do?category3=G103">샌들 / 슬리퍼</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list3.do?category3=G103">샌들 / 슬리퍼</a></li>
 														</ul>
 														<ul
 															class="pt-6 even:bg-gray-150 pb-7 2xl:pb-8 2xl:pt-7 max-h-[calc(100vh-220px)] overflow-y-scroll">
 															<li class="mb-1.5"><a
 																class="block text-sm py-1.5 text-heading font-semibold px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list2.do?category2=G2">남성화</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list2.do?category2=G2">남성화</a></li>
 															<li class=""><a
 																class="text-body text-sm block py-1.5 px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list3.do?category3=G201">단화 / 로퍼</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list3.do?category3=G201">단화 / 로퍼</a></li>
 															<li class=""><a
 																class="text-body text-sm block py-1.5 px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list3.do?category3=G202">워커 / 부츠</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list3.do?category3=G202">워커 / 부츠</a></li>
 															<li class="border-b border-gray-300 pb-3.5 mb-3"><a
 																class="text-body text-sm block py-1.5 px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list3.do?category3=G203">샌들 / 슬리퍼</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list3.do?category3=G203">샌들 / 슬리퍼</a></li>
 														</ul>
 														<ul
 															class="pt-6 even:bg-gray-150 pb-7 2xl:pb-8 2xl:pt-7 max-h-[calc(100vh-220px)] overflow-y-scroll">
 															<li class="mb-1.5"><a
 																class="block text-sm py-1.5 text-heading font-semibold px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list2.do?category2=G3">가방</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list2.do?category2=G3">가방</a></li>
 															<li class=""><a
 																class="text-body text-sm block py-1.5 px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list3.do?category3=G301">숄더백</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list3.do?category3=G301">숄더백</a></li>
 															<li class=""><a
 																class="text-body text-sm block py-1.5 px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list3.do?category3=G302">크로스백</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list3.do?category3=G302">크로스백</a></li>
 															<li class="border-b border-gray-300 pb-3.5 mb-3"><a
 																class="text-body text-sm block py-1.5 px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list3.do?category3=G303">트레이닝복</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list3.do?category3=G303">백팩</a></li>
 														</ul>
 													</div>
 												</div>
@@ -238,7 +238,7 @@ $(function(){
 										</div></li>
 									<li class=""><a
 										class="flex items-center py-2 ps-5 xl:ps-7 pe-3 xl:pe-3.5 hover:text-heading hover:bg-gray-300"
-										href="goods_list1.do?category1=T">모바일 / 태블릿</a>
+										href="http://localhost/retro_prj/user/goods/goods_list1.do?category1=T">모바일 / 태블릿</a>
 										<div
 											class="absolute flex bg-white categoryMegaMenu shadow-header w-[630px] xl:w-[1000px] 2xl:w-[1200px] start-full"
 											style="margin-left: 240px;">
@@ -250,34 +250,34 @@ $(function(){
 															class="pt-6 even:bg-gray-150 pb-7 2xl:pb-8 2xl:pt-7 max-h-[calc(100vh-220px)] overflow-y-scroll">
 															<li class="mb-1.5"><a
 																class="block text-sm py-1.5 text-heading font-semibold px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list2.do?category2=T1">스마트폰</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list2.do?category2=T1">스마트폰</a></li>
 															<li class=""><a
 																class="text-body text-sm block py-1.5 px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list3.do?category3=T101">삼성</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list3.do?category3=T101">삼성</a></li>
 															<li class=""><a
 																class="text-body text-sm block py-1.5 px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list3.do?category3=T102">LG</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list3.do?category3=T102">LG</a></li>
 															<li class=""><a
 																class="text-body text-sm block py-1.5 px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list3.do?category3=T103">애플</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list3.do?category3=T103">애플</a></li>
 															<li class="border-b border-gray-300 pb-3.5 mb-3"><a
 																class="text-body text-sm block py-1.5 px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list3.do?category3=T104">기타</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list3.do?category3=T104">기타</a></li>
 														</ul>
 														<ul
 															class="pt-6 even:bg-gray-150 pb-7 2xl:pb-8 2xl:pt-7 max-h-[calc(100vh-220px)] overflow-y-scroll">
 															<li class="mb-1.5"><a
 																class="block text-sm py-1.5 text-heading font-semibold px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list2.do?category2=T2">태블릿PC</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list2.do?category2=T2">태블릿PC</a></li>
 															<li class=""><a
 																class="text-body text-sm block py-1.5 px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list3.do?category3=T201">삼성</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list3.do?category3=T201">삼성</a></li>
 															<li class=""><a
 																class="text-body text-sm block py-1.5 px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list3.do?category3=T202">애플</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list3.do?category3=T202">애플</a></li>
 															<li class="border-b border-gray-300 pb-3.5 mb-3"><a
 																class="text-body text-sm block py-1.5 px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list3.do?category3=T203">기타</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list3.do?category3=T203">기타</a></li>
 														</ul>
 													</div>
 												</div>
@@ -285,7 +285,7 @@ $(function(){
 										</div></li>
 									<li class=""><a
 										class="flex items-center py-2 ps-5 xl:ps-7 pe-3 xl:pe-3.5 hover:text-heading hover:bg-gray-300"
-										href="goods_list1.do?category1=P">노트북 / PC</a>
+										href="http://localhost/retro_prj/user/goods/goods_list1.do?category1=P">노트북 / PC</a>
 										<div
 											class="absolute flex bg-white categoryMegaMenu shadow-header w-[630px] xl:w-[1000px] 2xl:w-[1200px] start-full"
 											style="margin-left: 240px;">
@@ -297,25 +297,25 @@ $(function(){
 															class="pt-6 even:bg-gray-150 pb-7 2xl:pb-8 2xl:pt-7 max-h-[calc(100vh-220px)] overflow-y-scroll">
 															<li class="mb-1.5"><a
 																class="block text-sm py-1.5 text-heading font-semibold px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list2.do?category2=P1">노트북</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list2.do?category2=P1">노트북</a></li>
 															<li class=""><a
 																class="text-body text-sm block py-1.5 px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list3.do?category3=P101">삼성</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list3.do?category3=P101">삼성</a></li>
 															<li class=""><a
 																class="text-body text-sm block py-1.5 px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list3.do?category3=P102">LG</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list3.do?category3=P102">LG</a></li>
 															<li class="border-b border-gray-300 pb-3.5 mb-3"><a
 																class="text-body text-sm block py-1.5 px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list3.do?category3=P103">애플</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list3.do?category3=P103">애플</a></li>
 														</ul>
 														<ul
 															class="pt-6 even:bg-gray-150 pb-7 2xl:pb-8 2xl:pt-7 max-h-[calc(100vh-220px)] overflow-y-scroll">
 															<li class="mb-1.5"><a
 																class="block text-sm py-1.5 text-heading font-semibold px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list2.do?category2=P2">모니터</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list2.do?category2=P2">모니터</a></li>
 															<li class="mb-1.5"><a
 																class="block text-sm py-1.5 text-heading font-semibold px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list2.do?category2=P3">데스크탑</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list2.do?category2=P3">데스크탑</a></li>
 														</ul>
 													</div>
 												</div>
@@ -323,7 +323,7 @@ $(function(){
 										</div></li>
 									<li class=""><a
 										class="flex items-center py-2 ps-5 xl:ps-7 pe-3 xl:pe-3.5 hover:text-heading hover:bg-gray-300"
-										href="goods_list1.do?category1=B">도서 / 문구</a>
+										href="http://localhost/retro_prj/user/goods/goods_list1.do?category1=B">도서 / 문구</a>
 										<div
 											class="absolute flex bg-white categoryMegaMenu shadow-header w-[630px] xl:w-[1000px] 2xl:w-[1200px] start-full"
 											style="margin-left: 240px;">
@@ -335,31 +335,31 @@ $(function(){
 															class="pt-6 even:bg-gray-150 pb-7 2xl:pb-8 2xl:pt-7 max-h-[calc(100vh-220px)] overflow-y-scroll">
 															<li class="mb-1.5"><a
 																class="block text-sm py-1.5 text-heading font-semibold px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list2.do?category2=B1">학습 / 교육</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list2.do?category2=B1">학습 / 교육</a></li>
 															<li class=""><a
 																class="text-body text-sm block py-1.5 px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list3.do?category3=B101">학습 / 참고서</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list3.do?category3=B101">학습 / 참고서</a></li>
 															<li class=""><a
 																class="text-body text-sm block py-1.5 px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list3.do?category3=B102">수험서 / 자격증</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list3.do?category3=B102">수험서 / 자격증</a></li>
 															<li class=""><a
 																class="text-body text-sm block py-1.5 px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list3.do?category3=B103">컴퓨터 / 인터넷</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list3.do?category3=B103">컴퓨터 / 인터넷</a></li>
 														</ul>
 														<ul
 															class="pt-6 even:bg-gray-150 pb-7 2xl:pb-8 2xl:pt-7 max-h-[calc(100vh-220px)] overflow-y-scroll">
 															<li class="mb-1.5"><a
 																class="block text-sm py-1.5 text-heading font-semibold px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list2.do?category2=B2">소설 / 만화책</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list2.do?category2=B2">소설 / 만화책</a></li>
 															<li class=""><a
 																class="text-body text-sm block py-1.5 px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list3.do?category3=B201">소설책</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list3.do?category3=B201">소설책</a></li>
 															<li class=""><a
 																class="text-body text-sm block py-1.5 px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list3.do?category3=B202">만화책</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list3.do?category3=B202">만화책</a></li>
 															<li class=""><a
 																class="block text-sm py-1.5 text-heading font-semibold px-5 xl:px-8 2xl:px-10 hover:text-heading hover:bg-gray-300"
-																href="goods_list2.do?category2=B3">문구 / 사무용품</a></li>
+																href="http://localhost/retro_prj/user/goods/goods_list2.do?category2=B3">문구 / 사무용품</a></li>
 														</ul>
 													</div>
 												</div>

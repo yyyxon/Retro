@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<c:import url="http://localhost/retro_prj/common/cdn/admin_cdn.jsp"/>
 <meta charset="UTF-8">
 
 <!-- 태균이가 만든거 -->

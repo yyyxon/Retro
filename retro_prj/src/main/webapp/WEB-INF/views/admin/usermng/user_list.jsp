@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<c:import url="http://localhost/retro_prj/common/cdn/admin_cdn.jsp"/>
 <meta charset="UTF-8">
 
 <!-- 태균이가 만든거 -->
@@ -179,11 +180,20 @@ function chkNull() {
 		<!---->
 		<div class="pagenationDiv">
     	<div class="pagination">
-      		<a href="#"><</a>
-        	<span class="active">1</span>
-        	<a href="#">2</a>
-        	<a href="#">3</a>
-        	<a href="#">></a>
+    		<c:if test="pageData.paginationEndNum != 1">
+    			<c:forEach var="pn" begin="${pageStart }" end="${pageEnd }" step="1">
+	        		<a href="user_list.do?page=${pn }">${pn }
+	        			<c:choose>
+		    				<c:when test="${param.page == pn }">
+					        	<span class="active">${pn }</span>
+		    				</c:when>
+		    				<c:when test="${empty param.page }">
+		    					<span class="active">1</span>
+		    				</c:when>
+	        			</c:choose>
+    				</a>
+    			</c:forEach>
+    		</c:if>
     	</div>
     	</div>
     	<c:if test="${ not empty param.keyword }">

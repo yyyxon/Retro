@@ -3,15 +3,24 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.co.sist.admin.userMng">
+<!-- 전체 레코그 수 구하기 -->
+<select id="CntRecode" resultType="int">
+SELECT COUNT(ID) FROM MEMBER
+</select>
+
 <!-- 모든 회원 조회 -->
-<select id="selectAllUser" resultType="kr.co.sist.admin.domain.user.UserDomain">
-SELECT ID, NICKNAME, PHONE, TO_CHAR(INPUT_DATE,'YYYY-MM-DD HH24:MI:SS') INPUT_DATE,
+<select id="selectAllUser" resultType="kr.co.sist.admin.domain.user.UserDomain" parameterType="kr.co.sist.common.BoardRangeVO">
+SELECT ID, NICKNAME, PHONE, TO_CHAR(INPUT_DATE,'YYYY-MM-DD HH24:MI:SS') INPUT_DATE, STATUS
+FROM (
+SELECT ROW_NUMBER() OVER(ORDER BY INPUT_DATE DESC) RNUM, ID, NICKNAME, PHONE, INPUT_DATE,
 CASE WHEN STATUS='C' THEN '탈퇴'
 		 WHEN STATUS='D' THEN '정지'
 		 WHEN STATUS='F' THEN '삭제'
 		 ELSE '정상'
 		 END STATUS
 FROM MEMBER
+)
+WHERE RNUM BETWEEN #{startNum} AND #{endNum}
 </select>
 
 <!-- 회원 정보 상세 조회 -->

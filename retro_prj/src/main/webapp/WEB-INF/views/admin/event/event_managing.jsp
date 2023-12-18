@@ -6,6 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<c:import url="http://localhost/retro_prj/common/cdn/admin_cdn.jsp"/>
 
 <!-- 태균이가 만든거 -->
 <style type="text/css">
@@ -66,7 +67,7 @@ border-radius: 9px;
 <script type="text/javascript">
 $(function() {
 	$("#btnLogout").click(function() {
-		location.href="logout.jsp";
+		location.href="admin_logout_process.do";
 	});
 });
 

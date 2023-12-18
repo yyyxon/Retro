@@ -84,7 +84,7 @@ $(function(){
 							</li>
 							<li class="flex items-center justify-center px-3 border-r-2">
 								<a class="flex items-center justify-center [&amp;>p]:ml-2"
-								href="/product/form?type=regist"><svg fill="none"
+								href="http://localhost/retro_prj/user/product/product_register.do"><svg fill="none"
 										height="29" viewBox="0 0 24 24" width="28"
 										xmlns="http://www.w3.org/2000/svg">
 											<path
@@ -96,21 +96,6 @@ $(function(){
 							
 							<li class="relative flex px-3">
 								<button class="flex items-center justify-center [&amp;>p]:ml-2" id="login">
-<<<<<<< HEAD
-								<script type="text/javascript">
-										$("#login").click(function(){
-											var uid = '<%=(String)session.getAttribute("id")%>';
-											if(uid=='null') {
-												location.href="login_frm.do"
-											} else {
-												$("#myPageDiv").toggle();
-											}
-											
-											
-										});
-									</script>
-=======
->>>>>>> branch 'main' of https://github.com/mark3lim/retro.git
 									<svg stroke="currentColor" fill="none" stroke-width="0"
 										viewBox="0 0 24 24" height="24" width="24"
 										xmlns="http://www.w3.org/2000/svg">
@@ -123,7 +108,7 @@ $(function(){
 								<!-- 로그인 됐을 때만 작동하게 코드 추가해주숑  -->
 								<div style="left: 110px;position: absolute;display: none;" id="myPageDiv">
 									<ul class='absolute bg-white flex flex-col top-[30px] right-[5px] rounded-lg shadow-header [&amp;>li]:py-3 [&amp;>li]:mx-5 [&amp;>li]:border-b [&amp;>li]:border-jnGray-500 [&amp;>li:last-of-type]:border-b-0 text-sm font-normal'>
-									<li style='width: 64px;''><a href=''/store/8626376'>마이 페이지</a></li>
+									<li style='width: 64px;''><a href='/store/8626376'>마이 페이지</a></li>
 									<li ><a href="http://localhost/retro_prj/user/logout_process.do">로그아웃</a></li></ul>
 								</div>
 							</li>
@@ -386,13 +371,11 @@ $(function(){
 						<nav
 							class="headerMenu flex w-full relative hidden lg:flex ps-3.5 xl:ps-5">
 							<div class="menuItem group cursor-pointer ">
-								<a
-									class="relative inline-flex items-center px-3 py-3 text-sm font-normal xl:text-base text-heading xl:px-4 group-hover:text-black"
+								<a class="relative inline-flex items-center px-3 py-3 text-sm font-normal xl:text-base text-heading xl:px-4 group-hover:text-black"
 									href="http://localhost/retro_prj/event.do">이벤트</a>
 							</div>
 							<div class="menuItem group cursor-pointer ">
-								<a
-									class="relative inline-flex items-center px-3 py-3 text-sm font-normal xl:text-base text-heading xl:px-4 group-hover:text-black"
+								<a class="relative inline-flex items-center px-3 py-3 text-sm font-normal xl:text-base text-heading xl:px-4 group-hover:text-black"
 									href="http://localhost/retro_prj/fraud.do">사기조회</a>
 							</div>
 						</nav>

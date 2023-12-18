@@ -8,6 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="icon" href="http://192.168.0.70/jsp_prj/common/main/favicon-32x32.png">
+<c:import url="http://localhost/retro_prj/common/cdn/cdn.jsp" />
 <!-- jQuery CDN -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <!-- 상품목록css -->

@@ -7,14 +7,11 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.co.sist.admin.domain.AdminProductDetailDomain;
 import kr.co.sist.admin.domain.AdminProductDomain;
 import kr.co.sist.admin.service.AdminProductService;
-import kr.co.sist.admin.vo.AdminProductVO;
 import kr.co.sist.common.BoardRangeVO;
 import kr.co.sist.common.pagination.PaginationDomain;
 
@@ -64,6 +61,5 @@ public class AdminProductController {
 		return aps.editRemoveProduct(pcode).toJSONString();
 	}// productManage
 
-	
 	
 }// class

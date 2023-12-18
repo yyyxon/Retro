@@ -3,13 +3,11 @@ package kr.co.sist.admin.service;
 import java.util.List;
 
 import org.apache.ibatis.exceptions.PersistenceException;
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import kr.co.sist.admin.dao.AdminProductDAO;
 import kr.co.sist.admin.domain.AdminProductDetailDomain;
 import kr.co.sist.admin.domain.AdminProductDomain;
-import kr.co.sist.admin.vo.AdminProductVO;
 import kr.co.sist.common.BoardRangeVO;
 import kr.co.sist.common.pagination.Pagination;
 import kr.co.sist.common.pagination.PaginationDomain;
@@ -47,8 +45,6 @@ public class AdminProductService {
 			int cnt = apDAO.productTotalCnt(brVO);
 			Pagination pn=new Pagination();
 			pageD=pn.setStartEndPageNum(cnt, page);
-			System.out.println("==================currentPage===================="+currentPage);
-			System.out.println("==================pageD===================="+pageD);
 		} catch (PersistenceException pe) {
 			pe.printStackTrace();
 		} // end catch

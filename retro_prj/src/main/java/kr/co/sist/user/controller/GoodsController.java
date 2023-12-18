@@ -162,7 +162,7 @@ public class GoodsController {
 
 		WishVO wVO=new WishVO();
 		WishService ws=WishService.getInstance();
-		wVO.setId("1011kiy111");
+		wVO.setId(id);
 		wVO.setPcode(pcode);
 		
 		ws.getChkPcode(wVO);

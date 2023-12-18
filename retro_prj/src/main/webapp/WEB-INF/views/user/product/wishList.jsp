@@ -3,6 +3,9 @@
     <%@ page info="" %>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+      <c:if test="${ empty id }">
+    <c:redirect url="http://localhost/retro_prj/user/login_frm.do"/>
+    </c:if> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,14 +40,6 @@
 </style>
 <script type="text/javascript">
 	$(function() {
-		/* $("#deleteBtn").click(function() {
-			var pcode = "${ wl.pcode }";
-			var confirmDelete = confirm("정말로 삭제하시겠습니까?");
-
-			if (confirmDelete) {
-				deleteWish(pcode);
-			}//end if
-		});//click */
 		
 	});//ready
 	

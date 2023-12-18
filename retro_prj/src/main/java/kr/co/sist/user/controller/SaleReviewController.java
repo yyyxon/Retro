@@ -16,7 +16,6 @@ public class SaleReviewController {
 	@PostMapping("/sales_review_write.do")
 	public String saleCommentFrm(String buyerId, Model model) {
 		
-		
 		model.addAttribute("info",srs.searchBuyerInfo(buyerId));
 		return "user/review/user_sales_review";
 	}//saleCommentFrm
@@ -33,5 +32,4 @@ public class SaleReviewController {
 		return "user/review/review_complete";
 	}//addSaleComment
 	
-
 }//class

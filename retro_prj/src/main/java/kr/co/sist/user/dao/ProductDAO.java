@@ -165,17 +165,5 @@ public class ProductDAO {
 		return wishCnt;
 	}//selectWishCnt
 	
-	
-
-	public static void main(String[] args) {
-		ProductDAO pd = ProductDAO.getInstance();
-		ProductVO pVO = new ProductVO();
-		pVO.setPcode("P00008");
-		pd.selectProduct(pVO);
-////		pd.getPcode(id);
-////		
-////		
-////		
-	}// main
 
 }// class

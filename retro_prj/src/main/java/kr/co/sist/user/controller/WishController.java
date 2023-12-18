@@ -2,7 +2,6 @@ package kr.co.sist.user.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -31,7 +30,7 @@ public class WishController {
 	public String addWish(WishVO wVO, HttpSession session) {
 		
 		String id = (String)session.getAttribute("id");
-		wVO.setId("1011kiy111");
+		wVO.setId(id);
 		return ws.addWish(wVO).toJSONString();
 	}//productRegister
 	
@@ -42,10 +41,10 @@ public class WishController {
 	 * @return
 	 */
 	@RequestMapping("/user/product/wishList.do")
-	public String WishList(HttpServletRequest request, HttpSession session,Model model, BoardRangeVO brVO) {
+	public String WishList(HttpSession session,Model model, BoardRangeVO brVO) {
 		String id = (String)session.getAttribute("id");
 		
-		brVO.setId("1011kiy111");
+		brVO.setId(id);
 		List<WishDomain> searchWishList=ws.searchWish(brVO);
 		int selectAllCnt=ws.searchWishCnt("1011kiy111");
 		

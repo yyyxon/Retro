@@ -98,14 +98,14 @@ public class LoginController {
 	
 //------------------admin
 	
-	@GetMapping("/admin/login/admin_login_frm.do")
+	@GetMapping("/admin/admin_login_frm.do")
 	public String adminLoginFrm() {
 		
 		
 		return "admin/login/admin_login_frm";
 	}//adminLoginFrm
 	
-	   @PostMapping("/admin/login/admin_login_process.do")
+	   @PostMapping("/admin/admin_login_process.do")
 	   public String adminloginSuccessProcess(Model model,LoginVO lVO) {
 
 	      String url="/admin/login/admin_login_frm";
@@ -128,7 +128,7 @@ public class LoginController {
 	
 
 	
-	@GetMapping("/admin/login/admin_logout_process.do")
+	@GetMapping("/admin/admin_logout_process.do")
 	public String removeAdminSession( SessionStatus ss) {
 		ss.setComplete();
 		

@@ -79,26 +79,35 @@
 											stroke-width="2"></path></svg>
 									<p>판매하기</p> </a>
 							</li>
+							
 							<li class="relative flex px-3">
 								<button class="flex items-center justify-center [&amp;>p]:ml-2" id="login">
+								<script type="text/javascript">
+										$("#login").click(function(){
+											var uid = '<%=(String)session.getAttribute("id")%>';
+											if(uid=='null') {
+												location.href="login/login_frm.do"
+											} else {
+												$("#myPageDiv").toggle();
+											}
+											
+											
+										});
+									</script>
 									<svg stroke="currentColor" fill="none" stroke-width="0"
 										viewBox="0 0 24 24" height="24" width="24"
 										xmlns="http://www.w3.org/2000/svg">
 											<path stroke-linecap="round" stroke-linejoin="round"
 											stroke-width="2"
 											d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
-									<p>로그인</p>
-									<script type="text/javascript">
-										$("#login").click(function(){
-											$("#myPageDiv").toggle();
-										});
-									</script>
+									<p></p>
+								 	
 								</button>
 								<!-- 로그인 됐을 때만 작동하게 코드 추가해주숑  -->
 								<div style="left: 110px;position: absolute;display: none;" id="myPageDiv">
 									<ul class='absolute bg-white flex flex-col top-[30px] right-[5px] rounded-lg shadow-header [&amp;>li]:py-3 [&amp;>li]:mx-5 [&amp;>li]:border-b [&amp;>li]:border-jnGray-500 [&amp;>li:last-of-type]:border-b-0 text-sm font-normal'>
 									<li style='width: 64px;''><a href=''/store/8626376'>마이 페이지</a></li>
-									<li><a>로그아웃</a></li></ul>
+									<li ><a href="logout_process.do">로그아웃</a></li></ul>
 								</div>
 							</li>
 						</ul>

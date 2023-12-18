@@ -24,7 +24,7 @@ public class LoginController {
 		return "user/login/login_frm";
 	}//loginfrm
 	
-	@PostMapping("/user/login/login_process.do")
+	@PostMapping("/user/login_process.do")
 	public String loginSuccessProcess(Model model,LoginVO lVO) {
 
 		String url="user/login/login_frm";
@@ -39,7 +39,7 @@ public class LoginController {
 			model.addAttribute("id", ld.getId());
 			model.addAttribute("nickname",ld.getNickname());
 			msg="";
-			url="user/main";
+			url="user/home";
 		}
 		model.addAttribute("msg", msg);
 		return url;
@@ -95,6 +95,17 @@ public class LoginController {
 		model.addAttribute("msg", msg);
 		return url;
 	}//findPwProcess
+	
+	@GetMapping("/user/logout_process.do")
+	public String removeUserSession( SessionStatus ss) {
+		ss.setComplete();
+		
+		
+		
+
+		
+		return "user/home";
+	}//removeAdminSession
 	
 //------------------admin
 	

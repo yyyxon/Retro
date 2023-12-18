@@ -49,7 +49,6 @@ public class HomeService {
 			for(int i = 0; i < idxArr.length; i++) {
 				list.add(hDAO.selectAllProduct().get(idxArr[i]));
 			}
-			System.out.println(idxArr[0] + "--" + idxArr[1] + "--" + idxArr[2] + "--" + idxArr[3] + "--" + idxArr[4]);
 		}catch(PersistenceException pe) {
 			pe.printStackTrace();
 		}

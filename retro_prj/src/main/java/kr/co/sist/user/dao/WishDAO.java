@@ -46,6 +46,18 @@ public class WishDAO {
 		return selectAllCnt;
 	}// selectWishCnt
 	
+	public int getChkPcode(WishVO wVO) throws PersistenceException {
+		int resultPcode=0;
+		
+		MybatisHandler mbh = MybatisHandler.getInstance();
+		SqlSession ss = mbh.getMyBatisHandler(configPath, false);
+		try {
+			resultPcode = ss.selectOne("user.wish.getPcode", wVO);
+	    } finally {
+	        mbh.closeHandler(ss);
+	    }//finally
+		return resultPcode;
+	}
 	
 	/**
 	 * 찜 추가

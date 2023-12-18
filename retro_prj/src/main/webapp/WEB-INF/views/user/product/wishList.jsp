@@ -105,8 +105,8 @@
 
 										<!-- 상품명 -->
 										<div data-v-6e1f328e="" class="list_item_title_wrap" style="width:auto;">
-											<p data-v-6e1f328e="" class="list_item_title">
-											${ wl.pname }</p>
+											<a href="http://localhost/retro_prj/user/goods/goods_info.do?pcode=${ wl.pcode }" class="list_item_title">
+											${ wl.pname }</a>
 										</div>
 										<!---->
 									</div>

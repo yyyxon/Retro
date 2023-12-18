@@ -11,6 +11,8 @@ import kr.co.sist.admin.domain.AdminProductDetailDomain;
 import kr.co.sist.admin.domain.AdminProductDomain;
 import kr.co.sist.admin.vo.AdminProductVO;
 import kr.co.sist.common.BoardRangeVO;
+import kr.co.sist.common.pagination.Pagination;
+import kr.co.sist.common.pagination.PaginationDomain;
 
 public class AdminProductService {
 
@@ -34,15 +36,24 @@ public class AdminProductService {
 	 * @param brVO
 	 * @return
 	 */
-	public int productTotalCnt(BoardRangeVO brVO) {
-		int cnt = 0;
+	public PaginationDomain productTotalCnt(String currentPage) {
+		int page = 1;
+		if(currentPage != null && !"".equals(currentPage)) {
+			page = Integer.parseInt(currentPage);
+		}
+		PaginationDomain pageD = null;
+		BoardRangeVO brVO=new BoardRangeVO();
 		try {
-			cnt = apDAO.productTotalCnt(brVO);
+			int cnt = apDAO.productTotalCnt(brVO);
+			Pagination pn=new Pagination();
+			pageD=pn.setStartEndPageNum(cnt, page);
+			System.out.println("==================currentPage===================="+currentPage);
+			System.out.println("==================pageD===================="+pageD);
 		} catch (PersistenceException pe) {
 			pe.printStackTrace();
 		} // end catch
 
-		return cnt;
+		return pageD;
 	}// productTotalCnt
 
 	/**

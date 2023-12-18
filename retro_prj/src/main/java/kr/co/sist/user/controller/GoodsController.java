@@ -16,7 +16,9 @@ import kr.co.sist.common.pagination.Pagination;
 import kr.co.sist.common.pagination.PaginationDomain;
 import kr.co.sist.user.domain.GoodsDomain;
 import kr.co.sist.user.service.GoodsService;
+import kr.co.sist.user.service.WishService;
 import kr.co.sist.user.vo.GoodsVO;
+import kr.co.sist.user.vo.WishVO;
 
 @Controller
 public class GoodsController {
@@ -157,9 +159,17 @@ public class GoodsController {
 		model.addAttribute("level",gd.getCredit_level());
 		model.addAttribute("pcode",pcode);
 		
-		if(gs.searchCheck(gVO) == 1) {
-			return "/user/product/product_detail";
-		}
+
+		WishVO wVO=new WishVO();
+		WishService ws=WishService.getInstance();
+		wVO.setId("1011kiy111");
+		wVO.setPcode(pcode);
+		
+		ws.getChkPcode(wVO);
+		
+		model.addAttribute("chkPcode",ws.getChkPcode(wVO));
+		System.out.println(ws.getChkPcode(wVO));
+		model.addAttribute("pcode",pcode);
 		
 		return "user/goods/goods_info";
 	}

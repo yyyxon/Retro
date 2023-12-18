@@ -23,6 +23,10 @@
 	 where  p.pcode = w.pcode and w.id= #{ id }
 	 ) where rnum between 1 and 5
 		</select>
+		
+		<select id="getPcode" resultType="int" parameterType="wVO">
+			select count(pcode) cnt from wish where id=#{ id } and pcode=#{ pcode }
+		</select>
 	
 	
 	<delete id="deleteWish" parameterType="String">

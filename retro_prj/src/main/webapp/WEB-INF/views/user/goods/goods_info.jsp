@@ -68,25 +68,39 @@ $(document).ready(function () {
   
   
   function addWish(pcode){
-	  $.ajax({
-			url : "../product/addWish.do",
-			type : "get",
-			data : "pcode=" + pcode,
-			dataType : "JSON",
-			error : function(xhr) {
-				alert("죄송합니다. 서버에 문제가 발생하였습니다. 잠시 후에 다시 시도해주세요.");
-				console.log(xhr.status);
-			},
-			success : function(jsonObj) {
-				alert("찜 등록이 완료되었습니다.");
-				var confirmGoWishList= confirm("찜 목록으로 가시겠습니까?");
-
-				if (confirmGoWishList) {
-					location.href="http://localhost/retro_prj/user/product/wishList.do";
-				}//end if
-			}//success
-		});//ajax
-  }//addWish
+	  
+	  	var chkPcode = ${ chkPcode };
+		if(chkPcode == 0 ){
+					alert("장바구니에 상품이 추가되었습니다.");
+		                // 사용자가 확인을 누른 경우
+					  $.ajax({
+							url : "../product/addWish.do",
+							type : "get",
+							data : "pcode=" + pcode,
+							dataType : "JSON",
+							error : function(xhr) {
+								alert("죄송합니다. 서버에 문제가 발생하였습니다. 잠시 후에 다시 시도해주세요.");
+								console.log(xhr.status);
+							},
+							success : function(jsonObj) {
+							if (confirm("장바구니 페이지로 이동하시겠습니까?")) {
+		                        window.location.href = "http://localhost/retro_prj/user/product/wishList.do"; 
+		                    } else {
+		                        location.reload();
+		                    }//end else
+		            }//success
+				});//ajax
+                  	
+                  	
+         }else{
+          	alert("이미 장바구니에 존재하는 상품입니다.");
+              if (confirm("장바구니 페이지로 이동하시겠습니까?")) {
+                   window.location.href = "http://localhost/retro_prj/user/product/wishList.do"; 
+               } else {
+                   location.reload();
+               }//end else
+     	}//end else
+}//addWish
 
 </script>
 </head>

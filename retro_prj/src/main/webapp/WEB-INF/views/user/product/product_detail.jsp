@@ -377,7 +377,7 @@
 					<div class="py-4 border-b border-gray-300 space-s-4">
 						<div class="pb-1 space-y-5 text-sm">
 							<div class="flex justify-between text-body">
-								<span>13초 전 · 조회 0 · 찜 0</span><a href="/fraud"><div
+								<span> 찜 ${ wishCnt }</span><a href="/fraud"><div
 										class="flex items-center hover:text-gray-400">
 										<svg stroke="currentColor" fill="currentColor"
 											stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em"

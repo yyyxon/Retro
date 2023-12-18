@@ -154,6 +154,17 @@ public class ProductDAO {
 		
 	}//selectBuyerAllInfo
 	
+	public int selectWishCnt(String pcode)throws PersistenceException{
+		int wishCnt=0;
+		MybatisHandler mbh = MybatisHandler.getInstance();
+		SqlSession ss = mbh.getMyBatisHandler(configPath, false);
+		wishCnt = ss.selectOne("user.product.selectWishCnt",pcode);
+		
+		mbh.closeHandler(ss);
+		
+		return wishCnt;
+	}//selectWishCnt
+	
 	
 
 	public static void main(String[] args) {

@@ -17,6 +17,7 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 import kr.co.sist.user.domain.ProductDomain;
 import kr.co.sist.user.service.ProductService;
+import kr.co.sist.user.service.WishService;
 import kr.co.sist.user.vo.ProductVO;
 
 @Controller
@@ -33,15 +34,8 @@ public class ProductController {
 	public String productRegister(HttpServletRequest request, Model model) {
 		
 		
-		
 		return "user/product/product_register";
 	}//productRegister
-	
-//	@RequestMapping("/upload_process.do")
-//	public String upload(HttpServletRequest request, Model model) {
-//		
-//		
-//	}//productRegister
 	
 	
 	
@@ -75,8 +69,6 @@ public class ProductController {
 			String c3code=mr.getParameter("c3code");
 			String id = (String)session.getAttribute("id");
 			
-			
-//			System.out.println(img);
 			pVO.setPname(pname);
 			pVO.setContext(context);
 			pVO.setImg(img);
@@ -91,21 +83,6 @@ public class ProductController {
 			pVO.setId("1011kiy111");
 			ps.addProduct(pVO);
 
-	     // 파일을 원하는 위치에 저장
-//	        Enumeration<String> files = mr.getFileNames();
-//	        while (files.hasMoreElements()) {
-//	            String name = files.nextElement();
-//	            MultipartFile file = mr.getFile(name);
-//
-//	            // 각 업로드된 파일을 처리합니다.
-//	            String originalFileName = file.getOriginalFilename();
-//	            String fileExtension = originalFileName.substring(originalFileName.lastIndexOf("."));
-//	            String savedFileName = pcode + fileExtension;
-//
-//	            // 파일을 원하는 위치에 저장합니다.
-//	            File savedFile = new File(saveDir, savedFileName);
-//	            file.transferTo(savedFile);
-//	        }
 	       
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -132,7 +109,10 @@ public class ProductController {
 		pVO.setId("1011kiy111");
 //		String pcode=request.getParameter("pcode");
 		ProductDomain userProduct=ps.searchProduct(pVO);
+		
 		model.addAttribute("AllCominfo", ps.searchBuyerAllInfo("1011kiy111"));
+		model.addAttribute("wishCnt", ps.searchWishCnt(pcode));
+		
 		model.addAttribute("userProduct",userProduct);
 		
 		return "user/product/product_detail";
@@ -163,7 +143,6 @@ public class ProductController {
 		File saveDir=new File("C:/Users/user/git/retro/retro_prj/src/main/webapp/upload");
 		
 		int maxSize=1024*1024*30; // 최대 파일 업로드 사이즈 30Mbyte
-		String pcode=null;
 		try {
 			MultipartRequest mr=new MultipartRequest(request, saveDir.getAbsolutePath(), 
 					maxSize, "UTF-8",new DefaultFileRenamePolicy());
@@ -179,6 +158,7 @@ public class ProductController {
 			String status=mr.getParameter("status");
 			String loc=mr.getParameter("loc");
 			String c3code=mr.getParameter("c3code");
+			String pcode=mr.getParameter("pcode");
 			String id = (String)session.getAttribute("id");
 			
 			pVO.setPname(pname);
@@ -192,6 +172,7 @@ public class ProductController {
 			pVO.setStatus(status);
 			pVO.setLoc(loc);
 			pVO.setC3code(c3code);
+			pVO.setPcode(pcode);
 			pVO.setId("1011kiy111");
 			ps.editProduct(pVO);
 
@@ -200,7 +181,7 @@ public class ProductController {
 			e.printStackTrace();
 		}//end catch
 
-	    return "user/product/productEdit_register_ok";
+	    return "user/product/product_register_ok";
 
 	}//productDetails
 	

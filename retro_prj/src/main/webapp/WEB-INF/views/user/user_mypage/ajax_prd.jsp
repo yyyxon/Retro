@@ -13,7 +13,7 @@
 				<a class="group box-border overflow-hidden flex rounded-md cursor-pointer pe-0 pb-2 lg:pb-3 flex-col items-start transition duration-200 ease-in-out transform hover:-translate-y-1 md:hover:-translate-y-1.5 hover:shadow-product bg-white"
 					title="${prd.pname }" href="http://localhost/retro_prj/user/goods/goods_info.do?pcode=${prd.pcode }">
 					<div class="relative w-full rounded-md overflow-hidden pt-[100%] mb-3 md:mb-3.5">
-						<img alt="${prd.pname }" referrerpolicy="no-referrer" src="http://192.168.10.143/mvc_prj/common/images/${prd.img }"
+						<img alt="${prd.pname }" referrerpolicy="no-referrer" src="http://localhost/retro_prj/upload/${prd.img }"
 							decoding="async" data-nimg="fill" class="bg-gray-300 object-cover w-full transition duration-200 ease-in rounded-md group-hover:rounded-b-none"
 							loading="lazy" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
 					</div>

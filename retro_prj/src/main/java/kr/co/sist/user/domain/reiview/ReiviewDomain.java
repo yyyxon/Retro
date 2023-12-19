@@ -10,5 +10,5 @@ import lombok.ToString;
 public class ReiviewDomain {
 
 	private String id, context, input_date, buycommentcode;
-	private char select2, select1;
+	private char select1, select2_1, select2_2, select2_3, select2_4;
 }

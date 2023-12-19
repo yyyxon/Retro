@@ -22,27 +22,31 @@ public class ReiviewService {
 	
 	public ReiviewCntDomain getReiviewCnt(List<ReiviewDomain> list) {
 		ReiviewCntDomain rcDomain = new ReiviewCntDomain();
-		int one = 0;
-		int two = 0;
-		int three = 0;
-		int four = 0;
+		int one = 0; int two = 0;
+		int three = 0; int four = 0;
 		
 		if(list != null) {
+			char[] chArr = new char[4];
 			for(ReiviewDomain reiview : list) {
 				if(reiview.getSelect1() != '1') {
-					switch (reiview.getSelect2()) {
-					case '1':
-						rcDomain.setOne(++one);
-						break;
-					case '2':
-						rcDomain.setTwo(++two);
-						break;
-					case '3':
-						rcDomain.setThree(++three);
-						break;
-					case '4':
-						rcDomain.setFour(++four);
-						break;
+					chArr[0] = reiview.getSelect2_1(); chArr[1] = reiview.getSelect2_2();
+					chArr[2] = reiview.getSelect2_3(); chArr[3] = reiview.getSelect2_4();
+					
+					for(int i = 0; i < chArr.length; i++) {
+						switch (chArr[i]) {
+						case '1':
+							rcDomain.setOne(++one);
+							break;
+						case '2':
+							rcDomain.setTwo(++two);
+							break;
+						case '3':
+							rcDomain.setThree(++three);
+							break;
+						case '4':
+							rcDomain.setFour(++four);
+							break;
+						}
 					}
 				}
 			}

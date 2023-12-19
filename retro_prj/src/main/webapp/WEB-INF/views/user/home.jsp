@@ -495,7 +495,8 @@ h1 {
 														<h2 class="line-clamp-2 text-sm sm:text-base md:mb-1.5 pb-0 text-heading">
 															${ prd.pname }
 														</h2>
-														<div class="font-semibold space-s-2 mt-0.5 text-heading sm:text-xl md:text-base lg:text-xl md:mt-1.5 2xl:mt-2">2,400원</div>
+														<div class="font-semibold space-s-2 mt-0.5 text-heading sm:text-xl md:text-base lg:text-xl md:mt-1.5 2xl:mt-2">
+														<fmt:formatNumber value="${ prd.price }" pattern="#,###,###"/>원</div>
 														<div class="my-1">
 															<c:if test="${ not empty prd.loc }">
 																<span class="text-sm text-gray-400">${ prd.loc }</span>

@@ -96,7 +96,7 @@ $(function(){
 	<option value="거래신고">거래신고</option>
 	<option value="회원/계정">회원/계정</option>
 	<option value="안전결제">안전결제</option>
-	<option value="사기신고">"사기신고"</option>
+	<option value="사기신고">사기신고</option>
 	<option value="오류/제안">오류/제안</option>
 	<option value="악성후기">악성후기</option>
 	<option value="기타">기타</option>

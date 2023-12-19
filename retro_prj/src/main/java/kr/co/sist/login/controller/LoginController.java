@@ -39,7 +39,7 @@ public class LoginController {
 			model.addAttribute("id", ld.getId());
 			model.addAttribute("nickname",ld.getNickname());
 			msg="";
-			url="user/home";
+			url="redirect:http://localhost/retro_prj/index.do";
 		}
 		model.addAttribute("msg", msg);
 		return url;
@@ -104,7 +104,7 @@ public class LoginController {
 		
 
 		
-		return "user/home";
+		return "redirect:http://localhost/retro_prj/index.do";
 	}//removeAdminSession
 	
 //------------------admin

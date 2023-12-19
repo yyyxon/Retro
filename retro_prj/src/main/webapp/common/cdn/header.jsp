@@ -3,16 +3,14 @@
 <!-- <body cz-shortcut-listen="true"> -->
 <script type="text/javascript">
 $(function(){
-	var uid = '<%=(String)session.getAttribute("id")%>';
-	if(uid!='null') {
-		$("#log").html(uid+"님");
+	if(${ not empty sessionScope.id }) {
+		$("#log").html("${ sessionScope.id }님");
 	}else{
 		$("#log").html("로그인");
 	}
 	
 	$("#login").click(function(){
-			var uid = '<%=(String)session.getAttribute("id")%>';
-			if(uid=='null') {
+		if(${ empty sessionScope.id }) {
 			location.href="http://localhost/retro_prj/user/login_frm.do";
 		} else {
 			$("#myPageDiv").toggle();

@@ -66,6 +66,8 @@ public LoginDomain selectTempPw(LoginVO lVO)throws PersistenceException {
 			int cnt=ss.update("kr.co.sist.login.updateTempPw", lVO);
 			if(cnt == 1) {
 				ss.commit();
+			}else {
+				ss.rollback();
 			}
 		} catch (NoSuchAlgorithmException e) {
 			e.printStackTrace();

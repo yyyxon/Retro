@@ -56,7 +56,7 @@ public int updateAnswer(AdminInquiryVO aiVO) {
 		cnt=ss.update("kr.co.sist.admininquiry.updateAnswer", aiVO);
 		if(cnt==1) {
 			ss.commit();
-		}
+		}else {ss.rollback();}
 		mbh.closeHandler(ss);
 		return cnt;
 		

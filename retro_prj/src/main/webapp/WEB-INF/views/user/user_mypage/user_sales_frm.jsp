@@ -55,7 +55,6 @@
 	
 function salesAjax(val) {
 	flag = val;
-	alert(flag);
 		
 	$.ajax({
 		url:"user_sales.do",

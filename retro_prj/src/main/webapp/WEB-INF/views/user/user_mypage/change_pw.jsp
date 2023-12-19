@@ -6,7 +6,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
 <c:import url="http://localhost/retro_prj/common/cdn/cdn.jsp"/>
 <link rel="stylesheet" href="https://kream.co.kr/_nuxt/css/199727e.css">
 <style type="text/css">

@@ -101,12 +101,13 @@ public class ProductController {
 		pVO.setPcode(pcode);
 		pVO.setId(id);
 		ProductDomain userProduct=ps.searchProduct(pVO);
-		
-		model.addAttribute("AllCominfo", ps.searchBuyerAllInfo(id));
-		model.addAttribute("wishCnt", ps.searchWishCnt(pcode));
-		model.addAttribute("searchChk", ps.searchCheck(pVO));
-		
 		model.addAttribute("userProduct",userProduct);
+		
+		if(id != null) {
+			model.addAttribute("AllCominfo", ps.searchBuyerAllInfo(id));
+			model.addAttribute("wishCnt", ps.searchWishCnt(pcode));
+			model.addAttribute("searchChk", ps.searchCheck(pVO));
+		}
 		
 		return "user/product/product_detail";
 	}//productDetail
@@ -118,20 +119,19 @@ public class ProductController {
 	 * @return
 	 */
 	@RequestMapping("/user/product/product_edit.do")
-	public String productEditFrm(HttpServletRequest request, Model model, ProductVO pVO) {
-
+	public String productEditFrm(HttpSession session,HttpServletRequest request, Model model, ProductVO pVO) {
+		String id = (String)session.getAttribute("id");
 	    String pcode = request.getParameter("pcode"); 
 	    pVO.setPcode(pcode); 
-
 	    model.addAttribute("userProduct", ps.searchProduct(pVO));
+	    pVO.setId(id);
 	    model.addAttribute("searchChk", ps.searchCheck(pVO));
-
 	    return "user/product/product_edit";
 	}//productEditFrm
 	
 	
 	@RequestMapping("/user/product/productEdit_register_ok.do")
-	public String productEdit(HttpSession session,HttpServletRequest request, ProductVO pVO)  {
+	public String productEdit(Model model,HttpSession session,HttpServletRequest request, ProductVO pVO)  {
 		
 		File saveDir=new File("C:/Users/user/git/retro/retro_prj/src/main/webapp/upload");
 		
@@ -156,14 +156,39 @@ public class ProductController {
 			pVO.setPcode(mr.getParameter("pcode"));
 			pVO.setId(id);
 			ps.editProduct(pVO);
+			 model.addAttribute("pcode",mr.getParameter("pcode"));
 	       
 		} catch (IOException e) {
 			e.printStackTrace();
 		}//end catch
-	    return "user/product/product_register_ok";
+	    return "user/product/productEdit_register_ok";
 
 	}//productDetails
 	
+	/**
+	 * 판매자가 보는 상품 상세 페이지
+	 * @param request
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping("/user/product/productEdit_detail.do")
+	public String productEditDetail( HttpServletRequest request,HttpSession session,Model model,ProductVO pVO) {
+		String id = (String)session.getAttribute("id");
+	
+		String pcode = request.getParameter("pcode"); 
+		pVO.setPcode(pcode);
+		pVO.setId(id);
+		ProductDomain userProduct=ps.searchProduct(pVO);
+		model.addAttribute("userProduct",userProduct);
+		
+		if(id != null) {
+			model.addAttribute("AllCominfo", ps.searchBuyerAllInfo(id));
+			model.addAttribute("wishCnt", ps.searchWishCnt(pcode));
+			model.addAttribute("searchChk", ps.searchCheck(pVO));
+		}
+		
+		return "user/product/product_detail";
+	}//productDetail
 	
 	@ResponseBody
 	@RequestMapping("/user/product/productSaleEdit.do")

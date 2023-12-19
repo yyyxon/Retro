@@ -218,7 +218,8 @@
 				}//end else
 			}//end if
 			var frm = document.frm;
-			frm.action = "${searchChk == 1 ? 'productEdit_register_ok.do' : '../product/productEdit_register_ok.do'}";
+			var searchChk="${searchChk}";
+			frm.action = searchChk == 1 ? 'productEdit_register_ok.do' : '../product/productEdit_register_ok.do';
 			$("#regiFrm").submit();
 
 		});

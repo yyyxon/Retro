@@ -31,7 +31,7 @@
 <!-- header -->
 <c:import url="/common/cdn/header.jsp" />
 
-<div style="margin-top: 170px;text-align: center;">
+<div style="margin: 130px 0px 200px 0px;text-align: center;">
 	<div style="font-size: 26px;color: #000000;">
 		<p>
 			<span style="padding-left: 100px;padding-right: 100px;border-bottom: 2px solid #000000;padding-bottom: 50px;">

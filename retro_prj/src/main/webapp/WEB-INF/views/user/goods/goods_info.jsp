@@ -73,7 +73,7 @@ $(document).ready(function () {
 	  
 	  	var chkPcode = ${ chkPcode };
 		if(chkPcode == 0 ){
-					alert("장바구니에 상품이 추가되었습니다.");
+					alert("찜 목록에 상품이 추가되었습니다.");
 		                // 사용자가 확인을 누른 경우
 					  $.ajax({
 							url : "../product/addWish.do",
@@ -85,7 +85,7 @@ $(document).ready(function () {
 								console.log(xhr.status);
 							},
 							success : function(jsonObj) {
-							if (confirm("장바구니 페이지로 이동하시겠습니까?")) {
+							if (confirm("찜 목록으로 이동하시겠습니까?")) {
 		                        window.location.href = "http://localhost/retro_prj/user/product/wishList.do"; 
 		                    } else {
 		                        location.reload();
@@ -95,8 +95,8 @@ $(document).ready(function () {
                   	
                   	
          }else{
-          	alert("이미 장바구니에 존재하는 상품입니다.");
-              if (confirm("장바구니 페이지로 이동하시겠습니까?")) {
+          	alert("이미 찜 목록에 존재하는 상품입니다.");
+              if (confirm("찜 목록으로 이동하시겠습니까?")) {
                    window.location.href = "http://localhost/retro_prj/user/product/wishList.do"; 
                } else {
                    location.reload();

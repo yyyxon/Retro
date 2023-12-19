@@ -31,7 +31,7 @@
 <!-- header -->
 <c:import url="/common/cdn/header.jsp" />
 
-<div style="margin-top: 170px;text-align: center;">
+<div style="margin: 130px 0px 200px 0px;text-align: center;">
 	<div style="font-size: 26px;color: #000000;">
 		<p>
 			<span style="padding-left: 100px;padding-right: 100px;border-bottom: 2px solid #000000;padding-bottom: 50px;">
@@ -44,7 +44,7 @@
 		<p><span>회원 가입이 완료되었습니다.</span></p>
 		<p style="margin-top: 30px;font-weight: bold;color: #333"><span>${param.id }(${param.nickname })님 방갑습니다.</span></p>
 <%-- 		<p style="margin-top: 30px;"><span>${param.id }(${param.nickname })님 방갑습니다.</span></p> --%>
-		<a id="mainA" href="indexdw.do">메인으로</a>
+		<a id="mainA" href="http://localhost/retro_prj/index.do">메인으로</a>
 	</div>
 </div>
 

@@ -29,7 +29,7 @@ public class MypagePrdInfoController {
 	@RequestMapping(value = "/mypage_prd_all.do", method = {GET, POST})
 	public String ajaxSearchAllProcess(HttpSession session,String flag, String id, String page, Model model) {
 		String sesId = (String)session.getAttribute("id");
-		String userid = "".equals(sesId) ? (String)session.getAttribute("id") : id;
+		String userid = !"".equals(sesId) && sesId != null ? sesId : id;
 //		MypageIDnFlagVO mVO = new MypageIDnFlagVO(userid, flag.charAt(0));
 		
 		int pageNum = 1;
@@ -42,7 +42,7 @@ public class MypagePrdInfoController {
 		brVO.setStatus(null);
 		brVO.setOrderby(flag);
 		
-		int totalRecode = mpiService.totalRecodeCnt(null);
+		int totalRecode = mpiService.totalRecodeCnt(brVO);
 		PaginationDomain pd = new Pagination().setStartEndPageNum(totalRecode, pageNum);
 		
 		brVO.setStartNum(pd.getStartNum());
@@ -56,13 +56,15 @@ public class MypagePrdInfoController {
 		model.addAttribute("pageEnd", pd.getPaginationEndNum());
 		model.addAttribute("pageurl", "mypage_prd_all.do");
 		
+		System.out.println(list);
+		
 		return "user/user_mypage/ajax_prd";
 	}
 	
 	@RequestMapping(value = "/mypage_prd_onsale.do", method = {GET, POST})
 	public String ajaxSearchOnProcess(HttpSession session,String flag, String id, String page, Model model) {
 		String sesId = (String)session.getAttribute("id");
-		String userid = "".equals(sesId) ? (String)session.getAttribute("id") : id;
+		String userid = !"".equals(sesId) && sesId != null ? sesId : id;
 //		MypageIDnFlagVO mVO = new MypageIDnFlagVO(userid, flag.charAt(0));
 		
 		int pageNum = 1;
@@ -72,16 +74,16 @@ public class MypagePrdInfoController {
 		
 		BoardRangeVO brVO = new BoardRangeVO();
 		brVO.setId(userid);
-		brVO.setStatus(null);
+		brVO.setStatus("N");
 		brVO.setOrderby(flag);
 		
-		int totalRecode = mpiService.totalRecodeCnt(null);
+		int totalRecode = mpiService.totalRecodeCnt(brVO);
 		PaginationDomain pd = new Pagination().setStartEndPageNum(totalRecode, pageNum);
 		
 		brVO.setStartNum(pd.getStartNum());
 		brVO.setEndNum(pd.getEndNum());
 
-		List<MypagePrdDomain> list = mpiService.searchAllPrd(brVO);
+		List<MypagePrdDomain> list = mpiService.searchPrdOnProcess(brVO);
 		model.addAttribute("prdList", list);
 		model.addAttribute("totalCnt", list.size());
 		model.addAttribute("f", true);
@@ -89,13 +91,15 @@ public class MypagePrdInfoController {
 		model.addAttribute("pageEnd", pd.getPaginationEndNum());
 		model.addAttribute("pageurl", "mypage_prd_onsale.do");
 		
+		System.out.println(list);
+		
 		return "user/user_mypage/ajax_prd";
 	}
 	
 	@RequestMapping(value = "/mypage_prd_completed.do", method = {GET, POST})
 	public String ajaxSearchCompleted(HttpSession session,String flag, String id, String page, Model model) {
 		String sesId = (String)session.getAttribute("id");
-		String userid = "".equals(sesId) ? (String)session.getAttribute("id") : id;
+		String userid = !"".equals(sesId) && sesId != null ? sesId : id;
 //		MypageIDnFlagVO mVO = new MypageIDnFlagVO(userid, flag.charAt(0));
 		
 		int pageNum = 1;
@@ -105,22 +109,24 @@ public class MypagePrdInfoController {
 		
 		BoardRangeVO brVO = new BoardRangeVO();
 		brVO.setId(userid);
-		brVO.setStatus(null);
+		brVO.setStatus("Y");
 		brVO.setOrderby(flag);
 		
-		int totalRecode = mpiService.totalRecodeCnt(null);
+		int totalRecode = mpiService.totalRecodeCnt(brVO);
 		PaginationDomain pd = new Pagination().setStartEndPageNum(totalRecode, pageNum);
 		
 		brVO.setStartNum(pd.getStartNum());
 		brVO.setEndNum(pd.getEndNum());
 
-		List<MypagePrdDomain> list = mpiService.searchAllPrd(brVO);
+		List<MypagePrdDomain> list = mpiService.searchCompletedPrd(brVO);
 		model.addAttribute("prdList", list);
 		model.addAttribute("totalCnt", list.size());
 		model.addAttribute("f", false);
 		model.addAttribute("pageStart", pd.getPaginationStartNum());
 		model.addAttribute("pageEnd", pd.getPaginationEndNum());
 		model.addAttribute("pageurl", "mypage_prd_completed.do");
+		
+		System.out.println(list);
 		
 		return "user/user_mypage/ajax_prd";
 	}

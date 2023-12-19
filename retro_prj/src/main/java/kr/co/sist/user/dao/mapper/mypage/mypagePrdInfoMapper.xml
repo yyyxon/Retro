@@ -15,10 +15,10 @@ TO_CHAR(CEIL((SYSDATE - P.INPUT_DATE) * 24 * 60 * 60)) DATE_GAP
 FROM PRODUCT P, MEMBER M, BUYRECEIPT B
 WHERE M.ID='${id}' AND P.ID=M.ID AND PCANCEL='N' AND P.PCODE=B.PCODE(+)
 <choose>
-	<when test="orderby == 'B'">
+	<when test='orderby == "B"'>
 		order by PRICE
 	</when>
-	<when test="orderby == 'C'">
+	<when test='orderby == "C"'>
 		order by PRICE desc
 	</when>
 	<otherwise>
@@ -44,10 +44,10 @@ WHERE NOT EXISTS
 )
 WHERE ID='${id}'
 <choose>
-	<when test="orderby == 'B'">
+	<when test='orderby == "B"'>
 		order by PRICE
 	</when>
-	<when test="orderby == 'C'">
+	<when test='orderby == "C"'>
 		order by PRICE desc
 	</when>
 	<otherwise>
@@ -62,10 +62,10 @@ SELECT P.PCODE, P.PNAME, P.PRICE, P.INPUT_DATE, P.LOC, P.IMG
 FROM PRODUCT P, BUYRECEIPT B, MEMBER M
 WHERE M.ID='${id}' AND P.ID=M.ID AND P.PCODE=B.PCODE AND CANCLE IS NULL
 <choose>
-	<when test="orderby == 'B'">
+	<when test='orderby == "B"'>
 		order by PRICE
 	</when>
-	<when test="orderby == 'C'">
+	<when test='orderby == "C"'>
 		order by PRICE desc
 	</when>
 	<otherwise>
@@ -78,9 +78,9 @@ WHERE M.ID='${id}' AND P.ID=M.ID AND P.PCODE=B.PCODE AND CANCLE IS NULL
 <select id="totalRecode" resultType="int" parameterType="kr.co.sist.common.BoardRangeVO">
 SELECT COUNT(*)
 FROM PRODUCT
-WHERE M.ID='${id}'
+WHERE ID=#{id}
 <if test="status != null">
-	AND SALLOK=#{status}
+	AND SALEOK=#{status}
 </if>
 </select>
 

@@ -7,7 +7,11 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="https://kream.co.kr/_nuxt/css/199727e.css" />
+<link rel="stylesheet" href="https://kream.co.kr/_nuxt/css/6ce4bbc.css" />
 <link rel="stylesheet" href="https://kream.co.kr/_nuxt/css/9caa514.css" />
+<link rel="stylesheet" href="https://kream.co.kr/_nuxt/css/1f3c072.css" />
+<link rel="stylesheet" href="https://kream.co.kr/_nuxt/css/e5d2c10.css" />
+<link rel="stylesheet" href="https://kream.co.kr/_nuxt/css/ac4cc82.css" />
 <c:import url="http://localhost/retro_prj/common/cdn/cdn.jsp" />
 <style type="text/css">
 #orderByList {
@@ -26,6 +30,10 @@
 
 .end-0 {
     right: 0;
+}
+
+#saleLi{
+	color: #333;
 }
 
 </style>
@@ -106,7 +114,7 @@ function changeCss(idName) {
 				<div class="px-0 max-lg:mt-10">
 					<div class="items-center justify-between block mb-4 md:flex lg:mb-7">
 						<div class="flex-shrink-0 mb-1 text-xs leading-4 text-body md:text-sm pe-4 md:me-6 lg:ps-2 lg:block">
-							2 개의 상품</div>
+							3 개의 상품</div>
 						<div class="flex flex-wrap items-center justify-between">
 							<div class="mr-0 lg:mr-4">
 								<ul class="colors flex flex-nowrap -me-3">

@@ -78,7 +78,7 @@ svg:not(:root) {
 </head>
 <body>
 
-	<c:import url="http://localhost/retro_prj/common/cdn/header.jsp" />
+	<jsp:include page="/common/cdn/header.jsp"/>
 	<main class="relative flex-grow border-b-2"
 		style="min-height: -webkit-fill-available; -webkit-overflow-scrolling: touch">
 		<div class="flex mx-auto max-w-[1280px] px-4 md:px-8 2xl:px-16 box-content">

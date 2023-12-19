@@ -18,7 +18,7 @@ public class UserController {
 	@Autowired
 	private UserService uService;
 	
-	@GetMapping("/user_list.do")
+	@GetMapping("/admin/user_list.do")
 	public String userList(Model model, String page, String keyword, String field) {
 		PaginationDomain pd = uService.totalRecode(page);
 		BoardRangeVO brVO = new BoardRangeVO();
@@ -37,7 +37,7 @@ public class UserController {
 		return "admin/usermng/user_list";
 	}
 	
-	@GetMapping("/member_detail.do")
+	@GetMapping("/admin/member_detail.do")
 	public String userDetail(Model model, String userId) {
 		model.addAttribute("userData", uService.searchOneUser(userId));
 		
@@ -45,13 +45,13 @@ public class UserController {
 	}
 	
 	@ResponseBody
-	@PostMapping("/user_withdraw.do")
+	@PostMapping("/admin/user_withdraw.do")
 	public String userWithdraw(String userId) {
 		return uService.UserWithdraw(userId).toJSONString();
 	}
 	
 	@ResponseBody
-	@PostMapping("/user_status_change.do")
+	@PostMapping("/admin/user_status_change.do")
 	public String userStatusChange(String userId) {
 		return uService.UserStatusChange(userId).toJSONString();
 	}

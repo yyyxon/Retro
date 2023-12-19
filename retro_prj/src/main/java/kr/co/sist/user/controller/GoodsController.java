@@ -171,13 +171,14 @@ public class GoodsController {
 		model.addAttribute("chkPcode",ws.getChkPcode(wVO));
 		System.out.println(ws.getChkPcode(wVO));
 		model.addAttribute("pcode",pcode);
-		
-		if(gs.searchCheck(gVO) == 1) {
-			ProductVO pVO = new ProductVO();
-			pVO.setPcode(pcode);
-			pVO.setId(id);
-			/* new ProductController().productDetail(pcode,session, model, pVO); */
-			return "user/product/product_detail";
+		if(id != null) {
+			if(gs.searchCheck(gVO) == 1) {
+				ProductVO pVO = new ProductVO();
+				pVO.setPcode(pcode);
+				pVO.setId(id);
+				/* new ProductController().productDetail(pcode,session, model, pVO); */
+				return "user/product/product_detail";
+			}
 		}
 		
 		return "user/goods/goods_info";

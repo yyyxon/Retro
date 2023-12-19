@@ -14,6 +14,7 @@
 <link rel="preload" href="https://web.joongna.com/_next/static/css/82d216d82f2f74d1.css" as="style"/>
 <link rel="stylesheet" href="https://web.joongna.com/_next/static/css/82d216d82f2f74d1.css" data-n-g=""/>
 <link href="https://fruitsfamily.com/static/css/main.8c8a1dc3.chunk.css" rel="stylesheet">
+<link href="https://fruitsfamily.com/static/css/main.5a75766e.chunk.css" rel="stylesheet">
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/variable/pretendardvariable.css" />
 <style type="text/css">
 .Checkout-container {

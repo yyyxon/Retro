@@ -103,11 +103,9 @@ public class ProductController {
 		ProductDomain userProduct=ps.searchProduct(pVO);
 		model.addAttribute("userProduct",userProduct);
 		
-		if(id != null) {
 			model.addAttribute("AllCominfo", ps.searchBuyerAllInfo(id));
 			model.addAttribute("wishCnt", ps.searchWishCnt(pcode));
 			model.addAttribute("searchChk", ps.searchCheck(pVO));
-		}
 		
 		return "user/product/product_detail";
 	}//productDetail

@@ -23,6 +23,30 @@
 	
 	<context:component-scan base-package="kr.co.sist" />
 	
-	
+	<interceptors>
+		<interceptor>
+			<mapping path="/admin/**"/>
+			<mapping path="/user/**"/>
+			<exclude-mapping path="/index.do"/>
+			<exclude-mapping path="/user/goods/**"/>
+			
+			<exclude-mapping path="/admin/admin_login_frm.do"/>
+			<exclude-mapping path="/admin/admin_login_process.do"/>
+			
+			<exclude-mapping path="/user/user_join.do"/>
+			<exclude-mapping path="/user/user_join_chk.do"/>
+			<exclude-mapping path="/user/user_join_process.do"/>
+			
+			<exclude-mapping path="/user/find_pw_frm.do"/>
+			<exclude-mapping path="/user/find_pw_process.do"/>
+			
+			<exclude-mapping path="/user/find_id_process.do"/>
+			<exclude-mapping path="/user/find_id_frm.do"/>
+			
+			<exclude-mapping path="/user/login_process.do"/>
+			<exclude-mapping path="/user/login_frm.do"/>
+			<beans:bean id="sessionInter" class="kr.co.sist.user.interceptor.InterceptorHttpSession"/>
+		</interceptor>
+	</interceptors>
 	
 </beans:beans>

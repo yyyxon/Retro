@@ -135,7 +135,7 @@ function moveReport() {
 		<form id="frm" action="admin_report_update_success.do" method="get">
 		
 		<input type="hidden" name="rcode" value="${param.rcode}"/>
-		<div id="background_box" style=" height: 130%;">
+		<div id="background_box" style=" height: 130%; width:1300px">
 		<div style="margin-top: 0px;margin-left: 50px; font-size: 25px">
 		<br><br>
 		<img src="http://localhost/retro_prj/upload/${ ard.img }" style="width:400px; height:400px"/>
@@ -153,7 +153,7 @@ function moveReport() {
     	<!-- 버튼 쓸 사람 -->
     	<div class="btnDiv">
 			<input type="button" class="btn" value="목록" onclick="moveReport()" id="listbtn" name="listbtn" style="margin-left:550px; margin-top: -540px; background-color: #333333; color: white; " >	
-			<input type="button" class="btn" value="신고상품삭제"  id="removebtn" name="removebtn" style="margin-left:300px; margin-top: -586px; background-color: #333333; color: white; width:120px">	
+			<input type="button" class="btn" value="신고상품삭제"  id="removebtn" name="removebtn" style="margin-left: -250px;margin-top: -540px; background-color: #333333; color: white; width:120px">	
 		</div>
 		<!---->
 		</form>

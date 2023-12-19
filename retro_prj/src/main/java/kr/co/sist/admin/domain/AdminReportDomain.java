@@ -8,6 +8,6 @@ import lombok.ToString;
 @Getter
 @ToString
 public class AdminReportDomain {
-	private String rcode,pname,type,category,id,reportId,inputDate,nickname,reportNickname,pcode;
+	private String rcode,pname,type,category,id,reportId,inputDate,nickname,reportNickname,pcode,img;
 
 }

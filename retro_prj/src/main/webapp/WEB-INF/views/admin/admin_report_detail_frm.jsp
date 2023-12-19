@@ -138,7 +138,7 @@ function moveReport() {
 		<div id="background_box" style=" height: 130%;">
 		<div style="margin-top: 0px;margin-left: 50px; font-size: 25px">
 		<br><br>
-		<img src="http://localhost/retro_prj/upload/<c:out value="${ img }"/>" style="width:400px; height:400px"/>
+		<img src="http://localhost/retro_prj/upload/${ ard.img }" style="width:400px; height:400px"/>
 		<div style="margin-top: 15px; padding:15px">
 		신고 물품 : <c:out value="${ard.pname}"/><br><br>
 		신고일 : <c:out value="${ard.inputDate }"/>

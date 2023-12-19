@@ -32,7 +32,7 @@
  
  <!-- 신고 내역 상세 보여주기 -->
 <select id="selectReportDetail" parameterType="String" resultType="kr.co.sist.admin.domain.AdminReportDomain">
-	select type, r.id, p.pname, p.id  reportId ,to_char(r.input_date,'yyyy-MM-dd') inputDate, rcode 
+	select type, r.id, p.pname, p.id  reportId ,to_char(r.input_date,'yyyy-MM-dd') inputDate, rcode , p.img
 	from report r , product p 
 	where p.pcode=r.pcode and rcode='${rcode}'
 </select>
@@ -47,4 +47,6 @@
 <select id="totalRecode" resultType="int">
   select count(*) from report
   </select>
+  
+  
   </mapper>

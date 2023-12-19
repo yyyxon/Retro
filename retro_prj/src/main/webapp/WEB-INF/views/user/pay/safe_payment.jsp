@@ -7,8 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<link rel="icon" href="http://192.168.0.70/jsp_prj/common/main/favicon-32x32.png">
+<c:import url="http://localhost/retro_prj/common/cdn/cdn.jsp" />
 <!-- jQuery CDN -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <!-- 결제 css -->
@@ -28,7 +27,10 @@
 </style>
 <script type="text/javascript">
 $(function() {
-	 // 체크박스 상태 감지
+	 // 초기에는 안전 결제하기 버튼을 비활성화
+    $('.button.default.full').prop('disabled', true);
+
+    // 체크박스 상태 감지
     $('#agree1').change(function() {
         // 체크박스가 체크되었을 때
         if ($(this).is(':checked')) {

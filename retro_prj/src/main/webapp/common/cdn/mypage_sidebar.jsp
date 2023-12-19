@@ -6,7 +6,7 @@
 	<ul>
 		<li id="purLi"><a href="http://localhost/retro_prj/my/purchase.do">구매내역</a></li>
 		<li id="saleLi"><a href="http://localhost/retro_prj/user_sales_frm.do">판매내역</a></li>
-		<li id="wishLi">찜 목록</li>
+		<li id="wishLi"><a href="http://localhost/retro_prj/user/product/wishList.do">찜 목록</a></li>
 	</ul>
 	<h3 class="mb-2 text-lg font-semibold" style="color:#222">내 정보</h3>
 	<ul>

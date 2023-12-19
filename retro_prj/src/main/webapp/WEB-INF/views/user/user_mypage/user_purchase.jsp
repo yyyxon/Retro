@@ -196,7 +196,7 @@
 		<div
 			class="flex mx-auto max-w-[1280px] px-4 md:px-8 2xl:px-16 box-content">
 			<c:import
-				url="http://localhost/retro_prj/common/cdn/mypage_sidebar.jsp" />
+				url="/common/cdn/mypage_sidebar.jsp" />
 			<div class="w-full flex-grow">
 				<c:import
 					url="http://localhost/retro_prj/common/cdn/mypage_info.jsp" />

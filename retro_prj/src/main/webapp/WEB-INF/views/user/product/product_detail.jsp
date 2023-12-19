@@ -299,7 +299,7 @@
 			},
 			success : function(jsonObj) {
 				alert("삭제 완료되었습니다.");
-				/* location.href=""; 사용자 메인으로 이동 */
+				location.href="http://localhost/retro_prj/index.do"; 
 			}//success
 		});//ajax
 	}//deleteProduct

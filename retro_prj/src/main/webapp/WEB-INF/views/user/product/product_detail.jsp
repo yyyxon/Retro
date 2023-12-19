@@ -632,7 +632,7 @@
 					<div class="flex">
 						<div class="flex w-full flex-col justify-around lg:ml-4">
 							<a class="font-semibold text-base text-jnblack"
-								href="/store/1424385"> <%-- ${ userProduct. } --%>
+								href="http://localhost/retro_prj/user_mypage_frm.do?id=${sessionScope.id} }"> <%-- ${ userProduct. } --%>
 							</a><span class="font-medium text-sm flex text-jnGray-500">판매상품
 								1 · 안전거래 0 · 후기 0</span>
 						</div>

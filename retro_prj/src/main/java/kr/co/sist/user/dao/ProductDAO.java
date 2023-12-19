@@ -25,6 +25,21 @@ public class ProductDAO {
 		} // end if
 		return pDAO;
 	}// getInstance
+	
+	public String sellectPrdPcode() {
+		String pcode="";
+		
+		MybatisHandler mbh = MybatisHandler.getInstance();
+		SqlSession ss = mbh.getMyBatisHandler(configPath, false);
+		try {
+			pcode = ss.selectOne("user.product.createPcode");
+	       
+	    } finally {
+	        mbh.closeHandler(ss);
+	    }//finally
+		
+		return pcode;
+	}
 
 	/**
 	 * 상품 등록

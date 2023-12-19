@@ -176,7 +176,7 @@ public class GoodsController {
 			ProductVO pVO = new ProductVO();
 			pVO.setPcode(pcode);
 			pVO.setId(id);
-			new ProductController().productDetail(session, model, pVO);
+			/* new ProductController().productDetail(pcode,session, model, pVO); */
 			return "user/product/product_detail";
 		}
 		

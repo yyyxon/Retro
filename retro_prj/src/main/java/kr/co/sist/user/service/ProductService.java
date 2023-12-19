@@ -25,6 +25,18 @@ public class ProductService {
         }
         return ps;
     }//getInstance
+    
+    public String pcode() {
+    	String pcode="";
+    	
+    	try {
+			pcode=pDAO.sellectPrdPcode();
+		}catch(PersistenceException pe) {
+			pe.printStackTrace();
+		}//end catch
+    	
+    	return pcode;
+    }
 
     /**
      * 상품 등록

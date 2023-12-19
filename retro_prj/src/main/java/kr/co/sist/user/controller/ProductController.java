@@ -43,16 +43,21 @@ public class ProductController {
 	 * @return
 	 */
 	@RequestMapping("/user/product/product_register_ok.do")
-	public String productRegisterOk(HttpSession session,HttpServletRequest request,ProductVO pVO)  {
+	public String productRegisterOk(Model model,HttpSession session,HttpServletRequest request,ProductVO pVO)  {
 		
 		File saveDir=new File("C:/Users/user/git/retro/retro_prj/src/main/webapp/upload");
 		
 		int maxSize=1024*1024*30; // 최대 파일 업로드 사이즈 30Mbyte
 		try {
+			
+			String pcode=ps.pcode();
+			
 			MultipartRequest mr=new MultipartRequest(request, saveDir.getAbsolutePath(), 
 					maxSize, "UTF-8",new DefaultFileRenamePolicy());
 			
 			String id = (String)session.getAttribute("id");
+			
+			
 			
 			pVO.setPname(mr.getParameter("pname"));
 			pVO.setContext(mr.getParameter("context"));
@@ -65,9 +70,13 @@ public class ProductController {
 			pVO.setStatus(mr.getParameter("status"));
 			pVO.setLoc(mr.getParameter("loc"));
 			pVO.setC3code(mr.getParameter("c3code"));
-			pVO.setPcode(mr.getParameter("pcode"));
+			pVO.setPcode(pcode);
 			pVO.setId(id);
+			
 			ps.addProduct(pVO);
+			
+			model.addAttribute("searchPrd", ps.searchProduct(pVO));
+			model.addAttribute("p_code", pcode);
 	       
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -84,10 +93,10 @@ public class ProductController {
 	 * @return
 	 */
 	@RequestMapping("/user/product/product_detail.do")
-	public String productDetail( HttpSession session,Model model,ProductVO pVO) {
+	public String productDetail(HttpServletRequest request, HttpSession session,Model model,ProductVO pVO) {
 		String id = (String)session.getAttribute("id");
 	
-		String pcode=ps.getPcode(id);
+		String pcode = (String)session.getAttribute("p_code"); 
 		pVO.setPcode(pcode);
 		pVO.setId(id);
 		ProductDomain userProduct=ps.searchProduct(pVO);

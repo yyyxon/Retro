@@ -121,7 +121,7 @@ $(function(){
 
 
 </form>
-<div style="margin-top:100px"></div>
+<div style="margin-top:250px"></div>
  <jsp:include page="/common/cdn/footer.jsp"/> 
 </body>
 </html>

@@ -46,7 +46,7 @@ public class WishController {
 		
 		brVO.setId(id);
 		List<WishDomain> searchWishList=ws.searchWish(brVO);
-		int selectAllCnt=ws.searchWishCnt("1011kiy111");
+		int selectAllCnt=ws.searchWishCnt(id);
 		
 		model.addAttribute("searchWishList",searchWishList);
 		model.addAttribute("selectAllCnt",selectAllCnt);

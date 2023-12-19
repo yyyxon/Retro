@@ -42,7 +42,7 @@ public class JoinController {
 	 * @return
 	 */
 	@ResponseBody
-	@PostMapping("/user_join_chk.do")
+	@PostMapping("/user/user_join_chk.do")
 	public String joinComplete(JoinVO jVO) {
 		JSONObject json = js.chkInfo(jVO);
 		return json.toJSONString();
@@ -53,7 +53,7 @@ public class JoinController {
 	 * @param jVO
 	 * @return
 	 */
-	@PostMapping("/user_join_process.do")
+	@PostMapping("/user/user_join_process.do")
 	public String joinUser(JoinVO jVO) {
 		js.addUser(jVO);
 		return "user/join/join_success";

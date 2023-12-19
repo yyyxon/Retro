@@ -127,7 +127,7 @@ function sortUp(txt, f) {
 <div class="px-0 max-lg:mt-10">
 	<div class="items-center justify-between block mb-4 md:flex lg:mb-7">
 		<div id="cntDiv" class="flex-shrink-0 mb-1 text-xs leading-4 text-body md:text-sm pe-4 md:me-6 lg:ps-2 lg:block">
-		<!-- 개의 상품 정보 -->
+		20개의 상품정보<!-- 개의 상품 정보 -->
 		</div>
 		<div class="flex flex-wrap items-center justify-between">
 			<div class="mr-0 lg:mr-4">

@@ -162,6 +162,23 @@
     WHERE  
         c1.ccode=c2.ccode AND c2.c2code = c3.c2code AND c3.C3CODE=p.C3CODE AND p.PCODE=#{pcode}
 </select>
+
+	<!-- 상품결제 시 정보 가져오기 -->
+	<select id="selectPayInfo" resultType="kr.co.sist.user.domain.BuyGoodsDomain" 
+	parameterType="String">
+	SELECT	*
+	FROM	PRODUCT
+	WHERE	PCODE = #{pcode}
+	</select>
+	
+	<!-- 상품 결제 인서트 -->
+	<insert id="insertPayInfo" parameterType="kr.co.sist.user.vo.BuyVO">
+	INSERT INTO SAFEPURCHASE
+	VALUES ( 
+	'S'||lpad(safe_seq.nextval, 5, 0), sysdate, 'N', #{id}, #{pcode}
+	)
+	</insert>
+	
 	
 </mapper>
 

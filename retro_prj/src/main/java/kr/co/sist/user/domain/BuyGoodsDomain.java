@@ -10,7 +10,7 @@ import lombok.ToString;
 @Setter
 @ToString
 public class BuyGoodsDomain {
-	private String name,pcode,img,safety_pay,buyReceiptCode,payment;
+	private String pname,pcode,img,safety_pay;
 	private Date payment_date;
 	private int price;
 }

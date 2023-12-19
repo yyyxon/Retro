@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ page info=""%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,7 +28,25 @@
 </style>
 <script type="text/javascript">
 $(function() {
+	 // 체크박스 상태 감지
+    $('#agree1').change(function() {
+        // 체크박스가 체크되었을 때
+        if ($(this).is(':checked')) {
+            // 안전 결제하기 버튼 활성화
+            $('.button.default.full').prop('disabled', false);
+        } else {
+            // 체크되지 않았을 때는 안전 결제하기 버튼 비활성화
+            $('.button.default.full').prop('disabled', true);
+        }
+    });
 
+    // 안전 결제하기 버튼 클릭 시 폼 제출
+    $('.button.default.full').click(function() {
+        // 체크박스가 체크되었을 때만 폼 제출
+        if ($('#agree1').is(':checked')) {
+            $('#pay').submit();
+        }
+    });
 });//ready
 </script>
 
@@ -40,11 +59,11 @@ $(function() {
 		<div class="CheckoutProductDetails">
 			<img class="CheckoutProductDetails-image" loading="lazy"
 				alt="product_image"
-				src="https://image.production.fruitsfamily.com/public/product/resized%40width620/WJn3LTLO7N-9B59E628-506B-4FF6-B0D8-4C5C82289CD5.jpg">
+				src="http://localhost/retro_prj/upload/<c:out value="${ payInfo.img }"/>">
 			<div class="CheckoutProductDetails-details">
-				<h6 class="CheckoutProductDetails-brand ">Needles</h6>
-				<div class="CheckoutProductDetails-productTitle">Needles
-					leather blouson</div>
+				<h6 class="CheckoutProductDetails-brand "><c:out value="${ payInfo.pname }"/></h6>
+				<div class="CheckoutProductDetails-productTitle">
+				<c:out value="${ payInfo.pname }"/></div>
 			</div>
 		</div>
 		<div class="Checkout-order">
@@ -58,7 +77,7 @@ $(function() {
 				</div>
 				<div class="CheckoutInvoice-price">
 					<div>상품 금액</div>
-					<div>182,000원</div>
+					<div><fmt:formatNumber value="${payInfo.price}" pattern="#,###,###"/>원</div>
 				</div>
 				<div class="CheckoutInvoice-price">
 					<div>수수료</div>
@@ -66,7 +85,7 @@ $(function() {
 				</div>
 				<div class="CheckoutInvoice-price total">
 					<div>총 결제 금액</div>
-					<div>182,000원</div>
+					<div><fmt:formatNumber value="${payInfo.price}" pattern="#,###,###"/>원</div>
 				</div>
 			</div>
 			<div class="Checkout-divider"></div>
@@ -95,9 +114,12 @@ $(function() {
 						<label for="agree1"></label>
 					</div>
 				</div>
+				<form id="pay" action="pay_wan.do">
 				<div>
-					<button class="button default full">안전 결제하기</button>
+					<input type="button" class="button default full" value="안전 결제하기"/>
+					<input type="hidden" name="pcode" value="${ param.pcode }"/>
 				</div>
+				</form>
 			</div>
 		</div>
 	</div>

@@ -308,7 +308,7 @@
 </head>
 <body>
 	<!-- header -->
-	<c:import url="http://localhost/retro_prj/common/cdn/header.jsp" />
+	<c:import url="/common/cdn/header.jsp" />
 		<div class="max-w-[1280px] lg:min-h-[950px] mx-auto max-w-[1280px] px-4 md:px-8 2xl:px-16 box-content">
 		<div class="items-start block grid-cols-2 pt-5 lg:grid gap-x-10 xl:gap-x-14 pb-14 lg:py-10 lg:pb-14 2xl:pb-20">
 			<div class="carouselWrapper relative product-gallery swiperThumbnail product-gallery-slider sticky top-[200px]   ">

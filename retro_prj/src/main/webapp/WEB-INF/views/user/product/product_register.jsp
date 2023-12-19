@@ -849,7 +849,7 @@
 </head>
 <body>
 	<!-- header -->
-	<c:import url="http://localhost/retro_prj/common/cdn/header.jsp" />
+	<c:import url="/common/cdn/header.jsp" />
 
 
 	<form id="regiFrm" name="frm" enctype="multipart/form-data"

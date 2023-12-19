@@ -24,7 +24,7 @@
 </head>
 <body>
 <!-- header -->
-<c:import url="http://localhost/retro_prj/common/cdn/header.jsp"/>
+<c:import url="/common/cdn/header.jsp"/>
 	<div class="mx-auto max-w-[1280px] px-4 md:px-8 2xl:px-16 box-content">
 		<section
 			class="flex flex-col items-center justify-center flex-auto py-36">

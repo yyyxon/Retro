@@ -156,7 +156,7 @@ function handleOnInputPhone(e)  {
 </head>
 <body>
 <!-- header -->
-<c:import url="http://localhost/retro_prj/common/cdn/header.jsp" />
+<c:import url="/common/cdn/header.jsp" />
 
 <form id="joinFrn" method="post" action="user_join_process.do">
 	<input type="hidden" value="" id="idHid" name="id">

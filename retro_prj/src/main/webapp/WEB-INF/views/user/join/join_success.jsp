@@ -29,7 +29,7 @@
 </head>
 <body>
 <!-- header -->
-<c:import url="http://localhost/retro_prj/common/cdn/header.jsp" />
+<c:import url="/common/cdn/header.jsp" />
 
 <div style="margin-top: 170px;text-align: center;">
 	<div style="font-size: 26px;color: #000000;">

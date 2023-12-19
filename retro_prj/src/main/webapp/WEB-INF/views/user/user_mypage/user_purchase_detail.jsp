@@ -54,7 +54,7 @@ pageContext.setAttribute("code", code);
 </head>
 <body>
 
-	<c:import url="http://localhost/retro_prj/common/cdn/header.jsp" />
+	<c:import url="/common/cdn/header.jsp" />
 	<main class="relative flex-grow border-b-2"
 		style="min-height: -webkit-fill-available; -webkit-overflow-scrolling: touch">
 		<div

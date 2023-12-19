@@ -21,7 +21,7 @@
 </head>
 <body>
 	<!-- header -->
-	<c:import url="http://localhost/retro_prj/common/cdn/header.jsp" />
+	<c:import url="/common/cdn/header.jsp" />
 	<!-- 메인 홈페이지 화면 -->
 	<c:import
 		url="http://localhost/retro_prj/common/cdn/example_main_tag.jsp" />

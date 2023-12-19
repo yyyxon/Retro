@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
@@ -18,6 +19,7 @@ import kr.co.sist.user.domain.ProductDomain;
 import kr.co.sist.user.service.ProductService;
 import kr.co.sist.user.vo.ProductVO;
 
+@SessionAttributes("pcode")
 @Controller
 public class ProductController {
 	private ProductService ps=ProductService.getInstance();
@@ -75,8 +77,7 @@ public class ProductController {
 			
 			ps.addProduct(pVO);
 			
-			model.addAttribute("searchPrd", ps.searchProduct(pVO));
-			model.addAttribute("p_code", pcode);
+			model.addAttribute("pcode", pcode);
 	       
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -93,16 +94,17 @@ public class ProductController {
 	 * @return
 	 */
 	@RequestMapping("/user/product/product_detail.do")
-	public String productDetail(HttpServletRequest request, HttpSession session,Model model,ProductVO pVO) {
+	public String productDetail( HttpSession session,Model model,ProductVO pVO) {
 		String id = (String)session.getAttribute("id");
 	
-		String pcode = (String)session.getAttribute("p_code"); 
+		String pcode = (String)session.getAttribute("pcode"); 
 		pVO.setPcode(pcode);
 		pVO.setId(id);
 		ProductDomain userProduct=ps.searchProduct(pVO);
 		
 		model.addAttribute("AllCominfo", ps.searchBuyerAllInfo(id));
 		model.addAttribute("wishCnt", ps.searchWishCnt(pcode));
+		model.addAttribute("searchChk", ps.searchCheck(pVO));
 		
 		model.addAttribute("userProduct",userProduct);
 		
@@ -122,6 +124,7 @@ public class ProductController {
 	    pVO.setPcode(pcode); 
 
 	    model.addAttribute("userProduct", ps.searchProduct(pVO));
+	    model.addAttribute("searchChk", ps.searchCheck(pVO));
 
 	    return "user/product/product_edit";
 	}//productEditFrm

@@ -163,7 +163,9 @@
 		}
 
 		$("#editBtn").click(function(){
-			location.href="product_edit.do?pcode=${ userProduct.pcode }";
+			var searchChk="${searchChk}";
+			var pcode="${ userProduct.pcode }";
+			location.href=searchChk == 1 ? 'product_edit.do?pcode='+pcode : '../product/product_edit.do?pcode='+pcode;
 		});
 		
 	});//ready
@@ -209,7 +211,7 @@
 		
 		if(payment === 'G'){
 			$.ajax({
-				url : "addBuyReceipt.do",
+				url : "${searchChk == 1 ? 'addBuyReceipt.do' : '../product/addBuyReceipt.do'}",
 				type : "get",
 				data : {
 				      payment: payment,
@@ -230,7 +232,7 @@
 			
 		}else if( payment === 'T' ){
 			$.ajax({
-				url : "addBuyReceipt.do",
+				url : "${searchChk == 1 ? 'addBuyReceipt.do' : '../product/addBuyReceipt.do'}",
 				type : "get",
 				data : {
 				      payment: payment,
@@ -267,7 +269,7 @@
 	/* 상태 변경에서 상품 판매 완료 처리를 하면 상품 판매 처리가 됨 */
 	function prductSaleOk(pcode) {
 		$.ajax({
-			url : "productSaleEdit.do",
+			url : "${searchChk == 1 ? 'productSaleEdit.do' : '../product/productSaleEdit.do'}",
 			type : "get",
 			data : "pcode=" + pcode,
 			dataType : "JSON",
@@ -287,7 +289,7 @@
 
 	function deleteProduct(pcode) {
 		$.ajax({
-			url : "productDelete.do",
+			url :  "${searchChk == 1 ? 'productDelete.do' : '../product/productDelete.do'}",
 			type : "get",
 			data : "pcode=" + pcode,
 			dataType : "JSON",

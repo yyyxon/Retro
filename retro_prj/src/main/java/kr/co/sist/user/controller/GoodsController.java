@@ -9,13 +9,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.co.sist.common.PageVO;
 import kr.co.sist.common.pagination.Pagination;
 import kr.co.sist.common.pagination.PaginationDomain;
 import kr.co.sist.user.domain.GoodsDomain;
+import kr.co.sist.user.domain.ProductDomain;
 import kr.co.sist.user.service.GoodsService;
+import kr.co.sist.user.service.ProductService;
 import kr.co.sist.user.service.WishService;
 import kr.co.sist.user.vo.GoodsVO;
 import kr.co.sist.user.vo.ProductVO;
@@ -176,15 +179,18 @@ public class GoodsController {
 				ProductVO pVO = new ProductVO();
 				pVO.setPcode(pcode);
 				pVO.setId(id);
-				/* new ProductController().productDetail(pcode,session, model, pVO); */
+				ProductDomain userProduct=gs.searchProduct(pVO);
+				ProductService ps=ProductService.getInstance();
+				
+				model.addAttribute("AllCominfo", ps.searchBuyerAllInfo(id));
+				model.addAttribute("wishCnt", ps.searchWishCnt(pcode));
+				model.addAttribute("userProduct",userProduct);
 				return "user/product/product_detail";
 			}
 		}
 		
 		return "user/goods/goods_info";
 	}
-	
-	
 	
 	@GetMapping("user/seller/seller_info.do")
 	public String sellerInfo() {

@@ -13,18 +13,15 @@
 <style type="text/css">
 </style>
 <script type="text/javascript">
-// JavaScript를 사용하여 pcode 값을 동적으로 추가
 	$(function() {
-		$("#goProductDetail").click(function(){
-			
-		});//click
+
 	});//ready
 </script>
 
 </head>
 <body>
 <!-- header -->
-<c:import url="/common/cdn/header.jsp"/>
+<c:import url="http://localhost/retro_prj/common/cdn/header.jsp"/>
 	<div class="mx-auto max-w-[1280px] px-4 md:px-8 2xl:px-16 box-content">
 		<section
 			class="flex flex-col items-center justify-center flex-auto py-36">
@@ -74,11 +71,10 @@
 			<div class="flex flex-col w-full px-5 mt-16 text-center">
 				<a
 					class="items-center justify-center py-4 mb-5 text-base font-semibold text-center transition duration-300 ease-in-out bg-white border border-solid rounded-md cursor-pointer text-jnGray-900 border-jnGray-400 hover:bg-jngreen hover:text-white"
-					href="http://localhost/retro_prj/user/product/product_register">상품 추가 등록</a>
+					href="product_register.do">상품 추가 등록</a>
 					<a
 					class="items-center justify-center py-4 mb-5 text-base font-semibold text-center transition duration-300 ease-in-out bg-white border border-solid rounded-md cursor-pointer text-jnGray-900 border-jnGray-400 hover:bg-jngreen hover:text-white"
-					  id="goProductDetail">상품 등록 확인</a>
-					  <input type="hidden" id="getPcode" value="${ pcode }"> 
+					href="product_detail.do">상품 등록 확인</a>
 			</div>
 		</section>
 	</div>

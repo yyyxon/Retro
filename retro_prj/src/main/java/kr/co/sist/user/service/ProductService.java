@@ -8,6 +8,7 @@ import org.json.simple.JSONObject;
 import kr.co.sist.user.dao.ProductDAO;
 import kr.co.sist.user.domain.MySalesDomain;
 import kr.co.sist.user.domain.ProductDomain;
+import kr.co.sist.user.vo.GoodsVO;
 import kr.co.sist.user.vo.ProductVO;
 
 public class ProductService {
@@ -36,7 +37,7 @@ public class ProductService {
 		}//end catch
     	
     	return pcode;
-    }
+    }//pcode
 
     /**
      * 상품 등록
@@ -54,15 +55,6 @@ public class ProductService {
 		return insertCnt;
 	}//searchCategory
     
-    public String getPcode(String id) {
-    	String getRecentPcode="";
-    	try {
-    		getRecentPcode=pDAO.getPcode(id);
-    	} catch (PersistenceException pe) {
-    		pe.printStackTrace();
-    	}//end catch
-    	return getRecentPcode;
-    }//getPcode
     
     
     public int searchWishCnt(String pcode) {
@@ -75,6 +67,17 @@ public class ProductService {
     	return wishCnt;
     }//searchWishCnt
     
+    public int searchCheck(ProductVO pVO) {
+		int cnt = 0;
+		
+		try {
+			cnt = pDAO.searchCheck(pVO);
+		}catch(PersistenceException pe) {
+			pe.printStackTrace();
+		}
+		
+		return cnt;
+	}
     
     public ProductDomain searchProduct(ProductVO pVO) {
     	ProductDomain search = null;

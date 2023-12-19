@@ -88,7 +88,6 @@ public class ProductDAO {
 
 		MybatisHandler mbh = MybatisHandler.getInstance();
 		SqlSession ss = mbh.getMyBatisHandler(configPath, false);
-		System.out.println( "------33333---->"+pVO.getPcode() );
 		search = ss.selectOne("user.product.selectProduct", pVO);
 
 		mbh.closeHandler(ss);

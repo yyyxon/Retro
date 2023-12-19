@@ -189,17 +189,15 @@
 </script>
 
 </head>
-<body style="height: auto">
 	<c:import url="/common/cdn/header.jsp" />
+<body style="height: auto">
 	<main class="relative flex-grow border-b-2"
 		style="min-height: -webkit-fill-available; -webkit-overflow-scrolling: touch">
 		<div
 			class="flex mx-auto max-w-[1280px] px-4 md:px-8 2xl:px-16 box-content">
-			<c:import
-				url="/common/cdn/mypage_sidebar.jsp" />
+			<c:import url="/common/cdn/mypage_sidebar.jsp" />
 			<div class="w-full flex-grow">
-				<c:import
-					url="http://localhost/retro_prj/common/cdn/mypage_info.jsp" />
+				<c:import url="/common/cdn/mypage_info.jsp" />
 				<div class="px-0 max-lg:mt-10">
 					<div
 						class="items-center justify-between block mb-4 md:flex lg:mb-7">

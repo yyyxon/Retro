@@ -7,7 +7,9 @@
 <meta charset="UTF-8">
 <c:import url="http://localhost/retro_prj/common/cdn/cdn.jsp"/>
 <style type="text/css">
-
+#infoLi {
+	color: #333;
+}
 </style>
 <%
 String str = request.getParameter("flag");

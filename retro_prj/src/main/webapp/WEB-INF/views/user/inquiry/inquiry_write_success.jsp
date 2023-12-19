@@ -14,6 +14,10 @@
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/variable/pretendardvariable.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <style type="text/css">
+#inquiryLi {
+	color: #333;
+}
+
 	.inputBox {
 	 border:none;
 	  border-bottom: 1px solid #ebebeb;

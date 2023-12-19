@@ -12,6 +12,10 @@
 <c:import url="http://localhost/retro_prj/common/cdn/cdn.jsp"/>
 <link rel="stylesheet" href="https://kream.co.kr/_nuxt/css/199727e.css">
 <style type="text/css">
+#infoLi {
+	color: #333;
+}
+
 .btn:hover {
 	background-color: black;
 	color: white;

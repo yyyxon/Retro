@@ -15,6 +15,9 @@
 <c:import url="http://localhost/retro_prj/common/cdn/cdn.jsp" />
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <style type="text/css">
+#wishLi{
+	color: #333;
+}
 
 #orderByList {
 	display : none;
@@ -73,7 +76,6 @@
 		<div class="flex mx-auto max-w-[1280px] px-4 md:px-8 2xl:px-16 box-content">
 			<c:import url="http://localhost/retro_prj/common/cdn/mypage_sidebar.jsp" />
 			<div class="w-full flex-grow">
-				<c:import url="http://localhost/retro_prj/common/cdn/mypage_info.jsp" />
 				<div class="px-0 max-lg:mt-10">
 					<div class="items-center justify-between block mb-4 md:flex lg:mb-7">
 						<div class="flex-shrink-0 mb-1 text-xs leading-4 text-body md:text-sm pe-4 md:me-6 lg:ps-2 lg:block">

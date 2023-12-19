@@ -153,10 +153,10 @@ pageContext.setAttribute("code", code);
 												style="color: rgb(34, 34, 34); width: 130px; font-size: 16px">구매
 												금액</p>
 											<div data-v-15287078="" class="description_wrap"
-												style="width: 94.125px; padding-top: 0px;">
+												style="width: 150px; padding-top: 0px;">
 												<p data-v-8016a084="" data-v-15287078=""
 													class="line_description display_paragraph"
-													style="color: rgb(34, 34, 34); width: 94.125px; text-align: left">
+													style="color: rgb(34, 34, 34); width: 150px; text-align: left">
 
 													<!-- 가격 -->
 													<em style="color: inherit;" class=""> <fmt:formatNumber

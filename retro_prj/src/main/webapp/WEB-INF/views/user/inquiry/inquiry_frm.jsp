@@ -96,6 +96,10 @@ a:hover {
   color: #222;
 }
 
+#inquiryLi {
+	color: #333;
+}
+
 /* TWO */
 
 .p2 .is-active li{

@@ -8,8 +8,6 @@
 <head>
 <meta charset="UTF-8">
 <c:import url="http://localhost/retro_prj/common/cdn/cdn.jsp" />
-<link rel="icon"
-	href="http://192.168.0.70/mvc_prj/common/main/favicon-32x32.png">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>

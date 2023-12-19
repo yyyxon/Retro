@@ -4,7 +4,7 @@
 <%-- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> --%>
 <%-- <%@ taglib prefix="fmt" uri="" %> --%>
 <title>RE:TRO</title>
-<link rel="icon" href="http://192.168.10.136/html_prj/common/main/favicon.png"/>
+<link rel="icon" href="http://localhost/retro_prj/common/images/favicon.png"/>
 <!-- jQeury CDN -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <!-- 중고나라 CSS -->

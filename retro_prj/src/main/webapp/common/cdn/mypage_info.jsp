@@ -13,7 +13,7 @@
 						style="border: 4px solid #FFFFFF"
 						loading="lazy" style="color: transparent;">
 				</div>
-				<h1 class="mr-2 text-xl font-semibold cursor-pointer lg:text-2xl"><c:out value="${sessionScope.id }"/>(<c:out value="${sessionScope.nickname }"/>)</h1>
+				<h1 class="mr-2 text-xl font-semibold cursor-pointer lg:text-2xl"><c:out value="${sessionScope.id eq null ? param.id : sessionScope.id }"/>(<c:out value="${sessionScope.nickname }"/>)</h1>
 			</div>
 			<div class="flex">
 				<p class="w-[calc(100%-50px)] text-base text-jnGray-600 break-all">

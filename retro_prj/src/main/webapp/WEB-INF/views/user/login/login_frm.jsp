@@ -98,7 +98,7 @@ $(function(){
  <c:import url="/common/cdn/cdn.jsp" /> 
 
  <jsp:include page="/common/cdn/header.jsp"/>
-<body>
+<body style="font-family: Pretendard Variable">
 <form id="frm" action="login_process.do" method="post">
 <div style="margin: 0px auto; text-align: center">
 <img src="http://localhost/retro_prj/common/images/main_logo.png" style="width:160px; margin: 0px auto;  margin-top: 150px "/>
@@ -108,10 +108,10 @@ $(function(){
 <div style="text-align: center; margin:0px auto;" id="LoginWrap">
 
 <label style="margin-left: -410px">아이디</label><br>
-<input type="text" id="id" name="id" placeholder="아이디를 입력해주세요"  class="inputBox" /> 
+<input type="text" id="id" name="id" placeholder="아이디를 입력해주세요"  class="inputBox" style="font-family: Pretendard Variable"/> 
 <br>
 <label style="margin-left: -400px; margin-top: 50px">비밀번호</label><br>
-<input type="password" id="pw" name="pw" placeholder="비밀번호를 입력해주세요"  class="inputBox" /> 
+<input type="password" id="pw" name="pw" placeholder="비밀번호를 입력해주세요"  class="inputBox" style="font-family: Pretendard Variable"/> 
 <br>
 <input type="button"  style="margin-top:40px; border-radius: 12px; width:450px; height: 50px; font-family:Pretendard Variable;    color:#FFFFFF; background-color:#333333  " id="loginBtn" name="loginBtn" value="로그인" class="btn btn-dark"/>
 <div style="text-align: center;  margin-top: 30px; " >

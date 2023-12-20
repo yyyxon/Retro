@@ -334,7 +334,7 @@
 													</div>
 													<div data-v-29479193="" class="list_item_title_wrap" style="width: auto">
 														<!---->
-														<p data-v-29479193="" class="list_item_title">
+														<p data-v-29479193="" class="list_item_title"  onclick="purchaseDetail('${ prd.code }')">
 														${ prd.pname  }</p>
 													</div>
 												</div>

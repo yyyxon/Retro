@@ -30,7 +30,8 @@ public class ChattingController {
 	}
 
 	@GetMapping("/chat/chatting.do")
-	public String chatting(String id, Model model, HttpSession session) {
+	public String chatting(Model model, HttpSession session) {
+		String id = (String)session.getAttribute("id");
 		if(id == null || "".equals(id)) {
 			 return "redirect:https://google.com";
 		}

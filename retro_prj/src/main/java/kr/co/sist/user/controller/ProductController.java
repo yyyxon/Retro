@@ -100,7 +100,6 @@ public class ProductController {
 		pVO.setPcode(pcode);
 		pVO.setId(id);
 		ProductDomain userProduct=ps.searchProduct(pVO);
-		System.out.println(ps.searchBuyerAllInfo(pcode));
 		
 		model.addAttribute("userProduct",userProduct);
 		model.addAttribute("AllCominfo", ps.searchBuyerAllInfo(pcode));

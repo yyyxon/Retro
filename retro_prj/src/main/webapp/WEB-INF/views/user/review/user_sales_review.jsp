@@ -205,7 +205,7 @@ textarea:focus {
 							<!-- 상품 정보 -->
 							<div class="product-info" style="margin-top:19px">
 								<p style="font-size:16px">${ info.pname }</p>
-								<h2>${ info.nickname }</h2>
+								<h2>${ sessionScope.nickname }</h2>
 							</div>
 							<!---->
 						</div>
@@ -215,7 +215,7 @@ textarea:focus {
 					<section class="css-1y8gct2">
 						<div>
 							<h3>
-								${ info.buyerNick }님과의 거래는 어떠셨나요?
+								${ info.nickname }님과의 거래는 어떠셨나요?
 							</h3>
 						</div>
 						
@@ -294,7 +294,7 @@ textarea:focus {
 					
 					<form id="hrdFrm" action="http://localhost/retro_prj/sales_review_write_prc.do" method="POST">
 					<input type="hidden" id="comment1" name="comment1" value="1">
-					<input type="hidden" id="code" name="code" value="${ param.code }">
+					<input type="hidden" id="code" name="code" value="${ param.pcode }">
 					<input type="hidden" id="id" name="id" value="${ param.id }">
 					<!-- 상세 선택 -->
 					<section>

@@ -29,10 +29,10 @@ CONTEXT, ID, INPUT_DATE
 )
 </insert>
 
-<select id="selectBuyerInfo" parameterType="String" resultType="msd">
-  select m.nickname as buyerNick ,p.pname, p.img
-  from CHATTING c, member m ,PRODUCT p
-  where p.pcode=c.pcode and m.id = c.BUYER_ID and c.BUYER_ID= #{ buyer }
+<select id="selectBuyerInfo" parameterType="rVO" resultType="msd">
+select distinct c.buyer_id id, nickname, pname, img
+from chatting c, product p, member m
+where c.buyer_id = m.id and c.pcode = p.pcode and p.pcode = #{ pcode } and buyer_id = #{ id }
 </select>
 
 

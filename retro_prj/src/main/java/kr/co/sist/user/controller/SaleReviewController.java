@@ -14,14 +14,14 @@ public class SaleReviewController {
 	private SaleReviewService srs=SaleReviewService.getInstance();
 	
 	@PostMapping("/sales_review_write.do")
-	public String saleCommentFrm(String buyerId, Model model) {
-		
-		model.addAttribute("info",srs.searchBuyerInfo(buyerId));
+	public String saleCommentFrm(ReviewVO rVO, Model model) {
+		model.addAttribute("info",srs.searchBuyerInfo(rVO));
 		return "user/review/user_sales_review";
 	}//saleCommentFrm
 	
 	@PostMapping("/sales_review_write_prc.do")
 	public String addSaleComment(ReviewVO rVO, Model model) {
+		System.out.println(rVO.toString());
 		model.addAttribute("addFlag", srs.addSaleReview(rVO) == 1 ? true : false);
 		
 		String pcode=rVO.getCode();

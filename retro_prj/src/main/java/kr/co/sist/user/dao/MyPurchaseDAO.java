@@ -116,11 +116,5 @@ public class MyPurchaseDAO {
 		
 		return cnt;
 	}
-	
-	public static void main(String[] args) {
-		
-		System.out.println(new MyPurchaseDAO().selectDealCnt("urface"));
-	}
-	
 
 }

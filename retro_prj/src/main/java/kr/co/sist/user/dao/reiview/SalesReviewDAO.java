@@ -39,12 +39,12 @@ public class SalesReviewDAO {
 		return insertcnt;
 	}//insertSaleReview
 	
-	public MySalesDomain selectBuyerInfo(String buyer) throws PersistenceException{
+	public MySalesDomain selectBuyerInfo(ReviewVO rVO) throws PersistenceException{
 		MySalesDomain msd = null;
 		
 		MybatisHandler mbh = MybatisHandler.getInstance();
 		SqlSession ss = mbh.getMyBatisHandler(configPath, false);
-		msd = ss.selectOne("user.sell.review.selectBuyerInfo",buyer);
+		msd = ss.selectOne("user.sell.review.selectBuyerInfo", rVO);
 		
 		mbh.closeHandler(ss);
 		

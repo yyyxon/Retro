@@ -45,11 +45,11 @@ public class SaleReviewService {
 	}//addSaleReview
 	
 	
-	public MySalesDomain searchBuyerInfo(String buyer) {
+	public MySalesDomain searchBuyerInfo(ReviewVO rVO) {
 		MySalesDomain searchInfo = null;
 		
 		try {
-			searchInfo = srDAO.selectBuyerInfo(buyer);
+			searchInfo = srDAO.selectBuyerInfo(rVO);
 		}catch(PersistenceException pe) {
 			pe.printStackTrace();
 		}//end catch

@@ -18,7 +18,7 @@ ORDER BY SEND_DATE DESC
 <select id="selectOneChat" resultType="kr.co.sist.user.domain.chat.ChatDetailDomain" parameterType="kr.co.sist.user.vo.chat.ChatDetailVO">
 SELECT C.CONTEXT, C.SENDER, C.SEND_DATE
 FROM CHATTING C, PRODUCT P
-WHERE C.PCODE=P.PCODE AND P.PCODE='P00001' AND ((C.SENDER=#{me} AND C.RECEIVER=#{you}) OR (C.SENDER=#{you} AND C.RECEIVER=#{me}))
+WHERE C.PCODE=P.PCODE AND P.PCODE=#{pcode} AND ((C.SENDER=#{me} AND C.RECEIVER=#{you}) OR (C.SENDER=#{you} AND C.RECEIVER=#{me}))
 ORDER BY SEND_DATE
 </select>
 

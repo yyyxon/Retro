@@ -169,12 +169,9 @@ public class GoodsController {
 		wVO.setId(id);
 		wVO.setPcode(pcode);
 		
-		ws.getChkPcode(wVO);
-		
-		model.addAttribute("chkPcode",ws.getChkPcode(wVO));
-		System.out.println(ws.getChkPcode(wVO));
 		model.addAttribute("pcode",pcode);
 		if(id != null) {
+			model.addAttribute("chkPcode",ws.getChkPcode(wVO));
 			if(gs.searchCheck(gVO) == 1) {
 				ProductVO pVO = new ProductVO();
 				pVO.setPcode(pcode);

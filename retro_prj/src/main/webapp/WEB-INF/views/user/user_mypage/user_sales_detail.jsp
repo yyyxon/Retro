@@ -8,6 +8,9 @@
 <head>
 <meta charset="UTF-8">
 <c:import url="http://localhost/retro_prj/common/cdn/cdn.jsp" />
+<link rel="stylesheet" href="https://kream.co.kr/_nuxt/css/fe9a548.css" />
+<link rel="stylesheet" href="https://kream.co.kr/_nuxt/css/d235be2.css" />
+<link rel="stylesheet" href="https://kream.co.kr/_nuxt/css/e427b18.css" />
 <link rel="stylesheet" href="https://kream.co.kr/_nuxt/css/1f3c072.css" />
 <link rel="stylesheet" href="https://kream.co.kr/_nuxt/css/7d787ff.css" />
 <link rel="stylesheet" href="https://kream.co.kr/_nuxt/css/c0c15c2.css" />

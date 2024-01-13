@@ -11,11 +11,8 @@
 <!-- jQuery CDN -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <!-- 결제 css -->
-<link rel="preload" href="https://web.joongna.com/_next/static/css/82d216d82f2f74d1.css" as="style"/>
-<link rel="stylesheet" href="https://web.joongna.com/_next/static/css/82d216d82f2f74d1.css" data-n-g=""/>
 <link href="https://fruitsfamily.com/static/css/main.8c8a1dc3.chunk.css" rel="stylesheet">
 <link href="https://fruitsfamily.com/static/css/main.5a75766e.chunk.css" rel="stylesheet">
-<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/variable/pretendardvariable.css" />
 <style type="text/css">
 .Checkout-container {
     padding-left: 650px;
@@ -54,8 +51,8 @@ $(function() {
 </script>
 
 </head>
-<body>
-<jsp:include page="/common/cdn/header.jsp"/>
+<body style="font-family: Pretendard Variable">
+<c:import url="/common/cdn/header.jsp"/>
 	<div class="Checkout-container">
 		<h1 class="page-title" style="font-family: Pretendard Variable; font-size: 22px">주문 / 결제</h1>
 		<h4 class="Checkout-title" style="font-family: Pretendard Variable">상품 정보</h4>
@@ -126,5 +123,5 @@ $(function() {
 		</div>
 	</div>
 </body>
-<jsp:include page="/common/cdn/footer.jsp"/>
+<c:import url="/common/cdn/footer.jsp"/>
 </html>

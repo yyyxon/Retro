@@ -127,10 +127,10 @@ public class ProductService {
     }//cancelProduct
     
 
-	public List<MySalesDomain> searchBuyerAllInfo(String seller){
+	public List<MySalesDomain> searchBuyerAllInfo(String pcode){
 		 List<MySalesDomain> searchAllInfo=null;
 		 try {
-			 searchAllInfo = pDAO.selectBuyerAllInfo(seller);
+			 searchAllInfo = pDAO.selectBuyerAllInfo(pcode);
 			}catch(PersistenceException pe) {
 				pe.printStackTrace();
 			}//end catch

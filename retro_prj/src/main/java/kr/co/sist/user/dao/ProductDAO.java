@@ -153,13 +153,13 @@ public class ProductDAO {
 		return deleteCnt;
 	}// deleteProduct
 
-	public List<MySalesDomain> selectBuyerAllInfo(String seller) throws PersistenceException {
+	public List<MySalesDomain> selectBuyerAllInfo(String pcode) throws PersistenceException {
 
 		List<MySalesDomain> selectInfo = null;
 
 		MybatisHandler mbh = MybatisHandler.getInstance();
 		SqlSession ss = mbh.getMyBatisHandler(configPath, false);
-		selectInfo = ss.selectList("user.product.selectBuyerAllInfo", seller);
+		selectInfo = ss.selectList("user.product.selectBuyerAllInfo", pcode);
 
 		mbh.closeHandler(ss);
 

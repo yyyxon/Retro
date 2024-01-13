@@ -54,9 +54,10 @@
 </select>
 		
 		<select id="selectBuyerAllInfo" resultType="msd" parameterType="String">
-		  select m.nickname as buyerNick, c.BUYER_ID as buyerId
+		  select m.nickname nickname, c.sender id
 		  from CHATTING c, member m
-		  where m.id = c.BUYER_ID and c.SELLER_ID = #{ seller }
+          where c.sender = m.id and pcode = #{ pcode }
+          group by nickname, c.sender
 		</select>
 		
 		<select id="selectWishCnt" resultType="int" parameterType="String">

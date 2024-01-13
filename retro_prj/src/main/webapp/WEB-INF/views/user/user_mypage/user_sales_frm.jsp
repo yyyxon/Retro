@@ -6,6 +6,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
+<link rel="stylesheet" href="https://kream.co.kr/_nuxt/css/26ca667.css" />
 <link rel="stylesheet" href="https://kream.co.kr/_nuxt/css/199727e.css" />
 <link rel="stylesheet" href="https://kream.co.kr/_nuxt/css/6ce4bbc.css" />
 <link rel="stylesheet" href="https://kream.co.kr/_nuxt/css/9caa514.css" />

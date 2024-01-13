@@ -8,6 +8,9 @@
 <head>
 <meta charset="UTF-8">
 <c:import url="http://localhost/retro_prj/common/cdn/cdn.jsp" />
+<link rel="stylesheet" href="https://kream.co.kr/_nuxt/css/fe9a548.css" />
+<link rel="stylesheet" href="https://kream.co.kr/_nuxt/css/d235be2.css" />
+<link rel="stylesheet" href="https://kream.co.kr/_nuxt/css/e427b18.css" />
 <link rel="stylesheet" href="https://kream.co.kr/_nuxt/css/1f3c072.css" />
 <link rel="stylesheet" href="https://kream.co.kr/_nuxt/css/7d787ff.css" />
 <link rel="stylesheet" href="https://kream.co.kr/_nuxt/css/c0c15c2.css" />
@@ -96,25 +99,27 @@ pageContext.setAttribute("code", code);
 
 								<div data-v-6287e8b0="" class="order_info">
 									<!---->
-									<div data-v-41e7c61c="" data-v-6287e8b0="" class="order_detail_header_product">
-										<div data-v-fc7cb978="" data-v-41e7c61c="" class="product_wrap tag_top">
-											<div data-v-fc7cb978="" class="product_img_flex_box">
-												<div data-v-fc7cb978="" class="product_img_wrap">
-													<img data-v-fc7cb978="" alt="  "
+									<div data-v-41e7c61c="" data-v-6287e8b0=""
+										class="order_detail_header_product">
+										<div data-v-fc7cb978="" data-v-41e7c61c=""
+											class="product_wrap tag_top">
+											<div data-v-057e2a43="" class="product_img_flex_box">
+												<div data-v-057e2a43="" class="product_img_wrap">
+													<img data-v-057e2a43="" alt="  "
 														src="http://localhost/retro_prj/upload/${ purchase.img }"
 														class="product_img"
-														style="background-color: rgb(246, 238, 237);">
+														style="background-color: rgb(235, 240, 245);">
 													<!---->
 												</div>
 											</div>
-											<div data-v-fc7cb978="" class="product_info_wrap">
-												<div data-v-fc7cb978="" class="product_info">
-													<div data-v-fc7cb978="" class="tag_wrap">
+
+											<div data-v-057e2a43="" class="product_info_wrap">
+												<div data-v-057e2a43="" class="product_info">
+													<div data-v-057e2a43="" class="tag_wrap">
 														<!---->
 													</div>
-													<p data-v-fc7cb978="" class="product_description">${ purchase.pname }</p>
-													<p data-v-fc7cb978="" class="product_title">
-														${ purchase.nickname }</p>
+													<p data-v-057e2a43="" class="product_description" style="font-size:16px">${ purchase.pname }</p>
+													<p data-v-057e2a43="" class="product_title">${ purchase.nickname }(${ purchase.seller })</p>
 												</div>
 											</div>
 										</div>
@@ -123,7 +128,7 @@ pageContext.setAttribute("code", code);
 								</div>
 							</div>
 						</div>
-						
+
 						<div data-v-7a3bdf55="">
 							<div data-v-c54402b6="" data-v-7a3bdf55=""
 								class="order_info_items_wrap empty_header">
@@ -171,7 +176,7 @@ pageContext.setAttribute("code", code);
 								</div>
 							</div>
 						</div>
-						
+
 						<div data-v-7a3bdf55="">
 							<div data-v-c54402b6="" data-v-7a3bdf55=""
 								class="order_info_items_wrap empty_header">
@@ -190,42 +195,23 @@ pageContext.setAttribute("code", code);
 										</div>
 
 										<c:if test="${ code eq 'B' }">
-											<div data-v-00c4558b="" data-v-4217af8e=""
-												class="display_line line separator"
-												style="background-color: rgb(240, 240, 240);"></div>
-											<div data-v-15287078="" data-v-4217af8e=""
-												class="display_line line title_description">
-												<p data-v-8016a084="" data-v-15287078=""
-													class="line_title display_paragraph"
-													style="color: rgb(34, 34, 34); width: 130px">거래 방법</p>
-												<div data-v-15287078="" class="description_wrap">
-													<p data-v-8016a084="" data-v-15287078=""
-														class="line_description display_paragraph"
-														style="color: rgb(34, 34, 34); text-align: left;">
+											<div data-v-0c19a43c="" class="shipping_address"
+												style="border-top: none">
+												<dl data-v-0c19a43c="" class="address_item">
+													<dt data-v-0c19a43c="" class="address_title">거래 방법</dt>
+													<dd data-v-0c19a43c="" class="address_txt">
 														<c:if test="${ purchase.payment eq 'T' }">택배거래</c:if>
 														<c:if test="${ purchase.payment eq 'G' }">직거래</c:if>
-													</p>
-												</div>
+													</dd>
+												</dl>
+												<dl data-v-0c19a43c="" class="address_item">
+													<dt data-v-0c19a43c="" class="address_title">
+														<c:out value="${ code eq 'B' ? '거래 일시' : '결제 일시' }" />
+													</dt>
+													<dd data-v-0c19a43c="" class="address_txt">${ purchase.buy_date }</dd>
+												</dl>
 											</div>
 										</c:if>
-
-										<div data-v-00c4558b="" data-v-4217af8e=""
-											class="display_line line separator"
-											style="background-color: rgb(240, 240, 240);"></div>
-										<div data-v-15287078="" data-v-4217af8e=""
-											class="display_line line title_description">
-											<p data-v-8016a084="" data-v-15287078=""
-												class="line_title display_paragraph"
-												style="color: rgb(34, 34, 34); width: 130px">
-												<c:out value="${ code eq 'B' ? '거래 일시' : '결제 일시' }" />
-											</p>
-											<div data-v-15287078="" class="description_wrap">
-												<p data-v-8016a084="" data-v-15287078=""
-													class="line_description display_paragraph"
-													style="color: rgb(34, 34, 34); text-align: left;">${ purchase.buy_date }
-												</p>
-											</div>
-										</div>
 									</div>
 								</div>
 							</div>

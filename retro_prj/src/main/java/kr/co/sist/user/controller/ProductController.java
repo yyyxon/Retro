@@ -96,16 +96,16 @@ public class ProductController {
 	@RequestMapping("/user/product/product_detail.do")
 	public String productDetail( HttpSession session,Model model,ProductVO pVO) {
 		String id = (String)session.getAttribute("id");
-	
 		String pcode = (String)session.getAttribute("pcode"); 
 		pVO.setPcode(pcode);
 		pVO.setId(id);
 		ProductDomain userProduct=ps.searchProduct(pVO);
-		model.addAttribute("userProduct",userProduct);
+		System.out.println(ps.searchBuyerAllInfo(pcode));
 		
-			model.addAttribute("AllCominfo", ps.searchBuyerAllInfo(id));
-			model.addAttribute("wishCnt", ps.searchWishCnt(pcode));
-			model.addAttribute("searchChk", ps.searchCheck(pVO));
+		model.addAttribute("userProduct",userProduct);
+		model.addAttribute("AllCominfo", ps.searchBuyerAllInfo(pcode));
+		model.addAttribute("wishCnt", ps.searchWishCnt(pcode));
+		model.addAttribute("searchChk", ps.searchCheck(pVO));
 		
 		return "user/product/product_detail";
 	}//productDetail
@@ -180,7 +180,7 @@ public class ProductController {
 		model.addAttribute("userProduct",userProduct);
 		
 		if(id != null) {
-			model.addAttribute("AllCominfo", ps.searchBuyerAllInfo(id));
+			model.addAttribute("AllCominfo", ps.searchBuyerAllInfo(pcode));
 			model.addAttribute("wishCnt", ps.searchWishCnt(pcode));
 			model.addAttribute("searchChk", ps.searchCheck(pVO));
 		}

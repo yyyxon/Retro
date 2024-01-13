@@ -181,8 +181,7 @@ public class GoodsController {
 				pVO.setId(id);
 				ProductDomain userProduct=gs.searchProduct(pVO);
 				ProductService ps=ProductService.getInstance();
-				
-				model.addAttribute("AllCominfo", ps.searchBuyerAllInfo(id));
+				model.addAttribute("AllCominfo", ps.searchBuyerAllInfo(pcode));
 				model.addAttribute("wishCnt", ps.searchWishCnt(pcode));
 				model.addAttribute("userProduct",userProduct);
 				return "user/product/product_detail";

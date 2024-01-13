@@ -114,6 +114,7 @@
 		$("#completeCancel").click(function() {
 			var modalBg3 = document.getElementById('completeModalBg');
 			modalBg3.style.display = 'none';
+			return;
 		});//click
 		$("#delCancel").click(function() {
 			var modalBg2 = document.getElementById('delModalBg');
@@ -742,13 +743,13 @@
 											style="color: transparent;">
 											
 										<div>
-											<p class="mb-0 text-start">${ info.buyerNick }</p>
+											<p class="mb-0 text-start">${ info.nickname }</p>
 										</div>
 											<!-- <p
 												class="text-start text-sm text-jnGray-700 w-full line-clamp-1">제가
 												아니면 안돼요</p> -->
 									</div> <label for="1424385_8626376_8626376" class="flex items-end"><input
-										type="radio" id="1424385_8626376_8626376" name="buyerId" value="${ info.buyerId }"
+										type="radio" id="1424385_8626376_8626376" name="buyerId" value="${ info.id }"
 										class="appearance-none rounded-full w-5 h-5 border-1.5 border-solid border-jnGray-500 transition-all duration-100 ease-linear mx-1.5 cursor-pointer checked:border-6 checked:border-jngreen"
 										value="8626376"></label></li>
 							</ul>

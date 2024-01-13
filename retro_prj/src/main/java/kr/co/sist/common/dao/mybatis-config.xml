@@ -70,6 +70,7 @@
     <mapper resource="kr/co/sist/user/dao/mapper/reportMapper.xml"/>
     <mapper resource="kr/co/sist/admin/dao/mapper/adminReportMapper.xml"/>
     <mapper resource="kr/co/sist/user/dao/mapper/homeMapper.xml"/>
+    <mapper resource="kr/co/sist/user/dao/mapper/chat/chatMapper.xml"/>
     
     <!-- 인영 mapper -->
     <mapper resource="kr/co/sist/admin/dao/mapper/adminProductMapper.xml"/>

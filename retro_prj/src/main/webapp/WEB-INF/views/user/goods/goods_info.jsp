@@ -300,8 +300,9 @@ $(document).ready(function () {
 					</div>
 				</div>
 				<div class="flex items-center py-4 border-b border-gray-300 space-s-4">
-					<button data-variant="slim"
-						class="text-[13px] md:text-sm leading-4 inline-flex items-center cursor-pointer transition ease-in-out duration-300 font-semibold font-body text-center justify-center placeholder-white focus-visible:outline-none focus:outline-none rounded-md h-11 md:h-12 px-5 py-2 transform-none normal-case hover:shadow-cart w-full bg-white hover:bg-white/90 text-jnblack hover:text-jnblack border-[1px] border-jnblack">채팅하기</button>
+					<button data-variant="slim" onclick="location.href='http://localhost/retro_prj/chat/start_chat.do?pcode=${ pcode }&uid=${id }';"
+						class="text-[13px] md:text-sm leading-4 inline-flex items-center cursor-pointer transition ease-in-out duration-300 font-semibold font-body text-center justify-center placeholder-white focus-visible:outline-none focus:outline-none rounded-md h-11 md:h-12 px-5 py-2 transform-none normal-case hover:shadow-cart w-full bg-white hover:bg-white/90 text-jnblack hover:text-jnblack border-[1px] border-jnblack">
+						채팅하기</button>
 					<button data-variant="slim" onclick="location.href='http://localhost/retro_prj/user/pay/safe_payment.do?pcode=${ pcode }';"
 						class="text-[13px] md:text-sm leading-4 inline-flex items-center cursor-pointer transition ease-in-out duration-300 font-semibold font-body text-center justify-center border-0 border-transparent placeholder-white focus-visible:outline-none focus:outline-none rounded-md h-11 md:h-12 px-5 text-white py-2 transform-none normal-case hover:text-white hover:shadow-cart w-full bg-jnblack hover:bg-jnblack/90">
 						<span class="py-2 3xl:px-8">안전거래</span>

@@ -1,4 +1,9 @@
-<img src="https://github.com/yyyxon/Retro/assets/130555434/f6259cc6-bf0a-41d5-a8db-650b8a03c030"><br><br>
+<img src="https://github.com/yyyxon/Retro/assets/130555434/f6259cc6-bf0a-41d5-a8db-650b8a03c030"><br>
+### ❤ 프로젝트 상세보기
+<a href="https://www.notion.so/yyyxon/RE-TRO-4a30b96197dc40aaac0aef0e34a1fca4">![notion](https://img.shields.io/badge/RE:TRO-000000?style=for-the-badge&logo=notion&logoColor=white)
+</a><br>
+(클릭시 노션으로 이동)
+<br>
 
 ### ✍️ 주제 및 개요
 
